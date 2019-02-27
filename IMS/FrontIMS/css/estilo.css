@@ -54,37 +54,16 @@ section img{
 	width: 500px;
 	height: 500px;
 }
-#historia{
+#articlenosotros{
 	font-size: 50px;
 	background: #C1BBF8;
 	width: 100%;
 	display: inline-block;
 	text-align: center;
 }
-#historia p {
+#articlenosotros p,#articlenosotros li {
 	font-size: 25px;
-	width: 90%;
-}
-#valores {
-	background: red;
-	font-size: 50px;
-	padding: 25px 25px 25px 100px;
-	height: 550px;
-	width: 550px;
-	display: inline-block;
-}
-#valores li {
-	background: red;
-	font-size: 25px;
-}
-#LogoEmpresarial{
-	display: inline-block;
-}
-#LogoEmpresarial img{
-	width: 480px;
-	height: 450px;
-	padding: 0px 90px;
-
+	padding: 20px;
 }
 footer{
 	width: 100%;
