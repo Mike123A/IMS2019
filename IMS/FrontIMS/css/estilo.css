@@ -132,4 +132,32 @@ footer img{
 	border-radius: 5px;
 	border: 2px solid;
 }
+/*PRODUCTOS*/
+#contenedorproductos{
+	width: 900px;
+	height: 600px;
+	background: red;
+	display: inline-block;
+}
+#productos{
+	width: 280px;
+	height: 180px;
+	background: #fff;
+	border: 1px solid;
+	display: inline-block;
+}
+#carrito{
+	width: 280px;
+	height: 600px;
+	background: blue;
+	display: inline-block;
+	vertical-align: center;
+
+}
+
+
+
+
+
+
 
