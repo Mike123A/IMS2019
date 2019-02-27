@@ -1,0 +1,40 @@
+.slider{
+	margin:auto;
+	overflow: hidden;
+	width: 600px;
+	height: 400px;
+	padding: 50px;
+	/*background: red;*/
+}
+.slider ul{
+	display: flex;
+	padding: 0;
+	width: 300%;
+	animation: cambio 25s infinite;
+}
+.slider li{
+	list-style: none;
+	width: 600px;
+	height: 400px;
+}
+.slider li img{
+	width: 600px;
+	height: 400px;
+	padding: 15px;
+}
+
+@keyframes cambio{
+	0%{margin-left: 0;}
+	20%{margin-left: 0;}
+	25%{margin-left: -100%;}
+	45%{margin-left: -100%;}
+	50%{margin-left: -200%;}
+	70%{margin-left: -200%;}
+}
+
+.historia{
+	background: red;
+	width: 100%;
+	height: 400px;
+
+}
