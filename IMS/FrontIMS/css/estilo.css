@@ -58,6 +58,44 @@ section img{
 	width: 500px;
 	height: 500px;
 }
+/*Index*/
+
+.carrusel {
+	width: 95%;
+	margin: auto;
+	overflow: hidden;
+}
+
+.carrusel ul {
+	display: flex;
+	padding: 0;
+	width: 300%;
+	
+	animation: cambio 20s infinite;
+}
+
+.carrusel li {
+	width: 100%;
+	list-style: none;
+}
+
+.carrusel img {
+	width: 70%;
+}
+
+@keyframes cambio {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+}
+
+/*Conocenos*/
 #articlenosotros{
 	font-size: 50px;
 	background: #C1BBF8;
@@ -166,7 +204,6 @@ footer img{
 
 /*DISTRIBUIDORES*/
 
-/*PRODUCTOS*/
 #contenedordistribuidores{
 	width: 100%;
 	height: 600px;
