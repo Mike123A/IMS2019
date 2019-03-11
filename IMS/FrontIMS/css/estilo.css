@@ -126,18 +126,23 @@ footer img{
 /*Estilos de CONTACTO*/
 
 #mapa{
-	width: 350px;
-	height: 200px;
+	
+	width: 400px;
+	height: 400px;
 	background: red;
 	display: inline-block;
 	margin: 15px;
 }
 #datosempresa{
-	width: 350px;
-	height: 200px;
+	width: 400px;
+	height: 400px;
 	background: red;
 	display: inline-block;
 	margin: 15px;
+}
+#datosempresa p{
+	vertical-align: center;
+	margin-top: 100px;
 }
 #formulariocontactanos{
 	width: 800px;
