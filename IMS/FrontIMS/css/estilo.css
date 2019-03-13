@@ -96,17 +96,22 @@ section img{
 }
 
 /*Conocenos*/
-#articlenosotros{
+article#articlenosotros{
 	font-size: 50px;
 	background: #C1BBF8;
 	width: 100%;
 	display: inline-block;
 	text-align: center;
 }
-#articlenosotros p,#articlenosotros li {
+article#articlenosotros p,#articlenosotros li {
 	font-size: 25px;
 	padding: 20px;
 }
+
+article#articlenosotros p:first-letter{
+	font-size: 30px;
+}
+
 footer{
 	width: 100%;
 	height: 50px;
@@ -125,7 +130,7 @@ footer img{
 
 /*Estilos de CONTACTO*/
 
-#mapa{
+#contenedorcontacto{
 	
 	width: 400px;
 	height: 400px;
@@ -133,14 +138,7 @@ footer img{
 	display: inline-block;
 	margin: 15px;
 }
-#datosempresa{
-	width: 400px;
-	height: 400px;
-	background: red;
-	display: inline-block;
-	margin: 15px;
-}
-#datosempresa p{
+#contenedorcontacto p{
 	vertical-align: center;
 	margin-top: 100px;
 }
