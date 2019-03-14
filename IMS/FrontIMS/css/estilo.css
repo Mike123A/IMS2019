@@ -31,15 +31,12 @@ header nav ul li a{
 	margin-left: 10px;
 	transition: 0.2s;
 }
-header nav ul li img{
-	width: 25px;
-	height: 25px;
-}
 header img{
 	width: 80px;
 	height: 80px;
 	display: inline-flex;
 	margin: auto;
+	display: none;
 }
 nav ul li a:hover{
 	transform: scale(1.25);
@@ -136,6 +133,7 @@ footer img{
 	height: 400px;
 	background: red;
 	display: inline-block;
+	vertical-align: top;
 	margin: 15px;
 }
 #contenedorcontacto p{
@@ -204,9 +202,7 @@ footer img{
 	margin: auto;
 	margin-top: 90px;
 }
-
 /*DISTRIBUIDORES*/
-
 #contenedordistribuidores{
 	width: 100%;
 	height: 600px;
@@ -222,6 +218,14 @@ footer img{
 	background: #fff;
 	border: 1px solid;
 	display: inline-block;
+}
+/*`SESION*/
+#contenedorsesion{
+	width: 650px;
+	height: 600px;
+	background: #3828AF;
+	display: inline-block;
+	margin: 10px;
 }
 
 
