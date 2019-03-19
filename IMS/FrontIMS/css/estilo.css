@@ -8,14 +8,16 @@ header{
 	height: 90px;
 	background: #0B0B61;
 	display: inline-block;
-	position: fixed;
 }
 header nav{
 	text-align: center;
 	height: 85px;
+	position: fixed;
+	width: 100%;
+	background: #0B0B61;
+	vertical-align: center;
 }
 header nav ul{
-	width: 90%;
 	margin:auto;
 }
 header nav ul li{
@@ -32,11 +34,10 @@ header nav ul li a{
 	transition: 0.2s;
 }
 header img{
-	width: 80px;
-	height: 80px;
+	width: 75px;
+	height: 75px;
 	display: inline-flex;
-	margin: auto;
-	display: none;
+	padding: 5px;
 }
 nav ul li a:hover{
 	transform: scale(1.25);
@@ -44,23 +45,37 @@ nav ul li a:hover{
 	background: #40514e;
 	margin: 0px 25px 0px 25px;
 }
-section{
-	margin-top: 90px;
-	width: 100%;
-	text-align: center;
-	background: #f5f5f5;
-	display: inline-block;
-}
 section img{
 	width: 500px;
 	height: 500px;
 }
+
+footer{
+	width: 100%;
+	height: 200px;
+	background: #40514e;
+	display: inline-block;
+	vertical-align: center;
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+}
+footer img{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	margin: auto;
+}
+
 /*Index*/
 
 .carrusel {
-	width: 95%;
+	
+	background: #f5f5f5;
+	width: 700px;
+	height: 550px;
 	margin: auto;
 	overflow: hidden;
+	text-align: center;
 }
 
 .carrusel ul {
@@ -92,6 +107,26 @@ section img{
 	
 }
 
+section#descripcionempresa{
+	width: 100%;
+	height: 400px;
+	background: url(../img/Fondo1.jpg);
+	background-size: cover;
+	display: inline-block;
+}
+section#descripcionempresa article{
+	width: 80%;
+	height: 200px;
+	margin: auto;
+	background: gray;
+	margin-top: 100px;
+	font-size: 30px;
+	color: #fff;
+	opacity: 50%;
+	vertical-align: center;
+	text-align: center;
+}
+
 /*Conocenos*/
 article#articlenosotros{
 	font-size: 50px;
@@ -109,21 +144,6 @@ article#articlenosotros p:first-letter{
 	font-size: 30px;
 }
 
-footer{
-	width: 100%;
-	height: 50px;
-	background: #40514e;
-	display: inline-block;
-	vertical-align: center;
-	padding: 10px 0px 10px 0px;
-	text-align: center;
-}
-footer img{
-	width: 40px;
-	height: 40px;
-	display: inline-block;
-	margin: auto;
-}
 
 /*Estilos de CONTACTO*/
 
