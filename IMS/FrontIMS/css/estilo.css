@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|ZCOOL+XiaoWei');
 *{
 	padding: 0;
 	margin: 0;
-	
+	font-family: 'ZCOOL XiaoWei', serif;
 }
 body{
 	background: #e2ecec;
@@ -127,62 +127,71 @@ section#contefooter li{
 	
 	50% {margin-left: -200%;}
 	70% {margin-left: -200%;}
-	
 }
 
 section#descripcionempresa{
 	width: 100%;
 	height: 400px;
 	background: url(../img/Fondo1.jpg);
-	/*filter: blur(10px);*/
 	background-size: cover;
 	display: inline-block;
 }
 section#descripcionempresa article{
 	width: 80%;
 	margin: auto;
-	background: gray;
 	margin-top: 140px;
 	font-size: 30px;
 	color: #fff;
-	vertical-align: center;
 	text-align: center;
-	opacity: .5;
+	opacity: .85;
+	font-family: 'Abril Fatface', cursive;
+	z-index: 98;
 }
 section#descripcionempresa1{
 	width: 100%;
 	height: 300px;
-	background: url(../img/medio-ambiente.jpg);
-	background-size: cover;
+
+}
+section#descripcionempresa1 img{
+	width: 634.5px;
+	height: 300px;
 	display: inline-block;
 }
-section#descripcionempresa1 article{
-	width: 80%;
-	margin: auto;
-	/*background: gray;*/
-	margin-top: 140px;
+section#descripcionempresa1 section{
+	width: 634.5px;
+	height: 300px;
+	vertical-align: top;
+	display: inline-block;
+	background: #e2ecec;
+	margin-left: -4px;
+}
+section#descripcionempresa1 section article{
 	font-size: 30px;
 	color: #000;
-	vertical-align: center;
 	text-align: center;
+	font-family: 'Abril Fatface', cursive;
+	margin: 70px 80px 0px 80px;
 }
 /*Conocenos*/
 article#articlenosotros{
 	font-size: 50px;
-	background: #C1BBF8;
+	/*background: #C1BBF8;*/
 	width: 100%;
 	display: inline-block;
 	text-align: center;
 }
 article#articlenosotros p,#articlenosotros li {
-	font-size: 25px;
+	font-size: 30px;
 	padding: 20px;
+	margin: 20px;
 }
-
 article#articlenosotros p:first-letter{
 	font-size: 30px;
 }
-
+.ImagenesNosotros{
+	width: 100%;
+	height: 400px;
+}
 
 /*Estilos de CONTACTO*/
 
@@ -262,23 +271,50 @@ article#articlenosotros p:first-letter{
 	margin-top: 90px;
 }
 /*DISTRIBUIDORES*/
-#contenedordistribuidores{
-	width: 100%;
-	height: 600px;
-	background: red;
-	display: inline-block;
-	margin: auto;
-	margin-top: 90px;
-}
 #distribuidor{
-	width: 280px;
-	height: 270px;
-	margin: 10px 5px 10px 5px;
+	width: calc(300px - 30px);
+	height: calc(400px - 30px);
 	background: #fff;
-	border: 1px solid;
 	display: inline-block;
+	margin:22px;
+	box-sizing: border-box;
+	overflow: hidden;
+	border-radius: 10px;
+	border: 5px solid #e2ecec;
 }
-/*`SESION*/
+#distribuidor img{
+	position: relative;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #e2ecec;
+	transition: 0.8s;
+	z-index: 1;
+}
+#distribuidor article{
+	margin: 30px 10px 30px 10px;
+	/*position: relative;*/
+	width: 90%;
+}
+#distribuidor article p{
+	font-size: 20px;
+	width: 90%;
+}
+#distribuidor article h3{
+	text-align: center;
+}
+#distribuidor:hover img{
+	top:20px;
+	/*background: red;*/
+	left: calc(50% - 30px);
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+
+/*SESION*/
 #contenedorsesion{
 	width: 650px;
 	height: 600px;
