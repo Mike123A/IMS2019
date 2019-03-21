@@ -178,6 +178,9 @@ article#articlenosotros{
 	width: 100%;
 	display: inline-block;
 	text-align: center;
+	vertical-align: top;
+	/*border:1px solid;*/
+	/*margin: auto;*/
 }
 article#articlenosotros p,#articlenosotros li {
 	font-size: 30px;
@@ -244,33 +247,84 @@ article#articlenosotros p:first-letter{
 	border: 2px solid;
 }
 /*PRODUCTOS*/
-#contenedorproductos{
-	width: 75%;
-	height: 600px;
-	background: red;
-	display: inline-block;
-	margin: auto;
-	margin-top: 90px;
-
-}
-#productos{
-	width: 20%;
-	height: 270px;
-	margin: 10px 5px 10px 5px;
+#producto{
+	width: 290px;
+	height: 450px;
+	margin-left: 10px;
 	background: #fff;
-	border: 1px solid;
-	display: inline-block;
-}
-/*#carrito{
-	width: 280px;
-	height: 600px;
-	background: blue;
+	border: 5px solid #e2ecec;
 	display: inline-block;
 	vertical-align: top;
-	margin: auto;
-	margin-top: 90px;
-}*/
+	text-align: center;
+}
+#producto h2,#productodesc h2{
+	margin-top:10px;
+	text-align: center;
+}
+#producto img, #productodesc img{
+	width: 240px;
+	height: 300px;
+	margin: 20px 10px 20px 10px;
+}
+#producto button{
+	width: 150px;
+	height: 50px;
+	border-radius: 10px;
+	background: #669999;
+	color: #fff;
+	font-size: 20px;
+}
+#producto button:hover{
+	background: #40514e;
+}
+/*Producto descripcion*/
+#productodesc{
+	width: 1235px ;
+	/*height: 450px;*/
+	margin-left: 10px;
+	background: #fff;
+	border: 5px solid #e2ecec;
+	border-radius: 10px;
+}
+#productodesc p{
+	margin-left: 20px;
+}
+#productodesc img{
+	margin: 20px;
+	display: inline-block;
+}
+#productodesc article{
+	margin: 20px;
+	vertical-align: top;
+	width: 650px ;
+	/*height: 300px;*/
+	display: inline-block;
+}
+.BotonesDescProd{
+	vertical-align: top;
+	margin:20px;
+	width: 200px;
+	display: inline-block;
+}
+.BotonesDescProd button,.BotonesDescProd input,.BotonesDescProd label{
+	width: 150px;
+	height: auto;
+	padding: 5px;
+	border-radius: 10px;
+	background: #669999;
+	color: #fff;
+	font-size: 20px;
+	margin: 20px;
+}
+.BotonesDescProd input,.BotonesDescProd label{
+	background: #fff;
+	color: #000;
+	text-align: center;
+}
 /*DISTRIBUIDORES*/
+a{
+	text-decoration: none;
+}
 #distribuidor{
 	width: calc(300px - 30px);
 	height: calc(400px - 30px);
@@ -294,8 +348,8 @@ article#articlenosotros p:first-letter{
 }
 #distribuidor article{
 	margin: 30px 10px 30px 10px;
-	/*position: relative;*/
 	width: 90%;
+	color: #000;
 }
 #distribuidor article p{
 	font-size: 20px;
