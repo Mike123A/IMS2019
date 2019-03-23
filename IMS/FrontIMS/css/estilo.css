@@ -273,7 +273,7 @@ article#articlenosotros p:first-letter{
 	width: 200px;
 	display: inline-block;
 }
-.BotonesDescProd button,.BotonesDescProd input,.BotonesDescProd label{
+.BotonesDescProd button,.BotonesDescProd input,.BotonesDescProd label,#formulariocontactanos button{
 	width: 150px;
 	height: auto;
 	padding: 5px;
@@ -344,67 +344,56 @@ a{
 
 /*Estilos de CONTACTO*/
 #UbicacionMapa{
-	width: 1240px;
+	width: 1260px;
 	height: 300px;
-	margin: 15px;
 	border-radius: 10px;
-}/*
-#contenedorcontacto{
-	
-	width: 400px;
-	height: 400px;
-	background: red;
-	display: inline-block;
-	vertical-align: top;
-	margin: 15px;
 }
-#contenedorcontacto p{
-	vertical-align: center;
-	margin-top: 100px;
-}*/
 #formulariocontactanos{
-	width: 1240px;
-	height: 500px;
-	/*background: red;*/
+	width: 800px;
 	display: inline-block;
-	margin: 15px;
-	align-items: center;
-	border: 2px solid;
 }
-
-#formulariocontactanos form{
-	padding: 10px;
+#formulariocontactanos{
+	padding: 20px;
 }
-#formulariocontactanos form label{
+#formulariocontactanos h2{
+	font-size: 50px;
+	color: #669999;
+}
+#formulariocontactanos label{
 	font-size: 20px;
 	display: inline-block;
-	vertical-align: top;
+	width: 100px;
 }
-#formulariocontactanos form input{
+#formulariocontactanos input, textarea{
 	font-size: 20px;
-	width: 320px;
+	width: calc(100% - 20px);
 	height: 30px;
 	display: inline-block;
-	border-radius: 5px;
-	margin-bottom: 5px;
-	border: 2px solid;
+	border: 2px solid #868C8C;
+	margin: 5px 0px 10px 10px;
+	padding: 3px 0px 3px 10px;
 }
-#formulariocontactanos form textarea{
-	font-size: 20px;
-	width: 600px;
+#formulariocontactanos textarea{
 	height: 175px;
-	display: inline-block;
-	border-radius: 5px;
-	border: 2px solid;
 }
-
-/*SESION*/
-/*#contenedorsesion{
-	width: 650px;
-	height: 600px;
-	background: #3828AF;
+#DatosEmpresa{
+	width: 380px;
+	height: 500px;
 	display: inline-block;
-	margin: 10px;
-}*/
-
-
+	background: #699;
+	vertical-align: top;
+	margin-top: 115px;
+	color: #fff;
+	font-size: 20px;
+	padding: 20px;
+}
+#DatosEmpresa h2{
+	text-align: center;
+}
+#DatosEmpresa p h2{
+	text-align: center;
+}
+#DatosEmpresa img{
+	width: 32px;
+	height: 32px;
+}
