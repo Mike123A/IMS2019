@@ -13,6 +13,9 @@ header{
 	background: #669999;
 	display: inline-block;
 }
+header a{
+	float:left;
+}
 header nav{
 	text-align: center;
 	height: 85px;
@@ -24,12 +27,16 @@ header nav{
 }
 header nav ul{
 	margin:auto;
+	float: right;
+	height: 80px;
+	margin-right: 50px;
 }
 header nav ul li{
 	display: inline-flex;
 	text-align: center;
 	vertical-align: top;
-	margin-top: 35px;
+	margin: 35px 0px 0px 0px;
+
 }
 header nav ul li a{
 	font-size: 18px;
@@ -37,17 +44,28 @@ header nav ul li a{
 	text-decoration: none;
 	margin-left: 5px;
 	transition: 0.2s;
+	margin: 0px 10px 0px 0px;
+
+}
+header nav ul a{
+	float: right;
+	margin: 30px 10px 0px 0px;
+}
+header nav ul a img{
+	width: 32px;
+	height: 32px;
 }
 header img{
-	width: 75px;
-	height: 75px;
+	width: 150px;
+	height: 90px;
 	display: inline-flex;
+	margin-left: 20px;
 }
 nav ul li a:hover{
 	transform: scale(1.25);
 	opacity: 1;
 	background: #40514e;
-	margin: 0px 25px 0px 25px;
+	/*margin: 0px 25px 0px 25px;*/
 }
 section img{
 	width: 500px;
@@ -195,57 +213,6 @@ article#articlenosotros p:first-letter{
 	height: 400px;
 	border-radius: .8em;
 }
-
-/*Estilos de CONTACTO*/
-
-#contenedorcontacto{
-	
-	width: 400px;
-	height: 400px;
-	background: red;
-	display: inline-block;
-	vertical-align: top;
-	margin: 15px;
-}
-#contenedorcontacto p{
-	vertical-align: center;
-	margin-top: 100px;
-}
-#formulariocontactanos{
-	width: 800px;
-	height: 500px;
-	/*background: red;*/
-	display: inline-block;
-	margin: 15px;
-	align-items: center;
-	border: 2px solid;
-}
-
-#formulariocontactanos form{
-	padding: 10px;
-}
-#formulariocontactanos form label{
-	font-size: 20px;
-	display: inline-block;
-	vertical-align: top;
-}
-#formulariocontactanos form input{
-	font-size: 20px;
-	width: 450px;
-	height: 30px;
-	display: inline-block;
-	border-radius: 5px;
-	margin-bottom: 5px;
-	border: 2px solid;
-}
-#formulariocontactanos form textarea{
-	font-size: 20px;
-	width: 600px;
-	height: 175px;
-	display: inline-block;
-	border-radius: 5px;
-	border: 2px solid;
-}
 /*PRODUCTOS*/
 #producto{
 	width: 290px;
@@ -321,9 +288,15 @@ article#articlenosotros p:first-letter{
 	color: #000;
 	text-align: center;
 }
-/*DISTRIBUIDORES*/
+/*ASOCIADOS*/
 a{
 	text-decoration: none;
+}
+#EncAsociados{
+	width: 500px;
+	height: 500px;
+	border:1px;
+	text-align: center;
 }
 #distribuidor{
 	width: calc(300px - 30px);
@@ -368,16 +341,70 @@ a{
 }
 
 
+
+/*Estilos de CONTACTO*/
+#UbicacionMapa{
+	width: 1240px;
+	height: 300px;
+	margin: 15px;
+	border-radius: 10px;
+}/*
+#contenedorcontacto{
+	
+	width: 400px;
+	height: 400px;
+	background: red;
+	display: inline-block;
+	vertical-align: top;
+	margin: 15px;
+}
+#contenedorcontacto p{
+	vertical-align: center;
+	margin-top: 100px;
+}*/
+#formulariocontactanos{
+	width: 1240px;
+	height: 500px;
+	/*background: red;*/
+	display: inline-block;
+	margin: 15px;
+	align-items: center;
+	border: 2px solid;
+}
+
+#formulariocontactanos form{
+	padding: 10px;
+}
+#formulariocontactanos form label{
+	font-size: 20px;
+	display: inline-block;
+	vertical-align: top;
+}
+#formulariocontactanos form input{
+	font-size: 20px;
+	width: 320px;
+	height: 30px;
+	display: inline-block;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	border: 2px solid;
+}
+#formulariocontactanos form textarea{
+	font-size: 20px;
+	width: 600px;
+	height: 175px;
+	display: inline-block;
+	border-radius: 5px;
+	border: 2px solid;
+}
+
 /*SESION*/
-#contenedorsesion{
+/*#contenedorsesion{
 	width: 650px;
 	height: 600px;
 	background: #3828AF;
 	display: inline-block;
 	margin: 10px;
-}
-
-
-
+}*/
 
 
