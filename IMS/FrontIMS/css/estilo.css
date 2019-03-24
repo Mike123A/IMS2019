@@ -17,35 +17,25 @@ header a{
 	float:left;
 }
 header nav{
-	text-align: center;
-	height: 85px;
 	position: fixed;
 	width: 100%;
 	background: #669999;
-	vertical-align: center;
 	z-index: 99;
 }
 header nav ul{
-	margin:auto;
 	float: right;
-	height: 80px;
 	margin-right: 50px;
 }
 header nav ul li{
 	display: inline-flex;
-	text-align: center;
-	vertical-align: top;
 	margin: 35px 0px 0px 0px;
-
 }
 header nav ul li a{
 	font-size: 18px;
 	color: #f5f5f5;
-	text-decoration: none;
 	margin-left: 5px;
-	transition: 0.2s;
+	transition: 0.5s;
 	margin: 0px 10px 0px 0px;
-
 }
 header nav ul a{
 	float: right;
@@ -55,7 +45,7 @@ header nav ul a img{
 	width: 32px;
 	height: 32px;
 }
-header img{
+header a img{
 	width: 260px;
 	height: 90px;
 	display: inline-flex;
@@ -65,13 +55,14 @@ nav ul li a:hover{
 	transform: scale(1.25);
 	opacity: 1;
 	background: #40514e;
-	/*margin: 0px 25px 0px 25px;*/
 }
-section img{
-	width: 500px;
-	height: 500px;
+.ContenedorPrincipal{
+	margin: 20px;
+	padding: 20px;
+	background: white;
+	border-radius: 5px;
+	box-shadow: 0 5px 0 rgba(0,0,0,0.2);
 }
-
 footer{
 	width: 100%;
 	height: 200px;
@@ -87,25 +78,18 @@ footer img{
 	display: inline-block;
 	margin: auto;
 }
-.ContenedorPrincipal{
-	margin: 20px;
-	padding: 20px;
-	background: white;
-	border-radius: 5px;
-	box-shadow: 0 5px 0 rgba(0,0,0,0.2);
-}
-section#contefooter{
+.contefooter{
 	width: 400px;
 	height: 200px;
 	display: inline-block;
 	vertical-align: top;
 	color: #fff;
 }
-section#contefooter a{
+.contefooter a{
 	text-decoration: none;
 	color: #fff;
 }
-section#contefooter li{
+.contefooter li{
 	list-style: none;
 }
 
@@ -154,28 +138,24 @@ section#descripcionempresa{
 	background-size: cover;
 	display: inline-block;
 }
-section#descripcionempresa article{
+#descripcionempresa article{
 	width: 80%;
 	margin: auto;
 	margin-top: 140px;
 	font-size: 30px;
 	color: #fff;
 	text-align: center;
-	opacity: .85;
+	opacity: .9;
+	background: gray;
 	font-family: 'Abril Fatface', cursive;
 	z-index: 98;
 }
-section#descripcionempresa1{
-	width: 100%;
-	height: 300px;
-
-}
-section#descripcionempresa1 img{
+#descripcionempresa1 img{
 	width: 634.5px;
 	height: 300px;
 	display: inline-block;
 }
-section#descripcionempresa1 section{
+#descripcionempresa1 section{
 	width: 634.5px;
 	height: 300px;
 	vertical-align: top;
@@ -183,7 +163,7 @@ section#descripcionempresa1 section{
 	background: #e2ecec;
 	margin-left: -4px;
 }
-section#descripcionempresa1 section article{
+#descripcionempresa1 section article{
 	font-size: 30px;
 	color: #000;
 	text-align: center;
@@ -191,22 +171,17 @@ section#descripcionempresa1 section article{
 	margin: 70px 80px 0px 80px;
 }
 /*Conocenos*/
-article#articlenosotros{
+.articlenosotros{
 	font-size: 50px;
 	width: 100%;
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
-	/*border:1px solid;*/
-	/*margin: auto;*/
 }
-article#articlenosotros p,#articlenosotros li {
+.articlenosotros p,#articlenosotros li {
 	font-size: 30px;
 	padding: 20px;
 	margin: 20px;
-}
-article#articlenosotros p:first-letter{
-	font-size: 30px;
 }
 .ImagenesNosotros{
 	width: 100%;
@@ -292,13 +267,8 @@ article#articlenosotros p:first-letter{
 a{
 	text-decoration: none;
 }
-#EncAsociados{
-	width: 500px;
-	height: 500px;
-	border:1px;
-	text-align: center;
-}
-#distribuidor{
+
+.asociado{
 	width: calc(300px - 30px);
 	height: calc(400px - 30px);
 	background: #fff;
@@ -309,7 +279,7 @@ a{
 	border-radius: 10px;
 	border: 5px solid #e2ecec;
 }
-#distribuidor img{
+.asociado img{
 	position: relative;
 	top:0;
 	left: 0;
@@ -319,19 +289,19 @@ a{
 	transition: 0.8s;
 	z-index: 1;
 }
-#distribuidor article{
+.asociado article{
 	margin: 30px 10px 30px 10px;
 	width: 90%;
 	color: #000;
 }
-#distribuidor article p{
+.asociado article p{
 	font-size: 20px;
 	width: 90%;
 }
-#distribuidor article h3{
+.asociado article h3{
 	text-align: center;
 }
-#distribuidor:hover img{
+.asociado:hover img{
 	top:20px;
 	/*background: red;*/
 	left: calc(50% - 30px);
@@ -339,13 +309,10 @@ a{
 	height: 60px;
 	border-radius: 50%;
 }
-
-
-
-/*Estilos de CONTACTO*/
+/*CONTACTO*/
 #UbicacionMapa{
 	width: 1260px;
-	height: 300px;
+	height: 440px;
 	border-radius: 10px;
 }
 #formulariocontactanos{
@@ -362,7 +329,7 @@ a{
 #formulariocontactanos label{
 	font-size: 20px;
 	display: inline-block;
-	width: 100px;
+	width: 200px;
 }
 #formulariocontactanos input, textarea{
 	font-size: 20px;
@@ -397,3 +364,35 @@ a{
 	width: 32px;
 	height: 32px;
 }
+/*Cuenta*/
+#productocarrito{
+	padding: 10px;
+}
+#productocarrito img{
+	background: yellow;
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+}
+#productocarrito article{
+	display: inline-block;
+	vertical-align: top;
+	width: 800px;
+	height: 200px;
+}
+#productocarrito h2{
+	text-align: center;
+}
+#productocarrito .datosp{
+	font-size: 30px;
+	width: 200px;
+	padding: 15px;
+	text-align: right;
+}
+.total{
+	text-align: right;
+	font-size: 40px;
+	padding: 15px;
+	text-align: right;
+}
+
