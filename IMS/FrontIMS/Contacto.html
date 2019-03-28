@@ -24,19 +24,19 @@
 		<div class="titulopagina">Contacto</div>
 		<iframe id="UbicacionMapa" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d465.55849987032025!2d-89.57396706133994!3d21.013952237692923!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1552494062010" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
 		
-		<form id="formulariocontactanos" action="">
+		<form id="formulariocontactanos" action="php/contacto.php" method="post">
 			<h2>Tienes alguna duda, contactanos...</h2>
 			<label for="">*Nombre:</label><br>
-			<input type="text"><br>
+			<input type="text" placeholder="Aqui va tu nombre" id="nombre" name="nombre" required=""><br>
 			<label for="">*Correo:</label><br>
-			<input type="text"><br>
+			<input type="text" placeholder="Aqui va tu correo" id="correo" name="correo" required=""><br>
 			<label for="">*Telefono:</label><br>
-			<input type="text"><br>
+			<input type="text" placeholder="Aqui va tu telefono" id="telefono" name="telefono" required=""><br>
 			<label for="">*Asunto:</label><br>
-			<input type="text"><br>
+			<input type="text" placeholder="Aqui va tu asunto" id="asunto" name="asunto" required=""><br>
 			<label for="">*Mensaje:</label><br>
-			<textarea name="" id=""></textarea><br>
-			<button>Enviar mensaje</button>
+			<textarea placeholder="Aqui va tu mensaje/comentario" id="mensaje" name="mensaje" required=""></textarea><br>
+			<button type="submit">Enviar mensaje</button>
 		</form>
 		<section id="DatosEmpresa">
 			<h2>Conectate con nosotros</h3><br><br>
