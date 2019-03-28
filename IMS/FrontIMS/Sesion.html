@@ -8,39 +8,56 @@
 <body>
 	<header>
 		<nav>
+			<a href="Nosotros.html"><img src="img/LogoBlanco.png"></a>	
 			<ul>
-				<li><a href="index.html">INICIO</a></li>
-				<li><a href="Nosotros.html">NOSOTROS</a></li>
-				<li><a href="Productos.html">PRODUCTOS</a></li>
-				<img src="img/LogoBlanco.png">	
-				<li><a href="Distribuidores.html">DISTRIBUIDORES</a></li>
-				<li><a href="Sesion.html">SESION</a></li>
-				<li><a href="Contacto.html">CONTACTO</a></li>
+				<li><a href="index.html">[ INICIO ]</a></li>
+				<li><a href="Nosotros.html">[ NOSOTROS ]</a></li>
+				<li><a href="Productos.html">[ PRODUCTOS ]</a></li>
+				<li><a href="Asociados.html">[ ASOCIADOS ]</a></li>
+				<li><a href="Contacto.html">[ CONTACTO ]</a></li>
+				<a href="Sesion.html"><img src="img/SesionIcono.png"></a>
+				<a href="Cuenta.html"><img src="img/carrito-de-la-compra.png"></a>	
 			</ul>
 		</nav>
 	</header>
-	
 	<section class="ContenedorPrincipal">
 		
+		<form id="formulariocontactanos" action="#">
+			<h2>Si aun no te haz registrado, hazlo es sencillo.</h2>
+			<label for="">*Nombre:</label><br>
+			<input type="text" placeholder="Nombre(s) y Apellidos" tittle="Debes ingresar tu nombre (Solo letras)"required><br>
+			<label for="">*Correo:</label><br>
+			<input type="email" placeholder="ej.ejemplo@dominio.com"><br>
+			<label for="">*Confirmar correo:</label><br>
+			<input type="email" placeholder="Confirma tu correo"><br>
+			<label for="">*Telefono:</label><br>
+			<input type="text" pattern="[0-9]" maxlength="10" placeholder="9991 00 00 00"><br>
+			<label for="">*Usuario</label><br>
+			<input type="text" placeholder="Usuario"><br>
+			<label for="">*Contraseña:</label><br>
+			<input type="password" placeholder="Contraseña"><br>
+			<label for="">*Confirmar contraseña:</label><br>
+			<input type="password" placeholder="Confirma tu contraseña"><br>
+			<label for="">*Fecha de nacimiento:</label><br>
+			<input type="date"><br>
+			<label for="">*Sexo:</label><br>
+			<input type="checkbox" value="Masculino" text="M"><br>
+			<input type="checkbox" value="Femenino"><br>
+			<button>Enviar mensaje</button>
+		</form>
 		
 	</section>
-	<section id="contenedorsesion">
-		
-		
-	</section>
-<footer>
-
-		<section id="contefooter">
+	<footer>
+		<section class="contefooter">
 			<li><a href=""><img src="img/FacebookIcono.png">@InnovativeMedicalSolutions</a><br></li>
 			<li><a href=""><img src="img/twitterIcono.png">@InnovativeMedicalSolutions</a><br></li>
 			<li><a href=""><img src="img/youtubeIcono.png">@InnovativeMedicalSolutions</a><br></li>
 		</section>
-		<section id="contefooter">
+		<section class="contefooter">
 			<p>Direccion:<br> Calle 28 <br> Cruzamientos: 19 y 17 <br> Col. Maya</p>
 			<p>Telefono:<br> 943 43 00</p>
 			<p>SoporteInnovativeMedicalSolutions@outlook.com</p>
-		</section>
-		
+		</section>		
 	</footer>
 </body>
 </html>
