@@ -15,10 +15,11 @@
 
 		Mensaje/Comentario: ".$mensaje."
 	";
-	mail($destinatario,$asunto,utf8_decode($mensaje));
-	echo "<script type='text/javascript'>alert('Tu mensaje ha sido enviado exitosamente');</script>";
-	echo "<script type='text/javascript'>window.location.href='http://bluuweb.cl/plantilla-1/index.html';</script>";
-
-	header("location: ../Contacto.html");
-
+	if(mail($destinatario,$asunto,utf8_decode($mensaje)))
+	echo "<script type='text/javascript'>
+		location.href='../Contacto.html';
+		</script>";
+	else
+		echo "<script type='text/javascript'>alert('No se envio');</script>";
+	
 ?>
