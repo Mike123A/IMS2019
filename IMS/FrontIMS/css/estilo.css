@@ -183,6 +183,9 @@ section#descripcionempresa{
 	text-align: center;
 	vertical-align: top;
 }
+.articlenosotros1{
+	width: 630px;
+}
 .articlenosotros p,#articlenosotros li {
 	font-size: 30px;
 	padding: 20px;
