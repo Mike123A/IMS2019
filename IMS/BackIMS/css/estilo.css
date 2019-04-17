@@ -69,6 +69,35 @@ header a img{
 	display: inline-flex;
 	margin-left: 20px;
 }
+header ul img{
+	width: 32px;
+	height: 32px;
+	margin-top: 25px;
+}
+.ContenedorPrincipal{
+	margin: 20px;
+	padding: 20px;
+	background: white;
+	border-radius: 5px;
+	box-shadow: 0 5px 0 rgba(0,0,0,0.2);
+}
+td, th {
+  border: 1px solid;
+  padding: 8px;
+}
+tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+tr:hover {
+	background-color: #ddd;
+}
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
 /*
 header nav ul{
 	float: right;
