@@ -31,19 +31,22 @@
 		</nav>
 	</header>
 	<section class="ContenedorPrincipal">
-		<table>
-			<tr>
-				<td>Clave</td>
-				<td>Nombres</td>
-				<td>Apellidos</td>
-				<td>Fecha Nacimiento</td>
-				<td>Correo</td>
-				<td>Direccion</td>
-				<td>Telefono</td>
-				<td>Usuario</td>
-				<td>Contraseña</td>
-				<td colspan="2">Acciones</td>
-			</tr>
+		<table >
+			<thead>
+				<tr>
+					<td>Clave</td>
+					<td>Nombres</td>
+					<td>Apellidos</td>
+					<td>Fecha Nacimiento</td>
+					<td>Correo</td>
+					<td>Direccion</td>
+					<td>Telefono</td>
+					<td>Usuario</td>
+					<td>Contraseña</td>
+					<td colspan="2">Acciones</td>
+				</tr>
+			</thead>
+			
 			<?php
 				include("php/conexion.php");
 
