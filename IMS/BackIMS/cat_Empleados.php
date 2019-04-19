@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title>IMS</title>
@@ -34,88 +34,42 @@
 		<table>
 			<tr>
 				<td>Clave</td>
-				<td>Producto</td>
-				<td>Descripcion</td>
-				<td>Precio</td>
-				<td>Imagen</td>
-				<td>Clave</td>
-				<td>Producto</td>
-				<td>Descripcion</td>
-				<td>Precio</td>
-				<td>Imagen</td>
+				<td>Nombres</td>
+				<td>Apellidos</td>
+				<td>Fecha Nacimiento</td>
+				<td>Correo</td>
+				<td>Direccion</td>
+				<td>Telefono</td>
+				<td>Usuario</td>
+				<td>Contraseña</td>
 				<td colspan="2">Acciones</td>
 			</tr>
 			<?php
 				include("php/conexion.php");
-				$query= "SELECT idEmpleado,NombresEmp,ApellidosEmp,FechaNacEmp,CorreoEmp,DireccionEmp,TelefonoEmp,UsuarioEmp,ContraseñaEmp FROM cat_empleados";
-				$resultado = $conexion->query($query);
-				while ($row = mysql_fetch_array($result)){  
-			?>
-				<tr>	
-					<td><?php echo $row['idEmpleado']; ?></td>
-					<td><?php echo $row['NombresEmp']; ?></td>
-					<td><?php echo $row['ApellidosEmp']; ?></td>
-					<td><?php echo $row['FechaNacEmp']; ?></td>
-					<td><?php echo $row['CorreoEmp']; ?></td>
-					<td><?php echo $row['DireccionEmp']; ?></td>
-					<td><?php echo $row['TelefonoEmp']; ?></td>
-					<td><?php echo $row['CorreoEmp']; ?></td>
-					<td><?php echo $row['UsuarioEmp']; ?></td>
-					<td><?php echo $row['ContraseñaEmp']; ?></td>
-					<td><a href="#">Modificar</a></td>
-					<td><a href="#">Eliminar</a></td>
-				</tr>
-			<?php
+
+				$sql = "SELECT * FROM cat_empleados";
+
+				if(!$resultado = $conexion->query($sql)){
+					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
+				}
+				while($fila = $resultado->fetch_assoc()){
+					echo"
+					<tr>
+						<td>".$fila['idEmpleado']." </td>
+    					<td>".$fila['NombresEmp']."</td>
+    					<td>".$fila['ApellidosEmp']."</td>
+    					<td>".$fila['FechaNacEmp']."</td>
+    					<td>".$fila['CorreoEmp']."</td>
+    					<td>".$fila['DireccionEmp']."</td>
+    					<td>".$fila['TelefonoEmp']."</td>
+    					<td>".$fila['UsuarioEmp']."</td>
+    					<td>".$fila['ContraseniaEmp'].'</td>
+						<td><a href="#">Modificar</a></td>
+						<td><a href="#">Eliminar</a></td>
+					</tr>';
 				}
 			?>
-		</table>
-		<table>
-  			<tr>
-			    <th>Firstname</th>
-			    <th>Lastname</th>
-			    <th>Age</th>
-			</tr>
-			<tr>
-			    <td>Jill</td>
-			    <td>Smith</td>
-			    <td>50</td>
-			</tr>
-			<tr>
-			    <td>Eve</td>
-			    <td>Jackson</td>
-			    <td>94</td>
-			</tr>
-			<tr>
-			    <td>Eve</td>
-			    <td>Jackson</td>
-			    <td>94</td>
-			</tr>
-			<tr>
-			    <td>Eve</td>
-			    <td>Jackson</td>
-			    <td>94</td>
-			</tr>
-			<tr>
-			    <td>Eve</td>
-			    <td>Jackson</td>
-			    <td>94</td>
-			</tr>
-			<tr>
-			    <td>Eve</td>
-			    <td>Jackson</td>
-			    <td>94</td>
-			</tr>
-			<tr>
-			    <td>Eve</td>
-			    <td>Jackson</td>
-			    <td>94</td>
-			</tr>
-			<tr>
-			    <td>Eve</td>
-			    <td>Jackson</td>
-			    <td>94</td>
-			</tr>
-		</table> 			
+		</table>	
 	</section>
 	
 </body>
