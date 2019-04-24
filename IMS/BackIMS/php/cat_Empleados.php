@@ -3,12 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>IMS</title>
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
 	<header>
 		<nav>
-			<a href="Nosotros.html"><img src="img/LogoConNombreBlanco.png"></a>	
+			<a href="Nosotros.html"><img src="../img/LogoConNombreBlanco.png"></a>	
 			<ul>
 				<li><a href="index.html">[ INICIO ]</a></li>
 				<li><a href="Nosotros.html">[ CATALOGOS ]</a>
@@ -31,6 +31,8 @@
 		</nav>
 	</header>
 	<section class="ContenedorPrincipal">
+		<h1>Catalogo de empleados</h1>
+		<button><a href="alta_empleado.html">Nuevo</a></button>
 		<table >
 			<thead>
 				<tr>
@@ -48,7 +50,7 @@
 			</thead>
 			
 			<?php
-				include("php/conexion.php");
+				include("conexion.php");
 
 				$sql = "SELECT * FROM cat_empleados";
 
@@ -67,9 +69,10 @@
     					<td>".$fila['TelefonoEmp']."</td>
     					<td>".$fila['UsuarioEmp']."</td>
     					<td>".$fila['ContraseniaEmp'].'</td>
-						<td><a href="#">Modificar</a></td>
-						<td><a href="#">Eliminar</a></td>
+						<td><a href="cambios_empleado.php?clave='.$fila['idEmpleado'].'">Modificar</a></td>
+						<td><a href="eliminar_empleado.php?clave='.$fila['idEmpleado'].'">Eliminar</a></td>
 					</tr>';
+
 				}
 			?>
 		</table>	

@@ -19,7 +19,7 @@
 			<label>Precio:</label>
 			<input type="text" required name="PrecioProducto" placeholder="Precio..." value="" /><br/><br/>	
 			<label>Imagen:</label>
-			<input type="text" required name="ImagenProducto" placeholder="Imagen..." value="" /><br/><br/>
+			<input type="date" required name="ImagenProducto" placeholder="Imagen..." value="" /><br/><br/>
 			<input type="submit" value="Guardar">		
 
 
