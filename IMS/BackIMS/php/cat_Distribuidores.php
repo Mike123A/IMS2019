@@ -10,7 +10,7 @@
 		<nav>
 			<a href="Nosotros.html"><img src="../img/LogoConNombreBlanco.png"></a>	
 			<ul>
-				<li><a href="index.html">[ INICIO ]</a></li>
+				<li><a href="../BackIMS/index.html">[ INICIO ]</a></li>
 				<li><a href="Nosotros.html">[ CATALOGOS ]</a>
 					<ul>
 						<li><a href="3">Productos</a></li>
