@@ -109,7 +109,9 @@ input{
 form h1{
 	font-size: 50px;
 }
-
+td img{
+	width: 100px;
+}
 
 
 

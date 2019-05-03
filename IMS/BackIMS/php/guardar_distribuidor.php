@@ -24,8 +24,8 @@
 	$resultado = $conexion->query($query);
 	if ($resultado) {
 		move_uploaded_file($url_temp,$src);
-		echo "Insertado";
-	    // header("Location: cat_empleados.php");
+		// echo "Insertado";
+	    header("Location: cat_distribuidores.php");
 	}else{
 		echo "No Insertado";
 	}

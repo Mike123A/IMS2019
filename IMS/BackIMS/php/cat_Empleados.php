@@ -68,10 +68,10 @@
     					<td>".$fila['DireccionEmp']."</td>
     					<td>".$fila['TelefonoEmp']."</td>
     					<td>".$fila['UsuarioEmp']."</td>
-    					<td>".$fila['ContraseniaEmp'].'</td>
-						<td><a href="cambios_empleado.php?clave='.$fila['idEmpleado'].'">Modificar</a></td>
-						<td><a href="eliminar_empleado.php?clave='.$fila['idEmpleado'].'">Eliminar</a></td>
-					</tr>';
+    					<td>".$fila['ContraseniaEmp']."</td>
+						<td><a href='cambios_empleado.php?clave=".$fila['idEmpleado']."'>Modificar</a></td>
+						<td><a href='eliminar_empleado.php?clave=".$fila['idEmpleado']."'>Eliminar</a></td>
+					</tr>";
 
 				}
 			?>

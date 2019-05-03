@@ -32,7 +32,7 @@
 	</header>
 	<section class="ContenedorPrincipal">
 		<h1>Catalogo de distribuidores</h1>
-		<button><a href="alta_empleado.html">Nuevo</a></button>
+		<button><a href="alta_distribuidor.php">Nuevo</a></button>
 		<table >
 			<thead>
 				<tr>
@@ -40,6 +40,7 @@
 					<td>Nombre</td>
 					<td>Desripcion</td>
 					<td>Telefono</td>
+					<td>Pagina/Link</td>
 					<td>Imagen</td>
 					<td colspan="2">Acciones</td>
 				</tr>
@@ -60,10 +61,11 @@
     					<td>".$fila['NombreDis']."</td>
     					<td>".$fila['DescripcionDis']."</td>
     					<td>".$fila['TelefonoDis']."</td>
-    					<td>".$fila['ImagenDis'].'</td>
-						<td><a href="cambios_empleado.php?clave='.$fila['idDistribuidor'].'">Modificar</a></td>
-						<td><a href="eliminar_empleado.php?clave='.$fila['idDistribuidor'].'">Eliminar</a></td>
-					</tr>';
+    					<td>".$fila['PaginaDis']."</td>
+    					<td> <img src='../../FrontIMS/img/Asociados/".$fila['ImagenDis']."'alt=''></td>
+						<td><a href='cambios_empleado.php?clave=".$fila['idDistribuidor']."'>Modificar</a></td>
+						<td><a href='eliminar_empleado.php?clave=".$fila['idDistribuidor']."'>Eliminar</a></td>
+					</tr>";
 
 				}
 			?>
