@@ -32,17 +32,15 @@
 	</header>
 	<section class="ContenedorPrincipal">
 		<h1>Catalogo de empleados</h1>
-		<button><a href="alta_empleado.php">Nuevo</a></button>
+		<button><a href="alta_cliente.php">Nuevo</a></button>
 		<table >
 			<thead>
 				<tr>
 					<td>Clave</td>
-					<td>Nombres</td>
-					<td>Apellidos</td>
-					<td>Fecha Nacimiento</td>
-					<td>Correo</td>
+					<td>Nombres o Razon Social</td>
 					<td>Direccion</td>
 					<td>Telefono</td>
+					<td>Correo</td>
 					<td>Usuario</td>
 					<td>Contraseña</td>
 					<td colspan="2">Acciones</td>
@@ -52,7 +50,7 @@
 			<?php
 				include("conexion.php");
 
-				$sql = "SELECT * FROM cat_empleados";
+				$sql = "SELECT * FROM cat_clientes";
 
 				if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
@@ -60,17 +58,15 @@
 				while($fila = $resultado->fetch_assoc()){
 					echo"
 					<tr>
-						<td>".$fila['idEmpleado']." </td>
-    					<td>".$fila['NombresEmp']."</td>
-    					<td>".$fila['ApellidosEmp']."</td>
-    					<td>".$fila['FechaNacEmp']."</td>
-    					<td>".$fila['CorreoEmp']."</td>
-    					<td>".$fila['DireccionEmp']."</td>
-    					<td>".$fila['TelefonoEmp']."</td>
-    					<td>".$fila['UsuarioEmp']."</td>
-    					<td>".$fila['ContraseniaEmp']."</td>
-						<td><a href='cambios_empleado.php?clave=".$fila['idEmpleado']."'>Modificar</a></td>
-						<td><a href='eliminar_empleado.php?clave=".$fila['idEmpleado']."'>Eliminar</a></td>
+						<td>".$fila['idCliente']." </td>
+    					<td>".$fila['NombreCli']."</td>
+    					<td>".$fila['DireccionCli']."</td>
+    					<td>".$fila['TelefonoCli']."</td>
+    					<td>".$fila['CorreoCli']."</td>
+    					<td>".$fila['UsuarioCli']."</td>
+    					<td>".$fila['ContraseniaCli']."</td>
+						<td><a href='cambios_cliente.php?clave=".$fila['idCliente']."'>Modificar</a></td>
+						<td><a href='eliminar_cliente.php?clave=".$fila['idCliente']."'>Eliminar</a></td>
 					</tr>";
 
 				}

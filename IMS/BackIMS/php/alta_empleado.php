@@ -8,25 +8,25 @@
 <body>
 	<header>
 		<nav>
-			<a href="Nosotros.html"><img src="../img/LogoConNombreBlanco.png"></a>	
+			<a href="#"><img src="../img/LogoConNombreBlanco.png"></a>	
 			<ul>
-				<li><a href="index.html">[ INICIO ]</a></li>
-				<li><a href="Nosotros.html">[ CATALOGOS ]</a>
+				<li><a href="../index.html">[ INICIO ]</a></li>
+				<li><a href="#">[ CATALOGOS ]</a>
 					<ul>
-						<li><a href="3">Productos</a></li>
-						<li><a href="4">Distribuidores</a></li>
-						<li><a href="5">Proveedores</a></li>
-						<li><a href="5">Clientes</a></li>
-						<li><a href="5">Empleados</a></li>
+						<li><a href="cat_productos.php">Productos</a></li>
+						<li><a href="cat_distribuidores.php">Distribuidores</a></li>
+						<li><a href="cat_proveedores.php">Proveedores</a></li>
+						<li><a href="cat_clientes.php">Clientes</a></li>
+						<li><a href="cat_empleados.php">Empleados</a></li>
 					</ul>
 				</li>
-				<li><a href="Nosotros.html">[ REPORTES]</a>
+				<li><a href="#">[ REPORTES]</a>
 					<ul>
-						<li><a href="6">CATALOGOS 9</a></li>
-						<li><a href="7">CATALOGOS 10</a></li>
+						<li><a href="#">CATALOGOS 9</a></li>
+						<li><a href="#">CATALOGOS 10</a></li>
 					</ul>
 				</li>
-				<a href="Sesion.html"><img src="img/SesionIcono.png"></a>
+				<li><a href="../index.html">[CERRAR SESION]</a></li>
 			</ul>
 		</nav>
 	</header>

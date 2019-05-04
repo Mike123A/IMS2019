@@ -31,21 +31,21 @@
 		</nav>
 	</header>
 	<section class="ContenedorPrincipal">
-		<form action="guardar_distribuidor.php" method="POST" enctype="multipart/form-data">
-		<h1>Alta de distribuidor</h1>
+		<form action="guardar_cliente.php" method="POST">
+		<h1>Alta de cliente</h1>
 
-			<label>Nombre(s)</label><br>
+			<label>Nombre o razon social</label><br>
 			<input type="text" required name="Nombres" placeholder="Aqui va el nombre"value="" /><br>
-			<label>Descripcion</label><br>
-			<input type="textarea" required name="Descripcion" placeholder="Descripcion"value="" /><br>
+			<label>Direccion</label><br>
+			<input type="text" required name="Direccion" placeholder="Aqui va la direccion"value="" /><br>
 			<label>Telefono</label><br>
 			<input type="text" required name="Telefono" placeholder="Aqui va el telefono"value="" /><br>
-			<label>Pagina</label><br>
-			<input type="text" required name="Pagina" placeholder="Aqui va la pagina"value="" /><br>
-			<label>Imagen</label><br>
-			<input type="file" required name="Imagen" value="" /><br>
-			
-			
+			<label>Correo</label><br>
+			<input type="text" required name="Correo" placeholder="Aqui va el correo"value="" /><br>
+			<label>Usuario</label><br>
+			<input type="text" required name="Usuario" placeholder="Aqui va el usuario"value="" /><br>
+			<label>Contraseña</label><br>
+			<input type="password" required name="Contraseña" placeholder="Aqui va la contraseña"value="" /> <br><br><br>
 			<input type="submit" value="Guardar">		
 
 		</form>

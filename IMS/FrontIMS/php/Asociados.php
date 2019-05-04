@@ -3,17 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>IMS</title>
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
 	<header>
 		<nav>
-			<a href="Nosotros.html"><img src="img/LogoBlanco.png"></a>	
+			<a href="Nosotros.html"><img src="../img/LogoBlanco.png"></a>	
 			<ul>
 				<li><a href="index.html">[ INICIO ]</a></li>
 				<li><a href="Nosotros.html">[ NOSOTROS ]</a></li>
 				<li><a href="Productos.html">[ PRODUCTOS ]</a></li>
-				<li><a href="Asociados.php">[ ASOCIADOS ]</a></li>
+				<li><a href="Asociados.html">[ ASOCIADOS ]</a></li>
 				<li><a href="Contacto.html">[ CONTACTO ]</a></li>
 				<a href="Sesion.html"><img src="img/SesionIcono.png"></a>
 				<a href="Cuenta.html"><img src="img/carrito-de-la-compra.png"></a>	
@@ -22,70 +22,36 @@
 	</header>
 	<section class="ContenedorPrincipal">
 		<div class="titulopagina">Distribuidores Oficiales</div>
+		<?php
+				include("conexion.php");
+
+				$sql = "SELECT * FROM cat_distribuidores";
+
+				if(!$resultado = $conexion->query($sql)){
+					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
+				}
+				
+				while($distribuidor = $resultado->fetch_assoc()){
+					
+
+					echo"
+					<a href='".$distribuidor['PaginaDis']."' target='_blank'>
+						<div class='asociado'>
+							<img src='../img/Asociados/".$distribuidor['ImagenDis']."' alt=''>	
+							<article>
+								<h3>
+									".$distribuidor['NombreDis']."
+								</h3>
+								<p>	
+									".$distribuidor['DescripcionDis']."
+								</p>	
+							</article>
+						</div>
+					</a>";
+				}				
+			?>
+
 		
-		<a href="https://www.sistembiomedica.com.mx/" target="_blank">
-			<div class="asociado">
-				<img src="img/Asociados/sistembiomedica.png" alt="">	
-				<article>
-					<h3>
-						Sistem Biomedica
-					</h3>
-					<p>	
-						Sistem Biomédica empresa iniciada en el año de 1998, con el propósito de ser en el Sureste un proveedor confiable para los Hospitales, Clínicas y consultorios médicos. 
-					</p>	
-				</article>
-			</div>
-		</a>
-		<a href="https://www.seccionamarilla.com.mx/informacion/equipos-y-materiales-medicos-de-yucatan-sa-de-cv/equipos-y-materiales-medicos-de-yucatan-sa-de-cv/yucatan/merida/centro/3853969" target="_blank">
-			<div class="asociado">
-			<img src="img/Asociados/EquiposMaterialesMedicos.png" alt="">	
-			<article>
-				<h3>
-					Equipos y materiales medicos de Yucatan
-				</h3>
-				<p>	
-					Es una empresa que actua como un intermediario entre las empresas productoras y los clientes finales, se dedica a la venta y distribucion de productos medicos.
-				</p>	
-			</article>
-		</div>
-		</a>
-		<a href="https://www.mundomedico.com.mx/pages/tiendas" target="_blank">
-			<div class="asociado">
-			<img src="img/Asociados/MundoMedico.png" alt="">	
-			<article>
-				<h3>
-						Mundo Medico
-				</h3>
-				<p>	
-					Mundo Médico es el principal portal de ventas en línea dedicado a los Médicos, Estudiantes de Medicina y a los Pacientes. 
-				</p>	
-			</article>
-		</div>
-		</a>
-		<a href="https://www.medicalcenter.com.mx/" target="_blank">
-			<div class="asociado">
-			<img src="img/Asociados/MedicalCenter.png" alt="">	
-			<article>
-				<h3>
-					Medical Center
-				</h3>
-				<p>	
-					Es una empresa que tiene precencia en distintos estados del pais, son considerados lideres en tiendas medicas a nivel nacional.
-				</p>	
-			</article>
-		</div>
-		<a href="http://www.zonamedicasureste.com/" target="_blank">
-			<div class="asociado">
-			<img src="img/Asociados/ZonaMedica.png" alt="">	
-			<article>
-				<h3>
-						Zona Medica
-				</h3>
-				<p>	
-					Son una distribuidora de equipo profesional de la salud, manejando marcas reconocidas a nivel mundial, contando entregas inmediatas y envíos a todo México. 
-				</p>	
-			</article>
-		</div>
 		<div class="titulopagina">Proveedores Oficiales</div>
 		<a href="http://www.novabio.us/es/" target="_blank">
 			<div class="asociado">
