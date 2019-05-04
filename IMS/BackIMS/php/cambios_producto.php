@@ -56,6 +56,8 @@
 			<input type="text" required name="Peso" placeholder="Aqui va el peso"value="<?php echo $fila['PesoProd']; ?>" /><br>
 			<label>Descripcion</label><br>
 			<input type="textarea" required name="Descripcion" placeholder="Descripcion"value="<?php echo $fila['DescripcionProd']; ?>" /><br>
+			<label>Precio</label><br>
+			<input type="text" required name="Precio" placeholder="Aqui va el precio"value="<?php echo $fila['PrecioProd']; ?>" /><br>
 			<label>Imagen actual</label><br>
 			<img class="imagenformulario" src="<?php echo $direccionimagen ?>" alt=''>
 			<br>

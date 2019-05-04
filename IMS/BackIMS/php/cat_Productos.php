@@ -46,6 +46,7 @@
 					<td>Ancho</td>
 					<td>Peso</td>
 					<td>Descripcion</td>
+					<td>Precio</td>
 					<td>Imagen</td>
 					<td colspan="2">Acciones</td>
 				</tr>
@@ -68,6 +69,8 @@
     					<td>".$fila['AnchoProd']."cm</td>
     					<td>".$fila['PesoProd']."gr</td>
     					<td>".$fila['DescripcionProd']."</td>
+    					<td>$".$fila['PrecioProd']."</td>
+
     					<td> <img src='../../FrontIMS/img/Productos/".$fila['ImagenProd']."'alt=''></td>
 						<td><a href='cambios_Producto.php?clave=".$fila['idProducto']."'>
 							<button class='modificar'>

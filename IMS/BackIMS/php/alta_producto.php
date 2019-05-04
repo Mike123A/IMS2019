@@ -44,6 +44,8 @@
 			<input type="text" required name="Peso" placeholder="Aqui va el peso"value="" /><br>
 			<label>Descripcion</label><br>
 			<input type="textarea" required name="Descripcion" placeholder="Descripcion"value="" /><br>
+			<label>Precio</label><br>
+			<input type="text" required name="Precio" placeholder="Aqui va el precio"value="" /><br>
 			
 			<label>Imagen</label><br>
 			<input type="file" required name="Imagen" value="" accept="image/*" /><br>

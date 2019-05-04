@@ -9,10 +9,12 @@
 	$Ancho = $_POST ['Ancho'];
 	$Peso = $_POST ['Peso'];
 	$descripcion = $_POST ['Descripcion'];
+	$Precio = $_POST ['Precio'];
+
 
 	$imagen = $_FILES['Imagen'];
 	if ($imagen['name']== "") {
-		$query = "UPDATE cat_productos SET NombreProd = '".$nombre."' , AltoProd = '".$Alto."' , AnchoProd = '".$Ancho."', PesoProd = '".$Peso."', DescripcionProd = '".$descripcion."' WHERE idProducto = ".$clave." ;";
+		$query = "UPDATE cat_productos SET NombreProd = '".$nombre."' , AltoProd = '".$Alto."' , AnchoProd = '".$Ancho."', PesoProd = '".$Peso."', DescripcionProd = '".$descripcion."' , PrecioProd = '".$Precio."' WHERE idProducto = ".$clave." ;";
 
 		$resultado = $conexion->query($query);
 		if ($resultado) {
@@ -35,7 +37,7 @@
 		$resultado1 = $conexion->query($query1);
 		$fila = $resultado1->fetch_assoc();
 
-		$query = "UPDATE cat_productos SET NombreProd = '".$nombre."' , AltoProd = '".$Alto."' , AnchoProd = '".$Ancho."', PesoProd = '".$Peso."', DescripcionProd = '".$descripcion."' , ImagenProd = '".$img_producto."' WHERE idProducto = ".$clave." ;";
+		$query = "UPDATE cat_productos SET NombreProd = '".$nombre."' , AltoProd = '".$Alto."' , AnchoProd = '".$Ancho."', PesoProd = '".$Peso."', DescripcionProd = '".$descripcion."' , PrecioProd = '".$Precio."' , ImagenProd = '".$img_producto."' WHERE idProducto = ".$clave." ;";
 
 		$resultado = $conexion->query($query);
 		if ($resultado) {

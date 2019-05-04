@@ -8,6 +8,7 @@
 	$Alto = $_POST ['Alto'];
 	$Ancho = $_POST ['Ancho'];
 	$Peso = $_POST ['Peso'];
+	$Precio = $_POST ['Precio'];
 	$descripcion = $_POST ['Descripcion'];
 
 
@@ -21,7 +22,7 @@
 	$img_producto = $img_nombre.'.png';
 	$src = $destino.$img_producto;
 
-	$query = "INSERT INTO cat_productos(NombreProd,AltoProd,AnchoProd,PesoProd,DescripcionProd,ImagenProd) VALUES ('$nombre','$Alto','$Ancho','$Peso','$descripcion','$img_producto')";
+	$query = "INSERT INTO cat_productos(NombreProd,AltoProd,AnchoProd,PesoProd,DescripcionProd,PrecioProd,ImagenProd) VALUES ('$nombre','$Alto','$Ancho','$Peso','$descripcion','$Precio','$img_producto')";
 
 	$resultado = $conexion->query($query);
 	if ($resultado) {

@@ -40,7 +40,7 @@
 							".$producto['NombreProd']."
 						</h2>
 						<img src='../img/Productos/".$producto['ImagenProd']."' alt=''>
-						<a href='../Producto-Descripcion.html'>
+						<a href='Producto-Descripcion.php?clave=".$producto['idProducto']."'>
 							<button>
 								Ver detalles
 							</button>

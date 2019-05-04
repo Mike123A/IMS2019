@@ -3,16 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title>IMS</title>
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
 	<header>
 		<nav>
-			<a href="Nosotros.html"><img src="img/LogoBlanco.png"></a>	
+			<a href="Nosotros.html"><img src="../img/LogoBlanco.png"></a>	
 			<ul>
 				<li><a href="index.html">[ INICIO ]</a></li>
 				<li><a href="Nosotros.html">[ NOSOTROS ]</a></li>
-				<li><a href="Productos.html">[ PRODUCTOS ]</a></li>
+				<li><a href="Productos.php">[ PRODUCTOS ]</a></li>
 				<li><a href="php/Asociados.php">[ ASOCIADOS ]</a></li>
 				<li><a href="Contacto.html">[ CONTACTO ]</a></li>
 				<a href="Sesion.html"><img src="img/SesionIcono.png"></a>
@@ -21,20 +21,30 @@
 		</nav>
 	</header>
 	<section class="ContenedorPrincipal">
+		<?php
+			$clave = $_GET['clave'];
+			include("conexion.php");
+			$sql = "SELECT * FROM cat_productos WHERE idProducto=".$clave.";";
+
+			if(!$resultado = $conexion->query($sql)){
+					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
+				}
+			$fila = $resultado->fetch_assoc();
+			
+			$direccionimagen = "../../FrontIMS/img/Productos/".$fila['ImagenProd'];
+		?>
 		<div id="productodesc">
 			<h2>
 				PRODUCTO
 			</h2>
-			<img src="img/Productos/Relog.jpg" alt="">
+			<img class="imagenformulario" src="<?php echo $direccionimagen ?>" alt=''>
 			<article>
 				<h3>Dimensiones:</h3>
-				<p>15 cm x 10 cm x 2cm</p><br>
+				<p>Alto <?php echo $fila['AltoProd']; ?> cm, Ancho <?php echo $fila['AnchoProd']; ?>cm</p><br>
 				<h3>Peso:</h3>
-				<p>400 gr</p>
-				<h3>Caracteristicas:</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, dolor facilis dolorum,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat saepe, est tempore accusantium et pariatur blanditiis, debitis doloribus nobis cumque sapiente non ad ex vel atque ipsam impedit exercitationem nemo! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis repellat magnam, aspernatur deserunt voluptates. Ea nisi, placeat eveniet quibusdam porro reprehenderit officiis obcaecati dolorum iure, ipsa, aspernatur sequi alias et.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi corporis culpa odio, necessitatibus at illum? Culpa omnis neque facere deleniti, fuga, aliquid dolore blanditiis eveniet esse, est totam. Aliquam, harum.</p><br>
-				<h3>Para quienes funciona:</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, repudiandae?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus hic quis officiis suscipit, est ipsum, ex eum veniam, autem consectetur repellat consequatur corporis quam perferendis, totam ipsa aliquid in perspiciatis.</p><br>
+				<p><?php echo $fila['PesoProd']; ?>gr</p><br>
+				<h3>Descripcion:</h3>
+				<p><?php echo $fila['DescripcionProd']; ?></p><br>
 			</article>
 			<div class="BotonesDescProd">
 				<label for="">Cuantos desea:</label> <br>
@@ -43,7 +53,7 @@
 						Agregar a carrito
 				</button>
 				<br>
-				<a href="Productos.html">
+				<a href="Productos.php">
 					<button>
 						Seguir Comprando
 					</button>
