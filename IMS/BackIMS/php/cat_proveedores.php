@@ -32,7 +32,7 @@
 	</header>
 	<section class="ContenedorPrincipal">
 		<h1>Catalogo de distribuidores</h1>
-		<a href="alta_distribuidor.php">
+		<a href="alta_proveedor.php">
 			<button class="agregar">
 				<img src="../img/agregar.png" alt="">Nuevo
 			</button>
@@ -53,7 +53,7 @@
 			<?php
 				include("conexion.php");
 
-				$sql = "SELECT * FROM cat_distribuidores";
+				$sql = "SELECT * FROM cat_proveedores";
 
 				if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
@@ -61,19 +61,19 @@
 				while($fila = $resultado->fetch_assoc()){
 					echo"
 					<tr>
-						<td>".$fila['idDistribuidor']." </td>
-    					<td>".$fila['NombreDis']."</td>
-    					<td>".$fila['DescripcionDis']."</td>
-    					<td>".$fila['TelefonoDis']."</td>
-    					<td>".$fila['PaginaDis']."</td>
-    					<td> <img src='../../FrontIMS/img/Asociados/".$fila['ImagenDis']."'alt=''></td>
-    					<td><a href='cambios_distribuidor.php?clave=".$fila['idDistribuidor']."'>
+						<td>".$fila['idProveedor']." </td>
+    					<td>".$fila['NombreProv']."</td>
+    					<td>".$fila['DescripcionProv']."</td>
+    					<td>".$fila['TelefonoProv']."</td>
+    					<td>".$fila['PaginaProv']."</td>
+    					<td> <img src='../../FrontIMS/img/Asociados/".$fila['ImagenProv']."'alt=''></td>
+    					<td><a href='cambios_proveedor.php?clave=".$fila['idProveedor']."'>
 							<button class='modificar'>
 								<img src='../img/modificar.png' alt=''>Modificar
 							</button>
 							</a>
 						</td>
-						<td><a href='eliminar_distribuidor.php?clave=".$fila['idDistribuidor']."'>
+						<td><a href='eliminar_proveedor.php?clave=".$fila['idProveedor']."'>
 							<button class='eliminar'>
 								<img src='../img/eliminar.png' alt=''>Eliminar
 							</button>

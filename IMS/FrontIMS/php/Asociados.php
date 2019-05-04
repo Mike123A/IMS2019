@@ -13,7 +13,7 @@
 				<li><a href="index.html">[ INICIO ]</a></li>
 				<li><a href="Nosotros.html">[ NOSOTROS ]</a></li>
 				<li><a href="Productos.html">[ PRODUCTOS ]</a></li>
-				<li><a href="Asociados.html">[ ASOCIADOS ]</a></li>
+				<li><a href="php/Asociados.html">[ ASOCIADOS ]</a></li>
 				<li><a href="Contacto.html">[ CONTACTO ]</a></li>
 				<a href="Sesion.html"><img src="img/SesionIcono.png"></a>
 				<a href="Cuenta.html"><img src="img/carrito-de-la-compra.png"></a>	
@@ -53,42 +53,34 @@
 
 		
 		<div class="titulopagina">Proveedores Oficiales</div>
-		<a href="http://www.novabio.us/es/" target="_blank">
-			<div class="asociado">
-			<img src="img/Asociados/nova.png" alt="">	
-			<article>
-				<h3>
-					Nova Biomedica
-				</h3>
-				<p>	
-					Nova Biomedical desarrolla, fabrica y vende tecnología de avanzada de analizadores de pruebas en sangre basados en técnicas de medición ópticas y electroquímicas. 
-				</p>	
-			</article>
-		</div>
-		<a href="http://www.dropsens.com/instrumentos_espectroelectroquimica.html" target="_blank">
-			<div class="asociado">
-			<img src="img/Asociados/dropsense.png" alt="">	
-			<article>
-				<h3>
-					Drop Sens
-				</h3>
-				<p>	
-					DropSens es una Empresa Innovadora de Base Tecnológica, localizada en Oviedo (España), especializada en el desarrollo de instrumentos y dispositivos para la Investigación en Electroquímica.
-				</p>	
-			</article>
-		</div>
-		<a href="http://www.osasen.com/" target="_blank">
-			<div class="asociado">
-			<img src="img/Asociados/osasen.png" alt="">	
-			<article>
-				<h3>
-					Osasen
-				</h3>
-				<p>	
-					Osasen tiene como objetivo el desarrollo de dispositivos y sistemas PoC rápidos y fiables y coste-eficientes basados en tecnología biosensórica.
-				</p>	
-			</article>
-		</div>
+		<?php
+				include("conexion.php");
+
+				$sql = "SELECT * FROM cat_proveedores";
+
+				if(!$resultado = $conexion->query($sql)){
+					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
+				}
+				
+				while($proveedor = $resultado->fetch_assoc()){
+					
+
+					echo"
+					<a href='".$proveedor['PaginaProv']."' target='_blank'>
+						<div class='asociado'>
+							<img src='../img/Asociados/".$proveedor['ImagenProv']."' alt=''>	
+							<article>
+								<h3>
+									".$proveedor['NombreProv']."
+								</h3>
+								<p>	
+									".$proveedor['DescripcionProv']."
+								</p>	
+							</article>
+						</div>
+					</a>";
+				}				
+			?>
 	</section>
 	<footer>
 		<section class="contefooter">

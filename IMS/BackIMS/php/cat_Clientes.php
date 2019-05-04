@@ -32,7 +32,11 @@
 	</header>
 	<section class="ContenedorPrincipal">
 		<h1>Catalogo de empleados</h1>
-		<button><a href="alta_cliente.php">Nuevo</a></button>
+		<a href="alta_empleado.php">
+			<button class="agregar">
+				<img src="../img/agregar.png" alt="">Nuevo
+			</button>
+		</a>
 		<table >
 			<thead>
 				<tr>
@@ -65,8 +69,19 @@
     					<td>".$fila['CorreoCli']."</td>
     					<td>".$fila['UsuarioCli']."</td>
     					<td>".$fila['ContraseniaCli']."</td>
-						<td><a href='cambios_cliente.php?clave=".$fila['idCliente']."'>Modificar</a></td>
-						<td><a href='eliminar_cliente.php?clave=".$fila['idCliente']."'>Eliminar</a></td>
+    					<td><a href='cambios_cliente.php?clave=".$fila['idCliente']."'>
+							<button class='modificar'>
+								<img src='../img/modificar.png' alt=''>Modificar
+							</button>
+							</a>
+						</td>
+						<td><a href='eliminar_cliente.php?clave=".$fila['idCliente']."'>
+							<button class='eliminar'>
+								<img src='../img/eliminar.png' alt=''>Eliminar
+							</button>
+							</a>
+						</td>
+						
 					</tr>";
 
 				}
