@@ -3,12 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>IMS</title>
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
 	<header>
 		<nav>
-			<a href="Nosotros.html"><img src="img/LogoBlanco.png"></a>	
+			<a href="Nosotros.html"><img src="../img/LogoBlanco.png"></a>	
 			<ul>
 				<li><a href="index.html">[ INICIO ]</a></li>
 				<li><a href="Nosotros.html">[ NOSOTROS ]</a></li>
@@ -22,51 +22,34 @@
 	</header>
 	<section class="ContenedorPrincipal">
 		<div class="titulopagina">Productos</div>
+		<?php
+				include("conexion.php");
+
+				$sql = "SELECT * FROM cat_productos";
+
+				if(!$resultado = $conexion->query($sql)){
+					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
+				}
+				
+				while($producto = $resultado->fetch_assoc()){
+					
+
+					echo"
+					<div id='producto'>
+						<h2>
+							".$producto['NombreProd']."
+						</h2>
+						<img src='../img/Productos/".$producto['ImagenProd']."' alt=''>
+						<a href='Producto-Descripcion.php?clave=".$producto['idProducto']."'>
+							<button>
+								Ver detalles
+							</button>
+						</a>
+					</div>";
+				}				
+			?>
 		
-		<div id="producto">
-			<h2>
-				PRODUCTO
-			</h2>
-			<img src="img/Productos/Relog.jpg" alt="">
-			<a href="Producto-Descripcion.html">
-				<button>
-					Ver detalles
-				</button>
-			</a>
-		</div>
-		<div id="producto">
-			<h2>
-				PRODUCTO
-			</h2>
-			<img src="img/Productos/Relog.jpg" alt="">
-			<a href="Producto-Descripcion.html">
-				<button>
-					Ver detalles
-				</button>
-			</a>
-		</div>
-		<div id="producto">
-			<h2>
-				PRODUCTO
-			</h2>
-			<img src="img/Productos/Relog.jpg" alt="">
-			<a href="Producto-Descripcion.html">
-				<button>
-					Ver detalles
-				</button>
-			</a>
-		</div>
-		<div id="producto">
-			<h2>
-				PRODUCTO
-			</h2>
-			<img src="img/Productos/Relog.jpg" alt="">
-			<a href="Producto-Descripcion.html">
-				<button>
-					Ver detalles
-				</button>
-			</a>
-		</div>
+		
 
 	</section>
 	<footer>
