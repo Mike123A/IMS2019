@@ -31,7 +31,7 @@
 		</nav>
 	</header>
 	<section class="ContenedorPrincipal">
-		<h1>Catalogo de empleados</h1>
+		<h1>Catalogo de clientes</h1>
 		<a href="alta_empleado.php">
 			<button class="agregar">
 				<img src="../img/agregar.png" alt="">Nuevo

@@ -42,13 +42,16 @@
 				<tr>
 					<td>Clave</td>
 					<td>Nombres</td>
-					<td>Apellidos</td>
+					<td>Apellido 1</td>
+					<td>Apellido 2</td>
 					<td>Fecha Nacimiento</td>
 					<td>Correo</td>
 					<td>Direccion</td>
 					<td>Telefono</td>
+					<td>Fecha Contratacion</td>
 					<td>Usuario</td>
 					<td>Contraseña</td>
+					<td>Nivel Usuario</td>
 					<td colspan="2">Acciones</td>
 				</tr>
 			</thead>
@@ -66,22 +69,25 @@
 					<tr>
 						<td>".$fila['idEmpleado']." </td>
     					<td>".$fila['NombresEmp']."</td>
-    					<td>".$fila['ApellidosEmp']."</td>
+    					<td>".$fila['Apellido1Emp']."</td>
+    					<td>".$fila['Apellido2Emp']."</td>
     					<td>".$fila['FechaNacEmp']."</td>
     					<td>".$fila['CorreoEmp']."</td>
     					<td>".$fila['DireccionEmp']."</td>
     					<td>".$fila['TelefonoEmp']."</td>
+    					<td>".$fila['FechaContEmp']."</td>
     					<td>".$fila['UsuarioEmp']."</td>
     					<td>".$fila['ContraseniaEmp']."</td>
+    					<td>".$fila['NivelUsuario']."</td>
     					<td><a href='cambios_empleado.php?clave=".$fila['idEmpleado']."'>
 							<button class='modificar'>
-								<img src='../img/modificar.png' alt=''>Modificar
+								<img src='../img/modificar.png' alt=''>
 							</button>
 							</a>
 						</td>
 						<td><a href='eliminar_empleado.php?clave=".$fila['idEmpleado']."'>
 							<button class='eliminar'>
-								<img src='../img/eliminar.png' alt=''>Eliminar
+								<img src='../img/eliminar.png' alt=''>
 							</button>
 							</a>
 						</td>

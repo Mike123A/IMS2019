@@ -36,8 +36,10 @@
 
 			<label>Nombre(s)</label><br>
 			<input type="text" required name="Nombres" placeholder="Aqui va el nombre"value="" /><br>
-			<label>Apellido(s)</label><br>
-			<input type="text" required name="Apellidos" placeholder="Aqui van los apellidos"value="" /><br>
+			<label>Apellido1</label><br>
+			<input type="text" required name="Apellido1" placeholder="Aqui va un apellido" value="" /><br>
+			<label>Apellido2</label><br>
+			<input type="text" required name="Apellido2" placeholder="Aqui va el segundo apellido"value="" /><br>
 			<label>Fecha de nacimiento</label><br>
 			<input type="date" required name="FechaNac" placeholder=""value="" /><br>
 			<label>Correo</label><br>
@@ -46,10 +48,15 @@
 			<input type="text" required name="Direccion" placeholder="Aqui va la direccion"value="" /><br>
 			<label>Telefono</label><br>
 			<input type="text" required name="Telefono" placeholder="Aqui va el telefono"value="" /><br>
+			<label>Fecha de contratacion</label><br>
+			<input type="date" required name="FechaCont" placeholder=""value="" /><br>
 			<label>Usuario</label><br>
 			<input type="text" required name="Usuario" placeholder="Aqui va el usuario"value="" /><br>
 			<label>Contraseña</label><br>
-			<input type="password" required name="Contraseña" placeholder="Aqui va la contraseña"value="" /> <br><br><br>
+			<input type="password" required name="Contraseña" placeholder="Aqui va la contraseña"value="" /> <br>
+			<label>Nivel de usuario</label><br>
+			<input type="number" required name="NUsuario" placeholder=""value="" /> <br>
+			<br><br>
 			<input type="submit" value="Guardar">		
 
 		</form>

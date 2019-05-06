@@ -48,8 +48,11 @@
 			<input style="display: none" type="text" required name="clave" placeholder="" value=" <?php echo $fila['idEmpleado']; ?>" /><br>
 			<label>Nombre(s)</label><br>
 			<input type="text" required name="Nombres" placeholder="" value=" <?php echo $fila['NombresEmp']; ?>" /><br>
-			<label>Apellido(s)</label><br>
-			<input type="text" required name="Apellidos" placeholder="Aqui van los apellidos" value=" <?php echo $fila['ApellidosEmp']; ?>" /><br>
+			<label>Apellido 1</label><br>
+			<input type="text" required name="Apellido1" placeholder="Aqui van los apellidos" value=" <?php echo $fila['Apellido1Emp']; ?>" /><br>
+			<label>Apellido 2</label><br>
+			<input type="text" required name="Apellido2" placeholder="Aqui van los apellidos" value=" <?php echo $fila['Apellido2Emp']; ?>" /><br>
+
 			<label>Fecha de nacimiento</label><br>
 			<input type="date" required name="FechaNac" placeholder="" value="<?php echo $fila['FechaNacEmp']; ?>" /><br>
 			<label>Correo</label><br>
@@ -58,10 +61,16 @@
 			<input type="text" required name="Direccion" placeholder="Aqui va la direccion" value=" <?php echo $fila['DireccionEmp']; ?>" /><br>
 			<label>Telefono</label><br>
 			<input type="text" required name="Telefono" placeholder="Aqui va el telefono" value=" <?php echo $fila['TelefonoEmp']; ?>" /><br>
+			<label>Fecha de contratacion</label><br>
+			<input type="date" required name="FechaCont" placeholder="" value="<?php echo $fila['FechaContEmp']; ?>" /><br>
 			<label>Usuario</label><br>
 			<input type="text" required name="Usuario" placeholder="Aqui va el usuario" value=" <?php echo $fila['UsuarioEmp']; ?>" /><br>
 			<label>Contraseña</label><br>
-			<input type="password" required name="Contraseña" placeholder="Aqui va la contraseña" value=" <?php echo $fila['ContraseniaEmp']; ?>" /><br><br><br>
+			<input type="password" required name="Contraseña" placeholder="Aqui va la contraseña" value=" <?php echo $fila['ContraseniaEmp']; ?>" /><br>
+			<label>Nivel de usuario</label><br>
+			<input type="number" required name="NUsuario" placeholder=""value="<?php echo $fila['NivelUsuario']; ?>" /> <br>
+			<br><br>
+
 			<input type="submit" value="Guardar">		
 
 		</form>

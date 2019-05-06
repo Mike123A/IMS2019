@@ -31,7 +31,7 @@
 		</nav>
 	</header>
 	<section class="ContenedorPrincipal">
-		<h1>Catalogo de distribuidores</h1>
+		<h1>Catalogo de proveedores</h1>
 		<a href="alta_proveedor.php">
 			<button class="agregar">
 				<img src="../img/agregar.png" alt="">Nuevo
