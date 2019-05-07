@@ -18,6 +18,9 @@
 			<input type="text" required name="DescripcionProducto" placeholder="Descripcion..." value="" /><br/><br/>		
 			<label>Precio:</label>
 			<input type="text" required name="PrecioProducto" placeholder="Precio..." value="" /><br/><br/>	
+			<label>Stock:</label>
+			<input type="text" required name="Stock" placeholder="Stock" value="" /><br/><br/>	
+
 			<label>Imagen:</label>
 			<input type="date" required name="ImagenProducto" placeholder="Imagen..." value="" /><br/><br/>
 			<input type="submit" value="Guardar">		
