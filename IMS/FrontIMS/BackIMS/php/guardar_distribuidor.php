@@ -14,7 +14,7 @@
 	$type = $imagen['type'];
 	$url_temp = $imagen['tmp_name'];
 
-	$destino = '../../FrontIMS/img/Asociados/';
+	$destino = '../../../FrontIMS/img/Asociados/';
 	$img_nombre = 'img_'.md5(date('d-m-Y H:m:s'));
 	$img_distribuidor = $img_nombre.'.png';
 	$src = $destino.$img_distribuidor;

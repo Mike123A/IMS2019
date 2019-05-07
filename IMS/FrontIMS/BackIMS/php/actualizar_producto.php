@@ -30,7 +30,7 @@
 		$type = $imagen['type'];
 		$url_temp = $imagen['tmp_name'];
 
-		$destino = '../../FrontIMS/img/Productos/';
+		$destino = '../../../FrontIMS/img/Productos/';
 		$img_nombre = 'img_'.md5(date('d-m-Y H:m:s'));
 		$img_producto = $img_nombre.'.png';
 		$src = $destino.$img_producto;
@@ -43,7 +43,7 @@
 
 		$resultado = $conexion->query($query);
 		if ($resultado) {
-			unlink("../../FrontIMS/img/Productos/".$fila['ImagenProd']);
+			unlink("../../../FrontIMS/img/Productos/".$fila['ImagenProd']);
 			move_uploaded_file($url_temp,$src);
 			header("Location: cat_productos.php");
 		}

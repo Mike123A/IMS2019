@@ -42,7 +42,7 @@
 				}
 			$fila = $resultado->fetch_assoc();
 			
-			$direccionimagen = "../../FrontIMS/img/Productos/".$fila['ImagenProd'];
+			$direccionimagen = "../../../FrontIMS/img/Productos/".$fila['ImagenProd'];
 		?>
 		<h1>Cambios al producto: <?php echo $fila['idProducto']; ?> </h1>
 		<input style="display: none" type="text" required name="clave" placeholder="" value=" <?php echo $fila['idProducto']; ?>" /><br>

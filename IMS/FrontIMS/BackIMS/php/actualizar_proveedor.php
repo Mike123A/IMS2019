@@ -10,7 +10,7 @@
 
 	$imagen = $_FILES['Imagen'];
 	if ($imagen['name']== "") {
-		$query = "UPDATE cat_distribuidores SET NombreDis = '".$nombre."' , DescripcionDis = '".$descripcion."' , TelefonoDis = '".$telefono."', PaginaDis = '".$pagina."' WHERE idDistribuidor = ".$clave." ;";
+		$query = "UPDATE cat_distribuidores SET NombreProv = '".$nombre."' , DescripcionProv = '".$descripcion."' , TelefonoProv = '".$telefono."', PaginaProv = '".$pagina."' WHERE idDistribuidor = ".$clave.";";
 
 		$resultado = $conexion->query($query);
 		if ($resultado) {
@@ -24,46 +24,26 @@
 		$type = $imagen['type'];
 		$url_temp = $imagen['tmp_name'];
 		
-		$destino = '../../FrontIMS/img/Asociados/';
+		$destino = '../../../FrontIMS/img/Asociados/';
 		$img_nombre = 'img_'.md5(date('d-m-Y H:m:s'));
-		$img_distribuidor = $img_nombre.'.png';
-		$src = $destino.$img_distribuidor;
+		$img_proveedor = $img_nombre.'.png';
+		$src = $destino.$img_proveedor;
 
-		$query1 = "SELECT ImagenDis FROM cat_distribuidores WHERE idDistribuidor =".$clave.";";
+		$query1 = "SELECT ImagenProv FROM cat_proveedores WHERE idProveedor =".$clave.";";
 		$resultado1 = $conexion->query($query1);
 		$fila = $resultado1->fetch_assoc();
 
-		$query = "UPDATE cat_distribuidores SET NombreDis = '".$nombre."' , DescripcionDis = '".$descripcion."' , TelefonoDis = '".$telefono."', PaginaDis = '".$pagina."', ImagenDis = '".$img_distribuidor."' WHERE idDistribuidor = ".$clave." ;";
+		$query = "UPDATE cat_proveedores SET NombreProv = '".$nombre."' , DescripcionProv = '".$descripcion."' , TelefonoProv = '".$telefono."', PaginaProv = '".$pagina."', ImagenProv = '".$img_proveedor."' WHERE idProveedor = ".$clave." ;";
 
 		$resultado = $conexion->query($query);
 		if ($resultado) {
-			unlink("../../FrontIMS/img/Asociados/".$fila['ImagenDis']);
+			unlink("../../../FrontIMS/img/Asociados/".$fila['ImagenProv']);
 			move_uploaded_file($url_temp,$src);
-			header("Location: cat_distribuidores.php");
+			header("Location: cat_proveedores.php");
 		}
 		else{
 			echo "No Insertado";
 		}	
 	}
-
-
-
-
-
-	
-
-	// $query = "INSERT INTO cat_distribuidores(NombreDis,DescripcionDis,TelefonoDis,PaginaDis,ImagenDis) VALUES ('$nombre','$descripcion','$telefono','$pagina','$img_distribuidor')";
-
-	// $resultado = $conexion->query($query);
-	// if ($resultado) {
-	// 	move_uploaded_file($url_temp,$src);
-	// 	// echo "Insertado";
-	//     header("Location: cat_distribuidores.php");
-	// }else{
-	// 	echo "No Insertado";
-	// }
-
-
-
 
 ?>

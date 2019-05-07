@@ -73,7 +73,7 @@
     					<td>$".$fila['PrecioProd']."</td>
     					<td>".$fila['StockProd']."</td>
 
-    					<td> <img src='../../FrontIMS/img/Productos/".$fila['ImagenProd']."'alt=''></td>
+    					<td> <img src='../../../FrontIMS/img/Productos/".$fila['ImagenProd']."'alt=''></td>
 						<td><a href='cambios_Producto.php?clave=".$fila['idProducto']."'>
 							<button class='modificar'>
 								<img src='../img/modificar.png' alt=''>Modificar

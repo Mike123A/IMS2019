@@ -42,7 +42,7 @@
 				}
 			$fila = $resultado->fetch_assoc();
 			
-			$direccionimagen = "../../FrontIMS/img/Asociados/".$fila['ImagenDis'];
+			$direccionimagen = "../../../FrontIMS/img/Asociados/".$fila['ImagenDis'];
 		?>
 		<h1>Cambios al distribuidor: <?php echo $fila['idDistribuidor']; ?> </h1>
 			<input style="display: none" type="text" required name="clave" placeholder="" value=" <?php echo $fila['idDistribuidor']; ?>" /><br>

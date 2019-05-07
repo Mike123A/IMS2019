@@ -11,7 +11,7 @@
 
 	$resultado = $conexion->query($query);
 	if ($resultado) {
-		unlink("../../FrontIMS/img/Productos/".$fila['ImagenProd']);
+		unlink("../../../FrontIMS/img/Productos/".$fila['ImagenProd']);
 
 		header("Location: cat_productos.php");
 

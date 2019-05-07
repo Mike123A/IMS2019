@@ -66,7 +66,7 @@
     					<td>".$fila['DescripcionDis']."</td>
     					<td>".$fila['TelefonoDis']."</td>
     					<td>".$fila['PaginaDis']."</td>
-    					<td> <img src='../../FrontIMS/img/Asociados/".$fila['ImagenDis']."'alt=''></td>
+    					<td> <img src='../../../FrontIMS/img/Asociados/".$fila['ImagenDis']."'alt=''></td>
     					<td><a href='cambios_distribuidor.php?clave=".$fila['idDistribuidor']."'>
 							<button class='modificar'>
 								<img src='../img/modificar.png' alt=''>Modificar

@@ -31,29 +31,29 @@
 		</nav>
 	</header>
 	<section class="ContenedorPrincipal">
-		<form action="actualizar_distribuidor.php" method="POST" enctype="multipart/form-data">
+		<form action="actualizar_proveedor.php" method="POST" enctype="multipart/form-data">
 		<?php
 			$clave = $_GET['clave'];
 			include("conexion.php");
-			$sql = "SELECT * FROM cat_distribuidores WHERE idDistribuidor=".$clave.";";
+			$sql = "SELECT * FROM cat_proveedores WHERE idProveedor=".$clave.";";
 
 			if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
 				}
 			$fila = $resultado->fetch_assoc();
 			
-			$direccionimagen = "../../FrontIMS/img/Asociados/".$fila['ImagenDis'];
+			$direccionimagen = "../../../FrontIMS/img/Asociados/".$fila['ImagenProv'];
 		?>
-		<h1>Cambios al distribuidor: <?php echo $fila['idDistribuidor']; ?> </h1>
-			<input style="display: none" type="text" required name="clave" placeholder="" value=" <?php echo $fila['idDistribuidor']; ?>" /><br>
+		<h1>Cambios al proveedor: <?php echo $fila['idProveedor']; ?> </h1>
+			<input style="display: none" type="text" required name="clave" placeholder="" value=" <?php echo $fila['idProveedor']; ?>" /><br>
 			<label>Nombre(s)</label><br>
-			<input type="text" required name="Nombres" placeholder="Aqui va el nombre"value="<?php echo $fila['NombreDis']; ?>" /><br>
+			<input type="text" required name="Nombres" placeholder="Aqui va el nombre"value="<?php echo $fila['NombreProv']; ?>" /><br>
 			<label>Descripcion</label><br>
-			<input type="textarea" required name="Descripcion" placeholder="Descripcion"value="<?php echo $fila['DescripcionDis']; ?>" /><br>
+			<input type="textarea" required name="Descripcion" placeholder="Descripcion"value="<?php echo $fila['DescripcionProv']; ?>" /><br>
 			<label>Telefono</label><br>
-			<input type="text" required name="Telefono" placeholder="Aqui va el telefono"value="<?php echo $fila['TelefonoDis']; ?>" /><br>
+			<input type="text" required name="Telefono" placeholder="Aqui va el telefono"value="<?php echo $fila['TelefonoProv']; ?>" /><br>
 			<label>Pagina</label><br>
-			<input type="text" required name="Pagina" placeholder="Aqui va la pagina"value="<?php echo $fila['PaginaDis']; ?>" /><br>
+			<input type="text" required name="Pagina" placeholder="Aqui va la pagina"value="<?php echo $fila['PaginaProv']; ?>" /><br>
 			<label>Imagen actual</label><br>
 			<img class="imagenformulario" src="<?php echo $direccionimagen ?>" alt=''>
 			<br>
