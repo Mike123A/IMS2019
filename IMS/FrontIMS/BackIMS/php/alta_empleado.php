@@ -1,3 +1,12 @@
+<?php
+	include("conexion.php");
+
+	$sql = "SELECT * FROM cat_tipousuarios";
+		if(!$resultado = $conexion->query($sql)){
+			die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
+		}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -55,6 +64,13 @@
 			<label>Contraseña</label><br>
 			<input type="password" required name="Contraseña" placeholder="Aqui va la contraseña"value="" /> <br>
 			<label>Nivel de usuario</label><br>
+			<SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('prueba');"> 
+				<?php
+					while($fila = $resultado->fetch_assoc()){
+					echo "<OPTION VALUE='".$fila['idtusuario']."'>".$fila['tipousuario']."</OPTION>";
+					}
+				?>
+			</SELECT> 
 			<input type="number" required name="NUsuario" placeholder=""value="" /> <br>
 			<br><br>
 			<input type="submit" value="Guardar">		

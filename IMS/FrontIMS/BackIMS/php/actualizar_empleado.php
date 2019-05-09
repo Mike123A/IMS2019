@@ -14,7 +14,7 @@
 	$contraseña = $_POST ['Contraseña'];
 	$NUsuario = $_POST ['NUsuario'];
 	
-	$query ="UPDATE cat_empleados SET NombresEmp = '".$nombre."', Apellido1Emp='".$apellido1."',Apellido2Emp='".$apellido2."', FechaNacEmp='".$fechanac."', CorreoEmp='".$correo."',DireccionEmp='".$direccion."',TelefonoEmp='".$telefono."',FechaContEmp='".$fechacont."',UsuarioEmp='".$usuario."',ContraseniaEmp='".$contraseña."',NivelUsuario='".$NUsuario."' WHERE idEmpleado = ".$clave." ;";
+	$query ="UPDATE cat_empleados SET NombresEmp = '".$nombre."', Apellido1Emp='".$apellido1."',Apellido2Emp='".$apellido2."', FechaNacEmp='".$fechanac."', CorreoEmp='".$correo."',DireccionEmp='".$direccion."',TelefonoEmp='".$telefono."',FechaContEmp='".$fechacont."',UsuarioEmp='".$usuario."',ContraseniaEmp='".$contraseña."',idtusuario='".$NUsuario."' WHERE idEmpleado = ".$clave." ;";
 
 	$resultado = $conexion->query($query);
 	if ($resultado) {
