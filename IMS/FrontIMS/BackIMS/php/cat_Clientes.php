@@ -54,7 +54,7 @@
 			<?php
 				include("conexion.php");
 
-				$sql = "SELECT * FROM cat_clientes";
+				$sql = "SELECT * FROM cat_clientes ";
 
 				if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
