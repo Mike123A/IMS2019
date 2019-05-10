@@ -12,18 +12,30 @@
 	$fechacont = $_POST ['FechaCont'];
 	$usuario = $_POST ['Usuario'];
 	$contraseña = $_POST ['Contraseña'];
-	$NUsuario = $_POST ['NUsuario'];
+	$tusuario = $_POST ['tipousuario'];
+	
+	// $busqueda = "SELECT * FROM cat_empleados where CorreoEmp = '".$correo."';";
 
+	// $resultado = $conexion->query($busqueda);
+	// if(mysqli_num_rows($resultado)>0) {
+	// 	echo ("Ya esiste esta cuenta");
+	// }else{
 
+	// }
 
-	$query = "INSERT INTO cat_empleados(NombresEmp, Apellido1Emp,Apellido2Emp, FechaNacEmp, CorreoEmp, DireccionEmp, TelefonoEmp, FechaContEmp, UsuarioEmp, ContraseniaEmp,NivelUsuario) VALUES ('$nombre','$apellido1','$apellido2','$fechanac','$correo','$direccion','$telefono','$fechacont','$usuario','$contraseña','$NUsuario')";
-
+	$query = "INSERT INTO cat_usuarios(Usuario, Contrasenia, idtusuario, estado) VALUES ('$usuario','$contraseña','$tusuario','Alta');";
 	$resultado = $conexion->query($query);
 	if ($resultado) {
+		$query = "SELECT idUsuario FROM cat_usuarios WHERE Usuario = '$usuario'";
+		$resultado = $conexion->query($query);
+		$fila = $resultado->fetch_assoc();
+		$idUsuario = $fila['idUsuario'];
+		$query = "INSERT INTO cat_empleados(NombresEmp, Apellido1Emp,Apellido2Emp, FechaNacEmp, CorreoEmp, DireccionEmp, TelefonoEmp, FechaContEmp, idUsuario) VALUES ('$nombre','$apellido1','$apellido2','$fechanac','$correo','$direccion','$telefono','$fechacont','$idUsuario');";
+		$resultado = $conexion->query($query);
 		header("Location: cat_empleados.php");
 	}else{
 		echo "No Insertado";
 	}
-
+	
 
 ?>

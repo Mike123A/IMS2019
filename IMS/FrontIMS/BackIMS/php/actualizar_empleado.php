@@ -1,5 +1,6 @@
 <?php
 	$clave = $_POST ['clave'];
+	$claveu = $_POST ['claveu'];
 
 	include("conexion.php"); 
 	$nombre = $_POST ['Nombres'];
@@ -12,13 +13,20 @@
 	$fechacont = $_POST ['FechaCont'];
 	$usuario = $_POST ['Usuario'];
 	$contraseña = $_POST ['Contraseña'];
-	$NUsuario = $_POST ['NUsuario'];
+	$tusuario = $_POST ['tipousuario'];
 	
-	$query ="UPDATE cat_empleados SET NombresEmp = '".$nombre."', Apellido1Emp='".$apellido1."',Apellido2Emp='".$apellido2."', FechaNacEmp='".$fechanac."', CorreoEmp='".$correo."',DireccionEmp='".$direccion."',TelefonoEmp='".$telefono."',FechaContEmp='".$fechacont."',UsuarioEmp='".$usuario."',ContraseniaEmp='".$contraseña."',idtusuario='".$NUsuario."' WHERE idEmpleado = ".$clave." ;";
-
+	$query ="UPDATE cat_empleados SET NombresEmp = '".$nombre."', Apellido1Emp=TRIM('$apellido1'),Apellido2Emp='$apellido2', FechaNacEmp='$fechanac', CorreoEmp='$correo',DireccionEmp='$direccion',TelefonoEmp='$telefono',FechaContEmp='$fechacont' WHERE idEmpleado = $clave;";
 	$resultado = $conexion->query($query);
 	if ($resultado) {
-		header("Location: cat_empleados.php");
+		$query1 = "UPDATE cat_usuarios SET Usuario='$usuario',Contrasenia='$contraseña',idtusuario=$tusuario WHERE idUsuario = $claveu";
+		$resultado1 = $conexion->query($query1);
+		if ($resultado1) {
+		
+			header("Location: cat_empleados.php");
+		}
+		else{
+		echo "No Insertado";
+		}
 	}else{
 		echo "No Insertado";
 	}
