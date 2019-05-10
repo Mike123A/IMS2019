@@ -93,6 +93,13 @@ thead{
 }
 td {
   padding: 8px;
+  border-bottom: 1px solid;
+}
+.bajas{
+	background: red;
+}
+.altas{
+	background: #2C612C;
 }
 form{
 	text-align: center;
@@ -110,7 +117,7 @@ form h1{
 	font-size: 50px;
 }
 td img{
-	width: 100px;
+	width: 90px;
 }
 
 .imagenformulario{
@@ -126,6 +133,13 @@ td img{
 	margin: 10px; 
 	border-radius: 10px;
 	width: 130px;
+}
+.alta{
+	background: #2C612C;
+	color:#fff;
+	font-size: 18px;
+	padding: 5px;
+	border-radius: 10px;
 }
 .eliminar{
 	background: red;

@@ -49,6 +49,7 @@
 					<td>Precio</td>
 					<td>Stock</td>
 					<td>Imagen</td>
+					<td>Estado</td>
 					<td colspan="2">Acciones</td>
 				</tr>
 			</thead>
@@ -73,21 +74,28 @@
     					<td>$".$fila['PrecioProd']."</td>
     					<td>".$fila['StockProd']."</td>
 
-    					<td> <img src='../../../FrontIMS/img/Productos/".$fila['ImagenProd']."'alt=''></td>
-						<td><a href='cambios_Producto.php?clave=".$fila['idProducto']."'>
+    					<td> <img src='../../../FrontIMS/img/Productos/".$fila['ImagenProd']."'alt=''></td>";
+    				if ($fila['estado'] == "Alta") {
+						echo "
+						<td class='altas'></td>";
+					}else{
+						echo "
+						<td class='bajas'></td>";			
+					}
+    				echo "
+						<td><a href='cambios_producto.php?clave=".$fila['idProducto']."'>
 							<button class='modificar'>
 								<img src='../img/modificar.png' alt=''>Modificar
 							</button>
 							</a>
 						</td>
-						<td><a href='eliminar_Producto.php?clave=".$fila['idProducto']."'>
+						<td>		
+							<a href='eliminar_Producto.php?clave=".$fila['idProducto']."'>
 							<button class='eliminar'>
-								<img src='../img/eliminar.png' alt=''>Eliminar
+								<img src='../img/refrescar.png' alt=''>Estado
 							</button>
 							</a>
-						</td>
-					</tr>";
-
+						</td></tr>";
 				}
 			?>
 		</table>	
