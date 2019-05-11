@@ -49,8 +49,8 @@
 					<td>Telefono</td>
 					<td>Fecha Contratacion</td>
 					<td>Usuario</td>
-					<td>Contraseña</td>
-					<td>Nivel Usuario</td>
+					<td>Tipo Usuario</td>
+					<td>Estado</td>
 					<td colspan="2">Acciones</td>
 				</tr>
 			</thead>
@@ -75,21 +75,30 @@
     					<td>".$fila['TelefonoEmp']."</td>
     					<td>".$fila['FechaContEmp']."</td>
     					<td>".$fila['Usuario']."</td>
-    					<td>".$fila['Contrasenia']."</td>
     					<td>".$fila['tipousuario']."</td>
-    					<td><a href='cambios_empleado.php?clave=".$fila['idEmpleado']."'>
+    					";
+    					if ($fila['estado'] == "Alta") {
+						echo "
+						<td class='altas'></td>";
+					}else{
+						echo "
+						<td class='bajas'></td>";			
+					}
+    				echo "
+						<td><a href='cambios_empleado.php?clave=".$fila['idUsuario']."'>
 							<button class='modificar'>
-								<img src='../img/modificar.png' alt=''>
+								<img src='../img/modificar.png' alt=''>Modificar
 							</button>
 							</a>
 						</td>
-						<td><a href='eliminar_empleado.php?clave=".$fila['idEmpleado']."'>
+						<td>		
+							<a href='eliminar_empleado.php?clave=".$fila['idUsuario']."'>
 							<button class='eliminar'>
-								<img src='../img/eliminar.png' alt=''>
+								<img src='../img/refrescar.png' alt=''>Estado
 							</button>
 							</a>
-						</td>
-					</tr>";
+						</td></tr>";
+					
 
 				}
 			?>
