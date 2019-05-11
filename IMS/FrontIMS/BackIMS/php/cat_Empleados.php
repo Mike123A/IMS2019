@@ -14,8 +14,6 @@
 				<li><a href="#">[ CATALOGOS ]</a>
 					<ul>
 						<li><a href="cat_productos.php">Productos</a></li>
-						<li><a href="cat_distribuidores.php">Distribuidores</a></li>
-						<li><a href="cat_proveedores.php">Proveedores</a></li>
 						<li><a href="cat_clientes.php">Clientes</a></li>
 						<li><a href="cat_empleados.php">Empleados</a></li>
 					</ul>
@@ -85,7 +83,7 @@
 						<td class='bajas'></td>";			
 					}
     				echo "
-						<td><a href='cambios_empleado.php?clave=".$fila['idUsuario']."'>
+						<td><a href='cambios_empleado.php?clave=".$fila['idEmpleado']."'>
 							<button class='modificar'>
 								<img src='../img/modificar.png' alt=''>Modificar
 							</button>

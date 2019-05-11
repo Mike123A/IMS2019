@@ -14,8 +14,6 @@
 				<li><a href="#">[ CATALOGOS ]</a>
 					<ul>
 						<li><a href="cat_productos.php">Productos</a></li>
-						<li><a href="cat_distribuidores.php">Distribuidores</a></li>
-						<li><a href="cat_proveedores.php">Proveedores</a></li>
 						<li><a href="cat_clientes.php">Clientes</a></li>
 						<li><a href="cat_empleados.php">Empleados</a></li>
 					</ul>
@@ -41,12 +39,16 @@
 			<thead>
 				<tr>
 					<td>Clave</td>
-					<td>Nombres o Razon Social</td>
+					<td>Nombres</td>
+					<td>Apellidos</td>
 					<td>Direccion</td>
+					
+
 					<td>Telefono</td>
+
 					<td>Correo</td>
 					<td>Usuario</td>
-					<td>Contraseña</td>
+					<td>Estado</td>
 					<td colspan="2">Acciones</td>
 				</tr>
 			</thead>
@@ -54,7 +56,7 @@
 			<?php
 				include("conexion.php");
 
-				$sql = "SELECT * FROM cat_clientes ";
+				$sql = "SELECT * FROM cat_clientes cc INNER JOIN cat_usuarios cu ON cc.idUsuario = cu.idUsuario ";
 
 				if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
@@ -64,25 +66,33 @@
 					<tr>
 						<td>".$fila['idCliente']." </td>
     					<td>".$fila['NombreCli']."</td>
+    					<td>".$fila['Apellido1Cli']." ".$fila['Apellido2Cli']."</td>
     					<td>".$fila['DireccionCli']."</td>
     					<td>".$fila['TelefonoCli']."</td>
     					<td>".$fila['CorreoCli']."</td>
-    					<td>".$fila['UsuarioCli']."</td>
-    					<td>".$fila['ContraseniaCli']."</td>
-    					<td><a href='cambios_cliente.php?clave=".$fila['idCliente']."'>
+    					<td>".$fila['Usuario']."</td>
+    					";
+    					if ($fila['estado'] == "Alta") {
+						echo "
+						<td class='altas'></td>";
+					}else{
+						echo "
+						<td class='bajas'></td>";			
+					}
+    				echo "
+						<td><a href='cambios_cliente.php?clave=".$fila['idCliente']."'>
 							<button class='modificar'>
 								<img src='../img/modificar.png' alt=''>Modificar
 							</button>
 							</a>
 						</td>
-						<td><a href='eliminar_cliente.php?clave=".$fila['idCliente']."'>
+						<td>		
+							<a href='eliminar_cliente.php?clave=".$fila['idUsuario']."'>
 							<button class='eliminar'>
-								<img src='../img/eliminar.png' alt=''>Eliminar
+								<img src='../img/refrescar.png' alt=''>Estado
 							</button>
 							</a>
-						</td>
-						
-					</tr>";
+						</td></tr>";
 
 				}
 			?>

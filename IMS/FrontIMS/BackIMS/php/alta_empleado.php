@@ -23,8 +23,6 @@
 				<li><a href="#">[ CATALOGOS ]</a>
 					<ul>
 						<li><a href="cat_productos.php">Productos</a></li>
-						<li><a href="cat_distribuidores.php">Distribuidores</a></li>
-						<li><a href="cat_proveedores.php">Proveedores</a></li>
 						<li><a href="cat_clientes.php">Clientes</a></li>
 						<li><a href="cat_empleados.php">Empleados</a></li>
 					</ul>

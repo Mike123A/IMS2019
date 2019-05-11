@@ -3,12 +3,23 @@
 	include("conexion.php"); 
 	$clave = $_GET['clave'];
 
-	
-	$query ="DELETE FROM cat_clientes WHERE idCliente=".$clave.";";
+	$query1 = "SELECT estado FROM cat_usuarios WHERE idUsuario =".$clave.";";
+	$resultado1 = $conexion->query($query1);
+	$fila = $resultado1->fetch_assoc();
+
+	if ($fila['estado'] == 'Alta') {
+		$query ="UPDATE cat_usuarios SET estado = 'Baja' WHERE idUsuario = ".$clave." ;";	
+	}else{
+		$query ="UPDATE cat_usuarios SET estado = 'Alta' WHERE idUsuario = ".$clave." ;";	
+	}
+	//echo $fila['ImagenDis'];
 
 	$resultado = $conexion->query($query);
 	if ($resultado) {
+		// unlink("../../../FrontIMS/img/Productos/".$fila['ImagenProd']);
 		header("Location: cat_clientes.php");
+
+
 	}else{
 		echo "No eliminado";
 	}
