@@ -6,40 +6,26 @@
 	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
-	<header>
-		<nav>
-			<a href="#"><img src="../img/LogoConNombreBlanco.png"></a>	
-			<ul>
-				<li><a href="../index.html">[ INICIO ]</a></li>
-				<li><a href="#">[ CATALOGOS ]</a>
-					<ul>
-						<li><a href="cat_productos.php">Productos</a></li>
-						<li><a href="cat_clientes.php">Clientes</a></li>
-						<li><a href="cat_empleados.php">Empleados</a></li>
-					</ul>
-				</li>
-				<li><a href="#">[ REPORTES]</a>
-					<ul>
-						<li><a href="#">CATALOGOS 9</a></li>
-						<li><a href="#">CATALOGOS 10</a></li>
-					</ul>
-				</li>
-				<li><a href="../index.html">[CERRAR SESION]</a></li>
-			</ul>
-		</nav>
-	</header>
+	<?php include ("../includes/menu.php") ?>
 	<section class="ContenedorPrincipal">
 		<form action="guardar_cliente.php" method="POST">
 		<h1>Alta de cliente</h1>
 
-			<label>Nombre o razon social</label><br>
+			<label>Nombre(s)</label><br>
 			<input type="text" required name="Nombres" placeholder="Aqui va el nombre"value="" /><br>
+			<label>Apellido1</label><br>
+			<input type="text" required name="Apellido1" placeholder="Aqui va un apellido" value="" /><br>
+			<label>Apellido2</label><br>
+			<input type="text" required name="Apellido2" placeholder="Aqui va el segundo apellido"
+			><br>
 			<label>Direccion</label><br>
 			<input type="text" required name="Direccion" placeholder="Aqui va la direccion"value="" /><br>
 			<label>Telefono</label><br>
 			<input type="text" required name="Telefono" placeholder="Aqui va el telefono"value="" /><br>
 			<label>Correo</label><br>
 			<input type="text" required name="Correo" placeholder="Aqui va el correo"value="" /><br>
+			<label>RFC</label><br>
+			<input type="text" name="RFC" placeholder="Aqui va el rfc"value="" /><br>
 			<label>Usuario</label><br>
 			<input type="text" required name="Usuario" placeholder="Aqui va el usuario"value="" /><br>
 			<label>Contraseña</label><br>

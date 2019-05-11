@@ -7,29 +7,7 @@
 
 </head>
 <body>
-	<header>
-		<nav>
-			<a href="#"><img src="../img/LogoConNombreBlanco.png"></a>	
-			<ul>
-				<li><a href="../index.html">[ INICIO ]</a></li>
-				<li><a href="#">[ CATALOGOS ]</a>
-					<ul>
-						<li><a href="cat_productos.php">Productos</a></li>
-						<li><a href="cat_clientes.php">Clientes</a></li>
-						<li><a href="cat_empleados.php">Empleados</a></li>
-					</ul>
-				</li>
-				<li><a href="#">[ REPORTES]</a>
-					<ul>
-						<li><a href="#">CATALOGOS 9</a></li>
-						<li><a href="#">CATALOGOS 10</a></li>
-					</ul>
-				</li>
-				<li><a href="../index.html">[CERRAR SESION]</a></li>
-			</ul>
-		</nav>
-		</nav>
-	</header>
+	<?php include ("../includes/menu.php") ?>
 	<section class="ContenedorPrincipal">
 		<?php
 			$clave = $_GET['clave'];
