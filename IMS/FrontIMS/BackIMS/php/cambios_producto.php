@@ -35,8 +35,7 @@
 			<input type="textarea" required name="Descripcion" placeholder="Descripcion"value="<?php echo $fila['DescripcionProd']; ?>" /><br>
 			<label>Precio</label><br>
 			<input type="text" required name="Precio" placeholder="Aqui va el precio"value="<?php echo $fila['PrecioProd']; ?>" /><br>
-			<label>Stock</label><br>	
-			<input type="text" required name="Stock" placeholder="Stock" value="<?php echo $fila['StockProd']; ?>"  /><br/>
+			
 			<label>Imagen actual</label><br>
 			<img class="imagenformulario" src="<?php echo $direccionimagen ?>" alt=''>
 			<br>

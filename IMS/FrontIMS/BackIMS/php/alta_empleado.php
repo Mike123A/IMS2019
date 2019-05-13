@@ -1,12 +1,3 @@
-<?php
-	include("conexion.php");
-
-	$sql = "SELECT * FROM cat_tipousuarios";
-		if(!$resultado = $conexion->query($sql)){
-			die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
-		}
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,6 +35,12 @@
 			<label>Tipo de usuario</label><br>
 			<SELECT NAME="tipousuario" SIZE=1 > 
 				<?php
+					include("conexion.php");
+
+					$sql = "SELECT * FROM cat_tipousuarios";
+					if(!$resultado = $conexion->query($sql)){
+						die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
+					}
 					while($fila = $resultado->fetch_assoc()){
 					echo "<OPTION VALUE='".$fila['idtusuario']."'>".$fila['tipousuario']."</OPTION>";
 					}

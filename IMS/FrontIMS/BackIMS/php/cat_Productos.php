@@ -34,7 +34,7 @@
 			<?php
 				include("conexion.php");
 
-				$sql = "SELECT * FROM cat_productos";
+				$sql = "SELECT * FROM cat_productos ORDER BY idProducto DESC";
 
 				if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');

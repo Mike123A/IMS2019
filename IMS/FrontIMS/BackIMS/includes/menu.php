@@ -10,7 +10,8 @@
 		<nav>
 			<a href="#"><img src="../img/LogoConNombreBlanco.png"></a>	
 			<ul>
-				<li><a href="../index.html">[ INICIO ]</a></li>
+				<li><a href="Ventas.php">[ VENTAS ]</a></li>
+				<li><a href="almacen_productos.php">[ ALMACEN ]</a></li>
 				<li><a href="#">[ CATALOGOS ]</a>
 					<ul>
 						<li><a href="cat_productos.php">Productos</a></li>

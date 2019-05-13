@@ -12,11 +12,9 @@
 	}else{
 		$query ="UPDATE cat_productos SET estado = 'Alta' WHERE idProducto = ".$clave." ;";	
 	}
-	//echo $fila['ImagenDis'];
 
 	$resultado = $conexion->query($query);
 	if ($resultado) {
-		// unlink("../../../FrontIMS/img/Productos/".$fila['ImagenProd']);
 
 		header("Location: cat_productos.php");
 
