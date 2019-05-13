@@ -6,7 +6,9 @@ CREATE TABLE `almacen_productos` (
   `idProducto` int(11) NOT NULL,
   `tipo_movimiento` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `Cantidad` int(11) NOT NULL,
-  PRIMARY KEY (`idMovAlm`)
+  PRIMARY KEY (`idMovAlm`),
+  KEY `idProducto` (`idProducto`),
+  CONSTRAINT `almacen_productos_ibfk_1` FOREIGN KEY (`idProducto`) REFERENCES `cat_productos` (`idProducto`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 INSERT INTO almacen_productos VALUES("1","0000-00-00","2","Entrada","10");
@@ -28,7 +30,8 @@ CREATE TABLE `cat_clientes` (
   `CorreoCli` varchar(50) NOT NULL,
   `RFC` varchar(15) NOT NULL,
   `idUsuario` int(11) NOT NULL,
-  PRIMARY KEY (`idCliente`)
+  PRIMARY KEY (`idCliente`),
+  KEY `idUsuario` (`idUsuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 INSERT INTO cat_clientes VALUES("1","Addy","Tun","Dzib","C30 #526 Col. Pacabtun","9991474849","addy@live.com.mx","","5");
@@ -46,7 +49,8 @@ CREATE TABLE `cat_empleados` (
   `TelefonoEmp` varchar(10) NOT NULL,
   `FechaContEmp` date NOT NULL,
   `idUsuario` int(10) NOT NULL,
-  PRIMARY KEY (`idEmpleado`)
+  PRIMARY KEY (`idEmpleado`),
+  KEY `idUsuario` (`idUsuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 INSERT INTO cat_empleados VALUES("1","Miguel Angel","Gomez","Crespo","1996-10-11","miguelgomez_@live.com.mx","C 3 # 76a x 6 y 8 Col. San Antonio Cinta","9991416297","2019-02-07","1");
@@ -95,7 +99,9 @@ CREATE TABLE `cat_usuarios` (
   `Contrasenia` varchar(10) NOT NULL,
   `idtusuario` int(11) NOT NULL,
   `estado` varchar(4) NOT NULL,
-  PRIMARY KEY (`idUsuario`)
+  PRIMARY KEY (`idUsuario`),
+  KEY `idtusuario` (`idtusuario`),
+  KEY `idtusuario_2` (`idtusuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 INSERT INTO cat_usuarios VALUES("1","Admin158","Pass74159","1","Alta");
@@ -112,7 +118,11 @@ CREATE TABLE `detalle_venta` (
   `idProducto` int(11) NOT NULL,
   `Cantidad` int(11) NOT NULL,
   `Precio` int(11) NOT NULL,
-  PRIMARY KEY (`idDetalleVentas`)
+  PRIMARY KEY (`idDetalleVentas`),
+  KEY `idVenta` (`idVenta`),
+  KEY `idProducto` (`idProducto`),
+  CONSTRAINT `detalle_venta_ibfk_1` FOREIGN KEY (`idVenta`) REFERENCES `ventas` (`idVenta`),
+  CONSTRAINT `detalle_venta_ibfk_2` FOREIGN KEY (`idProducto`) REFERENCES `cat_productos` (`idProducto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -125,7 +135,9 @@ CREATE TABLE `ventas` (
   `idEmpleado` int(11) NOT NULL,
   `totalVenta` int(11) NOT NULL,
   `estadoVenta` varchar(15) NOT NULL,
-  PRIMARY KEY (`idVenta`)
+  PRIMARY KEY (`idVenta`),
+  KEY `idCliente` (`idCliente`),
+  KEY `idEmpleado` (`idEmpleado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
