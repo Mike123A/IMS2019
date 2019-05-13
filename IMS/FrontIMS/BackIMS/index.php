@@ -7,7 +7,16 @@
 </head>
 <body >
 	<div id="fondo">
-		<form action="" class="login">
+		<?php
+			if(isset($_GET["error"])) {
+
+			echo "<p class='error'>Usuario y / o Contrasea erroneos. Intentelo de nuevo.</p>";
+			}
+
+ 
+
+		?>
+		<form action="php/identificacion_usuario.php" class="login">
 			<h2>Iniciar Sesion</h2><br>
 			<img src="img/logotipo.png" alt=""><br>
 			<label>Usuario</label><br>

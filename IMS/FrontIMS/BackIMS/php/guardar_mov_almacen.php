@@ -5,9 +5,9 @@
 	$idProd = $_POST ['producto'];
 	$TMov = $_POST ['tmov'];
 	$Cantidad = $_POST ['Cantidad'];
+	$fecha = date('Y/m/d'); 
 
-
-	$query = "INSERT INTO almacen_productos(idProducto, tipo_movimiento, Cantidad) VALUES ('$idProd','$TMov','$Cantidad');";
+	$query = "INSERT INTO almacen_productos(FechaMov,idProducto, tipo_movimiento, Cantidad) VALUES ('$fecha','$idProd','$TMov','$Cantidad');";
 	$resultado = $conexion->query($query);
 	if ($resultado) {
 		if ($TMov == "Entrada"){

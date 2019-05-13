@@ -18,6 +18,7 @@
 			<thead>
 				<tr>
 					<td>No. Movimiento</td>
+					<td>Fecha</td>
 					<td>Clave Producto</td>
 					<td>Nombre Producto</td>
 					<td>Tipo de movimiento</td>
@@ -38,6 +39,7 @@
 					echo"
 					<tr>
 						<td>".$fila['idMovAlm']." </td>
+    					<td>".$fila['FechaMov']."</td>
     					<td>".$fila['idProducto']."</td>
     					<td>".$fila['NombreProd']."</td>
     					<td>".$fila['tipo_movimiento']."</td>
