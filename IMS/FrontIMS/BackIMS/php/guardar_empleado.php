@@ -14,14 +14,7 @@
 	$contraseña = $_POST ['Contraseña'];
 	$tusuario = $_POST ['tipousuario'];
 	
-	// $busqueda = "SELECT * FROM cat_empleados where CorreoEmp = '".$correo."';";
-
-	// $resultado = $conexion->query($busqueda);
-	// if(mysqli_num_rows($resultado)>0) {
-	// 	echo ("Ya esiste esta cuenta");
-	// }else{
-
-	// }
+	
 
 	$query = "INSERT INTO cat_usuarios(Usuario, Contrasenia, idtusuario, estado) VALUES ('$usuario','$contraseña','$tusuario','Alta');";
 	$resultado = $conexion->query($query);
