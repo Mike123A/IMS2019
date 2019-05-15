@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,32 +9,80 @@
 <body>
 	<?php include ("../includes/menu.php") ?>
 	<section class="ContenedorPrincipal">
-		<form action="guardar_empleado.php" method="POST">
-			
-		<h1>Alta de empleado</h1>
+	
+		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
+			<?php
 
+		if (isset($_POST['Guardar'])) {
+  
+
+			$nombre = $_POST ['Nombres'];
+			$apellido1 = $_POST ['Apellido1'];
+			$apellido2 = $_POST ['Apellido2'];
+			$fechanac = $_POST ['FechaNac'];
+			$correo = $_POST ['Correo'];
+			$direccion = $_POST ['Direccion'];
+			$telefono = $_POST ['Telefono'];
+			$fechacont = $_POST ['FechaCont'];
+			$usuario = $_POST ['Usuario'];
+			$contraseña = $_POST ['Contraseña'];
+			$tusuario = $_POST ['tipousuario'];
+			
+			include("conexion.php"); 
+
+			$query = ("SELECT * FROM cat_usuarios WHERE usuario='$usuario'"); // inicio de mi consulta 
+			$resultado = $conexion->query($query);
+    		if(mysqli_num_rows($resultado)>0) { 
+      			$bandera = 1;
+      			$usuario = "";
+    		}
+    		$query = ("SELECT * FROM cat_empleados WHERE CorreoEmp='$correo'"); // inicio de mi consulta 
+			$resultado = $conexion->query($query);
+    		if(mysqli_num_rows($resultado)>0) { 
+      			$bandera = 1;
+      			$correo = "";
+    		}
+    		if($bandera == 0  ){
+    			$query = "INSERT INTO cat_usuarios(Usuario, Contrasenia, idtusuario, estado) VALUES ('$usuario','$contraseña','$tusuario','Alta');";
+				$resultado = $conexion->query($query);
+				if ($resultado) {
+					$query = "SELECT idUsuario FROM cat_usuarios WHERE Usuario = '$usuario'";
+					$resultado = $conexion->query($query);
+					$fila = $resultado->fetch_assoc();
+					$idUsuario = $fila['idUsuario'];
+					$query = "INSERT INTO cat_empleados(NombresEmp, Apellido1Emp,Apellido2Emp, FechaNacEmp, CorreoEmp, DireccionEmp, TelefonoEmp, FechaContEmp, idUsuario) VALUES ('$nombre','$apellido1','$apellido2','$fechanac','$correo','$direccion','$telefono','$fechacont','$idUsuario');";
+					$resultado = $conexion->query($query);
+					header("Location: cat_empleados.php");
+				}else{
+					echo "No Insertado";
+				}
+    		}
+		}	
+?>
+		<h1>Alta de empleado</h1>
 			<label>Nombre(s)</label><br>
-			<input type="text" required name="Nombres" placeholder="Aqui va el nombre"value="" /><br>
+			<input type="text" required name="Nombres" placeholder="Aqui va el nombre" value="<?php if(isset($nombre)) {echo $nombre;}?>"/><br>
 			<label>Apellido1</label><br>
-			<input type="text" required name="Apellido1" placeholder="Aqui va un apellido" value="" /><br>
+			<input type="text" required name="Apellido1" placeholder="Aqui va un apellido" value="<?php if(isset($apellido1)) {echo $apellido1;}?>" /><br>
 			<label>Apellido2</label><br>
-			<input type="text" required name="Apellido2" placeholder="Aqui va el segundo apellido"value="" /><br>
+			<input type="text" required name="Apellido2" placeholder="Aqui va el segundo apellido"value="<?php if(isset($apellido2)) {echo $apellido2;}?>" /><br>
 			<label>Fecha de nacimiento</label><br>
-			<input type="date" required name="FechaNac" placeholder=""value="" /><br>
+			<input type="date" required name="FechaNac" placeholder=""value="<?php if(isset($fechanac)) {echo $fechanac;}?>" /><br>
 			<label>Correo</label><br>
-			<input type="text" required name="Correo" placeholder="Aqui va el correo"value="" /><br>
+			<input type="text" required name="Correo" placeholder="<?php if(isset($correo) && $correo ==''){ echo 'Intente con otro';}else{echo "Aqui va el usuario";} ?>"value="<?php if(isset($correo)) {echo $correo;}?>" /><br>
 			<label>Direccion</label><br>
-			<input type="text" required name="Direccion" placeholder="Aqui va la direccion"value="" /><br>
+			<input type="text" required name="Direccion" placeholder="Aqui va la direccion"value="<?php if(isset($direccion)) {echo $direccion;}?>" /><br>
 			<label>Telefono</label><br>
-			<input type="text" required name="Telefono" placeholder="Aqui va el telefono"value="" /><br>
+			<input type="text" required name="Telefono" placeholder="Aqui va el telefono"value="<?php if(isset($telefono)) {echo $telefono;}?>" /><br>
 			<label>Fecha de contratacion</label><br>
-			<input type="date" required name="FechaCont" placeholder=""value="" /><br>
+			<input type="date" required name="FechaCont" placeholder=""value="<?php if(isset($fechacont)) {echo $fechacont;}?>" /><br>
 			<label>Usuario</label><br>
-			<input type="text" required name="Usuario" placeholder="Aqui va el usuario"value="" /><br>
+			
+			<input type="text" required name="Usuario" placeholder="<?php if(isset($usuario) && $usuario ==''){ echo 'Intente con otro';}else{echo "Aqui va el usuario";} ?>" value="<?php if(isset($usuario)){ echo $usuario;} ?>" /><br>
 			<label>Contraseña</label><br>
-			<input type="password" required name="Contraseña" placeholder="Aqui va la contraseña"value="" /> <br>
+			<input type="password" required name="Contraseña" placeholder="Aqui va la contraseña"value="<?php if(isset($contraseña)) {echo $contraseña;}?>" /> <br>
 			<label>Tipo de usuario</label><br>
-			<SELECT NAME="tipousuario" SIZE=1 > 
+			<SELECT NAME="tipousuario" SIZE=1  > 
 				<?php
 					include("conexion.php");
 
@@ -43,14 +92,22 @@
 					}
 					while($fila = $resultado->fetch_assoc()){
 					echo "<OPTION VALUE='".$fila['idtusuario']."'>".$fila['tipousuario']."</OPTION>";
+						if(isset($tipousuario)){
+							if ($fila['idtusuario'] == $tipousuario){
+								echo "<OPTION SELECTED VALUE='".$fila['idtusuario']."'>".$fila['tipousuario']."</OPTION>";
+							}
+						}
 					}
+
+					
 				?>
 			</SELECT> 
 			<br><br>
-			<input type="submit" value="Guardar" >		
+			<input type="submit" value="Guardar" name="Guardar" >		
 
 		</form>
 	</section>
+	
 	
 </body>
 </html>
