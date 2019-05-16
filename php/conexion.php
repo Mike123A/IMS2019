@@ -1,5 +1,5 @@
 <?php  
-	$conexion = new mysqli("localhost","root","","prueba_ims");
+	$conexion = new mysqli("localhost","root","","bd_ims");
 	if ($conexion) {
 		// echo "SI";
 	}
