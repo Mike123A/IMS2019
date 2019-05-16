@@ -67,7 +67,7 @@
 							</a>
 						</td>
 						<td>		
-							<a href='eliminar_Producto.php?clave=".$fila['idProducto']."'>
+							<a href='cambiar_estado_Producto.php?clave=".$fila['idProducto']."'>
 							<button class='eliminar'>
 								<img src='../img/refrescar.png' alt=''>Estado
 							</button>

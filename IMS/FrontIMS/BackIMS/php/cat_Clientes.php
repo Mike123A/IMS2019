@@ -21,11 +21,9 @@
 					<td>Nombres</td>
 					<td>Apellidos</td>
 					<td>Direccion</td>
-					
-
 					<td>Telefono</td>
-
 					<td>Correo</td>
+					<td>RFC</td>
 					<td>Usuario</td>
 					<td>Estado</td>
 					<td colspan="2">Acciones</td>
@@ -49,6 +47,7 @@
     					<td>".$fila['DireccionCli']."</td>
     					<td>".$fila['TelefonoCli']."</td>
     					<td>".$fila['CorreoCli']."</td>
+    					<td>".$fila['RFC']."</td>
     					<td>".$fila['Usuario']."</td>
     					";
     					if ($fila['estado'] == "Alta") {
@@ -66,7 +65,7 @@
 							</a>
 						</td>
 						<td>		
-							<a href='eliminar_cliente.php?clave=".$fila['idUsuario']."'>
+							<a href='cambiar_estado_cliente.php?clave=".$fila['idUsuario']."'>
 							<button class='eliminar'>
 								<img src='../img/refrescar.png' alt=''>Estado
 							</button>

@@ -68,7 +68,7 @@
 			<label>Fecha de nacimiento</label><br>
 			<input type="date" required name="FechaNac" placeholder=""value="<?php if(isset($fechanac)) {echo $fechanac;}?>" /><br>
 			<label>Correo</label><br>
-			<input type="email" required name="Correo" placeholder="<?php if(isset($correo) && $correo ==''){ echo 'Intente con otro';}else{echo "Aqui va el usuario";} ?>"value="<?php if(isset($correo)) {echo $correo;}?>" /><br>
+			<input type="email" required name="Correo" placeholder="<?php if(isset($correo) && $correo ==''){ echo 'Intente con otro';}else{echo "Aqui va el usuario";} ?>" value="<?php if(isset($correo)) {echo $correo;}?>" /><br>
 			<label>Direccion</label><br>
 			<input type="text" required name="Direccion" placeholder="Aqui va la direccion"value="<?php if(isset($direccion)) {echo $direccion;}?>" /><br>
 			<label>Telefono</label><br>

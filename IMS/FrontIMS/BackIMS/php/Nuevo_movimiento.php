@@ -1,3 +1,32 @@
+<?php
+
+	if (isset($_POST['Guardar'])) {
+		include("conexion.php"); 
+
+		$idProd = $_POST ['producto'];
+		$TMov = $_POST ['tmov'];
+		$Cantidad = $_POST ['Cantidad'];
+		$fecha = date('Y/m/d'); 
+
+		$query = "INSERT INTO almacen_productos(FechaMov,idProducto, tipo_movimiento, Cantidad) VALUES ('$fecha','$idProd','$TMov','$Cantidad');";
+		$resultado = $conexion->query($query);
+		if ($resultado) {
+			if ($TMov == "Entrada"){
+				$query = "UPDATE cat_productos SET StockProd = (StockProd + $Cantidad) WHERE idProducto = $idProd";
+				$resultado = $conexion->query($query);
+			}else{
+				if ($TMov == "Salida"){
+				$query = "UPDATE cat_productos SET StockProd = (StockProd - $Cantidad) WHERE idProducto = $idProd";
+				$resultado = $conexion->query($query);
+			}
+			}
+			header("Location: almacen_productos.php");
+		}else{
+			echo "No Insertado";
+		}
+
+	}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,7 +37,7 @@
 <body>
 	<?php include ("../includes/menu.php") ?>
 	<section class="ContenedorPrincipal">
-		<form action="guardar_mov_almacen.php" method="POST">
+		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
 		<h1>Nuevo movimiento de almacen</h1><br>
 			<label>Selecciona un producto</label><br>
 
@@ -34,7 +63,7 @@
 			<label>Cantidad</label><br>
 			<input type="number" required name="Cantidad" placeholder="Cantidad"
 			><br><br><br>
-			<input type="submit" value="Guardar">		
+			<input type="submit" value="Guardar" name="Guardar">		
 
 		</form>
 	</section>
