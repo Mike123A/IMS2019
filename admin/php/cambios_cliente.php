@@ -116,7 +116,7 @@
 			<input style="display: none" type="text" required name="clave" placeholder="" value=" <?php echo $fila['idCliente']; ?>" /><br>
 			<input  type="text" style="display: none" required name="claveu" placeholder="" value=" <?php echo $fila['idUsuario']; ?>" /><br>
 
-<label>Nombre(s)</label><br>
+			<label>Nombre(s)</label><br>
 			<input type="text" required name="Nombres" placeholder="Aqui va el nombre" value="<?php if(isset($nombre)) {echo $nombre;}?>" pattern="[A-Z a-z]+" title="Solo puedes ingresar letras"/><br>
 			<label>Apellido1</label><br>
 			<input type="text" name="Apellido1" placeholder="Aqui va un apellido" value="<?php if(isset($apellido1)) {echo $apellido1;}?>" pattern="[A-Za-z]+" title="Solo puedes ingresar letras" /><br>

@@ -3,20 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>IMS</title>
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
 	<header>
 		<nav>
-			<a href="Nosotros.html"><img src="img/LogoBlanco.png"></a>	
+			<a href="nosotros.html"><img src="../img/LogoBlanco.png"></a>	
 			<ul>
-				<li><a href="index.html">[ INICIO ]</a></li>
-				<li><a href="Nosotros.html">[ NOSOTROS ]</a></li>
-				<li><a href="Productos.html">[ PRODUCTOS ]</a></li>
-				<li><a href="php/Asociados.php">[ ASOCIADOS ]</a></li>
-				<li><a href="Contacto.html">[ CONTACTO ]</a></li>
-				<a href="Sesion.html"><img src="img/SesionIcono.png"></a>
-				<a href="Cuenta.html"><img src="img/carrito-de-la-compra.png"></a>	
+				<li><a href="../index.php">[ INICIO ]</a></li>
+				<li><a href="nosotros.php">[ NOSOTROS ]</a></li>
+				<li><a href="productos.php">[ PRODUCTOS ]</a></li>
+				<li><a href="asociados.php">[ ASOCIADOS ]</a></li>
+				<li><a href="contacto.php">[ CONTACTO ]</a></li>
+				<a href="sesion.php"><img src="../img/SesionIcono.png"></a>
+				<a href="cuenta.php"><img src="../img/carrito-de-la-compra.png"></a>	
 			</ul>
 		</nav>
 	</header>
@@ -25,7 +25,7 @@
 		
 		<a href="https://www.sistembiomedica.com.mx/" target="_blank">
 			<div class="asociado">
-				<img src="img/Asociados/sistembiomedica.png" alt="">	
+				<img src="../img/Asociados/sistembiomedica.png" alt="">	
 				<article>
 					<h3>
 						Sistem Biomedica
@@ -38,7 +38,7 @@
 		</a>
 		<a href="https://www.seccionamarilla.com.mx/informacion/equipos-y-materiales-medicos-de-yucatan-sa-de-cv/equipos-y-materiales-medicos-de-yucatan-sa-de-cv/yucatan/merida/centro/3853969" target="_blank">
 			<div class="asociado">
-			<img src="img/Asociados/EquiposMaterialesMedicos.png" alt="">	
+			<img src="../img/Asociados/EquiposMaterialesMedicos.png" alt="">	
 			<article>
 				<h3>
 					Equipos y materiales medicos de Yucatan
@@ -51,7 +51,7 @@
 		</a>
 		<a href="https://www.mundomedico.com.mx/pages/tiendas" target="_blank">
 			<div class="asociado">
-			<img src="img/Asociados/MundoMedico.png" alt="">	
+			<img src="../img/Asociados/MundoMedico.png" alt="">	
 			<article>
 				<h3>
 						Mundo Medico
@@ -64,7 +64,7 @@
 		</a>
 		<a href="https://www.medicalcenter.com.mx/" target="_blank">
 			<div class="asociado">
-			<img src="img/Asociados/MedicalCenter.png" alt="">	
+			<img src="../img/Asociados/MedicalCenter.png" alt="">	
 			<article>
 				<h3>
 					Medical Center
@@ -76,7 +76,7 @@
 		</div>
 		<a href="http://www.zonamedicasureste.com/" target="_blank">
 			<div class="asociado">
-			<img src="img/Asociados/ZonaMedica.png" alt="">	
+			<img src="../img/Asociados/ZonaMedica.png" alt="">	
 			<article>
 				<h3>
 						Zona Medica
@@ -89,7 +89,7 @@
 		<div class="titulopagina">Proveedores Oficiales</div>
 		<a href="http://www.novabio.us/es/" target="_blank">
 			<div class="asociado">
-			<img src="img/Asociados/nova.png" alt="">	
+			<img src="../img/Asociados/nova.png" alt="">	
 			<article>
 				<h3>
 					Nova Biomedica
@@ -101,7 +101,7 @@
 		</div>
 		<a href="http://www.dropsens.com/instrumentos_espectroelectroquimica.html" target="_blank">
 			<div class="asociado">
-			<img src="img/Asociados/dropsense.png" alt="">	
+			<img src="../img/Asociados/dropsense.png" alt="">	
 			<article>
 				<h3>
 					Drop Sens
@@ -113,7 +113,7 @@
 		</div>
 		<a href="http://www.osasen.com/" target="_blank">
 			<div class="asociado">
-			<img src="img/Asociados/osasen.png" alt="">	
+			<img src="../img/Asociados/osasen.png" alt="">	
 			<article>
 				<h3>
 					Osasen
@@ -126,9 +126,9 @@
 	</section>
 	<footer>
 		<section class="contefooter">
-			<li><a href=""><img src="img/FacebookIcono.png">@InnovativeMedicalSolutions</a><br></li>
-			<li><a href=""><img src="img/twitterIcono.png">@InnovativeMedicalSolutions</a><br></li>
-			<li><a href=""><img src="img/youtubeIcono.png">@InnovativeMedicalSolutions</a><br></li>
+			<li><a href=""><img src="../img/FacebookIcono.png">@InnovativeMedicalSolutions</a><br></li>
+			<li><a href=""><img src="../img/twitterIcono.png">@InnovativeMedicalSolutions</a><br></li>
+			<li><a href=""><img src="../img/youtubeIcono.png">@InnovativeMedicalSolutions</a><br></li>
 		</section>
 		<section class="contefooter">
 			<p>Direccion:<br> Calle 28 <br> Cruzamientos: 19 y 17 <br> Col. Maya</p>

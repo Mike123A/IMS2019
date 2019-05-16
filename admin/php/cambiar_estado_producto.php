@@ -15,12 +15,9 @@
 
 	$resultado = $conexion->query($query);
 	if ($resultado) {
-
 		header("Location: cat_productos.php");
-
 	}else{
 		echo "No eliminado";
 	}
-
 
 ?>

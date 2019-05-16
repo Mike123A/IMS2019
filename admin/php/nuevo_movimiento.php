@@ -18,7 +18,7 @@
 				if ($TMov == "Salida"){
 				$query = "UPDATE cat_productos SET StockProd = (StockProd - $Cantidad) WHERE idProducto = $idProd";
 				$resultado = $conexion->query($query);
-			}
+				}
 			}
 			header("Location: almacen_productos.php");
 		}else{

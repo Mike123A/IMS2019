@@ -1,22 +1,52 @@
+<?php
+
+	if (isset($_POST['Enviar'])) {
+
+		$nombre = $_POST["nombre"];
+		$correo = $_POST["correo"];
+		$telefono = $_POST["telefono"];
+		$asunto = $_POST["asunto"];
+		$mensaje = $_POST["mensaje"];
+
+		$destinatario = "SoporteIMS@outlook.com";
+
+		$mensaje = "
+			Datos del remitente
+			Nombre: ".$nombre."
+			Correo: ".$correo."
+			Telefono: ".$telefono."
+
+			Mensaje/Comentario: ".$mensaje."
+		";
+		if(mail($destinatario,$asunto,utf8_decode($mensaje))){
+			echo "<script type='text/javascript'>
+				location.href='../Contacto.html';
+			</script>";
+		}else{
+			echo "<script type='text/javascript'>alert('No se envio');</script>";
+		}
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title>IMS</title>
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
 	<header>
 		<nav>
-			<a href="Nosotros.html"><img src="img/LogoBlanco.png"></a>	
+			<a href="nosotros.html"><img src="../img/LogoBlanco.png"></a>	
 			<ul>
-				<li><a href="index.html">[ INICIO ]</a></li>
-				<li><a href="Nosotros.html">[ NOSOTROS ]</a></li>
-				<li><a href="Productos.html">[ PRODUCTOS ]</a></li>
-				<li><a href="php/Asociados.php">[ ASOCIADOS ]</a></li>
-				<li><a href="Contacto.html">[ CONTACTO ]</a></li>
-				<a href="Sesion.html"><img src="img/SesionIcono.png"></a>
-				<a href="Cuenta.html"><img src="img/carrito-de-la-compra.png"></a>	
+				<li><a href="../index.php">[ INICIO ]</a></li>
+				<li><a href="nosotros.php">[ NOSOTROS ]</a></li>
+				<li><a href="productos.php">[ PRODUCTOS ]</a></li>
+				<li><a href="asociados.php">[ ASOCIADOS ]</a></li>
+				<li><a href="contacto.php">[ CONTACTO ]</a></li>
+				<a href="sesion.php"><img src="../img/SesionIcono.png"></a>
+				<a href="cuenta.php"><img src="../img/carrito-de-la-compra.png"></a>	
 			</ul>
 		</nav>
 	</header>
@@ -36,7 +66,7 @@
 			<input type="text" placeholder="Aqui va tu asunto" id="asunto" name="asunto" required=""><br>
 			<label for="">*Mensaje:</label><br>
 			<textarea placeholder="Aqui va tu mensaje/comentario" id="mensaje" name="mensaje" required=""></textarea><br>
-			<button type="submit">Enviar mensaje</button>
+			<button type="submit" name="Enviar">Enviar mensaje</button>
 		</form>
 		<section id="DatosEmpresa">
 			<h2>Conectate con nosotros</h3><br><br>
@@ -54,17 +84,17 @@
 				<h3>Nuestras redes sociales</h2> 
 				Siguenos en nuestras redes sociales como: <br>
 				@InnovativeMedicalSolutions <br>
-				<img src="img/FacebookIcono.png">
-				<img src="img/twitterIcono.png">
-				<img src="img/youtubeIcono.png">
+				<img src="../img/FacebookIcono.png">
+				<img src="../img/twitterIcono.png">
+				<img src="../img/youtubeIcono.png">
 			</p>
 		</section>	
 	</section>
 	<footer>
 		<section class="contefooter">
-			<li><a href=""><img src="img/FacebookIcono.png">@InnovativeMedicalSolutions</a><br></li>
-			<li><a href=""><img src="img/twitterIcono.png">@InnovativeMedicalSolutions</a><br></li>
-			<li><a href=""><img src="img/youtubeIcono.png">@InnovativeMedicalSolutions</a><br></li>
+			<li><a href=""><img src="../img/FacebookIcono.png">@InnovativeMedicalSolutions</a><br></li>
+			<li><a href=""><img src="../img/twitterIcono.png">@InnovativeMedicalSolutions</a><br></li>
+			<li><a href=""><img src="../img/youtubeIcono.png">@InnovativeMedicalSolutions</a><br></li>
 		</section>
 		<section class="contefooter">
 			<p>Direccion:<br> Calle 28 <br> Cruzamientos: 19 y 17 <br> Col. Maya</p>

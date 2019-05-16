@@ -12,14 +12,10 @@
 	}else{
 		$query ="UPDATE cat_usuarios SET estado = 'Alta' WHERE idUsuario = ".$clave." ;";	
 	}
-	//echo $fila['ImagenDis'];
 
 	$resultado = $conexion->query($query);
 	if ($resultado) {
-		// unlink("../../../FrontIMS/img/Productos/".$fila['ImagenProd']);
-		header("Location: cat_clientes.php");
-
-
+		header("Location: cat_empleados.php");
 	}else{
 		echo "No eliminado";
 	}

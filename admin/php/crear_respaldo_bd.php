@@ -3,7 +3,6 @@
 		include('conexion.php');
  		$tables = '*';
 
-		//get all of the tables
 		if($tables == '*'){
 			$tables = array();
 			$sql = "SHOW TABLES";
@@ -16,7 +15,6 @@
 			$tables = is_array($tables) ? $tables : explode(',',$tables);
 		}
  
-		//getting table structures
 		$outsql = '';
 		foreach ($tables as $table) {
     
@@ -59,7 +57,6 @@
 	    fwrite($fileHandler, $outsql);
 	    fclose($fileHandler);
  
-	    // Download the SQL backup file to the browser
 	    header('Content-Description: File Transfer');
 	    header('Content-Type: application/octet-stream');
 	    header('Content-Disposition: attachment; filename=' . basename($backup_file_name));

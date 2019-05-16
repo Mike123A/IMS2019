@@ -20,7 +20,7 @@
 			
 			$query = ("SELECT * FROM cat_productos WHERE NombreProd='$nombre'"); // inicio de mi consulta 
 			$resultado = $conexion->query($query);
-			$direccionimagen = "../../../FrontIMS/img/Productos/".$fila['ImagenProd'];
+			$direccionimagen = "../..//img/Productos/".$fila['ImagenProd'];
    			
    			if(mysqli_num_rows($resultado)>0) { 
    				$bandera = 1;
@@ -45,7 +45,7 @@
 				$type = $imagen['type'];
 				$url_temp = $imagen['tmp_name'];
 
-				$destino = '../../../FrontIMS/img/Productos/';
+				$destino = '../../img/Productos/';
 				$img_nombre = 'img_'.md5(date('d-m-Y H:m:s'));
 				$img_producto = $img_nombre.'.png';
 				$src = $destino.$img_producto;
@@ -58,7 +58,7 @@
 
 				$resultado = $conexion->query($query);
 				if ($resultado) {
-					unlink("../../../FrontIMS/img/Productos/".$fila['ImagenProd']);
+					unlink("../../img/Productos/".$fila['ImagenProd']);
 					move_uploaded_file($url_temp,$src);
 					header("Location: cat_productos.php");
 				}
@@ -77,7 +77,7 @@
 		}
 		$fila = $resultado->fetch_assoc();
 			
-		$direccionimagen = "../../../FrontIMS/img/Productos/".$fila['ImagenProd'];
+		$direccionimagen = "../../img/Productos/".$fila['ImagenProd'];
 
 		$nombre = $fila['NombreProd'];
 		$Alto = $fila['AltoProd'];
@@ -121,7 +121,6 @@
 			<img class="imagenformulario" src="<?php echo $direccionimagen ?>" alt=''>
 			<br>
 			<input type="file" name="Imagen" value="" /><br>
-			
 			
 			<input type="submit" value="Guardar" name="Guardar">		
 

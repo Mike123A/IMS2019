@@ -9,7 +9,7 @@
 	<?php include ("../includes/menu.php") ?>
 	<section class="ContenedorPrincipal">
 		<h1>Movimientos de almacen</h1>
-		<a href="Nuevo_Movimiento.php">
+		<a href="nuevo_movimiento.php">
 			<button class="agregar">
 				<img src="../img/agregar.png" alt="">Nuevo
 			</button>

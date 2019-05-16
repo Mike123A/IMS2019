@@ -51,7 +51,7 @@
     					<td>$".$fila['PrecioProd']."</td>
     					<td>".$fila['StockProd']."</td>
 
-    					<td> <img src='../../../FrontIMS/img/Productos/".$fila['ImagenProd']."'alt=''></td>";
+    					<td> <img src='../../img/Productos/".$fila['ImagenProd']."'alt=''></td>";
     				if ($fila['estado'] == "Alta") {
 						echo "
 						<td class='altas'></td>";

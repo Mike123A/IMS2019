@@ -8,15 +8,15 @@
 <body>
 	<header>
 		<nav>
-			<a href="Nosotros.html"><img src="img/LogoBlanco.png"></a>	
+			<a href="php/nosotros.php"><img src="img/LogoBlanco.png"></a>	
 			<ul>
-				<li><a href="index.html">[ INICIO ]</a></li>
-				<li><a href="Nosotros.html">[ NOSOTROS ]</a></li>
-				<li><a href="Productos.html">[ PRODUCTOS ]</a></li>
+				<li><a href="index.php">[ INICIO ]</a></li>
+				<li><a href="php/nosotros.php">[ NOSOTROS ]</a></li>
+				<li><a href="php/productos.php">[ PRODUCTOS ]</a></li>
 				<li><a href="php/Asociados.php">[ ASOCIADOS ]</a></li>
-				<li><a href="Contacto.html">[ CONTACTO ]</a></li>
-				<a href="Sesion.html"><img src="img/SesionIcono.png"></a>
-				<a href="Cuenta.html"><img src="img/carrito-de-la-compra.png"></a>	
+				<li><a href="php/Contacto.php">[ CONTACTO ]</a></li>
+				<a href="php/sesion.php"><img src="img/SesionIcono.png"></a>
+				<a href="php/cuenta.php"><img src="img/carrito-de-la-compra.png"></a>	
 			</ul>
 		</nav>
 	</header>

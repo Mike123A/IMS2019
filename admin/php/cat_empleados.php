@@ -75,12 +75,9 @@
 							</button>
 							</a>
 						</td></tr>";
-					
-
 				}
 			?>
 		</table>	
 	</section>
-	
 </body>
 </html>

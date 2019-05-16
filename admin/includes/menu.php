@@ -22,11 +22,14 @@
 				</li>
 				<li><a href="#">[REPORTES]</a>
 					<ul>
-						<li><a href="#">CATALOGOS 9</a></li>
-						<li><a href="#">CATALOGOS 10</a></li>
+						<li><a href="#">Usuarios</a></li>
+						<li><a href="#">Empleados</a></li>
+						<li><a href="#">Clientes</a></li>
+						<li><a href="#">Ventas</a></li>
+						<li><a href="#">Productos</a></li>
+						<li><a href="Respaldo.php">Respaldo BD</a></li>
 					</ul>
 				</li>
-				<li><a href="Respaldo.php">[RESPALDO]</a></li>
 				<li><a href="../index.html">[CERRAR SESION]</a></li>
 			</ul>
 		</nav>

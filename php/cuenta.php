@@ -3,20 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>IMS</title>
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
 	<header>
 		<nav>
-			<a href="Nosotros.html"><img src="img/LogoBlanco.png"></a>	
+			<a href="nosotros.html"><img src="../img/LogoBlanco.png"></a>	
 			<ul>
-				<li><a href="index.html">[ INICIO ]</a></li>
-				<li><a href="Nosotros.html">[ NOSOTROS ]</a></li>
-				<li><a href="Productos.html">[ PRODUCTOS ]</a></li>
-				<li><a href="php/Asociados.php">[ ASOCIADOS ]</a></li>
-				<li><a href="Contacto.html">[ CONTACTO ]</a></li>
-				<a href="Sesion.html"><img src="img/SesionIcono.png"></a>
-				<a href="Cuenta.html"><img src="img/carrito-de-la-compra.png"></a>	
+				<li><a href="../index.php">[ INICIO ]</a></li>
+				<li><a href="nosotros.php">[ NOSOTROS ]</a></li>
+				<li><a href="productos.php">[ PRODUCTOS ]</a></li>
+				<li><a href="asociados.php">[ ASOCIADOS ]</a></li>
+				<li><a href="contacto.php">[ CONTACTO ]</a></li>
+				<a href="sesion.php"><img src="../img/SesionIcono.png"></a>
+				<a href="cuenta.php"><img src="../img/carrito-de-la-compra.png"></a>	
 			</ul>
 		</nav>
 	</header>
@@ -24,7 +24,7 @@
 		<h2>Articulos en el carrito</h2>
 		<hr />
 		<div id="productocarrito">
-			<img src="img/Productos/Relog.jpg" alt="">
+			<img src="../img/Productos/img_69b91182aa3d942e5bda962cab3f926e.png" alt="">
 			<article>
 				<h2>PRODUCTO</h2>
 				Descripcion:
@@ -37,7 +37,7 @@
 			<hr />
 		</div>
 		<div id="productocarrito">
-			<img src="img/Productos/Relog.jpg" alt="">
+			<img src="../img/Productos/img_69b91182aa3d942e5bda962cab3f926e.png" alt="">
 			<article>
 				<h2>PRODUCTO</h2>
 				Descripcion:
@@ -55,9 +55,9 @@
 	</section>
 	<footer>
 		<section class="contefooter">
-			<li><a href=""><img src="img/FacebookIcono.png">@InnovativeMedicalSolutions</a><br></li>
-			<li><a href=""><img src="img/twitterIcono.png">@InnovativeMedicalSolutions</a><br></li>
-			<li><a href=""><img src="img/youtubeIcono.png">@InnovativeMedicalSolutions</a><br></li>
+			<li><a href=""><img src="../img/FacebookIcono.png">@InnovativeMedicalSolutions</a><br></li>
+			<li><a href=""><img src="../img/twitterIcono.png">@InnovativeMedicalSolutions</a><br></li>
+			<li><a href=""><img src="../img/youtubeIcono.png">@InnovativeMedicalSolutions</a><br></li>
 		</section>
 		<section class="contefooter">
 			<p>Direccion:<br> Calle 28 <br> Cruzamientos: 19 y 17 <br> Col. Maya</p>
