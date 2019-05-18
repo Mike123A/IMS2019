@@ -11,29 +11,29 @@
 		$correo = $_POST ['Correo'];
 		$rfc = $_POST ['RFC'];
 		$usuario = $_POST ['Usuario'];
-		$contraseña = $_POST ['Contraseña'];
+		$contraseña =  $_POST ['Contraseña'];
 			
 		include("conexion.php"); 
 
-		$query = ("SELECT * FROM cat_usuarios WHERE usuario='$usuario'"); // inicio de mi consulta 
+		$query = ("SELECT * FROM cat_usuarios WHERE usuario='$usuario'");
 		$resultado = $conexion->query($query);
    		if(mysqli_num_rows($resultado)>0) { 
    			$bandera = 1;
       		$usuario = "";
     	}
-    	$query = ("SELECT * FROM cat_clientes WHERE CorreoCli='$correo'"); // inicio de mi consulta 
+    	$query = ("SELECT * FROM cat_clientes WHERE CorreoCli='$correo'"); 
 		$resultado = $conexion->query($query);
     	if(mysqli_num_rows($resultado)>0) { 
 			$bandera = 1;
      		$correo = "";
    		}
-   		$query = ("SELECT * FROM cat_clientes WHERE TelefonoCli='$telefono'"); // inicio de mi consulta 
+   		$query = ("SELECT * FROM cat_clientes WHERE TelefonoCli='$telefono'"); 
 		$resultado = $conexion->query($query);
     	if(mysqli_num_rows($resultado)>0) { 
 			$bandera = 1;
      		$telefono = "";
    		}
-   		$query = ("SELECT * FROM cat_clientes WHERE RFC='$rfc'"); // inicio de mi consulta 
+   		$query = ("SELECT * FROM cat_clientes WHERE RFC='$rfc'"); 
 		$resultado = $conexion->query($query);
     	if(mysqli_num_rows($resultado)>0) { 
 			$bandera = 1;

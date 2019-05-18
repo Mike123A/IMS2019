@@ -8,7 +8,12 @@
 <body>
 	<header>
 		<nav>
-			<a href="#"><img src="../img/LogoConNombreBlanco.png"></a>	
+			<a href="#"><img src="../img/LogoConNombreBlanco.png"></a>
+			<!-- <ul>
+				<li>	</li>
+				<li><a href="../index.html">[CERRAR SESION]</a></li>
+			</ul> -->
+			<!-- <br><br><br>		 -->
 			<ul>
 				<li><a href="Ventas.php">[VENTAS]</a></li>
 				<li><a href="almacen_productos.php">[ALMACEN]</a></li>
@@ -30,7 +35,7 @@
 						<li><a href="Respaldo.php">Respaldo BD</a></li>
 					</ul>
 				</li>
-				<li><a href="../index.html">[CERRAR SESION]</a></li>
+				<li><a href="cerrar_sesion.php">ADMIN1478 |Cerrar Sesion</a></li>
 			</ul>
 		</nav>
 	</header>	
