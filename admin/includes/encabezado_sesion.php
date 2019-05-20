@@ -10,7 +10,10 @@
 		<a href="cerrar_sesion.php"><img src="../img/cerrar-sesion.png" alt=""></a>
 
 		<label for=""><?php 
-		echo 'Merida, Yucatan, '.date('d/F/Y').' | '; 
+		$fecha = new DateTime('NOW');
+		date_default_timezone_set('America/Mexico_City');
+    	setlocale(LC_TIME, 'es_MX.UTF-8');
+		echo 'Merida, Yucatan, '.date('d-m-Y').' | '; 
 		echo 'Usuario: '.$_SESSION['Usuario']; 
 		?></label>
 	</header>	
