@@ -1,4 +1,15 @@
 <?php
+	session_start(); 	
+	if (empty($_SESSION['active'])) {
+		header("Location: ../");
+	}else{
+		if ($_SESSION['idtusuario'] == 1 || $_SESSION['idtusuario'] == 2) {}
+		else{
+			header("Location: index.php");
+		}
+	}
+
+
 
 	if (isset($_POST['Guardar'])) {
 
@@ -93,6 +104,8 @@
 
 </head>
 <body>
+	<?php include ("../includes/encabezado_sesion.php") ?>
+	
 	<?php include ("../includes/menu.php") ?>
 	<section class="ContenedorPrincipal">
 		

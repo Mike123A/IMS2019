@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+<?php
+	session_start(); 	
+	if (empty($_SESSION['active'])) {
+		header("Location: ../");
+	}else{
+		if ($_SESSION['idtusuario'] == 1 || $_SESSION['idtusuario'] == 4) {}
+		else{
+			header("Location: index.php");
+		}
+	}
+ ?>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">

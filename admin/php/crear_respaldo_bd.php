@@ -1,4 +1,14 @@
 <?php
+	session_start(); 	
+	if (empty($_SESSION['active'])) {
+		header("Location: ../");
+	}else{
+		if ($_SESSION['idtusuario'] == 1) {}
+		else{
+			header("Location: index.php");
+		}
+	}
+
  
 		include('conexion.php');
  		$tables = '*';

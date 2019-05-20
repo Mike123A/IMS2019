@@ -1,4 +1,14 @@
 <?php
+	session_start(); 	
+	if (empty($_SESSION['active'])) {
+		header("Location: ../");
+	}else{
+		if ($_SESSION['idtusuario'] == 1 || $_SESSION['idtusuario'] == 4) {}
+		else{
+			header("Location: index.php");
+		}
+	}
+
 	if (isset($_POST['Guardar'])) {
 		include("conexion.php"); 
 
@@ -100,6 +110,8 @@
 	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
+	<?php include ("../includes/encabezado_sesion.php") ?>
+	
 	<?php include ("../includes/menu.php") ?>
 	<section class="ContenedorPrincipal">
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" enctype="multipart/form-data">

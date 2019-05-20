@@ -1,4 +1,15 @@
 <?php
+	session_start(); 	
+	if (empty($_SESSION['active'])) {
+		header("Location: ../");
+	}else{
+		if ($_SESSION['idtusuario'] == 1 || $_SESSION['idtusuario'] == 3) {}
+		else{
+			header("Location: index.php");
+		}
+	}
+
+
 	if (isset($_POST['ConfirmarCli'])) {
 		$fecha = date('Y/m/d'); 
 		$sql1 = "INSERT INTO ventas(FechaVenta, idCliente) VALUES ('$fecha',$idCC)";

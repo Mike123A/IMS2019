@@ -1,4 +1,13 @@
 <?php
+	session_start(); 	
+	if (empty($_SESSION['active'])) {
+		header("Location: ../");
+	}else{
+		if ($_SESSION['idtusuario'] == 1 || $_SESSION['idtusuario'] == 2) {}
+		else{
+			header("Location: index.php");
+		}
+	}
 
 	include("conexion.php"); 
 	$clave = $_GET['clave'];
