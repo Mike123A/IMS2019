@@ -20,6 +20,8 @@
 				$resultado = $conexion->query($query);
 				}
 			}
+			mysqli_close($conexion);
+
 			header("Location: almacen_productos.php");
 		}else{
 			echo "No Insertado";

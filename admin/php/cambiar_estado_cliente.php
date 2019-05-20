@@ -15,6 +15,8 @@
 	
 	$resultado = $conexion->query($query);
 	if ($resultado) {
+		mysqli_close($conexion);
+
 		header("Location: cat_clientes.php");
 	}else{
 		echo "No eliminado";

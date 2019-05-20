@@ -67,6 +67,7 @@
 				$query1 = "UPDATE cat_usuarios SET Usuario='$usuario',Contrasenia='$contraseña' WHERE idUsuario = $claveu ;";
 				$resultado1 = $conexion->query($query1);
 				if ($resultado1) {
+					mysqli_close($conexion);
 				
 					header("Location: cat_clientes.php");
 				}

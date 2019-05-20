@@ -25,6 +25,8 @@
 			$query = "UPDATE cat_tipousuarios SET tipousuario= '$nombre' WHERE idtusuario = ".$clave." ;";
 			$resultado = $conexion->query($query);
 			if ($resultado) {
+				mysqli_close($conexion);
+				
 				header("Location: cat_tusuarios.php");
 			}else{
 				echo "No Insertado";

@@ -21,7 +21,8 @@
 			$query = "INSERT INTO cat_tipousuarios(tipousuario) VALUES ('$nombre');";
 			$resultado = $conexion->query($query);
 			if ($resultado) {
-		
+				mysqli_close($conexion);
+				
 				header("Location: cat_tusuarios.php");
 			}else{
 				echo "No Insertado";

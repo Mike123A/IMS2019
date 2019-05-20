@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
+	<?php include ("../includes/encabezado_sesion.php") ?>
 	<?php include ("../includes/menu.php") ?>
 	<section class="ContenedorPrincipal">
 		<h1>Movimientos de almacen</h1>
@@ -31,10 +32,10 @@
 				include("conexion.php");
 
 				$sql = "SELECT * FROM almacen_productos ap INNER JOIN cat_productos cp ON ap.idProducto = cp.idProducto ORDER BY idMovAlm DESC";
-
 				if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
 				}
+				mysqli_close($conexion);
 				while($fila = $resultado->fetch_assoc()){
 					echo"
 					<tr>

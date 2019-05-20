@@ -7,6 +7,27 @@
 body{
 	background: #e2ecec;
 }
+.encabezado_sesion{
+	background: #40514e;
+	width: 100%;
+	height: 40px;
+	margin-bottom: -4px;
+}
+.encabezado_sesion label{
+	font-size: 18px;
+	padding: 10px;
+	float: right;
+	color: white;
+}
+.encabezado_sesion a{
+	float: right;
+	display: inline-block;
+}
+.encabezado_sesion img{
+	width: 32px;
+	height: 32px;
+	padding: 5px;
+}
 ul, li { 
 	list-style:none; 
 } 

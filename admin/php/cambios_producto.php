@@ -35,6 +35,8 @@
 
 				$resultado = $conexion->query($query);
 				if ($resultado) {
+					mysqli_close($conexion);
+
 					header("Location: cat_productos.php");
 				}
 				else{
@@ -58,6 +60,8 @@
 
 				$resultado = $conexion->query($query);
 				if ($resultado) {
+					mysqli_close($conexion);
+					
 					unlink("../../img/Productos/".$fila['ImagenProd']);
 					move_uploaded_file($url_temp,$src);
 					header("Location: cat_productos.php");

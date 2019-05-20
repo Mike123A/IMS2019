@@ -69,5 +69,8 @@
 	    flush();
 	    readfile($backup_file_name);
 	    exec('rm ' . $backup_file_name);
+
+		mysqli_close($conexion);
+
   
 ?>

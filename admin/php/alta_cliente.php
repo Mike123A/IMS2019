@@ -49,6 +49,8 @@
 				$idUsuario = $fila['idUsuario'];
 				$query = "INSERT INTO cat_clientes(NombreCli, Apellido1Cli, Apellido2Cli, DireccionCli, TelefonoCli, CorreoCli, RFC, idUsuario) VALUES ('$nombre','$apellido1','$apellido2','$direccion','$telefono','$correo','$rfc',$idUsuario);";
 				$resultado = $conexion->query($query);
+				mysqli_close($conexion);
+				
 				header("Location: cat_clientes.php");
 			}else{
 				echo "No Insertado";
@@ -65,6 +67,7 @@
 	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
+	<?php include ("../includes/encabezado_sesion.php") ?>
 	<?php include ("../includes/menu.php") ?>
 	<section class="ContenedorPrincipal">
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">

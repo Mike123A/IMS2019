@@ -38,6 +38,8 @@
 				$idUsuario = $fila['idUsuario'];
 				$query = "INSERT INTO cat_empleados(NombresEmp, Apellido1Emp,Apellido2Emp, FechaNacEmp, CorreoEmp, DireccionEmp, TelefonoEmp, FechaContEmp, idUsuario) VALUES ('$nombre','$apellido1','$apellido2','$fechanac','$correo','$direccion','$telefono','$fechacont','$idUsuario');";
 				$resultado = $conexion->query($query);
+				mysqli_close($conexion);
+				
 				header("Location: cat_empleados.php");
 			}else{
 				echo "No Insertado";
@@ -53,6 +55,7 @@
 	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
+	<?php include ("../includes/encabezado_sesion.php") ?>
 	<?php include ("../includes/menu.php") ?>
 	<section class="ContenedorPrincipal">
 	

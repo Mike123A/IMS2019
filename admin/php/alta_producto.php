@@ -37,6 +37,8 @@
 			$resultado = $conexion->query($query);
 			if ($resultado) {
 				move_uploaded_file($url_temp,$src);
+				mysqli_close($conexion);
+				
 	    		header("Location: cat_productos.php");
 			}else{
 				echo "No Insertado";

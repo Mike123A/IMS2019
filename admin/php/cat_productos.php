@@ -39,6 +39,8 @@
 				if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
 				}
+				mysqli_close($conexion);
+				
 				while($fila = $resultado->fetch_assoc()){
 					echo"
 					<tr>
