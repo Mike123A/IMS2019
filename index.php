@@ -27,8 +27,18 @@
 				<li><a href="php/productos.php">[ PRODUCTOS ]</a></li>
 				<li><a href="php/Asociados.php">[ ASOCIADOS ]</a></li>
 				<li><a href="php/Contacto.php">[ CONTACTO ]</a></li>
-				<a href="php/sesion.php"><img src="img/SesionIcono.png"></a>
-				<a href="php/cuenta.php"><img src="img/carrito-de-la-compra.png"></a>	
+				<a href="#openModal"><img src="img/SesionIcono.png"></a>
+				
+				<a href="cuenta.php"><img src="img/carrito-de-la-compra.png"></a>
+				<div id="openModal" class="modalDialog">
+					<div>
+						<a href="#close" title="Close" class="close">X</a>
+						<br>
+						<?php 
+							include ("php/login.php");	
+						?>
+					</div>
+				</div>		
 			</ul>
 		</nav>
 	</header>

@@ -3,7 +3,7 @@
 	$alert = '';
 
 	if (!empty($_SESSION['active'])) {
-		header("Location: php/index.php");
+		// header("Location: php/index.php");
 	}else{
 		if (!empty($_POST['Ingresar'])) {
 			include("../php/conexion.php"); 
@@ -46,7 +46,7 @@
 	<div id="fondo">
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" class="login">
 			<h2>Iniciar Sesion</h2><br>
-			<img src="img/logotipo.png" alt=""><br>
+			<!-- <img src="img/logotipo.png" alt=""><br> -->
 
 			<label>Usuario</label><br>
 			<input type="text" required name="Usuario" placeholder="Aqui va el usuario"value="" /><br>
