@@ -6,7 +6,7 @@
 	<!-- <link rel="stylesheet" href="../css/estilo.css"> -->
 </head>
 <body>
-	<header class="encabezado_sesion">
+	<div class="encabezado_sesion">
 		<a href="cerrar_sesion.php"><img src="../img/cerrar-sesion.png" alt=""></a>
 
 		<label for=""><?php 
@@ -16,6 +16,6 @@
 		echo 'Merida, Yucatan, '.date('d-m-Y').' | '; 
 		echo 'Usuario: '.$_SESSION['Usuario']; 
 		?></label>
-	</header>	
+	</div>	
 </body>
 </html>

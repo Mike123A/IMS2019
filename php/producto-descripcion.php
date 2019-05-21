@@ -6,14 +6,15 @@
 	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
-	<?php
-	session_start(); 	
-	if (!empty($_SESSION['active'])) {
-		include ("../includes/encabezado_sesion.php");	
-	}
- ?>
+
 	<header>
 		<nav>
+			<?php
+				session_start(); 	
+				if (!empty($_SESSION['active'])) {
+					include ("../includes/encabezado_sesion.php");	
+				}
+		 	?>
 			<a href="nosotros.html"><img src="../img/LogoBlanco.png"></a>	
 			<ul>
 				<li><a href="../index.php">[ INICIO ]</a></li>
