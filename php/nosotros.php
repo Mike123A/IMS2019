@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,8 +13,7 @@
 	<header>
 		<nav>
 			<?php
-				session_start(); 	
-				if (isset($_SESSION['active'])) {
+				if (empty($_SESSION['active'])) {
 					include ("../includes/encabezado_sesion.php");	
 				}
 		 	?>
@@ -22,9 +24,13 @@
 				<li><a href="productos.php">[ PRODUCTOS ]</a></li>
 				<li><a href="asociados.php">[ ASOCIADOS ]</a></li>
 				<li><a href="contacto.php">[ CONTACTO ]</a></li>
+				
+				<a href="cuenta.php"><img src="../img/carrito-de-la-compra.png"></a>
+				<?php
+				if (isset($_SESSION['active'])) {
+				?>
 				<a href="#openModal"><img src="../img/SesionIcono.png"></a>
 
-				<a href="cuenta.php"><img src="../img/carrito-de-la-compra.png"></a>
 				<div id="openModal" class="modalDialog">
 					<div>
 						<a href="#close" title="Close" class="close">X</a>
@@ -33,7 +39,8 @@
 							include ("login.php");	
 						?>
 					</div>
-				</div>		
+				</div>
+				<?php } ?>	
 			</ul>
 		</nav>
 	</header>

@@ -1,9 +1,9 @@
 <?php
-	session_start();
+	// session_start();
 	$alert = '';
 
 	if (!empty($_SESSION['active'])) {
-		// header("Location: php/index.php");
+		header("Location: php/index.php");
 	}else{
 		if (!empty($_POST['Ingresar'])) {
 			include("../php/conexion.php"); 
@@ -22,10 +22,10 @@
 		   		$_SESSION['idUsuario'] = $data['idUsuario'];
 		   		$_SESSION['Usuario'] = $data['Usuario'];
 		   		$_SESSION['idtusuario'] = $data['idtusuario'];
-		   		if ($_SESSION['idtusuario']>0) {
-					header("Location: ../admin/php/index.php");
+		   		if ($_SESSION['idtusuario']==0) {
+					header("Location: ../");
 		   		}else{
-					header("Location: ../index.php");
+					header("Location: ../admin/php/index.php");
 
 		   		}
 		    }else{
@@ -43,7 +43,7 @@
 	<link rel="stylesheet" href="css/estilo.css">
 </head>
 <body >
-	<div id="fondo">
+	
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" class="login">
 			<h2>Iniciar Sesion</h2><br>
 			<!-- <img src="img/logotipo.png" alt=""><br> -->
@@ -56,7 +56,7 @@
 			<?php if (isset($alert)) { echo $alert;}  ?>
 		</form>
 		
-	</div>
+	
 	
 </body>
 </html>

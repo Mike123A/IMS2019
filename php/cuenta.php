@@ -11,8 +11,8 @@
 		<nav>
 			<?php
 				session_start(); 	
-				if (!empty($_SESSION['active'])) {
-					include ("../includes/encabezado_sesion.php");	
+				if (empty($_SESSION['active'])) {
+					include ('../includes/encabezado_sesion.php');	
 				}
 		 	?>
 			<a href="nosotros.html"><img src="../img/LogoBlanco.png"></a>	
