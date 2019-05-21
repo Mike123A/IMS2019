@@ -6,7 +6,21 @@
 	<link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
+	
 	<header>
+		<?php
+	session_start(); 	
+	if (!empty($_SESSION['active'])) {
+		echo "<header class='encabezado_sesion'>
+		<a href='cerrar_sesion.php'><img src='img/cerrar-sesion.png' alt=''></a>";
+
+		
+		$fecha = new DateTime('NOW');
+		date_default_timezone_set('America/Mexico_City');
+    	setlocale(LC_TIME, 'es_MX.UTF-8');
+		echo "<label for=''>Merida, Yucatan, ".date('d-m-Y')." | 'Usuario: ".$_SESSION['Usuario']."</label></header>";
+	}
+	?>
 		<nav>
 			<a href="php/nosotros.php"><img src="img/LogoBlanco.png"></a>	
 			<ul>

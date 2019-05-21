@@ -36,6 +36,12 @@
 	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
+	<?php
+	session_start(); 	
+	if (!empty($_SESSION['active'])) {
+		include ("../includes/encabezado_sesion.php");	
+	}
+ ?>
 	<header>
 		<nav>
 			<a href="nosotros.html"><img src="../img/LogoBlanco.png"></a>	
@@ -45,7 +51,7 @@
 				<li><a href="productos.php">[ PRODUCTOS ]</a></li>
 				<li><a href="asociados.php">[ ASOCIADOS ]</a></li>
 				<li><a href="contacto.php">[ CONTACTO ]</a></li>
-				<a href="sesion.php"><img src="../img/SesionIcono.png"></a>
+				<a href="login.php"><img src="../img/SesionIcono.png"></a>
 				<a href="cuenta.php"><img src="../img/carrito-de-la-compra.png"></a>	
 			</ul>
 		</nav>
@@ -54,7 +60,7 @@
 		<div class="titulopagina">Contacto</div>
 		<iframe id="UbicacionMapa" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d465.55849987032025!2d-89.57396706133994!3d21.013952237692923!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1552494062010" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
 		
-		<form id="formulariocontactanos" action="php/contacto.php" method="post">
+		<form id="formularios"action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
 			<h2>Tienes alguna duda, contactanos...</h2>
 			<label for="">*Nombre:</label><br>
 			<input type="text" placeholder="Aqui va tu nombre" id="nombre" name="nombre" required=""><br>

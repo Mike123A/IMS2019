@@ -6,6 +6,12 @@
 	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
+	<?php
+	session_start(); 	
+	if (!empty($_SESSION['active'])) {
+		include ("../includes/encabezado_sesion.php");	
+	}
+ ?>
 	<header>
 		<nav>
 			<a href="nosotros.html"><img src="../img/LogoBlanco.png"></a>	
@@ -15,7 +21,7 @@
 				<li><a href="productos.php">[ PRODUCTOS ]</a></li>
 				<li><a href="asociados.php">[ ASOCIADOS ]</a></li>
 				<li><a href="contacto.php">[ CONTACTO ]</a></li>
-				<a href="sesion.php"><img src="../img/SesionIcono.png"></a>
+				<a href="login.php"><img src="../img/SesionIcono.png"></a>
 				<a href="cuenta.php"><img src="../img/carrito-de-la-compra.png"></a>	
 			</ul>
 		</nav>
