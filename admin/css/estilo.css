@@ -34,7 +34,7 @@ ul, li {
 nav ul{
 	display: inline-flex;
 	float: right;
-	margin-right: 10px;
+	margin-right: 50px;
 }
 nav li{
 	/*width: 150px;*/

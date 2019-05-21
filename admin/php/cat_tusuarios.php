@@ -23,7 +23,7 @@
 	
 	<?php include ("../includes/menu.php") ?>
 	<section class="ContenedorPrincipal">
-		<h1>Catalogo de clientes</h1>
+		<h1>Catalogo de tipos de usuario</h1>
 		<a href="alta_tusuario.php">
 			<button class="agregar">
 				<img src="../img/agregar.png" alt="">Nuevo
