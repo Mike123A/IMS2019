@@ -37,36 +37,9 @@
 </head>
 <body>
 
-	<header>
-		<nav>
-			<?php
-				// session_start(); 	
-				// if (!empty($_SESSION['active'])) {
-				// 	include ("../includes/encabezado_sesion.php");	
-				// }
-		 	?>
-			<a href="nosotros.html"><img src="../img/LogoBlanco.png"></a>	
-			<ul>
-				<li><a href="../index.php">[ INICIO ]</a></li>
-				<li><a href="nosotros.php">[ NOSOTROS ]</a></li>
-				<li><a href="productos.php">[ PRODUCTOS ]</a></li>
-				<li><a href="asociados.php">[ ASOCIADOS ]</a></li>
-				<li><a href="contacto.php">[ CONTACTO ]</a></li>
-				<a href="#openModal"><img src="../img/SesionIcono.png"></a>
-				
-				<a href="cuenta.php"><img src="../img/carrito-de-la-compra.png"></a>
-				<div id="openModal" class="modalDialog">
-					<div>
-						<a href="#close" title="Close" class="close">X</a>
-						<br>
-						<?php 
-							include ("login.php");	
-						?>
-					</div>
-				</div>		
-			</ul>
-		</nav>
-	</header>
+		<?php 
+		include("../includes/menu.php"); 
+	 ?>
 	<section class="ContenedorPrincipal">
 		<div class="titulopagina">Contacto</div>
 		<iframe id="UbicacionMapa" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d465.55849987032025!2d-89.57396706133994!3d21.013952237692923!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1552494062010" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>

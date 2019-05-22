@@ -1,12 +1,13 @@
 <?php
-	session_start();
-	$alert = '';
+
+	// session_start();
+	// $alert = '';
 
 	if (!empty($_SESSION['active'])) {
-		header("Location: php/index.php");
+		// header("Location: php/index.php");
 	}else{
 		if (!empty($_POST['Ingresar'])) {
-			include("../php/conexion.php"); 
+			include("conexion.php"); 
 
 			$Usuario = $_POST['Usuario'];
 			$Contrasenia = $_POST['Contrasenia'];
@@ -17,13 +18,13 @@
 
 		   	if(mysqli_num_rows($resultado)>0) { 
 		   		$data = mysqli_fetch_array($resultado);
-		   		// print_r($data);
 		   		$_SESSION['active'] = true;
 		   		$_SESSION['idUsuario'] = $data['idUsuario'];
 		   		$_SESSION['Usuario'] = $data['Usuario'];
 		   		$_SESSION['idtusuario'] = $data['idtusuario'];
+
 		   		if ($_SESSION['idtusuario']==0) {
-					header("Location: ../");
+					 header("Location:".$_SERVER['HTTP_REFERER']);  
 		   		}else{
 					header("Location: ../admin/php/index.php");
 
@@ -31,6 +32,7 @@
 		    }else{
 				$alert = 'El usuario o clave es incorrecto';
 				session_destroy();
+				header("Location: index.php#openModal");
 		    }
 		}
 	}

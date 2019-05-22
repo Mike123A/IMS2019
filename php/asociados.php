@@ -6,37 +6,9 @@
 	<link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
-	
-	<header>
-		<nav>
-			<?php
-				// session_start(); 	
-				// if (!empty($_SESSION['active'])) {
-				// 	include ("../includes/encabezado_sesion.php");	
-				// }
-		 	?>
-			<a href="nosotros.html"><img src="../img/LogoBlanco.png"></a>	
-			<ul>
-				<li><a href="../index.php">[ INICIO ]</a></li>
-				<li><a href="nosotros.php">[ NOSOTROS ]</a></li>
-				<li><a href="productos.php">[ PRODUCTOS ]</a></li>
-				<li><a href="asociados.php">[ ASOCIADOS ]</a></li>
-				<li><a href="contacto.php">[ CONTACTO ]</a></li>
-				<a href="#openModal"><img src="../img/SesionIcono.png"></a>
-				
-				<a href="cuenta.php"><img src="../img/carrito-de-la-compra.png"></a>
-				<div id="openModal" class="modalDialog">
-					<div>
-						<a href="#close" title="Close" class="close">X</a>
-						<br>
-						<?php 
-							include ("login.php");	
-						?>
-					</div>
-				</div>		
-			</ul>
-		</nav>
-	</header>
+		<?php 
+		include("../includes/menu.php"); 
+	 ?>
 	<section class="ContenedorPrincipal">
 		<div class="titulopagina">Distribuidores Oficiales</div>
 		
