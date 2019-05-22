@@ -1,39 +1,3 @@
-<?php
-/*
-* Agrega el producto a la variable de sesion de productos.
-*/
-session_start();
-if (!empty($_POST['agregar'])) {
-	if(isset($_POST["clave"]) && isset($_POST["cantidad"])){
-		// si es el primer producto simplemente lo agregamos
-		if(empty($_SESSION["cart"])){
-			$_SESSION["cart"]=array( array("clave"=>$_POST["clave"],"cantidad"=> $_POST["cantidad"]));
-		}else{
-			// apartie del segundo producto:
-			$cart = $_SESSION["cart"];
-			$repeated = false;
-			// recorremos el carrito en busqueda de producto repetido
-			foreach ($cart as $c) {
-				// si el producto esta repetido rompemos el ciclo
-				if($c["clave"]==$_POST["clave"]){
-					$repeated=true;
-					break;
-				}
-			}
-			// si el producto es repetido no hacemos nada, simplemente redirigimos
-			if($repeated){
-				print "<script>alert('Error: Producto Repetido!');</script>";
-			}else{
-				// si el producto no esta repetido entonces lo agregamos a la variable cart y despues asignamos la variable cart a la variable de sesion
-				array_push($cart, array("clave"=>$_POST["clave"],"cantidad"=> $_POST["cantidad"]));
-				$_SESSION["cart"] = $cart;
-			}
-		}
-		print "<script>window.location='../products.php';</script>";
-	}
-}
-
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,9 +8,9 @@ if (!empty($_POST['agregar'])) {
 <body>
 
 	<?php 
-		include("../includes/menu.php"); 
+		// include("../includes/menu.php"); 
 	?>
-	<section class="ContenedorPrincipal">
+	
 		<?php
 			$clave = $_GET['clave'];
 			include("conexion.php");
@@ -59,6 +23,7 @@ if (!empty($_POST['agregar'])) {
 			
 			$direccionimagen = "../img/Productos/".$fila['ImagenProd'];
 		?>
+	<section class="ContenedorPrincipal">
 		<div id="productodesc">
 			<h2>
 				<?php echo $fila['NombreProd']; ?>
@@ -72,10 +37,10 @@ if (!empty($_POST['agregar'])) {
 				<h3>Descripcion:</h3>
 				<p><?php echo $fila['DescripcionProd']; ?></p><br>
 			</article>
-			<form class="BotonesDescProd" method="POST" action="agregar_carrito.php">
+			<form action="agregar_carrito.php" method="POST" class="BotonesDescProd">
 				<label for="">Cuantos desea:</label> <br>
-				<input style="display: none" type="text" required name="clave" placeholder="" value=" <?php echo $fila['idProducto']; ?>" /><br>
-				<input type="number" name="cantidad"><br>
+				<input  type="number" required name="clave" placeholder="" value="<?php echo $fila['idProducto']; ?>" /><br>
+				<input type="number" value="1"name="cantidad"><br>
 				<button type="submit" name="agregar" >Agregar al carrito</button>
 				<br>
 				<a href="productos.php">
