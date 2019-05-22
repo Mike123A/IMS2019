@@ -8,7 +8,7 @@
 <body>
 
 	<?php 
-		// include("../includes/menu.php"); 
+		include("../includes/menu.php"); 
 	?>
 	
 		<?php
@@ -38,7 +38,7 @@
 				<p><?php echo $fila['DescripcionProd']; ?></p><br>
 			</article>
 			<form action="agregar_carrito.php" method="post" class="BotonesDescProd">
-				ID <input  type="number" required name="clave" placeholder="" value="<?php echo $fila['idProducto']; ?>" /><br>
+				<input style="display: none" type="number" required name="clave" placeholder="" value="<?php echo $fila['idProducto']; ?>" /><br>
 				
 				<label for="">Cuantos desea:</label> <br>
 				<input type="number" value="1"name="cantidad"><br>

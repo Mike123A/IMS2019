@@ -1,6 +1,7 @@
 <?php 
-	session_start();
+	// session_start();
 	include "conexion.php";
+	$total = 0;
 
 ?>
 <!DOCTYPE html>
@@ -13,8 +14,7 @@
 <body>
 
 	<?php 
-		// include("../includes/menu.php");
-
+		include("../includes/menu.php");
 	?>
 	<section class="ContenedorPrincipal">
 	<h2>Articulos en el carrito</h2>
@@ -49,20 +49,23 @@
 				<h2><?php  echo $c["cantidad"]; ?></h2>
 				<h3>Precio acumulado:</h3>
 				<h3><?php echo $c["cantidad"]*$r->PrecioProd;?></h3>
+				<?php $total = $total + ($c["cantidad"]*$r->PrecioProd); ?>
 			</article>
 	<?php
 	$found = false;
 	foreach ($_SESSION["cart"] as $c) { if($idbus==$r->idProducto){ $found=true; break; }}
 	?>
-		<!-- <a href="php/delfromcart.php?id=<?php echo $c["product_id"];?>" class="btn btn-danger">Eliminar</a> -->
-	
+		<a href="eliminar_carrito.php?clave=<?php echo $c["clave"];?>">Eliminar</a>
+	<hr /><br>	
 <?php endforeach; ?>
 		<div class="total">
-			Total: $7000
+			<?php if (isset($total)) {
+				echo "Total:".$total;
+			} ?>
 		</div>
 	</section>
 	<?php 
-		// include("../includes/footer.php"); 
+		include("../includes/footer.php"); 
 	?>
 	<?php else:?>
 	<p class="alert alert-warning">El carrito esta vacio.</p>
