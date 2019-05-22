@@ -11,14 +11,14 @@
 	
 		<nav>
 			<?php
-			session_start(); 	
-			if (!empty($_SESSION['active'])) {
-				echo "<div class='encabezado_sesion'><a href='cerrar_sesion.php'><img src='img/cerrar-sesion.png' alt=''></a>";
-				$fecha = new DateTime('NOW');
-				date_default_timezone_set('America/Mexico_City');
-    			setlocale(LC_TIME, 'es_MX.UTF-8');
-				echo "<label for=''>Merida, Yucatan, ".date('d-m-Y')." | 'Usuario: ".$_SESSION['Usuario']."</label></div>";
-			}
+			// session_start(); 	
+			// if (!empty($_SESSION['active'])) {
+			// 	echo "<div class='encabezado_sesion'><a href='cerrar_sesion.php'><img src='img/cerrar-sesion.png' alt=''></a>";
+			// 	$fecha = new DateTime('NOW');
+			// 	date_default_timezone_set('America/Mexico_City');
+   //  			setlocale(LC_TIME, 'es_MX.UTF-8');
+			// 	echo "<label for=''>Merida, Yucatan, ".date('d-m-Y')." | 'Usuario: ".$_SESSION['Usuario']."</label></div>";
+			// }
 			?>
 			<a href="php/nosotros.php"><img src="img/LogoBlanco.png"></a>	
 			<ul>
@@ -30,15 +30,15 @@
 				<a href="#openModal"><img src="img/SesionIcono.png"></a>
 				
 				<a href="cuenta.php"><img src="img/carrito-de-la-compra.png"></a>
-				<div id="openModal" class="modalDialog">
+				<!-- <div id="openModal" class="modalDialog">
 					<div>
 						<a href="#close" title="Close" class="close">X</a>
 						<br>
 						<?php 
-							include ("php/login.php");	
+							// include ("php/login.php");	
 						?>
 					</div>
-				</div>		
+				</div> -->		
 			</ul>
 		</nav>
 	</header>

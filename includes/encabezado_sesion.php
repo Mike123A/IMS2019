@@ -11,14 +11,16 @@
 
 		<label for="">
 			<?php 
-				// session_start(); 	
-		
-			$fecha = new DateTime('NOW');
-			date_default_timezone_set('America/Mexico_City');
-	    	setlocale(LC_TIME, 'es_MX.UTF-8');
-			echo 'Merida, Yucatan, '.date('d-m-Y').' | '; 
-			echo 'Usuario: '.$_SESSION['Usuario']; 
-		?></label>
+				session_start();
+						
+				$fecha = new DateTime('NOW');
+				date_default_timezone_set('America/Mexico_City');
+		    	setlocale(LC_TIME, 'es_MX.UTF-8');
+				echo 'Merida, Yucatan, '.date('d-m-Y').' | '; 
+				echo 'Usuario: '.$_SESSION['Usuario']; 
+			?>
+			
+		</label>
 	</div>	
 </body>
 </html>

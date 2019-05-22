@@ -1,5 +1,5 @@
 <?php 
-	session_start();
+	// session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -13,9 +13,9 @@
 	<header>
 		<nav>
 			<?php
-				if (empty($_SESSION['active'])) {
-					include ("../includes/encabezado_sesion.php");	
-				}
+				// if (empty($_SESSION['active'])) {
+				// 	include ("../includes/encabezado_sesion.php");	
+				// }
 		 	?>
 			<a href="nosotros.html"><img src="../img/LogoBlanco.png"></a>	
 			<ul>

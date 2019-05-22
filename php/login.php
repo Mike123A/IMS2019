@@ -1,5 +1,5 @@
 <?php
-	// session_start();
+	session_start();
 	$alert = '';
 
 	if (!empty($_SESSION['active'])) {
