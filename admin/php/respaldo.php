@@ -26,7 +26,14 @@
 	<h1>Necesita un respaldo de la base de datos?</h1>
 	<br><br>
 	<button id="btn-resp"><a href="crear_respaldo_bd.php">Crear respaldo</a></button>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	</section>
+	<?php include ("../includes/footer.php") ?>
 	
 </body>
 </html>

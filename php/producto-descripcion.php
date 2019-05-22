@@ -1,3 +1,39 @@
+<?php
+/*
+* Agrega el producto a la variable de sesion de productos.
+*/
+session_start();
+if (!empty($_POST['agregar'])) {
+	if(isset($_POST["clave"]) && isset($_POST["cantidad"])){
+		// si es el primer producto simplemente lo agregamos
+		if(empty($_SESSION["cart"])){
+			$_SESSION["cart"]=array( array("clave"=>$_POST["clave"],"cantidad"=> $_POST["cantidad"]));
+		}else{
+			// apartie del segundo producto:
+			$cart = $_SESSION["cart"];
+			$repeated = false;
+			// recorremos el carrito en busqueda de producto repetido
+			foreach ($cart as $c) {
+				// si el producto esta repetido rompemos el ciclo
+				if($c["clave"]==$_POST["clave"]){
+					$repeated=true;
+					break;
+				}
+			}
+			// si el producto es repetido no hacemos nada, simplemente redirigimos
+			if($repeated){
+				print "<script>alert('Error: Producto Repetido!');</script>";
+			}else{
+				// si el producto no esta repetido entonces lo agregamos a la variable cart y despues asignamos la variable cart a la variable de sesion
+				array_push($cart, array("clave"=>$_POST["clave"],"cantidad"=> $_POST["cantidad"]));
+				$_SESSION["cart"] = $cart;
+			}
+		}
+		print "<script>window.location='../products.php';</script>";
+	}
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,7 +61,7 @@
 		?>
 		<div id="productodesc">
 			<h2>
-				PRODUCTO
+				<?php echo $fila['NombreProd']; ?>
 			</h2>
 			<img class="imagenformulario" src="<?php echo $direccionimagen ?>" alt=''>
 			<article>
@@ -36,19 +72,18 @@
 				<h3>Descripcion:</h3>
 				<p><?php echo $fila['DescripcionProd']; ?></p><br>
 			</article>
-			<div class="BotonesDescProd">
+			<form class="BotonesDescProd" method="POST" action="agregar_carrito.php">
 				<label for="">Cuantos desea:</label> <br>
-				<input type="number" value="1"><br>
-				<button>
-						Agregar a carrito
-				</button>
+				<input style="display: none" type="text" required name="clave" placeholder="" value=" <?php echo $fila['idProducto']; ?>" /><br>
+				<input type="number" name="cantidad"><br>
+				<button type="submit" name="agregar" >Agregar al carrito</button>
 				<br>
 				<a href="productos.php">
 					<button>
 						Seguir Comprando
 					</button>
 				</a>
-			</div>
+			</form>
 			
 		</div>
 		

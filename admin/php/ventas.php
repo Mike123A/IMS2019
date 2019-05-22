@@ -25,6 +25,8 @@
 		<h1>Ventas</h1>
 
 	</section>
+	<?php include ("../includes/footer.php") ?>
+	
 	
 </body>
 </html>
