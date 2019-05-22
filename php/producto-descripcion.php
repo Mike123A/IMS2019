@@ -37,9 +37,10 @@
 				<h3>Descripcion:</h3>
 				<p><?php echo $fila['DescripcionProd']; ?></p><br>
 			</article>
-			<form action="agregar_carrito.php" method="POST" class="BotonesDescProd">
+			<form action="agregar_carrito.php" method="post" class="BotonesDescProd">
+				ID <input  type="number" required name="clave" placeholder="" value="<?php echo $fila['idProducto']; ?>" /><br>
+				
 				<label for="">Cuantos desea:</label> <br>
-				<input  type="number" required name="clave" placeholder="" value="<?php echo $fila['idProducto']; ?>" /><br>
 				<input type="number" value="1"name="cantidad"><br>
 				<button type="submit" name="agregar" >Agregar al carrito</button>
 				<br>
