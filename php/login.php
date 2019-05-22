@@ -54,6 +54,7 @@
 			<input type="text" required name="Usuario" placeholder="Aqui va el usuario"value="" /><br>
 			<label>Contraseña</label><br>
 			<input type="password" required name="Contrasenia" placeholder="Aqui va la contraseña" /><br><br>
+			<input type="button" name="" value="Ingresar"><br>	
 			<input type="submit" name="Ingresar" value="Ingresar"><br>	
 			<?php if (isset($alert)) { echo $alert;}  ?>
 		</form>

@@ -37,9 +37,9 @@
 </head>
 <body>
 
-		<?php 
+	<?php 
 		include("../includes/menu.php"); 
-	 ?>
+	?>
 	<section class="ContenedorPrincipal">
 		<div class="titulopagina">Contacto</div>
 		<iframe id="UbicacionMapa" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d465.55849987032025!2d-89.57396706133994!3d21.013952237692923!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1552494062010" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -80,17 +80,8 @@
 			</p>
 		</section>	
 	</section>
-	<footer>
-		<section class="contefooter">
-			<li><a href=""><img src="../img/FacebookIcono.png">@InnovativeMedicalSolutions</a><br></li>
-			<li><a href=""><img src="../img/twitterIcono.png">@InnovativeMedicalSolutions</a><br></li>
-			<li><a href=""><img src="../img/youtubeIcono.png">@InnovativeMedicalSolutions</a><br></li>
-		</section>
-		<section class="contefooter">
-			<p>Direccion:<br> Calle 28 <br> Cruzamientos: 19 y 17 <br> Col. Maya</p>
-			<p>Telefono:<br> 943 43 00</p>
-			<p>SoporteInnovativeMedicalSolutions@outlook.com</p>
-		</section>		
-	</footer>
+	<?php 
+		include("../includes/footer.php"); 
+	?>
 </body>
 </html>
