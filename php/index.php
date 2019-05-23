@@ -29,7 +29,7 @@
 		</section>
 
 		<section id="descripcionempresa1">
-			<img src="img/medio-ambiente.jpg" alt="">
+			<img src="../img/medio-ambiente.jpg" alt="">
 			<section>
 				<article>"Nuestra empresa tiene un firme compromiso con el medio ambiente, por lo que utilizamos tecnologias Ecofriendly"</article>
 			</section>

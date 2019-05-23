@@ -13,11 +13,11 @@
 			?>
 			<a href="nosotros.php"><img src="../img/LogoBlanco.png"></a>	
 			<ul>
-				<li><a href="index.php">[ INICIO ]</a></li>
-				<li><a href="nosotros.php">[ NOSOTROS ]</a></li>
-				<li><a href="productos.php">[ PRODUCTOS ]</a></li>
-				<li><a href="Asociados.php">[ ASOCIADOS ]</a></li>
-				<li><a href="Contacto.php">[ CONTACTO ]</a></li>
+				<li><a href="index.php">[ Inicio ]</a></li>
+				<li><a href="nosotros.php">[ Nosotros ]</a></li>
+				<li><a href="productos.php">[ Productos ]</a></li>
+				<li><a href="Asociados.php">[ Asociados ]</a></li>
+				<li><a href="Contacto.php">[ Contacto ]</a></li>
 				
 				<a href="cuenta.php"><img src="../img/carrito-de-la-compra.png"></a>
 				
