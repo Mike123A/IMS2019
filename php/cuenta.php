@@ -49,7 +49,8 @@
 				<h2><?php  echo $c["cantidad"]; ?></h2>
 				<h3>Precio acumulado:</h3>
 				<h3><?php echo $c["cantidad"]*$r->PrecioProd;?></h3>
-				<?php $total = $total + ($c["cantidad"]*$r->PrecioProd); ?>
+				<?php $total = $total + ($c["cantidad"]*$r->PrecioProd);
+				$_SESSION["total"]= $total; ?>
 			</article>
 	<?php
 	$found = false;

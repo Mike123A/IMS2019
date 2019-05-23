@@ -3,11 +3,17 @@
 * Agrega el producto a la variable de sesion de productos.
 */
 session_start();
+	if (empty($_SESSION['active'])) {
+		header("Location: productos.php#openModal");
+		exit;
+	}
+
+echo $_POST["precio"];
 if(!empty($_POST)){
 	if(isset($_POST["clave"]) && isset($_POST["cantidad"])){
 		// si es el primer producto simplemente lo agregamos
 		if(empty($_SESSION["cart"])){
-			$_SESSION["cart"]=array( array("clave"=>$_POST["clave"],"cantidad"=> $_POST["cantidad"]));
+			$_SESSION["cart"]=array( array("clave"=>$_POST["clave"],"cantidad"=> $_POST["cantidad"],"precio"=> $_POST["precio"]));
 		}else{
 			// apartie del segundo producto:
 			$cart = $_SESSION["cart"];
@@ -25,7 +31,7 @@ if(!empty($_POST)){
 				print "<script>alert('Este producto ya esta en el carrito.');</script>";
 			}else{
 				// si el producto no esta repetido entonces lo agregamos a la variable cart y despues asignamos la variable cart a la variable de sesion
-				array_push($cart, array("clave"=>$_POST["clave"],"cantidad"=> $_POST["cantidad"]));
+				array_push($cart, array("clave"=>$_POST["clave"],"cantidad"=> $_POST["cantidad"],"precio"=> $_POST["precio"]));
 				$_SESSION["cart"] = $cart;
 			}
 		}

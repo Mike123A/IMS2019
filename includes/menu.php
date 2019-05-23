@@ -18,10 +18,11 @@
 				<li><a href="productos.php">[ Productos ]</a></li>
 				<li><a href="Asociados.php">[ Asociados ]</a></li>
 				<li><a href="Contacto.php">[ Contacto ]</a></li>
-				
+				<?php if (isset($_SESSION['cart'])) {?>
 				<a href="cuenta.php"><img src="../img/carrito-de-la-compra.png"></a>
-				
-				<?php if (!isset($_SESSION['active'])) {?>
+				<?php
+				} 
+				if (!isset($_SESSION['active'])) {?>
 				<a href="#openModal"><img src="../img/SesionIcono.png"></a>
 
 				<div id="openModal" class="modalDialog">
