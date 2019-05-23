@@ -406,7 +406,7 @@ a{
 
 .login{
 	text-align: center;
-	font-size: 25px;
+	background: #ebebeb;
 }
 .login button{
 	width: 150px;
@@ -421,6 +421,22 @@ a{
 	height: 30px;
 	margin:10px;
 }
+.login a{
+	padding: 0px;
+	margin: 0px;
+	margin-left: -100px;
+
+}
+.login p{
+text-align: left;
+width: 320px;
+font-size: 18px;
+padding: 10px;
+text-align: center;
+}
+
+
+
 .encabezado_sesion{
 	background: #40514e;
 	width: 100%;
@@ -445,7 +461,6 @@ a{
 
 .modalDialog {
 	position: fixed;
-	font-family: Arial, Helvetica, sans-serif;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -455,7 +470,6 @@ a{
 	opacity:0;
 	-webkit-transition: opacity 400ms ease-in;
 	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
 	pointer-events: none;
 }
 .modalDialog:target {
@@ -463,18 +477,19 @@ a{
 	pointer-events: auto;
 }
 .modalDialog > div {
-	width: 400px;
+	width: 450px;
 	position: relative;
-	margin: 10% auto;
-	padding: 5px 20px 13px 20px;
+	margin: 5% auto;
+	padding: 5px;
 	border-radius: 10px;
-	background: #fff;
+	/*background: #fff;
 	background: -moz-linear-gradient(#fff, #999);
 	background: -webkit-linear-gradient(#fff, #999);
-	background: -o-linear-gradient(#fff, #999);
-  -webkit-transition: opacity 400ms ease-in;
--moz-transition: opacity 400ms ease-in;
-transition: opacity 400ms ease-in;
+	background: -o-linear-gradient(#fff, #999);*/
+
+  	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
 }
 .close {
 	background: #606061;
@@ -511,3 +526,32 @@ transition: opacity 400ms ease-in;
                 width: 250px;
             }
         }
+
+
+.login img{
+	width: 80px;
+	padding: 10px;
+	background: #fff;
+	border-radius: 100px;
+}
+.login input{
+	width: 300px;
+	height: 40px;
+	border-radius: 10px;
+	font-size: 25px;
+}
+.encabezado-login {
+	background: #699;
+	padding: 20px;
+	font-size: 1.4em;
+	font-weight: bold;
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+}
+#btn_ingresar{
+	background: #329D2D;
+}
+#btn_ingresar:hover{
+	background: #164517;
+}

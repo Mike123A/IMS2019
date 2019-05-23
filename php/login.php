@@ -1,7 +1,7 @@
 <?php
 
 	// session_start();
-	// $alert = '';
+	$alert = '';
 
 	if (!empty($_SESSION['active'])) {
 		// header("Location: php/index.php");
@@ -47,15 +47,16 @@
 <body >
 	
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" class="login">
-			<h2>Iniciar Sesion</h2><br>
-			<!-- <img src="img/logotipo.png" alt=""><br> -->
+			<h2 class="encabezado-login">Iniciar Sesion</h2><br>
+			<img src="../img/logotipo.png" alt=""><br>
 
-			<label>Usuario</label><br>
-			<input type="text" required name="Usuario" placeholder="Aqui va el usuario"value="" /><br>
-			<label>Contraseña</label><br>
-			<input type="password" required name="Contrasenia" placeholder="Aqui va la contraseña" /><br><br>
-			<input type="button" name="" value="Ingresar"><br>	
-			<input type="submit" name="Ingresar" value="Ingresar"><br>	
+			<!-- <label>Usuario</label><br> -->
+			<input type="text" required name="Usuario" placeholder="Usuario"value="" /><br>
+			<!-- <label>Contraseña</label><br> -->
+			<input type="password" required name="Contrasenia" placeholder="Contraseña" /><br>
+			<input id="btn_ingresar"type="submit" name="Ingresar" value="Ingresar"><br>
+			<p>No tienes una cuenta <a href="registro-cliente.php"> Click aqui</a></p>	
+			<!-- <input type="button" name="" value="Registrarse"> -->
 			<?php if (isset($alert)) { echo $alert;}  ?>
 		</form>
 		

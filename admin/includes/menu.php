@@ -12,7 +12,7 @@
 			<a href="index.php"><img src="../img/LogoConNombreBlanco.png"></a>
 			<ul>
 				<?php if ($_SESSION['idtusuario'] == 1 || $_SESSION['idtusuario'] == 3) { ?>
-				<li><a href="Ventas.php">[VENTAS]</a></li>
+				<li><a href="ventas.php">[VENTAS]</a></li>
 				<?php } ?>
 				<?php if ($_SESSION['idtusuario'] == 1 || $_SESSION['idtusuario'] == 4) { ?>
 				<li><a href="almacen_productos.php">[ALMACEN]</a></li>
