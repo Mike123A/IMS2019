@@ -23,6 +23,11 @@
 	<?php include ("../includes/menu.php") ?>
 	<section class="ContenedorPrincipal">
 		<h1>Ventas mostrador</h1><br><br>
+		<a href="nueva_venta.php">
+			<button class="agregar">
+				<img src="../img/agregar.png" alt="">Nuevo
+			</button>
+		</a>
 		<table >
 			<thead>
 				<tr>

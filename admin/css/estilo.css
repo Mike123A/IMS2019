@@ -299,3 +299,25 @@ footer img{
 	border: 2px solid #4CA440;
 
 }
+#show,#hide {
+	display:none;
+}
+
+div#content {
+	display:none;
+	padding:10px;
+	width:800px;
+	cursor:pointer;
+}
+
+input#show:checked ~ div#content {
+	display:block;
+}
+
+input#hide:checked ~ div#content {
+	display:none;
+}
+
+
+
+
