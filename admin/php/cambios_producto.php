@@ -117,6 +117,8 @@
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" enctype="multipart/form-data">
 		
 		<h1>Cambios al producto: <?php echo $fila['idProducto']; ?> </h1>
+		<br><br>
+			<div style="/*-webkit-column-count:3*/-moz-column-count:2;column-count:2">
 		<input style="display: none" type="text" required name="clave" placeholder="" value=" <?php echo $fila['idProducto']; ?>" /><br>
 			<label>Nombre</label><br>
 			<input type="text" required name="Nombres" placeholder="<?php if(isset($nombre) && $nombre ==''){ echo 'Intente con otro';}else{echo "Aqui va el nombre";} ?>" value="<?php if(isset($nombre)) {echo $nombre;}?>" maxlength="50" /><br>
@@ -130,16 +132,16 @@
 			<input type="textarea" required name="Descripcion" placeholder="Descripcion" value="<?php if(isset($Descripcion)) {echo $Descripcion;}?>" maxlength="300"/><br>
 			<label>Precio</label><br>
 			<input type="text" required name="Precio" placeholder="Aqui va el precio" value="<?php if(isset($Precio)) {echo $Precio;}?>" /><br>
-			<label>Stock</label><br>
 			
-			
+			<br>
 			<label>Imagen actual</label><br>
 			<img class="imagenformulario" src="<?php echo $direccionimagen ?>" alt=''>
 			<br>
-			<input type="file" name="Imagen" value="" /><br>
-			
-			<input type="submit" value="Guardar" name="Guardar">		
-
+			<input type="file" name="Imagen" value="" /><br><br><br>
+			</div><br> 	<br>	
+			<a href="cat_productos.php"><input id="btn_cancelar" type="button" value="Cancelar" name="Cancelar"></a>
+			<input id="btn_aceptar" type="submit" value="Guardar" name="Guardar">		
+			<br><br><br>
 		</form>
 	</section>
 	<?php include ("../includes/footer.php") ?>

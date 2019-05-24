@@ -82,6 +82,7 @@
 	<section class="ContenedorPrincipal">
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
 		<h1>Alta de cliente</h1>
+		<br><br>
 			<div style="/*-webkit-column-count:3*/-moz-column-count:2;column-count:2">
 			<label>Nombre(s)</label><br>
 			<input type="text" required name="Nombres" placeholder="Ej. Juan Antonio" value="<?php if(isset($nombre)) {echo $nombre;}?>" pattern="[A-Z a-z]+" title="Solo puedes ingresar letras"/><br>

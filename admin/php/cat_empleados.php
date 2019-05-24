@@ -70,15 +70,8 @@
     					<td>".$fila['FechaContEmp']."</td>
     					<td>".$fila['Usuario']."</td>
     					<td>".$fila['tipousuario']."</td>
-    					";
-    					if ($fila['estado'] == "Alta") {
-						echo "
-						<td class='altas'></td>";
-					}else{
-						echo "
-						<td class='bajas'></td>";			
-					}
-    				echo "
+    					<td>".$fila['estado']."</td>
+    					
 						<td><a href='cambios_empleado.php?clave=".$fila['idEmpleado']."'>
 							<button class='modificar'>
 								<img src='../img/modificar.png' alt=''>Modificar

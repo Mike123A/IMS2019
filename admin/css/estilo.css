@@ -34,7 +34,7 @@ ul, li {
 nav ul{
 	display: inline-flex;
 	float: right;
-	margin-right: 50px;
+	margin-right: 60px;
 }
 nav li{
 	/*width: 150px;*/
@@ -64,11 +64,12 @@ nav ul li ul li:hover {
 } 
 nav ul li ul li { 
 	height: 20px;
-	width: 125px;
+	width: 135px;
 	margin: 10px;
 	padding: 10px;
 
 }
+
 
 header{
 	width: 100%;

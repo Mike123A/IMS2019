@@ -67,15 +67,9 @@
     					<td>$".$fila['PrecioProd']."</td>
     					<td>".$fila['StockProd']."</td>
 
-    					<td> <img src='../../img/Productos/".$fila['ImagenProd']."'alt=''></td>";
-    				if ($fila['estado'] == "Alta") {
-						echo "
-						<td class='altas'></td>";
-					}else{
-						echo "
-						<td class='bajas'></td>";			
-					}
-    				echo "
+    					<td> <img src='../../img/Productos/".$fila['ImagenProd']."'alt=''></td>
+    					<td>".$fila['estado']."</td>
+    				
 						<td><a href='cambios_producto.php?clave=".$fila['idProducto']."'>
 							<button class='modificar'>
 								<img src='../img/modificar.png' alt=''>Modificar

@@ -70,7 +70,8 @@
 	<section class="ContenedorPrincipal">
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" enctype="multipart/form-data">
 		<h1>Alta de producto</h1>
-
+		<br><br>
+			<div style="/*-webkit-column-count:3*/-moz-column-count:2;column-count:2">
 			<label>Nombre</label><br>
 			<input type="text" required name="Nombres" placeholder="<?php if(isset($nombre) && $nombre ==''){ echo 'Intente con otro';}else{echo "Aqui va el nombre";} ?>" value="<?php if(isset($nombre)) {echo $nombre;}?>" maxlength="50" /><br>
 			<label>Alto en centimetros</label><br>
@@ -87,9 +88,11 @@
 			<input type="text" required name="Stock" placeholder="Stock" value="<?php if(isset($Stock)) {echo $Stock;}?>" pattern="[0-9]+" maxlength="10" /><br/>
 			<label>Imagen</label><br>
 			<input type="file" src="<?php if(isset($url_temp)) {echo $url_temp;}?> ?>" required name="Imagen"  accept="image/*" /><br>
-			
-			<br>
-			<input type="submit" value="Guardar" name="Guardar">		
+		</div>
+			<br> 	<br>	
+			<a href="cat_productos.php"><input id="btn_cancelar" type="button" value="Cancelar" name="Cancelar"></a>
+			<input id="btn_aceptar" type="submit" value="Guardar" name="Guardar">		
+			<br><br><br>		
 
 		</form>
 	</section>

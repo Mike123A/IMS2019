@@ -110,10 +110,11 @@
 	<section class="ContenedorPrincipal">
 		
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
-
+<input style="display: none" type="text" required name="clave" placeholder="" value=" <?php echo $fila['idEmpleado'];?>" /><input  type="text" style="display: none" required name="claveu" placeholder="" value=" <?php echo $fila['idUsuario']; ?>" />
 		<h1>Cambios al registro: <?php echo $clave; ?></h1>
-			<input style="display: none" type="text" required name="clave" placeholder="" value=" <?php echo $fila['idEmpleado'];?>" /><br>
-			<input  type="text" style="display: none" required name="claveu" placeholder="" value=" <?php echo $fila['idUsuario']; ?>" /><br>
+		<br><br>
+			<div style="/*-webkit-column-count:3*/-moz-column-count:2;column-count:2">
+
 			<label>Nombre(s)</label><br>
 			<input type="text" required name="Nombres" placeholder="Aqui va el nombre" value="<?php if(isset($nombre)) {echo $nombre;}?>" pattern="[A-Z a-z]+"/><br>
 			<label>Apellido1</label><br>
@@ -123,7 +124,7 @@
 			<label>Fecha de nacimiento</label><br>
 			<input type="date" required name="FechaNac" placeholder=""value="<?php if(isset($fechanac)) {echo $fechanac;}?>" /><br>
 			<label>Correo</label><br>
-			<input type="email" required name="Correo" placeholder="<?php if(isset($correo) && $correo ==''){ echo 'Intente con otro';}else{echo "Aqui va el usuario";} ?>"value="<?php if(isset($correo)) {echo $correo;}?>" /><br>
+			<input type="email" required name="Correo" placeholder="<?php if(isset($correo) && $correo ==''){ echo 'Intente con otro';}else{echo "Aqui va el usuario";} ?>" value="<?php if(isset($correo)) {echo $correo;}?>" /><br>
 			<label>Direccion</label><br>
 			<input type="text" required name="Direccion" placeholder="Aqui va la direccion"value="<?php if(isset($direccion)) {echo $direccion;}?>" /><br>
 			<label>Telefono</label><br>
@@ -155,10 +156,12 @@
 
 					
 				?>
-			</SELECT> 
-			<br><br>
-
-			<input type="submit" value="Guardar" name="Guardar">		
+			</SELECT> <br> 	<br>	<br> 	<br>	
+			</div>
+<br> 	<br>	
+			<a href="cat_empleados.php"><input id="btn_cancelar" type="button" value="Cancelar" name="Cancelar"></a>
+			<input id="btn_aceptar" type="submit" value="Guardar" name="Guardar">		
+			<br><br><br>	
 
 		</form>
 	</section>

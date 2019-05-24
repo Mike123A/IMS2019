@@ -12,8 +12,18 @@
 			<a href="index.php"><img src="../img/LogoConNombreBlanco.png"></a>
 			<ul>
 				<?php if ($_SESSION['idtusuario'] == 1 || $_SESSION['idtusuario'] == 3) { ?>
-				<li><a href="ventas.php">[VENTAS]</a></li>
+				<li><a href="ventas.php">[VENTAS]</a>
+					<ul>
+						<?php if ($_SESSION['idtusuario'] == 1 || $_SESSION['idtusuario'] == 4) { ?>
+						<li><a href="ventas_linea.php">Venta en linea</a></li>
+						<?php }if ($_SESSION['idtusuario'] == 1 || $_SESSION['idtusuario'] == 3) { ?>
+						<li><a href="ventas.php">Venta mostrador</a></li>
+						<?php }?>
+					</ul>
+
+				</li>
 				<?php } ?>
+
 				<?php if ($_SESSION['idtusuario'] == 1 || $_SESSION['idtusuario'] == 4) { ?>
 				<li><a href="almacen_productos.php">[ALMACEN]</a></li>
 				<?php } ?>

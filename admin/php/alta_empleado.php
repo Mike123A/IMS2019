@@ -71,6 +71,9 @@
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
 
 		<h1>Alta de empleado</h1>
+		<br><br>
+			<div style="/*-webkit-column-count:3*/-moz-column-count:2;column-count:2">
+
 			<label>Nombre(s)</label><br>
 			<input type="text" required name="Nombres" placeholder="Aqui va el nombre" value="<?php if(isset($nombre)) {echo $nombre;}?>" pattern="[A-Z a-z]+"/><br>
 			<label>Apellido1</label><br>
@@ -112,9 +115,12 @@
 
 					
 				?>
-			</SELECT> 
-			<br><br>
-			<input type="submit" value="Guardar" name="Guardar" >		
+			</SELECT> <br> 	<br>	<br> 	<br>	
+			</div>
+<br> 	<br>	
+			<a href="cat_empleados.php"><input id="btn_cancelar" type="button" value="Cancelar" name="Cancelar"></a>
+			<input id="btn_aceptar" type="submit" value="Guardar" name="Guardar">		
+			<br><br><br>	
 
 		</form>
 	</section>

@@ -75,9 +75,11 @@
 				<OPTION VALUE="Salida">Salida</OPTION>";
 			</SELECT> <br>
 			<label>Cantidad</label><br>
-			<input type="number" required name="Cantidad" placeholder="Cantidad"
-			><br><br><br>
-			<input type="submit" value="Guardar" name="Guardar">		
+			<input type="number" required name="Cantidad" placeholder="Cantidad"> 
+			 <br> 	<br>	
+			<a href="almacen_productos.php"><input id="btn_cancelar" type="button" value="Cancelar" name="Cancelar"></a>
+			<input id="btn_aceptar" type="submit" value="Guardar" name="Guardar">		
+			<br><br><br>	
 
 		</form>
 	</section>

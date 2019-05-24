@@ -22,14 +22,14 @@
 	<?php include ("../includes/encabezado_sesion.php") ?>
 	<?php include ("../includes/menu.php") ?>
 	<section class="ContenedorPrincipal">
-		<h1>Ventas mostrador</h1><br><br>
+		<h1>Ventas desde pagina de clientes</h1>
+		<br><br>
 		<table >
 			<thead>
 				<tr>
 					<td>Clave</td>
 					<td>Fecha</td>
 					<td>Cliente</td>
-					<td>Empleado</td>
 					<td>Total</td>
 					<td>Estado</td>
 					<td colspan="2">Acciones</td>
@@ -39,7 +39,7 @@
 			<?php
 				include("conexion.php");
 
-				$sql = "SELECT v.idVenta,v.FechaVenta,ci.NombreCli,ci.Apellido1Cli,ci.Apellido2Cli, ce.NombresEmp,ce.Apellido1Emp,ce.Apellido2Emp, v.totalVenta, cev.EstadoVenta,v.idestadoVenta FROM ventas v INNER JOIN cat_usuarios cu ON v.idCliente = cu.idUsuario INNER JOIN cat_clientes ci ON cu.idUsuario = ci.idUsuario INNER JOIN cat_empleados ce ON v.idEmpleado = ce.idEmpleado INNER JOIN cat_estadosventa cev ON v.idestadoVenta = cev.idEstadoVenta ORDER BY idVenta Desc;";
+				$sql = "SELECT v.idVenta,v.FechaVenta,ci.NombreCli,ci.Apellido1Cli,ci.Apellido2Cli, v.totalVenta, cev.EstadoVenta,v.idestadoVenta FROM ventas v INNER JOIN cat_usuarios cu ON v.idCliente = cu.idUsuario INNER JOIN cat_clientes ci ON cu.idUsuario = ci.idUsuario INNER JOIN cat_estadosventa cev ON v.idestadoVenta = cev.idEstadoVenta WHERE v.idEmpleado = 0 ORDER BY idVenta Desc;";
 
 				if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
@@ -52,7 +52,6 @@
 						<td>".$fila['idVenta']." </td>
     					<td>".$fila['FechaVenta']."</td>
     					<td>".$fila['NombreCli']." ".$fila['Apellido1Cli']." ".$fila['Apellido2Cli']."</td>
-    					<td>".$fila['NombresEmp']." ".$fila['Apellido1Emp']." ".$fila['Apellido2Emp']."</td>
     					<td>$".$fila['totalVenta']."</td>
     					<td>".$fila['EstadoVenta']."</td>";
     					
