@@ -35,8 +35,8 @@ if(!empty($_POST)){
 			}
 		}
 		header("Location:".$_SERVER['HTTP_REFERER']);  
+
 	}
 }
 
 ?>
-
