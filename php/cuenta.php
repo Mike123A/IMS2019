@@ -36,19 +36,24 @@
 		$products = $conexion->query($query);
 		$r = $products->fetch_object();
 		?>  
-			<img src="../img/Productos/<?php echo $r->ImagenProd;?>" alt="">
-			<article>
 			<h2>Producto: <?php echo $r->NombreProd;?></h2>
-			Descripcion:
-			<p><?php echo $r->DescripcionProd;?></p><br><br>
+
+			<img src="../img/Productos/<?php echo $r->ImagenProd;?>" alt="">
+			<article class="datosp">
+				<h3>Descripcion:</h3>
+				<h4><?php echo $r->DescripcionProd;?></h4>
 			</article>
 			<article class="datosp">
 				<h3>Precio unitario:</h3>
-				<h2><?php  echo $r->PrecioProd; ?></h2>
+				<h4><?php  echo $r->PrecioProd; ?></h34>
+			</article>
+			<article class="datosp">
 				<h3>Cantidad:</h3>
-				<h2><?php  echo $c["cantidad"]; ?></h2>
-				<h3>Precio acumulado:</h3>
-				<h3><?php echo $c["cantidad"]*$r->PrecioProd;?></h3>
+				<h4><?php  echo $c["cantidad"]; ?></h4>
+			</article>
+			<article class="datosp">
+				<h3>Total:</h3>
+				<h2><?php echo $c["cantidad"]*$r->PrecioProd;?></h2>
 				<?php $total = $total + ($c["cantidad"]*$r->PrecioProd);
 				$_SESSION["total"]= $total; ?>
 			</article>
@@ -56,7 +61,7 @@
 	$found = false;
 	foreach ($_SESSION["cart"] as $c) { if($idbus==$r->idProducto){ $found=true; break; }}
 	?>
-		<a href="eliminar_carrito.php?clave=<?php echo $c["clave"];?>">Eliminar</a>
+		<button id="btn_quitar"><a href="eliminar_carrito.php?clave=<?php echo $c["clave"];?>">Remover</a></button>
 	<hr /><br>	
 <?php endforeach; ?>
 
@@ -81,11 +86,13 @@
 </style>
 
 		<div class="total">
+
 			<?php if (isset($total)) {
 				echo "Total:".$total;
 			} ?>
+			<br>	<div id="paypal-button-container"></div>
 		</div>
-		<div id="paypal-button-container"></div>
+		
 	</section>
 	<?php 
 		include("../includes/footer.php"); 

@@ -8,7 +8,6 @@ session_start();
 		exit;
 	}
 
-echo $_POST["precio"];
 if(!empty($_POST)){
 	if(isset($_POST["clave"]) && isset($_POST["cantidad"])){
 		// si es el primer producto simplemente lo agregamos

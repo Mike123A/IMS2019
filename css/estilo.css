@@ -211,6 +211,7 @@ section#descripcionempresa{
 #producto h2,#productodesc h2{
 	margin-top:10px;
 	text-align: center;
+	font-size: 35px;
 }
 #producto img, #productodesc img{
 	width: 240px;
@@ -380,25 +381,23 @@ a{
 /*Cuenta*/
 #productocarrito{
 	padding: 10px;
+	width: 95%;
+	/*background: yellow;*/
 }
 #productocarrito img{
-	width: 200px;
-	height: 200px;
+	width: 150px;
+	height: 150px;
 	display: inline-block;
-}
-#productocarrito article{
-	display: inline-block;
-	vertical-align: top;
-	width: 500px;
-	height: 200px;
+	margin-top: -30px;
 }
 #productocarrito h2{
 	text-align: center;
 }
 #productocarrito .datosp{
-	width: 200px;
+	width: 180px;
 	padding: 15px;
-	text-align: right;
+	display: inline-block;
+	vertical-align: top;
 }
 .total{
 	text-align: right;
@@ -446,6 +445,7 @@ text-align: center;
 	width: 100%;
 	height: 40px;
 	margin-bottom: -4px;
+	position: fixe
 }
 .encabezado_sesion label{
 	font-size: 18px;
@@ -576,7 +576,7 @@ text-align: center;
     left: 50%;
 
 }
-#btn_cancelar:hover{
+#btn_cancelar:hover,#btn_quitar:hover,#btn_quitar:hover a{
 	color: white;
 	background: red;
 	border: 2px solid red;
@@ -609,6 +609,22 @@ text-align: center;
 	font-size: 18px;
 	margin-left: 175px;
 }
+#btn_quitar{
+	width: 180px;
+	height: 50px;
+	color: black;
+	border: 2px solid gray;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 18px;
+	vertical-align: top;
+	margin-top: 20px;
+}
+#btn_quitar a{
+	text-decoration: none;
+	color: black;
+}
+
 
 
 

@@ -51,9 +51,9 @@
 			<img src="../img/logotipo.png" alt=""><br>
 
 			<!-- <label>Usuario</label><br> -->
-			<input type="text" required name="Usuario" placeholder="Usuario"value="" /><br>
+			<input type="text" required name="Usuario" placeholder="Usuario"value="" autocomplete="off"/><br>
 			<!-- <label>Contraseña</label><br> -->
-			<input type="password" required name="Contrasenia" placeholder="Contraseña" /><br>
+			<input type="password" required name="Contrasenia" placeholder="Contraseña" autocomplete="off"/><br>
 			<input id="btn_ingresar"type="submit" name="Ingresar" value="Ingresar"><br>
 			<p>No tienes una cuenta <a href="registro-cliente.php"> Click aqui</a></p>	
 			<!-- <input type="button" name="" value="Registrarse"> -->
