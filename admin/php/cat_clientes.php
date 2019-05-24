@@ -66,15 +66,8 @@
     					<td>".$fila['CorreoCli']."</td>
     					<td>".$fila['RFC']."</td>
     					<td>".$fila['Usuario']."</td>
-    					";
-    					if ($fila['estado'] == "Alta") {
-						echo "
-						<td class='altas'></td>";
-					}else{
-						echo "
-						<td class='bajas'></td>";			
-					}
-    				echo "
+    					<td>".$fila['estado']."</td>
+  
 						<td><a href='cambios_cliente.php?clave=".$fila['idCliente']."'>
 							<button class='modificar'>
 								<img src='../img/modificar.png' alt=''>Modificar
