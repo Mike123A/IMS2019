@@ -56,7 +56,7 @@
 			<input type="text" placeholder="Aqui va tu asunto" id="asunto" name="asunto" required=""><br>
 			<label for="">*Mensaje:</label><br>
 			<textarea placeholder="Aqui va tu mensaje/comentario" id="mensaje" name="mensaje" required=""></textarea><br>
-			<button type="submit" name="Enviar">Enviar mensaje</button>
+			<button id="btn_env" type="submit" name="Enviar">Enviar mensaje</button>
 		</form>
 		<section id="DatosEmpresa">
 			<h2>Conectate con nosotros</h3><br><br>
@@ -83,5 +83,6 @@
 	<?php 
 		include("../includes/footer.php"); 
 	?>
+	
 </body>
 </html>

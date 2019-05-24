@@ -351,6 +351,7 @@ a{
 	border: 2px solid #868C8C;
 	margin: 5px 0px 10px 10px;
 	padding: 3px 0px 3px 10px;
+	border-radius: 10px;
 }
 .formularios textarea{
 	height: 175px;
@@ -422,6 +423,7 @@ a{
 	width: 200px;
 	height: 30px;
 	margin:10px;
+	padding-left: 15px;
 }
 .login a{
 	padding: 0px;
@@ -540,7 +542,8 @@ text-align: center;
 	width: 300px;
 	height: 40px;
 	border-radius: 10px;
-	font-size: 25px;
+	font-size: 20px;
+	margin: 10px;
 }
 .encabezado-login {
 	background: #699;
@@ -561,3 +564,58 @@ text-align: center;
 	width: 900px;
 	margin-left: 200px;
 }
+#btn_cancelar{
+	width: 200px;
+	height: 50px;
+	color: black;
+	border: 2px solid gray;
+	border-radius: 10px;
+	padding: 10px;
+	text-align: center;
+	position: absolute;
+    left: 50%;
+
+}
+#btn_cancelar:hover{
+	color: white;
+	background: red;
+	border: 2px solid red;
+
+}
+#btn_aceptar{
+	width: 200px;
+	height: 50px;
+	color: black;
+	border: 2px solid gray;
+	border-radius: 10px;
+	padding: 10px;
+	text-align: center;
+	position: absolute;
+    left: 34%;
+}
+#btn_aceptar:hover,#btn_env:hover{
+	color: white;
+	background: #4CA440;
+	border: 2px solid #4CA440;
+
+}
+#btn_env{
+	width: 200px;
+	height: 50px;
+	color: black;
+	border: 2px solid gray;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 18px;
+	margin-left: 175px;
+}
+
+
+
+
+
+
+
+
+
+

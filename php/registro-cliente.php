@@ -107,9 +107,14 @@
 			<label>Confirmar contraseña</label><br>
 			<input type="password" required name="Contraseña1" placeholder="<?php if(isset($contraseña1) && $contraseña1 ==''){ echo 'No coinciden';}else{echo "Ej. Vic1478AHs";} ?>"value="<?php if(isset($contraseña)) {echo $contraseña;}?>" value="<?php if(isset($contraseña)) {echo $contraseña;}?>" pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" title="Una contraseña válida es un conjuto de caracteres, donde cada uno consiste de una letra mayúscula o minúscula, o un dígito. La contraseña debe empezar con una letra y contener al menos un dígito. Debe tener 8-10 caracteres" maxlength="10" minlength="10"/> <br>
 			</div>
-			<input type="submit" value="Registrarse" name="Guardar">
+			<input id="btn_aceptar"type="submit" value="Registrarse" name="Guardar">
+			<a href="index.php"><input id="btn_cancelar" type="button" value="Cancelar" name="Cancelar"></a>
+			
 		</form>
-		
+		<br><br>
+		<br><br>
+		<br><br>
+
 		
 	</section>
 	<?php 
