@@ -34,32 +34,29 @@
 	</form>
 	<?php if (isset($_POST['buscar'])) { 
 	$variable = $_POST['variable'];
-		?>
-	<br><br><br>
-	<table>
-			<thead>
-				<tr>
-					<td>Clave</td>
-					<td>Nombre</td>
-					<td>Alto</td>
-					<td>Ancho</td>
-					<td>Peso</td>
-					<td>Descripcion</td>
-					<td>Precio</td>
-					<td>Stock</td>
-					<td>Imagen</td>
-					<td></td>
-				</tr>
-			</thead>
-			
-			<?php
-				include("conexion.php");
-				$sql = "SELECT * FROM cat_productos WHERE NombreProd like '%$variable%' ORDER BY idProducto ASC";
+		include("conexion.php");
+		$sql = "SELECT * FROM cat_productos WHERE NombreProd like '%$variable%' ORDER BY idProducto ASC";
 
-				if(!$resultado = $conexion->query($sql)){
-					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
-				}
-				
+		if(!$resultado = $conexion->query($sql)){
+			die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
+		}
+		if(mysqli_num_rows($resultado)>0){
+			echo "
+			<table>
+				<thead>
+					<tr>
+						<td>Clave</td>
+						<td>Nombre</td>
+						<td>Alto</td>
+						<td>Ancho</td>
+						<td>Peso</td>
+						<td>Descripcion</td>
+						<td>Precio</td>
+						<td>Stock</td>
+						<td>Imagen</td>
+						<td></td>
+					</tr>
+				</thead>";
 				while($fila = $resultado->fetch_assoc()){
 					echo"
 					<tr>
@@ -84,18 +81,18 @@
 							</form>
 						</td>
     					
-						</tr>";
+					</tr>";
 				}
-			?>
+
+		}else
+			print "<script>alert('No se encontraron coincidencias, intenta con otro');</script>";
+
+
+		?>
 		</table>		
-	<?php }?>
+	<?php } ?>
 
-<br><br><br><br>
-
-
-
-
-
+<br><br>
 
 
 	<h2>Articulos en la cuenta</h2>
@@ -146,7 +143,84 @@
 	<hr /><br>	
 <?php endforeach; ?>
 
-<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+		<div class="total">
+
+			<?php if (isset($total)) {
+				echo "Total:".$total;
+			} ?>
+			<br>	<div id="paypal-button-container"></div>
+		</div>
+		
+	
+
+	<?php else:?>
+	<p class="alert alert-warning">Sin articulos.</p>
+<?php endif;?>
+	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
+		<label for="">Buscar cliente:</label>
+		<input type="text" name="variable">
+		<button id="btn_busqueda" type="submit" name="buscar_c"><img src="../img/Lupa.png" alt=""></button>
+		<br>
+	</form>
+		<br>
+
+	<?php if (isset($_POST['buscar_c'])) { 
+	$variable = $_POST['variable'];
+		include("conexion.php");
+		$sql = "SELECT * FROM cat_clientes WHERE NombreCli like '%$variable%' ORDER BY idCliente ASC";
+
+		if(!$resultado = $conexion->query($sql)){
+			die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
+		}
+		if(mysqli_num_rows($resultado)>0){
+			echo "
+			<table>
+				<thead>
+					<tr>
+						<td>Clave</td>
+						<td>Nombres</td>
+						<td>Apellidos</td>
+						<td>Direccion</td>
+						<td>Telefono</td>
+						<td>Correo</td>
+						<td>RFC</td>
+						<td></td>
+					</tr>
+				</thead>";
+				while($fila = $resultado->fetch_assoc()){
+					echo"
+					<tr>
+						<td>".$fila['idCliente']." </td>
+    					<td>".$fila['NombreCli']."</td>
+    					<td>".$fila['Apellido1Cli']." ".$fila['Apellido2Cli']."cm</td>
+    					<td>".$fila['DireccionCli']."</td>
+    					<td>".$fila['TelefonoCli']."</td>
+    					<td>".$fila['CorreoCli']."</td>
+    					<td>".$fila['RFC']."</td>
+    					<td id='td_ac'>
+    						<form action='agregar_carrito.php' method='post'>
+							<input style='display: none' type='number' required name='clave' placeholder='' value=".$fila['idCliente']." /><br>
+				
+							<button id='btn_agregar' type='submit' name='agregar' >Seleccionar</button>
+							</form>
+						</td>
+    					
+					</tr>";
+				}
+
+		}else
+			print "<script>alert('No se encontraron coincidencias, intenta con otro');</script>";
+
+
+		?>
+		</table>		
+	<?php } ?>
+
+
+</section>
+	<?php include ("../includes/footer.php") ?>
+	<script src="https://www.paypalobjects.com/api/checkout.js"></script>
 <style>
    
     /* Media query for mobile viewport */
@@ -166,21 +240,50 @@
    
 </style>
 
-		<div class="total">
-
-			<?php if (isset($total)) {
-				echo "Total:".$total;
-			} ?>
-			<br>	<div id="paypal-button-container"></div>
-		</div>
-		
-	
-
-	<?php else:?>
-	<p class="alert alert-warning">Sin articulos.</p>
-<?php endif;?>
-</section>
-	<?php include ("../includes/footer.php") ?>
+<script>
+    paypal.Button.render({
+        env: 'sandbox', // sandbox | production
+        style: {
+            label: 'checkout',  // checkout | credit | pay | buynow | generic
+            size:  'responsive', // small | medium | large | responsive
+            shape: 'pill',   // pill | rect
+            color: 'gold'   // gold | blue | silver | black
+        },
+ 
+        // PayPal Client IDs - replace with your own
+        // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+ 
+        client: {
+            sandbox:    'AY1Y4wOofLSFUt7f8WHjTeZrN2f3PUsIK1k9PJdNelXLwLATRuqR4SUp_KymwxYpsyYPAGbFEwoxLxyW',
+            production: 'AUZ5SjsTb6BGsBOCyAdmed_9t_v-U6kQIbVIfsA1kWmPCnB06GYiCRiExLsfDMycl_vm4U3630E65EVL'
+        },
+ 
+        // Wait for the PayPal button to be clicked
+ 
+        payment: function(data, actions) {
+            return actions.payment.create({
+                payment: {
+                    transactions: [
+                        {
+                            amount: { total: '<?php echo $total; ?>', currency: 'MXN' },
+                        }
+                    ]
+                }
+            });
+        },
+ 
+        // Wait for the payment to be authorized by the customer
+ 
+        onAuthorize: function(data, actions) {
+            return actions.payment.execute().then(function() {
+                console.log(data);
+                window.location="procesar_venta.php";
+            });
+        }
+   
+    }, '#paypal-button-container');
+ 
+</script>
 	
 	
 </body>

@@ -65,25 +65,7 @@
 	<hr /><br>	
 <?php endforeach; ?>
 
-<script src="https://www.paypalobjects.com/api/checkout.js"></script>
-<style>
-   
-    /* Media query for mobile viewport */
-    @media screen and (max-width: 400px) {
-        #paypal-button-container {
-           width: 100%;
-        }
-    }
-   
-    /* Media query for desktop viewport */
-    @media screen and (min-width: 400px) {
-        #paypal-button-container {
-           width: 250px;
-            display: inline-block;
-        }
-    }
-   
-</style>
+
 
 		<div class="total">
 
@@ -102,7 +84,25 @@
 <?php endif;?>
 
  
- 
+ <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<style>
+   
+    /* Media query for mobile viewport */
+    @media screen and (max-width: 400px) {
+        #paypal-button-container {
+           width: 100%;
+        }
+    }
+   
+    /* Media query for desktop viewport */
+    @media screen and (min-width: 400px) {
+        #paypal-button-container {
+           width: 250px;
+            display: inline-block;
+        }
+    }
+   
+</style>
 <script>
     paypal.Button.render({
         env: 'sandbox', // sandbox | production
