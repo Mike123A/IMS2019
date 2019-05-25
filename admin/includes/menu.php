@@ -37,7 +37,10 @@
 						<li><a href="cat_empleados.php">Empleados</a></li>
 						<?php }if ($_SESSION['idtusuario'] == 1 || $_SESSION['idtusuario'] == 2) { ?>
 						<li><a href="cat_tusuarios.php">Tipos Usuarios </a></li>
+						<?php }if ($_SESSION['idtusuario'] == 1 || $_SESSION['idtusuario'] == 3) { ?>
+						<li><a href="cat_eventa.php">Etapas de venta </a></li>
 						<?php } ?>
+
 					</ul>
 				</li>
 				<?php if ($_SESSION['idtusuario'] == 1 ) { ?>

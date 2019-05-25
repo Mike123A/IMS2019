@@ -148,7 +148,7 @@
 			<?php if (isset($total)) {
 				echo "Total:".$total;
 			} ?>
-			<br>	<div id="paypal-button-container"></div>
+			<br>	<!-- <div id="paypal-button-container"></div> -->
 		</div>
 		
 	
@@ -256,6 +256,16 @@
 				}
 		}
 	 ?></table>
+	 <div class="total">
+
+			<?php if (isset($total)) echo "Total a pagar: ".$total; ?>
+			<br>
+			<div id="paypal-button-container"></div>
+			<br>
+
+			<button id="btn_agregar"><a href="procesar_venta.php">Procesar venta</a></button>
+			<button id="btn_quitar"><a href="limpiar_cuenta.php">Cancelar venta</a></button>
+	</div>
 
 </section>
 	<?php include ("../includes/footer.php") ?>

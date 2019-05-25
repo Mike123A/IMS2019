@@ -31,7 +31,7 @@
 					<td>Fecha</td>
 					<td>Cliente</td>
 					<td>Total</td>
-					<td>Estado</td>
+					<td>Etapa de venta</td>
 					<td colspan="2">Acciones</td>
 				</tr>
 			</thead>
@@ -58,14 +58,14 @@
     				echo "
 						<td><a href='#'>
 							<button class='modificar'>
-								<img src='../img/modificar.png' alt=''>Ver detalles
+								<img src='../img/archivo.png' alt=''>Ver detalles
 							</button>
 							</a>
 						</td>
 						<td>		
 							<a href='cambiar_estado_venta.php?clave=".$fila['idVenta']."&estado=".$fila['idestadoVenta']."''>
-							<button class='eliminar'>
-								<img src='../img/refrescar.png' alt=''>Estado
+							<button class='etapa'>
+								<img src='../img/aumentar.png' alt=''>Etapa
 							</button>
 							</a>
 						</td></tr>";

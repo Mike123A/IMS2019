@@ -24,16 +24,13 @@
 		$resultado = $conexion->query($query);
 		if ($resultado) {
 			mysqli_close($conexion);
-
-			header("Location: ventas_linea.php");
+			header("Location:".$_SERVER['HTTP_REFERER']);  
 		}else{
 			echo "No eliminado";
 		}
 	}else{
 		print "<script>alert('Esta venta ya esta en la estapa final.');</script>";
-		print "<script>window.location='ventas_linea.php';</script>";
-
-
+		header("Location:".$_SERVER['HTTP_REFERER']);  
 	}
 	//
 
