@@ -120,7 +120,7 @@ td {
   border-bottom: 1px solid;
 }
 #td_ac{
-	height: 100px;
+	height: 80px;
 }
 form{
 	text-align: center;
@@ -333,7 +333,7 @@ footer img{
 	font-size: 20px;
 }
 #btn_agregar,#btn_quitar{
-	width: 100px;
+	width: 110px;
 	height: 45px;
 	border-radius: 10px;
 	border: 2px solid gray;
@@ -362,16 +362,6 @@ footer img{
 #btn_busqueda :hover{
 	background: #D6D0D0;
 	border-radius: 10px;
-}
-#btn_seleccionar{
-	width: 100px;
-	height: 45px;
-	border-radius: 10px;
-	border: 2px solid gray;
-	padding: 10px;
-	vertical-align: top;
-	font-size: 18px;
-	background: yellow;
 }
 
 

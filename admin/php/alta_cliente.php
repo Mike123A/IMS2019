@@ -60,8 +60,10 @@
 				$query = "INSERT INTO cat_clientes(NombreCli, Apellido1Cli, Apellido2Cli, DireccionCli, TelefonoCli, CorreoCli, RFC, idUsuario) VALUES ('$nombre','$apellido1','$apellido2','$direccion','$telefono','$correo','$rfc',$idUsuario);";
 				$resultado = $conexion->query($query);
 				mysqli_close($conexion);
-				
-				header("Location: cat_clientes.php");
+				if (isset($_SESSION["cart"])) 
+					header("Location: nueva_venta.php" );  
+				else
+					header("Location: cat_clientes.php" );  
 			}else{
 				echo "No Insertado";
 			}

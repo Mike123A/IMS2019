@@ -140,9 +140,8 @@
 	foreach ($_SESSION["cart"] as $c) { if($idbus==$r->idProducto){ $found=true; break; }}
 	?>
 		<button id="btn_quitar"><a href="eliminar_carrito.php?clave=<?php echo $c["clave"];?>">Remover</a></button>
-	<hr /><br>	
-<?php endforeach; ?>
-
+	<hr /><br><?php endforeach; ?>
+	</div>
 
 		<div class="total">
 
@@ -199,24 +198,64 @@
     					<td>".$fila['CorreoCli']."</td>
     					<td>".$fila['RFC']."</td>
     					<td id='td_ac'>
-    						<form action='agregar_carrito.php' method='post'>
-							<input style='display: none' type='number' required name='clave' placeholder='' value=".$fila['idCliente']." /><br>
+							<form action='".htmlspecialchars($_SERVER['PHP_SELF'])."'method='POST'>
+
+							<input style='display: none' type='number' required name='cliente' placeholder='' value='".$fila['idUsuario']."' /><br>
 				
-							<button id='btn_agregar' type='submit' name='agregar' >Seleccionar</button>
+							<button id='btn_agregar' type='submit' name='seleccionarc' >Seleccionar</button>
 							</form>
 						</td>
     					
 					</tr>";
 				}
-
+			echo "</table>";
 		}else
-			print "<script>alert('No se encontraron coincidencias, intenta con otro');</script>";
+			echo "<label>No se encontraron coincidencias puedes intentar con otro o regitar un nuevo cliente <a href='alta_cliente.php'>Click aqui.</a></label><br><br><br><br>";
 
 
 		?>
-		</table>		
-	<?php } ?>
+			
+	<?php } 
 
+		if (isset($_POST['seleccionarc'])) 
+			$_SESSION["cliente"]= $_POST['cliente'];
+		if (isset($_SESSION["cliente"])) {
+			include("conexion.php");
+			$idbuscl = $_SESSION["cliente"];
+
+			$sql = "SELECT * FROM cat_clientes WHERE idUsuario = $idbuscl";
+		
+			if(!$resultado = $conexion->query($sql)){
+			die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
+		}
+		
+		echo "
+		<table>
+			<thead>
+				<tr>
+					<td>Clave</td>
+					<td>Nombres</td>
+					<td>Apellidos</td>
+					<td>Direccion</td>
+					<td>Telefono</td>
+					<td>Correo</td>
+					<td>RFC</td>
+				</tr>
+			</thead>";
+			while($fila = $resultado->fetch_assoc()){
+				echo"
+				<tr>
+					<td>".$fila['idCliente']." </td>
+    				<td>".$fila['NombreCli']."</td>
+    				<td>".$fila['Apellido1Cli']." ".$fila['Apellido2Cli']."cm</td>
+    				<td>".$fila['DireccionCli']."</td>
+    				<td>".$fila['TelefonoCli']."</td>
+    				<td>".$fila['CorreoCli']."</td>
+    				<td>".$fila['RFC']."</td>				
+				</tr>";
+				}
+		}
+	 ?></table>
 
 </section>
 	<?php include ("../includes/footer.php") ?>
