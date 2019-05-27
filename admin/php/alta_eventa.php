@@ -56,7 +56,7 @@
 		<h1>Alta de etapa de venta</h1>
 		<br>
 		<label>Etapa de venta</label><br>
-		<input type="text" required name="Nombres" placeholder="<?php if(isset($nombre) && $nombre ==''){ echo 'Intente con otro';}else{echo "Aqui va el tipo de usuario";} ?>" value="<?php if(isset($nombre)) {echo $nombre;}?>" /><br>
+		<input type="text" required name="Nombres" placeholder="<?php if(isset($nombre) && $nombre ==''){ echo 'Intente con otro';}else{echo "Ej. Produccion/Empaque/Mantenimiento";} ?>" value="<?php if(isset($nombre)) {echo $nombre;}?>" /><br>
 		<br>
 		<a href="cat_eventa.php"><input id="btn_cancelar" type="button" value="Cancelar" name="Cancelar"></a>
 			<input id="btn_aceptar" type="submit" value="Guardar" name="Guardar">		

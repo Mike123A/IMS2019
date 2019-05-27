@@ -73,19 +73,19 @@
 		<br><br>
 			<div style="/*-webkit-column-count:3*/-moz-column-count:2;column-count:2">
 			<label>Nombre</label><br>
-			<input type="text" required name="Nombres" placeholder="<?php if(isset($nombre) && $nombre ==''){ echo 'Intente con otro';}else{echo "Aqui va el nombre";} ?>" value="<?php if(isset($nombre)) {echo $nombre;}?>" maxlength="50" /><br>
+			<input type="text" required name="Nombres" placeholder="<?php if(isset($nombre) && $nombre ==''){ echo 'Intente con otro';}else{echo "Ej. Glucheck";} ?>" value="<?php if(isset($nombre)) {echo $nombre;}?>" maxlength="50" /><br>
 			<label>Alto en centimetros</label><br>
-			<input type="text" required name="Alto" placeholder="Aqui va el alto" value="<?php if(isset($Alto)) {echo $Alto;}?>" pattern="[0-9]+" maxlength="5"/><br>
+			<input type="text" required name="Alto" placeholder="Ej. 10 cm" value="<?php if(isset($Alto)) {echo $Alto;}?>" pattern="[0-9]+" maxlength="5"/><br>
 			<label>Ancho en centimetros</label><br>
-			<input type="text" required name="Ancho" placeholder="Aqui va el ancho" value="<?php if(isset($Ancho)) {echo $Ancho;}?>" pattern="[0-9]+" maxlength="5" /><br>
+			<input type="text" required name="Ancho" placeholder="Ej. 5cm" value="<?php if(isset($Ancho)) {echo $Ancho;}?>" pattern="[0-9]+" maxlength="5" /><br>
 			<label>Peso en gramos</label><br>
-			<input type="text" required name="Peso" placeholder="Aqui va el peso" value="<?php if(isset($Peso)) {echo $Peso;}?>" pattern="[0-9]+" maxlength="5"/><br>
+			<input type="text" required name="Peso" placeholder="Ej. 300gr" value="<?php if(isset($Peso)) {echo $Peso;}?>" pattern="[0-9]+" maxlength="5"/><br>
 			<label>Descripcion</label><br>
-			<input type="textarea" required name="Descripcion" placeholder="Descripcion" value="<?php if(isset($Descripcion)) {echo $Descripcion;}?>" maxlength="300"/><br>
+			<input type="textarea" required name="Descripcion" placeholder="Ej. Es un producto a travez del cual se puede medir la glucosa de una manera amigable para el paciente" value="<?php if(isset($Descripcion)) {echo $Descripcion;}?>" maxlength="300"/><br>
 			<label>Precio</label><br>
-			<input type="text" required name="Precio" placeholder="Aqui va el precio" value="<?php if(isset($Precio)) {echo $Precio;}?>" /><br>
+			<input type="text" required name="Precio" placeholder="Ej. $450.00" value="<?php if(isset($Precio)) {echo $Precio;}?>" /><br>
 			<label>Stock</label><br>
-			<input type="text" required name="Stock" placeholder="Stock" value="<?php if(isset($Stock)) {echo $Stock;}?>" pattern="[0-9]+" maxlength="10" /><br/>
+			<input type="text" required name="Stock" placeholder="Ej. 100" value="<?php if(isset($Stock)) {echo $Stock;}?>" pattern="[0-9]+" maxlength="10" /><br/>
 			<label>Imagen</label><br>
 			<input type="file" src="<?php if(isset($url_temp)) {echo $url_temp;}?> ?>" required name="Imagen"  accept="image/*" /><br>
 		</div>
