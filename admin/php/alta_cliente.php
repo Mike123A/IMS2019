@@ -45,11 +45,14 @@
    		}
    		$query = ("SELECT * FROM cat_clientes WHERE RFC='$rfc'"); 
 		$resultado = $conexion->query($query);
-    	if(mysqli_num_rows($resultado)>0 && $rfc=! "") { 
-			$bandera = 1;
-     		$rfc = "";
+    	if(mysqli_num_rows($resultado)>0) { 
+    		if ($rfc != "") {
+    			$bandera = 1;
+     			$rfc = "";
+    		}
    		}
    		if($bandera == 0  ){
+   			$contraseña =  md5($_POST ['Contraseña']);
    			$query = "INSERT INTO cat_usuarios(Usuario, Contrasenia, idtusuario, estado) VALUES ('$usuario','$contraseña','$tusuario','Alta');";
 			$resultado = $conexion->query($query);
 			if ($resultado) {

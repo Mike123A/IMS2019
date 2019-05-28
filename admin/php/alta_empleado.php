@@ -38,6 +38,7 @@
      		$correo = "";
    		}
    		if($bandera == 0  ){
+   			$contraseña =  md5($_POST ['Contraseña']);
    			$query = "INSERT INTO cat_usuarios(Usuario, Contrasenia, idtusuario, estado) VALUES ('$usuario','$contraseña','$tusuario','Alta');";
 			$resultado = $conexion->query($query);
 			if ($resultado) {

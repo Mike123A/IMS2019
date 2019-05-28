@@ -10,8 +10,8 @@
 			include("conexion.php"); 
 
 			$Usuario = $_POST['Usuario'];
-			$Contrasenia = $_POST['Contrasenia'];
-			// $Contrasenia = md5($_POST['Contrasenia']);
+			// $Contrasenia = $_POST['Contrasenia'];
+			$Contrasenia = md5($_POST['Contrasenia']);
 
 			$query = ("SELECT * FROM cat_usuarios WHERE Usuario='$Usuario' AND Contrasenia='$Contrasenia'");
 			$resultado = $conexion->query($query);

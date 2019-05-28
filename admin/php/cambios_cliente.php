@@ -67,27 +67,47 @@
 	    	if(mysqli_num_rows($resultado)>0) { 
 				$bandera = 1;
 	     		$RFC = "";
-	      		echo "4";
-
 	     	}
    		}
    		if($bandera == 0  ){
-	   		$query = "UPDATE cat_clientes SET NombreCli = '".$nombre."', Apellido1Cli='".$apellido1."', Apellido2Cli='".$apellido2."', DireccionCli='".$direccion."',TelefonoCli='".$telefono."',CorreoCli='".$correo."',RFC='".$RFC."' WHERE idCliente = ".$clave." ;";
-			$resultado = $conexion->query($query);
-			if ($resultado) {
-				$query1 = "UPDATE cat_usuarios SET Usuario='$usuario',Contrasenia='$contraseña' WHERE idUsuario = $claveu ;";
-				$resultado1 = $conexion->query($query1);
-				if ($resultado1) {
-					mysqli_close($conexion);
-				
-					header("Location: cat_clientes.php");
+   			if ($contraseña =! "") {
+   				$contraseña =  md5($_POST ['Contraseña']);
+	   			$query = "UPDATE cat_clientes SET NombreCli = '".$nombre."', Apellido1Cli='".$apellido1."', Apellido2Cli='".$apellido2."', DireccionCli='".$direccion."',TelefonoCli='".$telefono."',CorreoCli='".$correo."',RFC='".$RFC."' WHERE idCliente = ".$clave." ;";
+				$resultado = $conexion->query($query);
+				if ($resultado) {
+					$query1 = "UPDATE cat_usuarios SET Usuario='$usuario',Contrasenia='$contraseña' WHERE idUsuario = $claveu ;";
+					$resultado1 = $conexion->query($query1);
+					if ($resultado1) {
+						mysqli_close($conexion);
+					
+						header("Location: cat_clientes.php");
+					}
+					else{
+					echo "No Insertado";
+					}
+				}else{
+					echo "No Insertado";
 				}
-				else{
-				echo "No Insertado";
+   			}else{
+   				$query = "UPDATE cat_clientes SET NombreCli = '".$nombre."', Apellido1Cli='".$apellido1."', Apellido2Cli='".$apellido2."', DireccionCli='".$direccion."',TelefonoCli='".$telefono."',CorreoCli='".$correo."',RFC='".$RFC."' WHERE idCliente = ".$clave." ;";
+				$resultado = $conexion->query($query);
+				if ($resultado) {
+					$query1 = "UPDATE cat_usuarios SET Usuario='$usuario' WHERE idUsuario = $claveu ;";
+					$resultado1 = $conexion->query($query1);
+					if ($resultado1) {
+						mysqli_close($conexion);
+					
+						header("Location: cat_clientes.php");
+					}
+					else{
+					echo "No Insertado";
+					}
+				}else{
+					echo "No Insertado";
 				}
-			}else{
-				echo "No Insertado";
-			}
+
+   			}
+	   		
 		}
 	}else{
 		$clave = $_GET['clave'];
@@ -144,12 +164,12 @@
 			<label>Telefono</label><br>
 			<input type="tel" required name="Telefono" placeholder="<?php if(isset($telefono) && $telefono ==''){ echo 'Intente con otro';}else{echo 'Ej. 9991 47 47 47';}?>" value="<?php if(isset($telefono)) {echo $telefono;}?>"  pattern="[0-9]+" maxlength="10" title="Solo puedes ingresar numeros "/><br>
 			<label>RFC</label><br>
-			<input type="text" name="RFC" placeholder="<?php if(isset($rfc) && $rfc ==''){ echo 'Intente con otro';}else{echo 'Ej. VECJ880326 XXX';}?>" value="<?php if(isset($rfc)) {echo $rfc;}?>" /><br>
+			<input type="text" name="RFC" placeholder="<?php if(isset($rfc) && $rfc !=''){ echo 'Intente con otro';}else{echo 'Ej. VECJ880326 XXX';}?>" value="<?php if(isset($rfc)) {echo $rfc;}?>" /><br>
 			<label>Usuario</label><br>
 			
 			<input autocomplete="off" type="text" required name="Usuario" placeholder="<?php if(isset($usuario) && $usuario ==''){ echo 'Ej. UsuarioVic';}else{echo "Aqui va el usuario";} ?>" value="<?php if(isset($usuario)){ echo $usuario;} ?>" maxlength="10" /><br>
-			<label>Contraseña</label><br>
-			<input type="password" required name="Contraseña" placeholder="<?php if(isset($contraseña) && $contraseña ==''){ echo 'No coinciden';}else{echo "Ej. Vic1478AHs";} ?>"value="<?php if(isset($contraseña)) {echo $contraseña;}?>" pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" title="Una contraseña válida es un conjuto de caracteres, donde cada uno consiste de una letra mayúscula o minúscula, o un dígito. La contraseña debe empezar con una letra y contener al menos un dígito. Debe tener 8-10 caracteres" maxlength="10" minlength="10"/> <br>
+			<label>Si no deseas cambiar la contraseña, dejar en blanco.</label><br>
+			<input type="password"  name="Contraseña" placeholder="<?php if(isset($contraseña) && $contraseña ==''){ echo 'No coinciden';}else{echo "Ej. Vic1478AHs";} ?>"value="<?php if(isset($contraseña)) {}?>" pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" title="Una contraseña válida es un conjuto de caracteres, donde cada uno consiste de una letra mayúscula o minúscula, o un dígito. La contraseña debe empezar con una letra y contener al menos un dígito. Debe tener 8-10 caracteres" maxlength="10" minlength="10"/> <br>
 			<br>
 			</div>
 			<br> 	<br>	

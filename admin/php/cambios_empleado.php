@@ -54,22 +54,46 @@
 	   		}
 	   	}
    		if($bandera == 0  ){
-	   		$query ="UPDATE cat_empleados SET NombresEmp = '".$nombre."', Apellido1Emp=TRIM('$apellido1'),Apellido2Emp='$apellido2', FechaNacEmp='$fechanac', CorreoEmp='$correo',DireccionEmp='$direccion',TelefonoEmp='$telefono',FechaContEmp='$fechacont' WHERE idEmpleado = $clave;";
-			$resultado = $conexion->query($query);
-			if ($resultado) {
-				$query1 = "UPDATE cat_usuarios SET Usuario='$usuario',Contrasenia='$contraseña',idtusuario=$tusuario WHERE idUsuario = $claveu";
-				$resultado1 = $conexion->query($query1);
-				if ($resultado1) {
-					mysqli_close($conexion);
-				
-					header("Location: cat_empleados.php");
+   			if ($contraseña =! "") {
+   				$contraseña =  md5($_POST ['Contraseña']);
+   				$query ="UPDATE cat_empleados SET NombresEmp = '".$nombre."', Apellido1Emp=TRIM('$apellido1'),Apellido2Emp='$apellido2', FechaNacEmp='$fechanac', CorreoEmp='$correo',DireccionEmp='$direccion',TelefonoEmp='$telefono',FechaContEmp='$fechacont' WHERE idEmpleado = $clave;";
+				$resultado = $conexion->query($query);
+				if ($resultado) {
+					$query1 = "UPDATE cat_usuarios SET Usuario='$usuario',Contrasenia='$contraseña',idtusuario=$tusuario WHERE idUsuario = $claveu";
+					$resultado1 = $conexion->query($query1);
+					if ($resultado1) {
+						mysqli_close($conexion);
+					
+						header("Location: cat_empleados.php");
+					}
+					else{
+					echo "No Insertado";
+					}
+				}else{
+					echo "No Insertado";
 				}
-				else{
-				echo "No Insertado";
+
+	   		}else{
+	   			$query ="UPDATE cat_empleados SET NombresEmp = '".$nombre."', Apellido1Emp=TRIM('$apellido1'),Apellido2Emp='$apellido2', FechaNacEmp='$fechanac', CorreoEmp='$correo',DireccionEmp='$direccion',TelefonoEmp='$telefono',FechaContEmp='$fechacont' WHERE idEmpleado = $clave;";
+				$resultado = $conexion->query($query);
+				if ($resultado) {
+					$query1 = "UPDATE cat_usuarios SET Usuario='$usuario',idtusuario=$tusuario WHERE idUsuario = $claveu";
+					$resultado1 = $conexion->query($query1);
+					if ($resultado1) {
+						mysqli_close($conexion);
+					
+						header("Location: cat_empleados.php");
+					}
+					else{
+					echo "No Insertado";
+					}
+				}else{
+					echo "No Insertado";
 				}
-			}else{
-				echo "No Insertado";
-			}
+
+
+	   		}
+	   		
 		}
 	}else{
 		$clave = $_GET['clave'];
@@ -135,7 +159,7 @@
 			
 			<input type="text" required name="Usuario" placeholder="<?php if(isset($usuario) && $usuario ==''){ echo 'Intente con otro';}else{echo "Aqui va el usuario";} ?>" value="<?php if(isset($usuario)){ echo $usuario;} ?>" maxlength="10" /><br>
 			<label>Contraseña</label><br>
-			<input type="password" required name="Contraseña" placeholder="Aqui va la contraseña"value="<?php if(isset($contraseña)) {echo $contraseña;}?>" pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" title="Una contraseña válida es un conjuto de caracteres, donde cada uno consiste de una letra mayúscula o minúscula, o un dígito. La contraseña debe empezar con una letra y contener al menos un dígito. Debe tener 8-10 caracteres" maxlength="10" minlength="10"/> <br>
+			<input type="password" name="Contraseña" placeholder="Si no vas a cambiar contraseña, dejar vacio el campo."value="<?php if(isset($contraseña)) {}?>" pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" title="Una contraseña válida es un conjuto de caracteres, donde cada uno consiste de una letra mayúscula o minúscula, o un dígito. La contraseña debe empezar con una letra y contener al menos un dígito. Debe tener 8-10 caracteres" maxlength="10" minlength="10"/> <br>
 			<label>Tipo de usuario</label><br>
 			<SELECT NAME="tipousuario" SIZE=1  > 
 				<?php
