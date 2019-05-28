@@ -4,13 +4,11 @@
 	$alert = '';
 
 	if (!empty($_SESSION['active'])) {
-		// header("Location: php/index.php");
 	}else{
 		if (!empty($_POST['Ingresar'])) {
 			include("conexion.php"); 
 
 			$Usuario = $_POST['Usuario'];
-			// $Contrasenia = $_POST['Contrasenia'];
 			$Contrasenia = md5($_POST['Contrasenia']);
 
 			$query = ("SELECT * FROM cat_usuarios WHERE Usuario='$Usuario' AND Contrasenia='$Contrasenia'");
@@ -56,8 +54,8 @@
 			<input type="password" required name="Contrasenia" placeholder="Contraseña" autocomplete="off"/><br>
 			<input id="btn_ingresar"type="submit" name="Ingresar" value="Ingresar"><br>
 			<p>No tienes una cuenta <a href="registro-cliente.php"> Click aqui</a></p>	
-			<!-- <input type="button" name="" value="Registrarse"> -->
 			<?php if (isset($alert)) { echo $alert;}  ?>
+			<br>
 		</form>
 		
 	
