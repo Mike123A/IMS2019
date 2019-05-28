@@ -66,7 +66,7 @@
 				$resultado1 = $conexion->query($query1);
 				$fila = $resultado1->fetch_assoc();
 
-				$query = "UPDATE cat_productos SET NombreProd = '".$nombre."' , AltoProd = '".$Alto."' , AnchoProd = '".$Ancho."', PesoProd = '".$Peso."', DescripcionProd = '".$Descripcion."' , PrecioProd = '".$Precio."' , StockProd = '".$Stock."',ImagenProd = '".$img_producto."' WHERE idProducto = ".$clave." ;";
+				$query = "UPDATE cat_productos SET NombreProd = '".$nombre."' , AltoProd = '".$Alto."' , AnchoProd = '".$Ancho."', PesoProd = '".$Peso."', DescripcionProd = '".$Descripcion."' , PrecioProd = '".$Precio."',ImagenProd = '".$img_producto."' WHERE idProducto = ".$clave." ;";
 
 				$resultado = $conexion->query($query);
 				if ($resultado) {

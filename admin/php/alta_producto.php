@@ -21,11 +21,16 @@
 		$Descripcion = $_POST ['Descripcion'];
 
 		$bandera=0;
-
+				
 		$imagen = $_FILES['Imagen'];
 		$nombreimagen = $imagen['name'];
 		$type = $imagen['type'];
 		$url_temp = $imagen['tmp_name'];
+
+		$destino = '../../img/Productos/';
+		$img_nombre = 'img_'.md5(date('d-m-Y H:m:s'));
+		$img_producto = $img_nombre.'.png';
+		$src = $destino.$img_producto;
 
 		$query = ("SELECT * FROM cat_productos WHERE nombreProd='$nombre'"); // inicio de mi consulta 
 		$resultado = $conexion->query($query);
@@ -34,12 +39,8 @@
       		$nombre = "";
     	}
     	if($bandera == 0  ){
-			
 
-			$destino = '../../../FrontIMS/img/Productos/';
-			$img_nombre = 'img_'.md5(date('d-m-Y H:m:s'));
-			$img_producto = $img_nombre.'.png';
-			$src = $destino.$img_producto;
+			
 
 			$query = "INSERT INTO cat_productos(NombreProd,AltoProd,AnchoProd,PesoProd,DescripcionProd,PrecioProd,StockProd,ImagenProd,estado) VALUES ('$nombre','$Alto','$Ancho','$Peso','$Descripcion','$Precio','$Stock','$img_producto','Alta')";
 
@@ -47,7 +48,6 @@
 			if ($resultado) {
 				move_uploaded_file($url_temp,$src);
 				mysqli_close($conexion);
-				
 	    		header("Location: cat_productos.php");
 			}else{
 				echo "No Insertado";
