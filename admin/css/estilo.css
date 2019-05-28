@@ -190,7 +190,7 @@ td img{
 }
 a button img{
 	width: 20px;
-	margin-right: 10px;
+    padding: 2px;
 }
 
 h1{
@@ -277,7 +277,7 @@ footer img{
 	padding: 10px;
 	text-align: center;
 	position: absolute;
-    left: 50%;
+    left: 51%;
 
 }
 #btn_cancelar:hover,#btn_quitar:hover,#btn_quitar:hover a{
@@ -295,7 +295,7 @@ footer img{
 	padding: 10px;
 	text-align: center;
 	position: absolute;
-    left: 34%;
+    left: 33%;
 }
 #btn_aceptar:hover,#btn_env:hover,#btn_agregar:hover{
 	color: white;
@@ -370,6 +370,3 @@ footer img{
 	background: #D6D0D0;
 	border-radius: 10px;
 }
-
-
-
