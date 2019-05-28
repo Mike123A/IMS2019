@@ -43,8 +43,10 @@
    		$query = ("SELECT * FROM cat_clientes WHERE RFC='$rfc'"); 
 		$resultado = $conexion->query($query);
     	if(mysqli_num_rows($resultado)>0) { 
-			$bandera = 1;
-     		$rfc = "";
+    		if ($rfc != "") {
+    			$bandera = 1;
+     			$rfc = "";
+    		}
    		}
 
    		if($bandera == 0  ){
