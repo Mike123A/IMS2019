@@ -370,3 +370,38 @@ footer img{
 	background: #D6D0D0;
 	border-radius: 10px;
 }
+
+/*///NUEVOOOOO/////*/
+.MenuIndex{
+	width: 220px;
+	height: 220px;
+	padding: 10px;
+	margin: 20px 0px !important;
+	background: #669999;
+	border-radius: 150px;
+	display: inline-block;
+	margin:auto;
+	vertical-align: top;
+	text-align: center;
+}
+.MenuIndex img{
+	width: 130px;
+	height: 130px;
+	margin-top: 10px;
+}
+.MenuIndex label{
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	margin:auto;
+	text-decoration: none;
+}
+.a_menu_index{
+	width: 500px;
+}
+
+
+
+
+
+

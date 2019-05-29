@@ -24,7 +24,7 @@
 		   		if ($_SESSION['idtusuario']==0) {
 					 header("Location:".$_SERVER['HTTP_REFERER']);  
 		   		}else{
-					header("Location: ../admin/php/index.php");
+					header("Location: ../admin/index.php");
 
 		   		}
 		    }else{

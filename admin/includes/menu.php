@@ -9,7 +9,7 @@
 	<header>
 
 		<nav>
-			<a href="index.php"><img src="../img/LogoConNombreBlanco.png"></a>
+			<a href="../index.php"><img src="../img/LogoConNombreBlanco.png"></a>
 			<ul>
 				<?php if ($_SESSION['idtusuario'] == 1 || $_SESSION['idtusuario'] == 3) { ?>
 				<li><a href="#">[VENTAS]</a>
@@ -44,16 +44,7 @@
 					</ul>
 				</li>
 				<?php if ($_SESSION['idtusuario'] == 1 ) { ?>
-				<li><a href="#">[REPORTES]</a>
-					<ul>
-						<li><a href="#">Usuarios</a></li>
-						<li><a href="#">Empleados</a></li>
-						<li><a href="#">Clientes</a></li>
-						<li><a href="#">Ventas</a></li>
-						<li><a href="#">Productos</a></li>
-						<li><a href="Respaldo.php">Respaldo BD</a></li>
-					</ul>
-				</li>
+				<li><a href="reportes.php">[REPORTES]</a></li>
 				<?php } ?>
 				<!-- <li><a href="cerrar_sesion.php">ADMIN1478 |Cerrar Sesion</a></li> -->
 			</ul>
