@@ -19,7 +19,7 @@
 </head>
 <body>
 	<header class="encabezado_sesion">
-		<a href="cerrar_sesion.php"><img src="../img/cerrar-sesion.png" alt=""></a>
+		<a href="php/cerrar_sesion.php"><img src="../img/cerrar-sesion.png" alt=""></a>
 
 		<label for=""><?php 
 		$fecha = new DateTime('NOW');
