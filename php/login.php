@@ -43,7 +43,7 @@
 	<link rel="stylesheet" href="css/estilo.css">
 </head>
 <body >
-	
+			<a href="#close" title="Close" class="close">X</a>
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" class="login">
 			<h2 class="encabezado-login">Iniciar Sesion</h2><br>
 			<img src="../img/logotipo.png" alt=""><br>

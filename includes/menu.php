@@ -26,13 +26,12 @@
 				<a href="#openModal"><img src="../img/SesionIcono.png"></a>
 
 				<div id="openModal" class="modalDialog">
-					<div>
-						<a href="#close" title="Close" class="close">X</a>
+
+						
 						<br>
 						<?php 
-							include("login.php");
+								include("login.php");
 						?>
-					</div>
 				</div>	
 				<?php }?>
 				
