@@ -16,8 +16,8 @@
 				<li><a href="index.php">[ Inicio ]</a></li>
 				<li><a href="nosotros.php">[ Nosotros ]</a></li>
 				<li><a href="productos.php">[ Productos ]</a></li>
-				<li><a href="Asociados.php">[ Asociados ]</a></li>
-				<li><a href="Contacto.php">[ Contacto ]</a></li>
+				<li><a href="asociados.php">[ Asociados ]</a></li>
+				<li><a href="contacto.php">[ Contacto ]</a></li>
 				<?php if (isset($_SESSION['cart'])) {?>
 				<a href="cuenta.php"><img src="../img/carrito-de-la-compra.png"></a>
 				<?php
