@@ -17,8 +17,11 @@ if (isset($_SESSION['cliente'])) {
 		foreach($_SESSION["cart"] as $c){
 			$query = "INSERT INTO detalle_venta(idVenta,idProducto,Cantidad,Precio) VALUES ('$cart_id','$c[clave]','$c[cantidad]',$c[precio]);";
 			$resultado = $conexion->query($query);
+		}
+		foreach($_SESSION["cart"] as $c){
+			$query = "UPDATE cat_productos SET StockProd = (StockProd-$c[cantidad]) WHERE idProducto = $c[clave] ";
+			$resultado = $conexion->query($query);
 			if($resultado){
-				mysqli_close($conexion);
 				unset($_SESSION["cart"]);
 				unset($_SESSION["cliente"]);
 				print "<script>	window.location='ventas.php';</script>";

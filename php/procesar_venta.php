@@ -16,6 +16,10 @@ $fecha = date('Y/m/d');
 		foreach($_SESSION["cart"] as $c){
 			$query = "INSERT INTO detalle_venta(idVenta,idProducto,Cantidad,Precio) VALUES ('$cart_id','$c[clave]','$c[cantidad]',$c[precio]);";
 			$resultado = $conexion->query($query);
+		}
+		foreach($_SESSION["cart"] as $c){
+			$query = "UPDATE cat_productos SET StockProd = (StockProd-$c[cantidad]) WHERE idProducto = $c[clave] ";
+			$resultado = $conexion->query($query);
 			if($resultado){
 				unset($_SESSION["cart"]);
 				print "<script>	window.location='productos.php';</script>";

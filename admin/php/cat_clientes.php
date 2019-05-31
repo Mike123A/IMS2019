@@ -70,7 +70,7 @@
   
 						<td><a href='cambios_cliente.php?clave=".$fila['idCliente']."'>
 							<button class='modificar'>
-								<img src='../img/modificar.png' alt=''>Modificar
+								<img src='../img/modificar.png' alt=''>
 							</button>
 							</a>
 						</td>

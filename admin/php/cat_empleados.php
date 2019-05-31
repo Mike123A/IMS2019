@@ -81,7 +81,7 @@
 						<td>		
 							<a href='cambiar_estado_empleado.php?clave=".$fila['idUsuario']."'>
 							<button class='eliminar'>
-								<img src='../img/refrescar.png' alt=''>
+								<img src='../img/refrescar.png' alt=''> Estado
 							</button>
 							</a>
 						</td></tr>";

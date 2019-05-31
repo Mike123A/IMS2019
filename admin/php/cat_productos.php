@@ -72,14 +72,14 @@
     				
 						<td><a href='cambios_producto.php?clave=".$fila['idProducto']."'>
 							<button class='modificar'>
-								<img src='../img/modificar.png' alt=''>Modificar
+								<img src='../img/modificar.png' alt=''>
 							</button>
 							</a>
 						</td>
 						<td>		
 							<a href='cambiar_estado_Producto.php?clave=".$fila['idProducto']."'>
 							<button class='eliminar'>
-								<img src='../img/refrescar.png' alt=''>Estado
+								<img src='../img/refrescar.png' alt=''> Estado
 							</button>
 							</a>
 						</td></tr>";

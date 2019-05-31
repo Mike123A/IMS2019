@@ -39,10 +39,7 @@
 			<h2>Producto: <?php echo $r->NombreProd;?></h2>
 
 			<img src="../img/Productos/<?php echo $r->ImagenProd;?>" alt="">
-			<article class="datosp">
-				<h3>Descripcion:</h3>
-				<h4><?php echo $r->DescripcionProd;?></h4>
-			</article>
+			
 			<article class="datosp">
 				<h3>Precio unitario:</h3>
 				<h4><?php  echo $r->PrecioProd; ?></h34>

@@ -15,7 +15,6 @@
 		include("conexion.php");
 
 		$sql = "SELECT * FROM ( SELECT SUM(dv.Cantidad) AS Cantidad,cp.NombreProd,cp.idProducto FROM detalle_venta dv INNER JOIN cat_productos cp ON dv.idProducto = cp.idProducto INNER JOIN ventas v ON dv.idVenta = v.idVenta WHERE v.FechaVenta BETWEEN '$fecha1' AND '$fecha2' GROUP BY dv.idProducto) C WHERE Cantidad = ( SELECT MAX(Cantidad) FROM ( SELECT SUM(dv.Cantidad) AS Cantidad,cp.NombreProd FROM detalle_venta dv INNER JOIN cat_productos cp ON dv.idProducto = cp.idProducto INNER JOIN ventas v ON dv.idVenta = v.idVenta WHERE v.FechaVenta BETWEEN '$fecha1' AND '$fecha2' GROUP BY dv.idProducto ) A )";
-		echo $sql;
 		if(!$resultado = $conexion->query($sql)){
 			die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
 		}
@@ -29,7 +28,8 @@
 		$fecha1 = $_POST ['finicio'];
 		$fecha2 = $_POST ['ffin'];
 		include("conexion.php");
-		$sql = "SELECT * FROM ( SELECT SUM(dv.Cantidad) AS Cantidad,cp.NombreProd,cp.idProducto FROM detalle_venta dv INNER JOIN cat_productos cp ON dv.idProducto = cp.idProducto INNER JOIN ventas v ON dv.idVenta = v.idVenta WHERE v.FechaVenta BETWEEN '$fecha1' AND '$fecha2' GROUP BY dv.idProducto) C WHERE Cantidad = ( SELECT MIN(Cantidad) FROM ( SELECT MAX(dv.Cantidad) AS Cantidad,cp.NombreProd FROM detalle_venta dv INNER JOIN cat_productos cp ON dv.idProducto = cp.idProducto INNER JOIN ventas v ON dv.idVenta = v.idVenta WHERE v.FechaVenta BETWEEN '$fecha1' AND '$fecha2' GROUP BY dv.idProducto ) A )";
+		$sql = "SELECT * FROM ( SELECT SUM(dv.Cantidad) AS Cantidad,cp.NombreProd,cp.idProducto FROM detalle_venta dv INNER JOIN cat_productos cp ON dv.idProducto = cp.idProducto INNER JOIN ventas v ON dv.idVenta = v.idVenta WHERE v.FechaVenta BETWEEN '$fecha1' AND '$fecha2' GROUP BY dv.idProducto) C WHERE Cantidad = ( SELECT MIN(Cantidad) FROM ( SELECT SUM(dv.Cantidad) AS Cantidad,cp.NombreProd FROM detalle_venta dv INNER JOIN cat_productos cp ON dv.idProducto = cp.idProducto INNER JOIN ventas v ON dv.idVenta = v.idVenta WHERE v.FechaVenta BETWEEN '$fecha1' AND '$fecha2' GROUP BY dv.idProducto ) A )";
+		//echo $sql;
 
 		if(!$resultado = $conexion->query($sql)){
 			die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
@@ -83,7 +83,7 @@
 			<?php if (isset($prodmasvend)) {
 			echo "<label for=''>
 			El producto mas vendido en este rango de fechas es: ".$prodmasvend['NombreProd']."
-			</label>";
+			</label><br><br>";
 			
 			}?>
 			
@@ -104,7 +104,7 @@
 			<?php if (isset($prodmenosvend)) {
 			echo "<label for=''>
 			El producto menos vendido en este rango de fechas es: ".$prodmenosvend['NombreProd']."
-			</label>";
+			</label><br><br>";
 			
 			}?>
 			
@@ -125,7 +125,7 @@
 			<?php if (isset($mejorvendedor)) {
 			echo "<label for=''>
 			El vendedor que ha concretado mas ventas en este rango de fechas es: ".$mejorvendedor['NombresEmp']." ".$mejorvendedor['Apellido1Emp']." ".$mejorvendedor['Apellido2Emp']."
-			</label>";
+			</label><br><br>";
 			}?>
 			
 		</form>
@@ -160,18 +160,20 @@
 						Buscar
 				</button>
 			</a>
-			
+		<br><br>
 		</form>
+			<hr>	
+		<hr>	
 		<br><br>
 		<form class="formrep" action="#">
 			<label for="">¿Necesita un respaldo de la base de datos?</label>
 			<button id="btn-resp"><a href="crear_respaldo_bd.php">Crear respaldo</a></button>
 			
 		</form>
-			<hr>	
-		<hr>	
-		<br><br>
+			
 		
+		<br><br>
+		<hr>	<hr>	
 	<br>
 	<br>
 	<br>
