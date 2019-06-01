@@ -46,6 +46,7 @@
 				<?php if ($_SESSION['idtusuario'] == 1 ) { ?>
 				<li><a href="reportes.php">[REPORTES]</a></li>
 				<?php } ?>
+				<a href="actualizar_perfil.php"><img src="../img/SesionIcono.png"></a>
 				<!-- <li><a href="cerrar_sesion.php">ADMIN1478 |Cerrar Sesion</a></li> -->
 			</ul>
 		</nav>

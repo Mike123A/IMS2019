@@ -72,7 +72,7 @@
 	     	}
    		}
    		if($bandera == 0  ){
-   			if ($contraseña =! "") {
+   			if ($contraseña != "") {
    				$contraseña =  md5($_POST ['Contraseña']);
 	   			$query = "UPDATE cat_clientes SET NombreCli = '".$nombre."', Apellido1Cli='".$apellido1."', Apellido2Cli='".$apellido2."', DireccionCli='".$direccion."',TelefonoCli='".$telefono."',CorreoCli='".$correo."',RFC='".$RFC."' WHERE idCliente = ".$clave." ;";
 				$resultado = $conexion->query($query);
