@@ -1,0 +1,11 @@
+[31-May-2019 22:45:24 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/imedical/public_html/php/conexion.php on line 2
+[31-May-2019 22:45:24 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/imedical/public_html/php/productos.php on line 19
+[31-May-2019 22:45:24 UTC] PHP Warning:  main(): Couldn't fetch mysqli in /home/imedical/public_html/php/productos.php on line 20
+[31-May-2019 22:47:28 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/imedical/public_html/php/conexion.php on line 2
+[31-May-2019 22:47:28 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/imedical/public_html/php/productos.php on line 19
+[31-May-2019 22:47:28 UTC] PHP Warning:  main(): Couldn't fetch mysqli in /home/imedical/public_html/php/productos.php on line 20
+[31-May-2019 22:47:31 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/imedical/public_html/php/conexion.php on line 2
+[31-May-2019 22:47:31 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/imedical/public_html/php/productos.php on line 19
+[31-May-2019 22:47:31 UTC] PHP Warning:  main(): Couldn't fetch mysqli in /home/imedical/public_html/php/productos.php on line 20
+[01-Jun-2019 00:08:05 UTC] PHP Notice:  Undefined variable: bandera in /home/imedical/public_html/php/registro-cliente.php on line 52
+[01-Jun-2019 00:08:05 UTC] PHP Notice:  Undefined variable: tusuario in /home/imedical/public_html/php/registro-cliente.php on line 54
