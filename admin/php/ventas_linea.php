@@ -39,7 +39,21 @@
 			<?php
 				include("conexion.php");
 
-				$sql = "SELECT v.idVenta,v.FechaVenta,ci.NombreCli,ci.Apellido1Cli,ci.Apellido2Cli, v.totalVenta, cev.EstadoVenta,v.idestadoVenta FROM ventas v INNER JOIN cat_usuarios cu ON v.idCliente = cu.idUsuario INNER JOIN cat_clientes ci ON cu.idUsuario = ci.idUsuario INNER JOIN cat_estadosventa cev ON v.idestadoVenta = cev.idEstadoVenta WHERE v.idEmpleado = 0 ORDER BY idVenta Desc;";
+				$sql_numr = mysqli_query($conexion,"SELECT COUNT(*) as total FROM ventas v INNER JOIN cat_usuarios cu ON v.idCliente = cu.idUsuario INNER JOIN cat_clientes ci ON cu.idUsuario = ci.idUsuario INNER JOIN cat_estadosventa cev ON v.idestadoVenta = cev.idEstadoVenta WHERE v.idEmpleado = 0;");
+				$total_registros = mysqli_fetch_array($sql_numr);
+				$totalregistros = $total_registros['total'];
+
+				$porpagina = 5;
+
+				if (empty($_GET['pagina'])) {
+					$pagina = 1;
+				}else{
+					$pagina = $_GET['pagina'];
+				}
+
+				$desde = ($pagina - 1) * $porpagina;
+
+				$sql = "SELECT v.idVenta,v.FechaVenta,ci.NombreCli,ci.Apellido1Cli,ci.Apellido2Cli, v.totalVenta, cev.EstadoVenta,v.idestadoVenta FROM ventas v INNER JOIN cat_usuarios cu ON v.idCliente = cu.idUsuario INNER JOIN cat_clientes ci ON cu.idUsuario = ci.idUsuario INNER JOIN cat_estadosventa cev ON v.idestadoVenta = cev.idEstadoVenta WHERE v.idEmpleado = 0 ORDER BY idVenta ASC LIMIT $desde,$porpagina;";
 
 				if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
@@ -72,6 +86,37 @@
 				}
 			?>
 		</table>	
+		<div class="paginador">
+			<ul>
+				<?php 	
+					if ($pagina != 1) {
+				 ?>
+				<li><a href="?pagina=<?php 	echo 1 ?>">|<</a></li>
+				<li><a href="?pagina=<?php 	echo $pagina-1 ?>"><</a></li>
+				<?php 	
+					}
+				 ?>
+				<?php 	
+					for ($i	=1; $i < $totalpagina+1 ; $i++) { 
+						if ($i == $pagina) 
+							echo "<li><a class='paginaseleccionada' href='?pagina=".$i."'>".$i."</a></li>";
+						else
+							echo "<li><a href='?pagina=".$i."'>".$i."</a></li>";
+					}
+
+				 ?>
+
+				<?php 	
+					if ($pagina != $totalpagina) {
+				 ?>
+
+				<li><a href="?pagina=<?php 	echo $pagina+1 ?>">></a></li>
+				<li><a href="?pagina=<?php 	echo $totalpagina ?>">>|</a></li>
+				<?php 	
+					}
+				 ?>
+			</ul>
+		</div>		
 
 	</section>
 	<?php include ("../includes/footer.php") ?>
