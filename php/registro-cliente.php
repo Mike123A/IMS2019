@@ -104,7 +104,7 @@
 			<input type="text" name="RFC" placeholder="<?php if(isset($rfc) && $rfc ==''){ echo 'Intente con otro';}else{echo 'Ej. VECJ880326 XXX';}?>" value="<?php if(isset($rfc)) {echo $rfc;}?>" /><br>
 			<label>Usuario</label><br>
 			
-			<input autocomplete="off" type="text" required name="Usuario" placeholder="<?php if(isset($usuario) && $usuario ==''){ echo 'Ej. UsuarioVic';}else{echo "Aqui va el usuario";} ?>" value="<?php if(isset($usuario)){ echo $usuario;} ?>" maxlength="10" /><br>
+			<input autocomplete="off" type="text" required name="Usuario" placeholder="<?php if(isset($usuario) && $usuario ==''){ echo 'Ej. UsuarioVic';}else{echo "Ej. User1478";} ?>" value="<?php if(isset($usuario)){ echo $usuario;} ?>" maxlength="10" /><br>
 			<label>Contraseña</label><br>
 			<input type="password" required name="Contraseña" placeholder="<?php if(isset($contraseña) && $contraseña ==''){ echo 'No coinciden';}else{echo "Ej. Vic1478AHs";} ?>"value="<?php if(isset($contraseña)) {echo $contraseña;}?>" pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" title="Una contraseña válida es un conjuto de caracteres, donde cada uno consiste de una letra mayúscula o minúscula, o un dígito. La contraseña debe empezar con una letra y contener al menos un dígito. Debe tener 8-10 caracteres" maxlength="10" minlength="10"/> <br>
 			<label>Confirmar contraseña</label><br>

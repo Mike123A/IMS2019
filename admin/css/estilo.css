@@ -376,8 +376,8 @@ footer img{
 
 /*///NUEVOOOOO/////*/
 .MenuIndex{
-	width: 220px;
-	height: 220px;
+	width: 205px;
+	height: 205px;
 	padding: 10px;
 	margin: 20px 0px !important;
 	background: #669999;
@@ -398,6 +398,7 @@ footer img{
 	font-weight: bold;
 	margin:auto;
 	text-decoration: none;
+	font-size: 22px;
 }
 .a_menu_index{
 	width: 500px;

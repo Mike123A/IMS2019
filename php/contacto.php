@@ -7,7 +7,7 @@
 		$telefono = $_POST["telefono"];
 		$asunto = $_POST["asunto"];
 		$mensaje = $_POST["mensaje"];
-
+        $headers = "From: imdicals.com.mx";
 		$destinatario = "SoporteIMS@outlook.com";
 
 		$mensaje = "
@@ -18,9 +18,9 @@
 
 			Mensaje/Comentario: ".$mensaje."
 		";
-		if(mail($destinatario,$asunto,utf8_decode($mensaje))){
+		if(mail($destinatario,$asunto,utf8_decode($mensaje),$headers)){
 			echo "<script type='text/javascript'>
-				location.href='../Contacto.html';
+				location.href='contacto.php';
 			</script>";
 		}else{
 			echo "<script type='text/javascript'>alert('No se envio');</script>";

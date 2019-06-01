@@ -29,7 +29,7 @@
 	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
 		<label for="">Buscar producto:</label>
 		<input type="text" name="variable">
-		<button id="btn_busqueda" type="submit" name="buscar"><img src="../img/Lupa.png" alt=""></button>
+		<button id="btn_busqueda" type="submit" name="buscar"><img src="../img/lupa.png" alt=""></button>
 		<br>
 	</form>
 	<?php if (isset($_POST['buscar'])) { 
@@ -156,7 +156,7 @@
 	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
 		<label for="">Buscar cliente:</label>
 		<input type="text" name="variable">
-		<button id="btn_busqueda" type="submit" name="buscar_c"><img src="../img/Lupa.png" alt=""></button>
+		<button id="btn_busqueda" type="submit" name="buscar_c"><img src="../img/lupa.png" alt=""></button>
 		<br>
 	</form>
 		<br>

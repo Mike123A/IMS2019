@@ -129,7 +129,7 @@
 			<label>Peso en gramos</label><br>
 			<input type="text" required name="Peso" placeholder="Aqui va el peso" value="<?php if(isset($Peso)) {echo $Peso;}?>" pattern="[0-9]+" maxlength="5"/><br>
 			<label>Descripcion</label><br>
-			<input type="textarea" required name="Descripcion" placeholder="Descripcion" value="<?php if(isset($Descripcion)) {echo $Descripcion;}?>" maxlength="300"/><br>
+			<input type="textarea" required name="Descripcion" placeholder="Descripcion" value="<?php if(isset($Descripcion)) {echo $Descripcion;}?>" maxlength="300"/><br><br>
 			<label>Precio</label><br>
 			<input type="text" required name="Precio" placeholder="Aqui va el precio" value="<?php if(isset($Precio)) {echo $Precio;}?>" /><br>
 			
@@ -141,7 +141,7 @@
 			</div><br> 	<br>	
 			<a href="cat_productos.php"><input id="btn_cancelar" type="button" value="Cancelar" name="Cancelar"></a>
 			<input id="btn_aceptar" type="submit" value="Guardar" name="Guardar">		
-			<br><br><br>
+			<br><br><br><br>
 		</form>
 	</section>
 	<?php include ("../includes/footer.php") ?>

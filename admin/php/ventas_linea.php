@@ -56,17 +56,17 @@
     					<td>".$fila['EstadoVenta']."</td>";
     					
     				echo "
-						<td><a href='#'>
+						<td><a href='../pdf/factura.php?clave=".$fila['idVenta']."' target='_blank'>
 							<button class='modificar'>
 								<img src='../img/archivo.png' alt=''>Ver detalles
 							</button>
 							</a>
-						</td>
-						<td>		
-							<a href='cambiar_estado_venta.php?clave=".$fila['idVenta']."&estado=".$fila['idestadoVenta']."''>
+						</td>	<td><a href='cambiar_estado_venta.php?clave=".$fila['idVenta']."&estado=".$fila['idestadoVenta']."'>
 							<button class='etapa'>
 								<img src='../img/aumentar.png' alt=''>Etapa
 							</button>
+							</a>
+						</td>
 							</a>
 						</td></tr>";
 				}

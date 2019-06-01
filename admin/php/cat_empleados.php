@@ -35,7 +35,7 @@
 					<td>Clave</td>
 					<td>Nombres</td>
 					<td>Apellidos</td>
-					<td>Fecha Nacimiento</td>
+					
 					<td>Correo</td>
 					<td>Direccion</td>
 					<td>Telefono</td>
@@ -63,7 +63,7 @@
 						<td>".$fila['idEmpleado']." </td>
     					<td>".$fila['NombresEmp']."</td>
     					<td>".$fila['Apellido1Emp']." ".$fila['Apellido2Emp']."</td>
-    					<td>".$fila['FechaNacEmp']."</td>
+    					
     					<td>".$fila['CorreoEmp']."</td>
     					<td>".$fila['DireccionEmp']."</td>
     					<td>".$fila['TelefonoEmp']."</td>
