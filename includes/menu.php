@@ -18,6 +18,8 @@
 				<li><a href="productos.php">[ Productos ]</a></li>
 				<li><a href="asociados.php">[ Asociados ]</a></li>
 				<li><a href="contacto.php">[ Contacto ]</a></li>
+				
+
 				<?php if (isset($_SESSION['cart'])) {?>
 				<a href="cuenta.php"><img src="../img/carrito-de-la-compra.png"></a>
 				<?php
@@ -33,7 +35,13 @@
 								include("login.php");
 						?>
 				</div>	
-				<?php }?>
+				<?php }else{?>
+<a href="actualizar_perfil.php"><img src="../img/SesionIcono.png"></a>
+				<?php } ?>
+
+				
+				
+
 				
 
 				
