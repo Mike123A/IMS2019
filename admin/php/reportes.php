@@ -149,6 +149,29 @@
 			<hr>	
 		<hr>	
 		<br><br>
+		<form action="../pdf/productos.php" method="POST" class="formrep" target="_blank">
+			<label for="">Lista de productos</label>
+			<br><br><br>
+				<button type="submit" id="btn-resp">
+						Generar
+				</button>
+			</a>
+		<br><br>
+		</form>
+			<hr>	
+		<hr>	
+		<br><br>
+		<form action="../pdf/clientes.php" method="POST" class="formrep" target="_blank">
+			<label for="">Lista de clientes</label>
+			<br><br><br>
+				<button type="submit" id="btn-resp">
+						Generar
+				</button>
+			</a>
+		<br><br>
+		</form>
+		<hr><hr>
+		<br><br>
 		<form action="../pdf/ventaslinea.php" method="POST" class="formrep" target="_blank">
 			<label for="">Ventas en linea</label>
 			<br><br><br>
