@@ -42,7 +42,22 @@
 			<?php
 				include("conexion.php");
 
-				$sql = "SELECT * FROM cat_tipousuarios";
+				$sql_numr = mysqli_query($conexion,"SELECT COUNT(*) as total FROM cat_tipousuarios;");
+				$total_registros = mysqli_fetch_array($sql_numr);
+				$totalregistros = $total_registros['total'];
+
+				$porpagina = 5;
+
+				if (empty($_GET['pagina'])) {
+					$pagina = 1;
+				}else{
+					$pagina = $_GET['pagina'];
+				}
+
+				$desde = ($pagina - 1) * $porpagina;
+				$totalpagina = ceil($totalregistros / $porpagina);
+
+				$sql = "SELECT * FROM cat_tipousuarios ORDER BY idtusuario ASC LIMIT $desde,$porpagina";
 
 				if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
@@ -65,6 +80,37 @@
 				}
 			?>
 		</table>	
+		<div class="paginador">
+			<ul>
+				<?php 	
+					if ($pagina != 1) {
+				 ?>
+				<li><a href="?pagina=<?php 	echo 1 ?>">|<</a></li>
+				<li><a href="?pagina=<?php 	echo $pagina-1 ?>"><</a></li>
+				<?php 	
+					}
+				 ?>
+				<?php 	
+					for ($i	=1; $i < $totalpagina+1 ; $i++) { 
+						if ($i == $pagina) 
+							echo "<li><a class='paginaseleccionada' href='?pagina=".$i."'>".$i."</a></li>";
+						else
+							echo "<li><a href='?pagina=".$i."'>".$i."</a></li>";
+					}
+
+				 ?>
+
+				<?php 	
+					if ($pagina != $totalpagina) {
+				 ?>
+
+				<li><a href="?pagina=<?php 	echo $pagina+1 ?>">></a></li>
+				<li><a href="?pagina=<?php 	echo $totalpagina ?>">>|</a></li>
+				<?php 	
+					}
+				 ?>
+			</ul>
+		</div>		
 	</section>
 	<?php include ("../includes/footer.php") ?>
 	

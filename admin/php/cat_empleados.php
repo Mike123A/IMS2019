@@ -48,8 +48,22 @@
 			
 			<?php
 				include("conexion.php");
+				$sql_numr = mysqli_query($conexion,"SELECT COUNT(*) as total FROM cat_empleados ce INNER JOIN cat_usuarios cu ON ce.idUsuario = cu.idUsuario INNER JOIN cat_tipousuarios ctu ON cu.idtusuario = ctu.idtusuario;");
+				$total_registros = mysqli_fetch_array($sql_numr);
+				$totalregistros = $total_registros['total'];
 
-				$sql = "SELECT * FROM cat_empleados ce INNER JOIN cat_usuarios cu ON ce.idUsuario = cu.idUsuario INNER JOIN cat_tipousuarios ctu ON cu.idtusuario = ctu.idtusuario ORDER BY idEmpleado DESC";
+				$porpagina = 5;
+
+				if (empty($_GET['pagina'])) {
+					$pagina = 1;
+				}else{
+					$pagina = $_GET['pagina'];
+				}
+
+				$desde = ($pagina - 1) * $porpagina;
+				$totalpagina = ceil($totalregistros / $porpagina);
+
+				$sql = "SELECT * FROM cat_empleados ce INNER JOIN cat_usuarios cu ON ce.idUsuario = cu.idUsuario INNER JOIN cat_tipousuarios ctu ON cu.idtusuario = ctu.idtusuario ORDER BY idEmpleado ASC LIMIT $desde,$porpagina";
 
 				if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
@@ -91,6 +105,36 @@
 				}
 			?>
 		</table>	
+		<div class="paginador">
+			<ul>
+				<?php 	
+					if ($pagina != 1) {
+				 ?>
+				<li><a href="?pagina=<?php 	echo 1 ?>">|<</a></li>
+				<li><a href="?pagina=<?php 	echo $pagina-1 ?>"><</a></li>
+				<?php 	
+					}
+				 ?>
+				<?php 	
+					for ($i	=1; $i < $totalpagina+1 ; $i++) { 
+						if ($i == $pagina) 
+							echo "<li><a class='paginaseleccionada' href='?pagina=".$i."'>".$i."</a></li>";
+						else
+							echo "<li><a href='?pagina=".$i."'>".$i."</a></li>";
+					}
+
+				 ?>
+
+				<?php 	
+					if ($pagina != $totalpagina) {
+				 ?>
+
+				<li><a href="?pagina=<?php 	echo $pagina+1 ?>">></a></li>
+				<li><a href="?pagina=<?php 	echo $totalpagina ?>">>|</a></li>
+				<?php 	
+					}
+				 ?>
+			</ul>
 	</section>
 	<?php include ("../includes/footer.php") ?>
 	

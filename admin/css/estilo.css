@@ -407,7 +407,40 @@ footer img{
 .fecha_rep{
 	width: 200px;
 }
-
+.paginador ul{
+	padding: 15px;
+	list-style: none;
+	background: #FFF;
+	margin-top: 15px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: flex-end;
+}
+.paginador a{
+	color: black;
+	border: 1px solid #ddd;
+	padding: 5px;
+	display: inline-block;
+	font-size: 14px;
+	text-align: center;
+	width: 35px;
+	text-decoration: none;
+	font-family: arial;
+}
+.paginador a:hover{
+	background: #464650;
+	border: 1px solid #ddd;
+	color: white;
+}
+.paginaseleccionada{
+	color: white !important;
+	width: 35px;
+	background: #428bca;
+	border: 1px solid #428bca;
+}
 
 
 
