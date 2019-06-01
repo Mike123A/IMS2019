@@ -39,11 +39,10 @@
 					<td>Correo</td>
 					<td>Direccion</td>
 					<td>Telefono</td>
-					<td>Fecha Contratacion</td>
 					<td>Usuario</td>
 					<td>Tipo Usuario</td>
 					<td>Estado</td>
-					<td colspan="2">Acciones</td>
+					<td colspan="3">Acciones</td>
 				</tr>
 			</thead>
 			
@@ -67,13 +66,17 @@
     					<td>".$fila['CorreoEmp']."</td>
     					<td>".$fila['DireccionEmp']."</td>
     					<td>".$fila['TelefonoEmp']."</td>
-    					<td>".$fila['FechaContEmp']."</td>
     					<td>".$fila['Usuario']."</td>
     					<td>".$fila['tipousuario']."</td>
     					<td>".$fila['estado']."</td>
-    					
+    					<td><a href='detallesemp.php?clave=".$fila['idEmpleado']."'>
+							<button class='modificar' title='Ver detalles de registro'>
+								<img src='../img/archivo.png' alt=''>
+							</button>
+							</a>
+						</td>
 						<td><a href='cambios_empleado.php?clave=".$fila['idEmpleado']."'>
-							<button class='modificar'>
+							<button class='modificar' >
 								<img src='../img/modificar.png' alt=''>
 							</button>
 							</a>
