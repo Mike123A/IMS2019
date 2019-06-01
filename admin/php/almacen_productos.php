@@ -56,6 +56,9 @@
 
 				$desde = ($pagina - 1) * $porpagina;
 
+				$totalpagina = ceil($totalregistros / $porpagina);
+				
+
 
 				$sql = "SELECT * FROM almacen_productos ap INNER JOIN cat_productos cp ON ap.idProducto = cp.idProducto ORDER BY idMovAlm ASC LIMIT $desde,$porpagina";
 				if(!$resultado = $conexion->query($sql)){

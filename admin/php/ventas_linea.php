@@ -52,6 +52,8 @@
 				}
 
 				$desde = ($pagina - 1) * $porpagina;
+				$totalpagina = ceil($totalregistros / $porpagina);
+				
 
 				$sql = "SELECT v.idVenta,v.FechaVenta,ci.NombreCli,ci.Apellido1Cli,ci.Apellido2Cli, v.totalVenta, cev.EstadoVenta,v.idestadoVenta FROM ventas v INNER JOIN cat_usuarios cu ON v.idCliente = cu.idUsuario INNER JOIN cat_clientes ci ON cu.idUsuario = ci.idUsuario INNER JOIN cat_estadosventa cev ON v.idestadoVenta = cev.idEstadoVenta WHERE v.idEmpleado = 0 ORDER BY idVenta ASC LIMIT $desde,$porpagina;";
 
