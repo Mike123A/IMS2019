@@ -54,7 +54,7 @@
 	   		}
 	   	}
    		if($bandera == 0  ){
-   			if ($contraseña =! "") {
+   			if ($contraseña != "") {
    				$contraseña =  md5($_POST ['Contraseña']);
    				$query ="UPDATE cat_empleados SET NombresEmp = '".$nombre."', Apellido1Emp=TRIM('$apellido1'),Apellido2Emp='$apellido2', FechaNacEmp='$fechanac', CorreoEmp='$correo',DireccionEmp='$direccion',TelefonoEmp='$telefono',FechaContEmp='$fechacont' WHERE idEmpleado = $clave;";
 				$resultado = $conexion->query($query);
