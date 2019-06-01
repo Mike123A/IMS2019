@@ -9,93 +9,6 @@
 		}
 	}
 
-
-
-	if (isset($_POST['Guardar'])) {
-
-		$clave = $_POST ['clave'];
-		$claveu = $_POST ['claveu'];
-
-		include("conexion.php"); 
-		$nombre = $_POST ['Nombres'];
-		$apellido1 = $_POST ['Apellido1'];
-		$apellido2 = $_POST ['Apellido2'];
-		$fechanac = $_POST ['FechaNac'];
-		$correo = $_POST ['Correo'];
-		$direccion = $_POST ['Direccion'];
-		$telefono = $_POST ['Telefono'];
-		$fechacont = $_POST ['FechaCont'];
-		$usuario = $_POST ['Usuario'];
-		$contraseña = $_POST ['Contraseña'];
-		$tusuario = $_POST ['tipousuario'];
-		
-		$sql1 = "SELECT * FROM cat_empleados ce INNER JOIN cat_usuarios cu ON ce.idUsuario = cu.idUsuario INNER JOIN cat_tipousuarios ctu ON cu.idtusuario = ctu.idtusuario WHERE idEmpleado = $clave";
-
-		if(!$resultado1 = $conexion->query($sql1)){
-				die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
-		};
-		$fila = $resultado1->fetch_assoc();
-		if ($fila['Usuario']!= $usuario) {
-			
-			$query = ("SELECT * FROM cat_usuarios WHERE usuario='$usuario'"); // inicio de mi consulta 
-			$resultado = $conexion->query($query);
-   		
-   			if(mysqli_num_rows($resultado)>0) { 
-   				$bandera = 1;
-      			$usuario = "";
-    		}
-		}
-		if ($fila['CorreoEmp']!= $correo) {
-	    	$query = ("SELECT * FROM cat_empleados WHERE CorreoEmp='$correo'"); // inicio de mi consulta 
-			$resultado = $conexion->query($query);
-	    	if(mysqli_num_rows($resultado)>0) { 
-				$bandera = 1;
-	     		$correo = "";
-	   		}
-	   	}
-   		if($bandera == 0  ){
-   			if ($contraseña != "") {
-   				$contraseña =  md5($_POST ['Contraseña']);
-   				$query ="UPDATE cat_empleados SET NombresEmp = '".$nombre."', Apellido1Emp=TRIM('$apellido1'),Apellido2Emp='$apellido2', FechaNacEmp='$fechanac', CorreoEmp='$correo',DireccionEmp='$direccion',TelefonoEmp='$telefono',FechaContEmp='$fechacont' WHERE idEmpleado = $clave;";
-				$resultado = $conexion->query($query);
-				if ($resultado) {
-					$query1 = "UPDATE cat_usuarios SET Usuario='$usuario',Contrasenia='$contraseña',idtusuario=$tusuario WHERE idUsuario = $claveu";
-					$resultado1 = $conexion->query($query1);
-					if ($resultado1) {
-						mysqli_close($conexion);
-					
-						header("Location: cat_empleados.php");
-					}
-					else{
-					echo "No Insertado";
-					}
-				}else{
-					echo "No Insertado";
-				}
-
-	   		}else{
-	   			$query ="UPDATE cat_empleados SET NombresEmp = '".$nombre."', Apellido1Emp=TRIM('$apellido1'),Apellido2Emp='$apellido2', FechaNacEmp='$fechanac', CorreoEmp='$correo',DireccionEmp='$direccion',TelefonoEmp='$telefono',FechaContEmp='$fechacont' WHERE idEmpleado = $clave;";
-				$resultado = $conexion->query($query);
-				if ($resultado) {
-					$query1 = "UPDATE cat_usuarios SET Usuario='$usuario',idtusuario=$tusuario WHERE idUsuario = $claveu";
-					$resultado1 = $conexion->query($query1);
-					if ($resultado1) {
-						mysqli_close($conexion);
-					
-						header("Location: cat_empleados.php");
-					}
-					else{
-					echo "No Insertado";
-					}
-				}else{
-					echo "No Insertado";
-				}
-
-
-	   		}
-	   		
-		}
-	}else{
 		$clave = $_GET['clave'];
 		
 		include("conexion.php");
@@ -115,9 +28,9 @@
 		$telefono = $fila['TelefonoEmp'];
 		$fechacont = $fila['FechaContEmp'];
 		$usuario = $fila['Usuario'];
-		$contraseña = $fila['Contrasenia'];
+		$contrase単a = $fila['Contrasenia'];
 		$tusuario = $fila['idtusuario'];
-	}    	
+		
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -135,7 +48,7 @@
 		
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
 <input style="display: none" type="text" required name="clave" placeholder="" value=" <?php echo $fila['idEmpleado'];?>" /><input  type="text" style="display: none" required name="claveu" placeholder="" value=" <?php echo $fila['idUsuario']; ?>" />
-		<h1>Cambios al registro: <?php echo $clave; ?></h1>
+		<h1>Detalles del registro: <?php echo $clave; ?></h1>
 		<br><br>
 			<div style="/*-webkit-column-count:3*/-moz-column-count:2;column-count:2">
 
