@@ -54,7 +54,7 @@
 	   		}
 	   	}
    		if($bandera == 0  ){
-   			if ($contraseña =! "") {
+   			if ($contraseña != "") {
    				$contraseña =  md5($_POST ['Contraseña']);
    				$query ="UPDATE cat_empleados SET NombresEmp = '".$nombre."', Apellido1Emp=TRIM('$apellido1'),Apellido2Emp='$apellido2', FechaNacEmp='$fechanac', CorreoEmp='$correo',DireccionEmp='$direccion',TelefonoEmp='$telefono',FechaContEmp='$fechacont' WHERE idEmpleado = $clave;";
 				$resultado = $conexion->query($query);
@@ -141,9 +141,9 @@
 
 			<label>Nombre(s)</label><br>
 			<input type="text" required name="Nombres" placeholder="Aqui va el nombre" value="<?php if(isset($nombre)) {echo $nombre;}?>" pattern="[A-Z a-z]+"/><br>
-			<label>Apellido1</label><br>
+			<label>Primer apellido</label><br>
 			<input type="text" required name="Apellido1" placeholder="Aqui va un apellido" value="<?php if(isset($apellido1)) {echo $apellido1;}?>" pattern="[A-Za-z]+" /><br>
-			<label>Apellido2</label><br>
+			<label>Segundo apellido</label><br>
 			<input type="text" required name="Apellido2" placeholder="Aqui va el segundo apellido"value="<?php if(isset($apellido2)) {echo $apellido2;}?>" pattern="[A-Za-z]+" /><br>
 			<label>Fecha de nacimiento</label><br>
 			<input type="date" required name="FechaNac" placeholder=""value="<?php if(isset($fechanac)) {echo $fechanac;}?>" /><br>

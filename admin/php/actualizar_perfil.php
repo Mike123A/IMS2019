@@ -49,12 +49,12 @@
 	   		}
 	   	}
    		if($bandera == 0  ){
-   			if ($contraseña == " ") {
+   			if ($contraseña != "") {
    				$contraseña =  md5($_POST ['Contraseña']);
    				$query ="UPDATE cat_empleados SET NombresEmp = '".$nombre."', Apellido1Emp=TRIM('$apellido1'),Apellido2Emp='$apellido2', FechaNacEmp='$fechanac', CorreoEmp='$correo',DireccionEmp='$direccion',TelefonoEmp='$telefono',FechaContEmp='$fechacont' WHERE idEmpleado = $clave;";
 				$resultado = $conexion->query($query);
 				if ($resultado) {
-					$query1 = "UPDATE cat_usuarios SET Usuario='$usuario',Contrasenia='$contraseña',idtusuario=$tusuario WHERE idUsuario = $claveu";
+					$query1 = "UPDATE cat_usuarios SET Usuario='$usuario',Contrasenia='$contraseña' WHERE idUsuario = $claveu";
 					$resultado1 = $conexion->query($query1);
 					if ($resultado1) {
 						mysqli_close($conexion);
@@ -68,15 +68,11 @@
 					echo "No Insertado";
 				}
 
-   		
-	   			
-
-
 	   		}else{
 	   			$query ="UPDATE cat_empleados SET NombresEmp = '".$nombre."', Apellido1Emp=TRIM('$apellido1'),Apellido2Emp='$apellido2', FechaNacEmp='$fechanac', CorreoEmp='$correo',DireccionEmp='$direccion',TelefonoEmp='$telefono',FechaContEmp='$fechacont' WHERE idEmpleado = $clave;";
 				$resultado = $conexion->query($query);
 				if ($resultado) {
-					$query1 = "UPDATE cat_usuarios SET Usuario='$usuario',idtusuario=$tusuario WHERE idUsuario = $claveu";
+					$query1 = "UPDATE cat_usuarios SET Usuario='$usuario' WHERE idUsuario = $claveu";
 					$resultado1 = $conexion->query($query1);
 					if ($resultado1) {
 						mysqli_close($conexion);
@@ -88,8 +84,8 @@
 				}else{
 					echo "No Insertado";
 				}
-	   			
-	   		}
+
+
 	   		}
 	   		
 		}
@@ -113,7 +109,6 @@
 		$fechacont = $fila['FechaContEmp'];
 		$usuario = $fila['Usuario'];
 		$contraseña = $fila['Contrasenia'];
-		$tusuario = $fila['idtusuario'];
 	}    	
 ?>
 <!DOCTYPE html>
@@ -156,28 +151,8 @@
 			
 			<input type="text" required name="Usuario" placeholder="<?php if(isset($usuario) && $usuario ==''){ echo 'Intente con otro';}else{echo "Aqui va el usuario";} ?>" value="<?php if(isset($usuario)){ echo $usuario;} ?>" maxlength="10" /><br>
 			<label>Contraseña</label><br>
-			<input type="password" name="Contraseña" placeholder="Si no vas a cambiar contraseña, dejar vacio el campo."value="" pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" title="Una contraseña válida es un conjuto de caracteres, donde cada uno consiste de una letra mayúscula o minúscula, o un dígito. La contraseña debe empezar con una letra y contener al menos un dígito. Debe tener 8-10 caracteres" maxlength="10" minlength="10"/> <br>
-			<label>Tipo de usuario</label><br>
-			<SELECT NAME="tipousuario" SIZE=1  > 
-				<?php
-					include("conexion.php");
-
-					$sql = "SELECT * FROM cat_tipousuarios";
-					if(!$resultado = $conexion->query($sql)){
-						die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
-					}
-					while($fila = $resultado->fetch_assoc()){
-					echo "<OPTION VALUE='".$fila['idtusuario']."'>".$fila['tipousuario']."</OPTION>";
-						if(isset($tipousuario)){
-							if ($fila['idtusuario'] == $tipousuario){
-								echo "<OPTION SELECTED VALUE='".$fila['idtusuario']."'>".$fila['tipousuario']."</OPTION>";
-							}
-						}
-					}
-
-					
-				?>
-			</SELECT> <br> 	<br>	<br> 	<br>	
+			<input type="password" name="Contraseña" placeholder="Si no vas a cambiar contraseña, dejar vacio el campo."value="<?php if(isset($contraseña)) {}?>" pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" title="Una contraseña válida es un conjuto de caracteres, donde cada uno consiste de una letra mayúscula o minúscula, o un dígito. La contraseña debe empezar con una letra y contener al menos un dígito. Debe tener 8-10 caracteres" maxlength="10" minlength="10"/> <br>
+			 <br> 	
 			</div>
 <br> 	<br>	
 			<a href="../index.php"><input id="btn_cancelar" type="button" value="Cancelar" name="Cancelar"></a>
