@@ -520,7 +520,7 @@ text-align: center;
 	-moz-transition: opacity 400ms ease-in;
 	transition: opacity 400ms ease-in;
 }
-.close:hover { background: #00d9ff; }
+.close:hover { background: red; }
 
 /*PAYPAL*/
 
