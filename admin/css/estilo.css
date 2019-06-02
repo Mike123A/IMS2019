@@ -436,10 +436,35 @@ footer img{
 	color: white;
 }
 .paginaseleccionada{
+	padding: 5px;
+	display: inline-block;
+	font-size: 14px;
+	text-align: center;
+	width: 35px;
+	text-decoration: none;
+	font-family: arial;
 	color: white !important;
 	width: 35px;
 	background: #428bca;
 	border: 1px solid #428bca;
+}
+
+/*BUSCADOR*/
+
+.form_buscador{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	float: right;
+	background: initial;
+	padding: 10px;
+	border-radius: 10px;
+}
+.form_buscador input{
+	width: 220px;
+	height: 35px;
 }
 
 
