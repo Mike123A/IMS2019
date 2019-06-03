@@ -24,6 +24,10 @@
 	<section class="ContenedorPrincipal">
 		<h1>Ventas desde pagina de clientes</h1>
 		<br><br>
+		<form action="buscar_ventas_linea.php" method="GET" class="form_buscador">
+			<input type="text" name="busqueda" placeholder="">
+			<button id="btn_busqueda" type="submit" name="buscar"><img src="../img/lupa.png" alt=""></button>
+		</form>
 		<table >
 			<thead>
 				<tr>
@@ -101,7 +105,7 @@
 				<?php 	
 					for ($i	=1; $i < $totalpagina+1 ; $i++) { 
 						if ($i == $pagina) 
-							echo "<li><a class='paginaseleccionada' href='?pagina=".$i."'>".$i."</a></li>";
+							echo "<li class='paginaseleccionada'>".$i."</li>";
 						else
 							echo "<li><a href='?pagina=".$i."'>".$i."</a></li>";
 					}

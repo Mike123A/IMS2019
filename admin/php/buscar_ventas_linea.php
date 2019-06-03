@@ -21,15 +21,17 @@
 <body>
 	<?php include ("../includes/encabezado_sesion.php") ?>
 	<?php include ("../includes/menu.php") ?>
+	<?php $busqueda = strtolower($_REQUEST['busqueda']);
+	if (empty($busqueda)) {
+		header("Location: ventas_linea.php");
+	}
+
+	 ?>
 	<section class="ContenedorPrincipal">
-		<h1>Ventas mostrador</h1><br><br>
-		<a href="nueva_venta.php">
-			<button class="agregar">
-				<img src="../img/agregar.png" alt="">Nuevo
-			</button>
-		</a>
-		<form action="buscar_ventas.php" method="GET" class="form_buscador">
-			<input type="text" name="busqueda" placeholder="">
+		<h1>Ventas desde pagina de clientes</h1>
+		<br><br>
+		<form action="buscar_ventas_linea.php" method="GET" class="form_buscador">
+			<input type="text" name="busqueda" placeholder="" value="<?php if(isset($busqueda)) echo $busqueda ?>">
 			<button id="btn_busqueda" type="submit" name="buscar"><img src="../img/lupa.png" alt=""></button>
 		</form>
 		<table >
@@ -38,7 +40,6 @@
 					<td>Clave</td>
 					<td>Fecha</td>
 					<td>Cliente</td>
-					<td>Empleado</td>
 					<td>Total</td>
 					<td>Etapa de venta</td>
 					<td colspan="2">Acciones</td>
@@ -48,7 +49,15 @@
 			<?php
 				include("conexion.php");
 
-				$sql_numr = mysqli_query($conexion,"SELECT COUNT(*) as total FROM ventas v INNER JOIN cat_usuarios cu ON v.idCliente = cu.idUsuario INNER JOIN cat_clientes ci ON cu.idUsuario = ci.idUsuario INNER JOIN cat_empleados ce ON v.idEmpleado = ce.idEmpleado INNER JOIN cat_estadosventa cev ON v.idestadoVenta = cev.idEstadoVenta;");
+				$sql_numr = mysqli_query($conexion,"SELECT COUNT(*) as total FROM ventas v INNER JOIN cat_usuarios cu ON v.idCliente = cu.idUsuario INNER JOIN cat_clientes ci ON cu.idUsuario = ci.idUsuario INNER JOIN cat_estadosventa cev ON v.idestadoVenta = cev.idEstadoVenta WHERE (
+					idVenta LIKE '%$busqueda%' OR 
+					NombreCli LIKE '%$busqueda%' OR 
+					Apellido1Cli LIKE '%$busqueda%' OR 
+					Apellido2Cli LIKE '%$busqueda%' OR 
+					FechaVenta LIKE '%$busqueda%' OR 
+					totalVenta LIKE '%$busqueda%' OR 
+					EstadoVenta LIKE '%$busqueda%') AND v.idEmpleado = 0;");
+
 				$total_registros = mysqli_fetch_array($sql_numr);
 				$totalregistros = $total_registros['total'];
 
@@ -64,8 +73,14 @@
 				$totalpagina = ceil($totalregistros / $porpagina);
 				
 
-
-				$sql = "SELECT v.idVenta,v.FechaVenta,ci.NombreCli,ci.Apellido1Cli,ci.Apellido2Cli, ce.NombresEmp,ce.Apellido1Emp,ce.Apellido2Emp, v.totalVenta, cev.EstadoVenta,v.idestadoVenta FROM ventas v INNER JOIN cat_usuarios cu ON v.idCliente = cu.idUsuario INNER JOIN cat_clientes ci ON cu.idUsuario = ci.idUsuario INNER JOIN cat_empleados ce ON v.idEmpleado = ce.idEmpleado INNER JOIN cat_estadosventa cev ON v.idestadoVenta = cev.idEstadoVenta ORDER BY idVenta ASC LIMIT $desde,$porpagina;";
+				$sql = "SELECT v.idVenta,v.FechaVenta,ci.NombreCli,ci.Apellido1Cli,ci.Apellido2Cli, v.totalVenta, cev.EstadoVenta,v.idestadoVenta FROM ventas v INNER JOIN cat_usuarios cu ON v.idCliente = cu.idUsuario INNER JOIN cat_clientes ci ON cu.idUsuario = ci.idUsuario INNER JOIN cat_estadosventa cev ON v.idestadoVenta = cev.idEstadoVenta WHERE (
+					idVenta LIKE '%$busqueda%' OR 
+					NombreCli LIKE '%$busqueda%' OR 
+					Apellido1Cli LIKE '%$busqueda%' OR 
+					Apellido2Cli LIKE '%$busqueda%' OR 
+					FechaVenta LIKE '%$busqueda%' OR 
+					totalVenta LIKE '%$busqueda%' OR 
+					EstadoVenta LIKE '%$busqueda%') AND v.idEmpleado = 0 ORDER BY idVenta ASC LIMIT $desde,$porpagina;";
 
 				if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
@@ -78,7 +93,6 @@
 						<td>".$fila['idVenta']." </td>
     					<td>".$fila['FechaVenta']."</td>
     					<td>".$fila['NombreCli']." ".$fila['Apellido1Cli']." ".$fila['Apellido2Cli']."</td>
-    					<td>".$fila['NombresEmp']." ".$fila['Apellido1Emp']." ".$fila['Apellido2Emp']."</td>
     					<td>$".$fila['totalVenta']."</td>
     					<td>".$fila['EstadoVenta']."</td>";
     					
@@ -88,24 +102,25 @@
 								<img src='../img/archivo.png' alt=''>Ver detalles
 							</button>
 							</a>
-						</td>
-						<td>		
-							<a href='cambiar_estado_venta.php?clave=".$fila['idVenta']."&estado=".$fila['idestadoVenta']."'>
+						</td>	<td><a href='cambiar_estado_venta.php?clave=".$fila['idVenta']."&estado=".$fila['idestadoVenta']."'>
 							<button class='etapa'>
 								<img src='../img/aumentar.png' alt=''>Etapa
 							</button>
+							</a>
+						</td>
 							</a>
 						</td></tr>";
 				}
 			?>
 		</table>	
+<?php if ($totalregistros !=0) { ?>
 		<div class="paginador">
 			<ul>
 				<?php 	
 					if ($pagina != 1) {
 				 ?>
-				<li><a href="?pagina=<?php 	echo 1 ?>">|<</a></li>
-				<li><a href="?pagina=<?php 	echo $pagina-1 ?>"><</a></li>
+				<li><a href="?pagina=<?php 	echo 1 ?>&busqueda=<?php echo $busqueda ?>">|<</a></li>
+				<li><a href="?pagina=<?php 	echo $pagina-1 ?>&busqueda=<?php echo $busqueda ?>"><</a></li>
 				<?php 	
 					}
 				 ?>
@@ -114,7 +129,7 @@
 						if ($i == $pagina) 
 							echo "<li class='paginaseleccionada'>".$i."</li>";
 						else
-							echo "<li><a href='?pagina=".$i."'>".$i."</a></li>";
+							echo "<li><a href='?pagina=".$i."&busqueda=".$busqueda."'>".$i."</a></li>";
 					}
 
 				 ?>
@@ -123,14 +138,14 @@
 					if ($pagina != $totalpagina) {
 				 ?>
 
-				<li><a href="?pagina=<?php 	echo $pagina+1 ?>">></a></li>
-				<li><a href="?pagina=<?php 	echo $totalpagina ?>">>|</a></li>
+				<li><a href="?pagina=<?php 	echo $pagina+1 ?>&busqueda=<?php echo $busqueda ?>">></a></li>
+				<li><a href="?pagina=<?php 	echo $totalpagina ?>&busqueda=<?php echo $busqueda ?>">>|</a></li>
 				<?php 	
 					}
 				 ?>
 			</ul>
-		</div>		
-
+		</div>
+	<?php } ?>
 	</section>
 	<?php include ("../includes/footer.php") ?>
 	

@@ -19,6 +19,12 @@
 <body>
 	<?php include ("../includes/encabezado_sesion.php") ?>
 	<?php include ("../includes/menu.php") ?>
+	<?php $busqueda = strtolower($_REQUEST['busqueda']);
+	if (empty($busqueda)) {
+		header("Location: almacen_productos.php");
+	}
+
+	 ?>
 	<section class="ContenedorPrincipal">
 		<h1>Movimientos de almacen</h1>
 		<a href="nuevo_movimiento.php">
@@ -27,7 +33,7 @@
 			</button>
 		</a>
 		<form action="buscar_almacen_productos.php" method="GET" class="form_buscador">
-			<input type="text" name="busqueda" placeholder="">
+			<input type="text" name="busqueda" placeholder="" value="<?php if(isset($busqueda)) echo $busqueda ?>">
 			<button id="btn_busqueda" type="submit" name="buscar"><img src="../img/lupa.png" alt=""></button>
 		</form>
 		<table >
@@ -46,7 +52,15 @@
 			<?php
 				include("conexion.php");
 
-				$sql_numr = mysqli_query($conexion,"SELECT COUNT(*) as total FROM almacen_productos ap INNER JOIN cat_productos cp ON ap.idProducto = cp.idProducto ;");
+				$sql_numr = mysqli_query($conexion,"SELECT COUNT(*) as total FROM almacen_productos ap INNER JOIN cat_productos cp ON ap.idProducto = cp.idProducto WHERE (
+					idMovAlm LIKE '%$busqueda%' OR 
+					FechaMov LIKE '%$busqueda%' OR 
+					ap.idProducto LIKE '%$busqueda%' OR 
+					NombreProd LIKE '%$busqueda%' OR 
+					tipo_movimiento LIKE '%$busqueda%' OR 
+					Cantidad LIKE '%$busqueda%' OR 
+					StockProd LIKE '%$busqueda%');");
+
 				$total_registros = mysqli_fetch_array($sql_numr);
 				$totalregistros = $total_registros['total'];
 
@@ -64,7 +78,14 @@
 				
 
 
-				$sql = "SELECT * FROM almacen_productos ap INNER JOIN cat_productos cp ON ap.idProducto = cp.idProducto ORDER BY idMovAlm ASC LIMIT $desde,$porpagina";
+				$sql = "SELECT * FROM almacen_productos ap INNER JOIN cat_productos cp ON ap.idProducto = cp.idProducto WHERE (
+					idMovAlm LIKE '%$busqueda%' OR 
+					FechaMov LIKE '%$busqueda%' OR 
+					ap.idProducto LIKE '%$busqueda%' OR 
+					NombreProd LIKE '%$busqueda%' OR 
+					tipo_movimiento LIKE '%$busqueda%' OR 
+					Cantidad LIKE '%$busqueda%' OR 
+					StockProd LIKE '%$busqueda%') ORDER BY idMovAlm ASC LIMIT $desde,$porpagina";
 				if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
 				}
@@ -83,22 +104,23 @@
 				}
 			?>
 		</table>	
+		<?php if ($totalregistros !=0) { ?>
 		<div class="paginador">
 			<ul>
 				<?php 	
 					if ($pagina != 1) {
 				 ?>
-				<li><a href="?pagina=<?php 	echo 1 ?>">|<</a></li>
-				<li><a href="?pagina=<?php 	echo $pagina-1 ?>"><</a></li>
+				<li><a href="?pagina=<?php 	echo 1 ?>&busqueda=<?php echo $busqueda ?>">|<</a></li>
+				<li><a href="?pagina=<?php 	echo $pagina-1 ?>&busqueda=<?php echo $busqueda ?>"><</a></li>
 				<?php 	
 					}
 				 ?>
 				<?php 	
 					for ($i	=1; $i < $totalpagina+1 ; $i++) { 
 						if ($i == $pagina) 
-							echo "<li><a class='paginaseleccionada' href='?pagina=".$i."'>".$i."</a></li>";
+							echo "<li class='paginaseleccionada'>".$i."</li>";
 						else
-							echo "<li><a href='?pagina=".$i."'>".$i."</a></li>";
+							echo "<li><a href='?pagina=".$i."&busqueda=".$busqueda."'>".$i."</a></li>";
 					}
 
 				 ?>
@@ -107,13 +129,14 @@
 					if ($pagina != $totalpagina) {
 				 ?>
 
-				<li><a href="?pagina=<?php 	echo $pagina+1 ?>">></a></li>
-				<li><a href="?pagina=<?php 	echo $totalpagina ?>">>|</a></li>
+				<li><a href="?pagina=<?php 	echo $pagina+1 ?>&busqueda=<?php echo $busqueda ?>">></a></li>
+				<li><a href="?pagina=<?php 	echo $totalpagina ?>&busqueda=<?php echo $busqueda ?>">>|</a></li>
 				<?php 	
 					}
 				 ?>
 			</ul>
-		</div>	
+		</div>
+	<?php } ?>
 	</section>
 	<?php include ("../includes/footer.php") ?>
 
