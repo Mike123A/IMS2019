@@ -90,8 +90,10 @@
 			die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
 		}
 		$fila = $resultado->fetch_assoc();
-			
-		$direccionimagen = "../../img/Productos/".$fila['ImagenProd'];
+		$classremove = '';
+		$Imagen = '<img id="img" src="../../img/Productos/'.$fila['ImagenProd'].'" alt="">';
+
+		// $direccionimagen = "../../img/Productos/".$fila['ImagenProd'];
 
 		$nombre = $fila['NombreProd'];
 		$Alto = $fila['AltoProd'];
@@ -108,6 +110,9 @@
 	<meta charset="UTF-8">
 	<title>IMS</title>
 	<link rel="stylesheet" href="../css/estilo.css">
+	<script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script> 
+
+	<script type="text/javascript" src="../js/functions.js"></script>
 </head>
 <body>
 	<?php include ("../includes/encabezado_sesion.php") ?>
@@ -134,10 +139,19 @@
 			<input type="text" required name="Precio" placeholder="Aqui va el precio" value="<?php if(isset($Precio)) {echo $Precio;}?>" /><br>
 			
 			<br>
-			<label>Imagen actual</label><br>
-			<img class="imagenformulario" src="<?php echo $direccionimagen ?>" alt=''>
-			<br>
-			<input type="file" name="Imagen" value="" /><br><br><br>
+			<div class="photo">
+				<label for="Imagen">Imagen</label>
+			        <div class="prevPhoto">
+			        <span class="delPhoto <?php echo $classremove ?>">X</span>
+			        <label for="Imagen"></label>
+			        <?php echo $Imagen; ?>
+			        </div>
+			        <div class="upimg">
+			        <input type="file" name="Imagen" id="Imagen">
+			        </div>
+			        <div id="form_alert"></div>
+			</div>
+			<br><br><br>
 			</div><br> 	<br>	
 			<a href="cat_productos.php"><input id="btn_cancelar" type="button" value="Cancelar" name="Cancelar"></a>
 			<input id="btn_aceptar" type="submit" value="Guardar" name="Guardar">		

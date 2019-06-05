@@ -62,11 +62,15 @@
 	<meta charset="UTF-8">
 	<title>IMS</title>
 	<link rel="stylesheet" href="../css/estilo.css">
+	<script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script> 
+
+	<script type="text/javascript" src="../js/functions.js"></script>
 </head>
 <body>
 	<?php include ("../includes/encabezado_sesion.php") ?>
 	
 	<?php include ("../includes/menu.php") ?>
+	
 	<section class="ContenedorPrincipal">
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" enctype="multipart/form-data">
 		<h1>Alta de producto</h1>
@@ -86,8 +90,19 @@
 			<input type="text" required name="Precio" placeholder="Ej. $450.00" value="<?php if(isset($Precio)) {echo $Precio;}?>" /><br>
 			<label>Stock</label><br>
 			<input type="text" required name="Stock" placeholder="Ej. 100" value="<?php if(isset($Stock)) {echo $Stock;}?>" pattern="[0-9]+" maxlength="10" /><br/>
-			<label>Imagen</label><br>
-			<input type="file" src="<?php if(isset($url_temp)) {echo $url_temp;}?> ?>" required name="Imagen"  accept="image/*" /><br>
+			<div class="photo">
+				<label for="Imagen">Imagen</label>
+			        <div class="prevPhoto">
+			        <span class="delPhoto notBlock">X</span>
+			        <label for="Imagen"></label>
+			        </div>
+			        <div class="upimg">
+			        <input type="file" name="Imagen" id="Imagen">
+			        </div>
+			        <div id="form_alert"></div>
+			</div>
+
+			
 		</div>
 			<br> 	<br>	
 			<a href="cat_productos.php"><input id="btn_cancelar" type="button" value="Cancelar" name="Cancelar"></a>
@@ -97,7 +112,6 @@
 		</form>
 	</section>
 	<?php include ("../includes/footer.php") ?>
-	
 	
 </body>
 </html>
