@@ -1,0 +1,2 @@
+[15-Jun-2019 22:29:12 UTC] PHP Notice:  Undefined variable: mysqli in /home/imedical/public_html/movil/consulta/consultar.php on line 12
+[15-Jun-2019 22:29:12 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/imedical/public_html/movil/consulta/consultar.php on line 12

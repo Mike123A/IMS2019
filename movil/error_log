@@ -1,0 +1,73 @@
+[11-Jun-2019 11:33:53 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/imedical/public_html/movil/login.php on line 11
+[11-Jun-2019 11:33:53 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/imedical/public_html/movil/login.php on line 14
+[11-Jun-2019 11:33:53 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/imedical/public_html/movil/login.php on line 18
+[11-Jun-2019 11:33:53 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, bool given in /home/imedical/public_html/movil/login.php on line 21
+[11-Jun-2019 11:34:57 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/imedical/public_html/movil/login.php on line 11
+[11-Jun-2019 11:34:57 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/imedical/public_html/movil/login.php on line 14
+[11-Jun-2019 11:34:57 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/imedical/public_html/movil/login.php on line 18
+[11-Jun-2019 11:34:57 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, bool given in /home/imedical/public_html/movil/login.php on line 21
+[11-Jun-2019 11:35:00 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/imedical/public_html/movil/login.php on line 11
+[11-Jun-2019 11:35:00 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/imedical/public_html/movil/login.php on line 14
+[11-Jun-2019 11:35:00 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/imedical/public_html/movil/login.php on line 18
+[11-Jun-2019 11:35:00 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, bool given in /home/imedical/public_html/movil/login.php on line 21
+[11-Jun-2019 20:50:37 UTC] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'imedical_root'@'localhost' to database 'imedical_prueba' in /home/imedical/public_html/movil/alta_empleado.php on line 7
+[11-Jun-2019 20:50:37 UTC] PHP Notice:  Undefined index: telefono in /home/imedical/public_html/movil/alta_empleado.php on line 16
+[11-Jun-2019 20:50:37 UTC] PHP Notice:  Undefined index: fechacont in /home/imedical/public_html/movil/alta_empleado.php on line 17
+[11-Jun-2019 20:50:37 UTC] PHP Notice:  Undefined index: usuario in /home/imedical/public_html/movil/alta_empleado.php on line 18
+[11-Jun-2019 20:50:37 UTC] PHP Notice:  Undefined index: contrasenia in /home/imedical/public_html/movil/alta_empleado.php on line 19
+[11-Jun-2019 20:50:37 UTC] PHP Notice:  Undefined index: tipousuario in /home/imedical/public_html/movil/alta_empleado.php on line 20
+[11-Jun-2019 20:50:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on bool in /home/imedical/public_html/movil/alta_empleado.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/imedical/public_html/movil/alta_empleado.php on line 23
+[11-Jun-2019 21:00:45 UTC] PHP Notice:  Undefined index: telefono in /home/imedical/public_html/movil/alta_empleado.php on line 16
+[11-Jun-2019 21:00:45 UTC] PHP Notice:  Undefined index: fechacont in /home/imedical/public_html/movil/alta_empleado.php on line 17
+[11-Jun-2019 21:00:45 UTC] PHP Notice:  Undefined index: usuario in /home/imedical/public_html/movil/alta_empleado.php on line 18
+[11-Jun-2019 21:00:45 UTC] PHP Notice:  Undefined index: contrasenia in /home/imedical/public_html/movil/alta_empleado.php on line 19
+[11-Jun-2019 21:00:45 UTC] PHP Notice:  Undefined index: tipousuario in /home/imedical/public_html/movil/alta_empleado.php on line 20
+[15-Jun-2019 23:00:44 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/imedical/public_html/movil/alta_empleado.php on line 32
+[15-Jun-2019 23:01:30 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/imedical/public_html/movil/alta_empleado.php on line 32
+[15-Jun-2019 23:13:13 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/imedical/public_html/movil/alta_empleado.php on line 32
+[16-Jun-2019 04:46:14 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/imedical/public_html/movil/alta_empleado.php on line 37
+[16-Jun-2019 04:51:31 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/imedical/public_html/movil/alta_empleado.php on line 32
+[16-Jun-2019 04:52:00 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/imedical/public_html/movil/alta_empleado.php on line 32
+[16-Jun-2019 04:53:16 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/imedical/public_html/movil/alta_empleado.php on line 32
+[16-Jun-2019 04:54:25 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/imedical/public_html/movil/alta_empleado.php on line 32
+[16-Jun-2019 04:57:14 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/imedical/public_html/movil/alta_empleado.php on line 32
+[17-Jun-2019 16:20:12 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/imedical/public_html/movil/baja_empleado.php on line 7
+[17-Jun-2019 16:20:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on bool in /home/imedical/public_html/movil/baja_empleado.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/imedical/public_html/movil/baja_empleado.php on line 12
+[17-Jun-2019 16:23:40 UTC] PHP Notice:  Undefined index: telefono in /home/imedical/public_html/movil/actualizar_empleado.php on line 17
+[17-Jun-2019 16:23:40 UTC] PHP Notice:  Undefined index: fechacont in /home/imedical/public_html/movil/actualizar_empleado.php on line 18
+[17-Jun-2019 16:23:40 UTC] PHP Notice:  Undefined index: usuario in /home/imedical/public_html/movil/actualizar_empleado.php on line 19
+[17-Jun-2019 16:23:40 UTC] PHP Notice:  Undefined index: contrasenia in /home/imedical/public_html/movil/actualizar_empleado.php on line 20
+[17-Jun-2019 16:23:40 UTC] PHP Notice:  Undefined index: tipousuario in /home/imedical/public_html/movil/actualizar_empleado.php on line 21
+[17-Jun-2019 16:23:40 UTC] PHP Notice:  Undefined index: Contraseña in /home/imedical/public_html/movil/actualizar_empleado.php on line 25
+[17-Jun-2019 16:23:40 UTC] PHP Notice:  Undefined variable: claveu in /home/imedical/public_html/movil/actualizar_empleado.php on line 29
+[17-Jun-2019 16:24:01 UTC] PHP Notice:  Undefined index: telefono in /home/imedical/public_html/movil/actualizar_empleado.php on line 17
+[17-Jun-2019 16:24:01 UTC] PHP Notice:  Undefined index: fechacont in /home/imedical/public_html/movil/actualizar_empleado.php on line 18
+[17-Jun-2019 16:24:01 UTC] PHP Notice:  Undefined index: usuario in /home/imedical/public_html/movil/actualizar_empleado.php on line 19
+[17-Jun-2019 16:24:01 UTC] PHP Notice:  Undefined index: contrasenia in /home/imedical/public_html/movil/actualizar_empleado.php on line 20
+[17-Jun-2019 16:24:01 UTC] PHP Notice:  Undefined index: tipousuario in /home/imedical/public_html/movil/actualizar_empleado.php on line 21
+[17-Jun-2019 16:24:01 UTC] PHP Notice:  Undefined index: Contraseña in /home/imedical/public_html/movil/actualizar_empleado.php on line 25
+[17-Jun-2019 16:24:01 UTC] PHP Notice:  Undefined variable: claveu in /home/imedical/public_html/movil/actualizar_empleado.php on line 29
+[17-Jun-2019 21:30:13 UTC] PHP Notice:  Undefined index: Contraseña in /home/imedical/public_html/movil/actualizar_empleado.php on line 25
+[17-Jun-2019 21:30:13 UTC] PHP Notice:  Undefined variable: claveu in /home/imedical/public_html/movil/actualizar_empleado.php on line 29
+[17-Jun-2019 21:36:55 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/imedical/public_html/movil/alta_empleado.php on line 32
+[17-Jun-2019 22:10:56 UTC] PHP Notice:  Undefined index: Contraseña in /home/imedical/public_html/movil/actualizar_empleado.php on line 25
+[17-Jun-2019 22:10:56 UTC] PHP Notice:  Undefined variable: claveu in /home/imedical/public_html/movil/actualizar_empleado.php on line 29
+[21-Jun-2019 02:03:02 UTC] PHP Notice:  Undefined index: Contraseña in /home/imedical/public_html/movil/actualizar_empleado.php on line 25
+[21-Jun-2019 02:03:02 UTC] PHP Notice:  Undefined variable: claveu in /home/imedical/public_html/movil/actualizar_empleado.php on line 29
+[21-Jun-2019 17:20:39 UTC] PHP Notice:  Undefined index: apellido1 in /home/imedical/public_html/movil/alta_empleado.php on line 11
+[21-Jun-2019 17:20:39 UTC] PHP Notice:  Undefined index: apellido2 in /home/imedical/public_html/movil/alta_empleado.php on line 12
+[21-Jun-2019 17:20:39 UTC] PHP Notice:  Undefined index: fechanac in /home/imedical/public_html/movil/alta_empleado.php on line 13
+[21-Jun-2019 17:20:39 UTC] PHP Notice:  Undefined index: correo in /home/imedical/public_html/movil/alta_empleado.php on line 14
+[21-Jun-2019 17:20:39 UTC] PHP Notice:  Undefined index: direccion in /home/imedical/public_html/movil/alta_empleado.php on line 15
+[21-Jun-2019 17:20:39 UTC] PHP Notice:  Undefined index: telefono in /home/imedical/public_html/movil/alta_empleado.php on line 16
+[21-Jun-2019 17:20:39 UTC] PHP Notice:  Undefined index: fechacont in /home/imedical/public_html/movil/alta_empleado.php on line 17
+[21-Jun-2019 17:20:39 UTC] PHP Notice:  Undefined index: usuario in /home/imedical/public_html/movil/alta_empleado.php on line 18
+[21-Jun-2019 17:20:39 UTC] PHP Notice:  Undefined index: contrasenia in /home/imedical/public_html/movil/alta_empleado.php on line 19
+[21-Jun-2019 17:20:39 UTC] PHP Notice:  Undefined index: tipousuario in /home/imedical/public_html/movil/alta_empleado.php on line 20
+[21-Jun-2019 17:20:39 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/imedical/public_html/movil/alta_empleado.php on line 32
