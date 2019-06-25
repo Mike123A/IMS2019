@@ -17,7 +17,7 @@
 		$Ancho = $_POST ['Ancho'];
 		$Peso = $_POST ['Peso'];
 		$Precio = $_POST ['Precio'];
-		$Stock = $_POST ['Stock'];
+		
 		$Descripcion = $_POST ['Descripcion'];
 
 		$bandera=0;
@@ -37,12 +37,14 @@
    		if(mysqli_num_rows($resultado)>0) { 
    			$bandera = 1;
       		$nombre = "";
+      		echo "<script>alert('Ya ha sido registrado un producto con este nombre')</script>";
+
     	}
     	if($bandera == 0  ){
 
 			
 
-			$query = "INSERT INTO cat_productos(NombreProd,AltoProd,AnchoProd,PesoProd,DescripcionProd,PrecioProd,StockProd,ImagenProd,estado) VALUES ('$nombre','$Alto','$Ancho','$Peso','$Descripcion','$Precio','$Stock','$img_producto','Alta')";
+			$query = "INSERT INTO cat_productos(NombreProd,AltoProd,AnchoProd,PesoProd,DescripcionProd,PrecioProd,ImagenProd,estado) VALUES ('$nombre','$Alto','$Ancho','$Peso','$Descripcion','$Precio','$img_producto','Alta')";
 
 			$resultado = $conexion->query($query);
 			if ($resultado) {
@@ -87,9 +89,7 @@
 			<label>Descripcion</label><br>
 			<input type="textarea" required name="Descripcion" placeholder="Ej. Es un producto a travez del cual se puede medir la glucosa de una manera amigable para el paciente" value="<?php if(isset($Descripcion)) {echo $Descripcion;}?>" maxlength="300"/><br>
 			<label>Precio</label><br>
-			<input type="text" required name="Precio" placeholder="Ej. $450.00" value="<?php if(isset($Precio)) {echo $Precio;}?>" /><br>
-			<label>Stock</label><br>
-			<input type="text" required name="Stock" placeholder="Ej. 100" value="<?php if(isset($Stock)) {echo $Stock;}?>" pattern="[0-9]+" maxlength="10" /><br/>
+			<input type="text" pattern="^[1-9][0-9]+" title="Solo numeros positivos, no puede iniciar con un 0"required name="Precio" placeholder="Ej. $450.00" value="<?php if(isset($Precio)) {echo $Precio;}?>" /><br>
 			<div class="photo">
 				<label for="Imagen">Imagen</label>
 			        <div class="prevPhoto">
@@ -97,11 +97,11 @@
 			        <label for="Imagen"></label>
 			        </div>
 			        <div class="upimg">
-			        <input required type="file" name="Imagen" id="Imagen">
+			        <input type="file" name="Imagen" id="Imagen">
 			        </div>
 			        <div id="form_alert"></div>
 			</div>
-
+<br> 	<br>	
 			
 		</div>
 			<br> 	<br>	

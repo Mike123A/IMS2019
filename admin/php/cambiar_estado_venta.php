@@ -26,7 +26,7 @@
 			mysqli_close($conexion);
 			header("Location:".$_SERVER['HTTP_REFERER']);  
 		}else{
-			echo "No eliminado";
+			echo "Error";
 		}
 	}else{
 		print "<script>alert('Esta venta ya esta en la estapa final.');</script>";

@@ -1,7 +1,7 @@
 <?php
 
 	// session_start();
-	$alert = '';
+
 
 	if (!empty($_SESSION['active'])) {
 	}else{
@@ -11,7 +11,7 @@
 			$Usuario = $_POST['Usuario'];
 			$Contrasenia = md5($_POST['Contrasenia']);
 
-			$query = ("SELECT * FROM cat_usuarios WHERE Usuario='$Usuario' AND Contrasenia='$Contrasenia'");
+			$query = ("SELECT * FROM cat_usuarios WHERE Usuario='$Usuario' AND Contrasenia='$Contrasenia' AND estado ='Alta'");
 			$resultado = $conexion->query($query);
 
 		   	if(mysqli_num_rows($resultado)>0) { 
@@ -30,15 +30,15 @@
 		    }else{
 				$alert = 'El usuario o clave es incorrecto';
 				session_destroy();
-				header("Location: index.php#openModal");
+			    header("Location: index.php#openModal");
 		    }
 		}
 	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
+<head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+	
 	<title>IMS</title>
 	<link rel="stylesheet" href="css/estilo.css">
 </head>

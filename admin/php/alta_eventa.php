@@ -20,6 +20,8 @@
    		if(mysqli_num_rows($resultado)>0) { 
    			$bandera = 1;
       		$nombre = "";
+      		echo "<script>alert('Ya ha sido registrada esta etapa')</script>";
+
     	}
    		if($bandera == 0  ){
    			include("conexion.php"); 
@@ -37,7 +39,7 @@
 				echo "No Insertado";
 			}
 	
-   		} 
+   		}
 	}	
 ?>
 <!DOCTYPE html>
@@ -56,7 +58,7 @@
 		<h1>Alta de etapa de venta</h1>
 		<br>
 		<label>Etapa de venta</label><br>
-		<input type="text" required name="Nombres" placeholder="<?php if(isset($nombre) && $nombre ==''){ echo 'Intente con otro';}else{echo "Ej. Produccion/Empaque/Mantenimiento";} ?>" value="<?php if(isset($nombre)) {echo $nombre;}?>" /><br>
+		<input type="text" required name="Nombres" placeholder="<?php if(isset($nombre) && $nombre ==''){ echo 'Intente con otro';}else{echo "Ej. Produccion/Empaque/Mantenimiento";} ?>" value="<?php if(isset($nombre)) {echo $nombre;}?>" pattern="[A-Z a-z]+" /><br>
 		<br>
 		<a href="cat_eventa.php"><input id="btn_cancelar" type="button" value="Cancelar" name="Cancelar"></a>
 			<input id="btn_aceptar" type="submit" value="Guardar" name="Guardar">		

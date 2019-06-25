@@ -38,7 +38,8 @@
 	   		if(mysqli_num_rows($resultado)>0) { 
 	   			$bandera = 1;
 	      		$usuario = "";
-	      		echo "1";
+      			echo "<script>alert('El usuario ya no esta disponible')</script>";
+
 	    	}
 	    }
 	    if ($fila['CorreoCli']!= $correo) {
@@ -47,8 +48,7 @@
 	    	if(mysqli_num_rows($resultado)>0) { 
 				$bandera = 1;
 	     		$correo = "";
-	      		echo "2";
-
+	      		echo "<script>alert('El correo ya ha sido asociado a una cuenta')</script>";
 	   		}
 	   	}
 	    if ($fila['TelefonoCli']!= $telefono) {
@@ -57,8 +57,7 @@
     		if(mysqli_num_rows($resultado)>0) { 
 				$bandera = 1;
      			$telefono = "";
-	      		echo "3";
-
+	      		echo "<script>alert('El telefono ya ha sido asociado a una cuenta')</script>";
      		}
    		}
    		if ($fila['RFC']!= $RFC) {
@@ -67,6 +66,7 @@
 	    	if(mysqli_num_rows($resultado)>0) { 
 				$bandera = 1;
 	     		$RFC = "";
+	      		echo "<script>alert('El RFC ya ha sido asociado a una cuenta')</script>";
 	     	}
    		}
    		if($bandera == 0  ){

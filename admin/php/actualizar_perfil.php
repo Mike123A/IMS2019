@@ -36,6 +36,8 @@
 			$resultado = $conexion->query($query);
    		
    			if(mysqli_num_rows($resultado)>0) { 
+    			echo "<script>alert('El usuario no esta disponible')</script>";
+
    				$bandera = 1;
       			$usuario = "";
     		}
@@ -44,6 +46,8 @@
 	    	$query = ("SELECT * FROM cat_empleados WHERE CorreoEmp='$correo'"); // inicio de mi consulta 
 			$resultado = $conexion->query($query);
 	    	if(mysqli_num_rows($resultado)>0) { 
+    		echo "<script>alert('Ya hay una cuenta asociada a este corrreo')</script>";
+	    		
 				$bandera = 1;
 	     		$correo = "";
 	   		}

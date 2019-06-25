@@ -189,7 +189,7 @@
 					<tr>
 						<td>".$fila['idCliente']." </td>
     					<td>".$fila['NombreCli']."</td>
-    					<td>".$fila['Apellido1Cli']." ".$fila['Apellido2Cli']."cm</td>
+    					<td>".$fila['Apellido1Cli']." ".$fila['Apellido2Cli']."</td>
     					<td>".$fila['DireccionCli']."</td>
     					<td>".$fila['TelefonoCli']."</td>
     					<td>".$fila['CorreoCli']."</td>
@@ -207,7 +207,7 @@
 				}
 			echo "</table>";
 		}else
-			echo "<label>No se encontraron coincidencias puedes intentar con otro o regitar un nuevo cliente <a href='alta_cliente.php'>Click aqui.</a></label><br><br><br><br>";
+			echo "<label>No se encontraron coincidencias puedes intentar con otro o registrar un nuevo cliente <a href='alta_cliente.php'>Click aqui.</a></label><br><br><br><br>";
 
 
 		?>

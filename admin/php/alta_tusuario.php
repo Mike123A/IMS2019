@@ -20,6 +20,8 @@
    		if(mysqli_num_rows($resultado)>0) { 
    			$bandera = 1;
       		$nombre = "";
+      		echo "<script>alert('Ya ha sido registrada este tipo de usuarios')</script>";
+
     	}
    		if($bandera == 0  ){
    			include("conexion.php"); 
@@ -56,10 +58,10 @@
 		<h1>Alta de tipo de usuario</h1>
 		<br>
 		<label>Tipo de usuario/Categoria</label><br>
-		<input type="text" required name="Nombres" placeholder="<?php if(isset($nombre) && $nombre ==''){ echo 'Intente con otro';}else{echo "Ej. Admin/Produccion/Ventas";} ?>" value="<?php if(isset($nombre)) {echo $nombre;}?>" /><br>
+		<input type="text" required name="Nombres" placeholder="<?php if(isset($nombre) && $nombre ==''){ echo 'Intente con otro';}else{echo "Ej. Admin/Produccion/Ventas";} ?>" value="<?php if(isset($nombre)) {echo $nombre;}?>" pattern="[A-Z a-z]+" /><br>
 		<br>
 		<a href="cat_tusuarios.php"><input id="btn_cancelar" type="button" value="Cancelar" name="Cancelar"></a>
-			<input id="btn_aceptar" type="submit" value="Guardar" name="Guardar">		
+			<input id="btn_aceptar" type="submit" value="Guardar" name="Guardar" >		
 			<br><br><br>
 		</form>
 	</section>

@@ -43,12 +43,16 @@
    			if(mysqli_num_rows($resultado)>0) { 
    				$bandera = 1;
       			$usuario = "";
+	      		echo "<script>alert('El usuario ya no esta disponible')</script>";
+
     		}
 		}
 		if ($fila['CorreoEmp']!= $correo) {
 	    	$query = ("SELECT * FROM cat_empleados WHERE CorreoEmp='$correo'"); // inicio de mi consulta 
 			$resultado = $conexion->query($query);
 	    	if(mysqli_num_rows($resultado)>0) { 
+	      		echo "<script>alert('El correo ya ha sido asociado a una cuenta')</script>";
+
 				$bandera = 1;
 	     		$correo = "";
 	   		}

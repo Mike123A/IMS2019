@@ -30,6 +30,8 @@
 	    	if(mysqli_num_rows($resultado)>0) { 
 				$bandera = 1;
 	     		$nombre = "";
+	      		echo "<script>alert('Ya ha sido registra la etapa de venta')</script>";
+
 	     	}
    		}
    		if($bandera == 0  ){
@@ -74,7 +76,7 @@
 			<input style="display: none" type="text" required name="clave"  value=" <?php echo $fila['idEstadoVenta']; ?>" /><br>
 			<br>
 			<label>Tipo de usuario/Categoria</label><br>
-			<input type="text" required name="Nombres" placeholder="<?php if(isset($nombre) && $nombre ==''){ echo 'Intente con otro';}else{echo 'Aqui va el tipo';}?>" value="<?php if(isset($nombre)) {echo $nombre;}?>" /><br>
+			<input type="text" required name="Nombres" placeholder="<?php if(isset($nombre) && $nombre ==''){ echo 'Intente con otro';}else{echo 'Aqui va el tipo';}?>" value="<?php if(isset($nombre)) {echo $nombre;}?>" pattern="[A-Z a-z]+"/><br>
 			 <br> 	<br>	
 			<a href="cat_eventa.php"><input id="btn_cancelar" type="button" value="Cancelar" name="Cancelar"></a>
 			<input id="btn_aceptar" type="submit" value="Guardar" name="Guardar">		

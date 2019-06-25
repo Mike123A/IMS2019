@@ -21,6 +21,7 @@ $fecha = date('Y/m/d');
 			$query = "UPDATE cat_productos SET StockProd = (StockProd-$c[cantidad]) WHERE idProducto = $c[clave] ";
 			$resultado = $conexion->query($query);
 			if($resultado){
+				print "<script>	window.open('../pdf/factura.php?clave=$cart_id');</script>";
 				unset($_SESSION["cart"]);
 				print "<script>	window.location='productos.php';</script>";
 			}

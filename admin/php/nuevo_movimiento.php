@@ -17,8 +17,21 @@
 		$TMov = $_POST ['tmov'];
 		$Cantidad = $_POST ['Cantidad'];
 		$fecha = date('Y/m/d'); 
+		$bandera;
 
-		$query = "INSERT INTO almacen_productos(FechaMov,idProducto, tipo_movimiento, Cantidad) VALUES ('$fecha','$idProd','$TMov','$Cantidad');";
+		if ($TMov == 'Salida') {
+			$sql = "SELECT * FROM cat_productos WHERE idProducto = $idProd";
+			if(!$resultado = $conexion->query($sql)){
+				die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
+			}
+			$fila = $resultado->fetch_assoc();
+			if ($Cantidad > $fila['StockProd']) {
+    			echo "<script>alert('No puedes registrar una salida con un numero superior a las existencias')</script>";
+				$bandera = 1;
+			}
+		}
+		if ($bandera !=1) {
+					$query = "INSERT INTO almacen_productos(FechaMov,idProducto, tipo_movimiento, Cantidad) VALUES ('$fecha','$idProd','$TMov','$Cantidad');";
 		$resultado = $conexion->query($query);
 		if ($resultado) {
 			if ($TMov == "Entrada"){
@@ -36,6 +49,15 @@
 		}else{
 			echo "No Insertado";
 		}
+
+		}
+
+
+
+
+
+		
+
 
 	}
 ?>
@@ -75,7 +97,7 @@
 				<OPTION VALUE="Salida">Salida</OPTION>";
 			</SELECT> <br>
 			<label>Cantidad</label><br>
-			<input type="number" required name="Cantidad" placeholder="Cantidad"> 
+			<input type="number" required name="Cantidad" placeholder="Cantidad" pattern="[1-9][0-9]+" min="1"title="Solo numeros positivos, no puede iniciar con un 0"> 
 			 <br> 	<br>	
 			<a href="almacen_productos.php"><input id="btn_cancelar" type="button" value="Cancelar" name="Cancelar"></a>
 			<input id="btn_aceptar" type="submit" value="Guardar" name="Guardar">		

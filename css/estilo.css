@@ -157,12 +157,12 @@ section#descripcionempresa{
 	z-index: 98;
 }
 #descripcionempresa1 img{
-	width: 580px;
+	width: 634px;
 	height: 300px;
 	display: inline-block;
 }
 #descripcionempresa1 section{
-	width: 575px;
+	width: 635px;
 	height: 300px;
 	vertical-align: top;
 	display: inline-block;
@@ -201,7 +201,7 @@ section#descripcionempresa{
 #producto{
 	width: 265px;
 	height: 450px;
-	margin-left: 10px;
+	margin: 19px;
 	background: #fff;
 	border: 5px solid #e2ecec;
 	display: inline-block;
@@ -280,7 +280,7 @@ a{
 }
 
 .asociado{
-	width: calc(272px - 30px);
+	width: calc(300px - 30px);
 	height: calc(400px - 30px);
 	background: #fff;
 	display: inline-block;
@@ -486,10 +486,10 @@ text-align: center;
 	color: #FFFFFF;
 	line-height: 25px;
 	position: absolute;
-	right: 350px;
+	right: 455px;
 	text-align: center;
 	top: 48px;
-	width: 39px;
+	width: 38px;
 	text-decoration: none;
 	font-weight: bold;
 	-webkit-border-radius: 12px;
@@ -504,13 +504,14 @@ text-align: center;
 	padding: 2px;
 	padding-top: 10px; 
 }
+
 .modalDialog > form {
-	width: 450px;
+	width: 380px;
 	position: absolute;
 	margin: 5% auto;
 	padding: 5px;
 	border-radius: 10px;
-	left: 33%;
+	left: 35%;
 	/*background: #fff;
 	background: -moz-linear-gradient(#fff, #999);
 	background: -webkit-linear-gradient(#fff, #999);
@@ -631,8 +632,6 @@ text-align: center;
 	text-decoration: none;
 	color: black;
 }
-
-
 .form_buscador{
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -660,9 +659,6 @@ text-align: center;
 	width: 50px;
 	vertical-align: top;
 }
-
-
-
 
 .paginador ul{
 	padding: 15px;
@@ -705,6 +701,10 @@ text-align: center;
 	background: #428bca;
 	border: 1px solid #428bca;
 }
+
+
+
+
 
 
 

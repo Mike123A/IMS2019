@@ -30,12 +30,16 @@
    		if(mysqli_num_rows($resultado)>0) { 
    			$bandera = 1;
       		$usuario = "";
+      		echo "<script>alert('El usuario no esta disponible')</script>";
+
     	}
     	$query = ("SELECT * FROM cat_empleados WHERE CorreoEmp='$correo'"); // inicio de mi consulta 
 		$resultado = $conexion->query($query);
     	if(mysqli_num_rows($resultado)>0) { 
 			$bandera = 1;
      		$correo = "";
+    		echo "<script>alert('Ya hay una cuenta asociada a este corrreo')</script>";
+
    		}
    		if($bandera == 0  ){
    			$contraseña =  md5($_POST ['Contraseña']);

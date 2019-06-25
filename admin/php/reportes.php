@@ -149,6 +149,22 @@
 			<hr>	
 		<hr>	
 		<br><br>
+		<form action="../pdf/ventaslinea.php" method="POST" class="formrep" target="_blank">
+			<label for="">Ventas en linea</label>
+			<br><br><br>
+			<label for="">Fecha inicio </label><input class="fecha_rep" class="fecha_rep" required type="date" name="finicio" value="<?php if (isset($fecha1)) echo $fecha1?>">
+			<label for="">Fecha limite </label><input class="fecha_rep" class="fecha_rep" required type="date" name="ffin" value="<?php if (isset($fecha2)) echo $fecha2?>">
+			<br>
+			<br>
+				<button type="submit" id="btn-resp">
+						Buscar
+				</button>
+			</a>
+		<br><br>
+		</form>
+			<hr>	
+		<hr>	
+		<br><br>
 		<form action="../pdf/productos.php" method="POST" class="formrep" target="_blank">
 			<label for="">Lista de productos</label>
 			<br><br><br>
@@ -172,22 +188,7 @@
 		</form>
 		<hr><hr>
 		<br><br>
-		<form action="../pdf/ventaslinea.php" method="POST" class="formrep" target="_blank">
-			<label for="">Ventas en linea</label>
-			<br><br><br>
-			<label for="">Fecha inicio </label><input class="fecha_rep" class="fecha_rep" required type="date" name="finicio" value="<?php if (isset($fecha1)) echo $fecha1?>">
-			<label for="">Fecha limite </label><input class="fecha_rep" class="fecha_rep" required type="date" name="ffin" value="<?php if (isset($fecha2)) echo $fecha2?>">
-			<br>
-			<br>
-				<button type="submit" id="btn-resp">
-						Buscar
-				</button>
-			</a>
-		<br><br>
-		</form>
-			<hr>	
-		<hr>	
-		<br><br>
+		
 		<form class="formrep" action="#">
 			<label for="">¿Necesita un respaldo de la base de datos?</label>
 			<button id="btn-resp"><a href="crear_respaldo_bd.php">Crear respaldo</a></button>

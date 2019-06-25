@@ -28,18 +28,21 @@
 		$query = ("SELECT * FROM cat_usuarios WHERE usuario='$usuario'");
 		$resultado = $conexion->query($query);
    		if(mysqli_num_rows($resultado)>0) { 
+    		echo "<script>alert('El usuario no esta disponible')</script>";
    			$bandera = 1;
       		$usuario = "";
     	}
     	$query = ("SELECT * FROM cat_clientes WHERE CorreoCli='$correo'"); 
 		$resultado = $conexion->query($query);
     	if(mysqli_num_rows($resultado)>0) { 
+    		echo "<script>alert('Ya hay una cuenta asociada a este corrreo')</script>";
 			$bandera = 1;
      		$correo = "";
    		}
    		$query = ("SELECT * FROM cat_clientes WHERE TelefonoCli='$telefono'"); 
 		$resultado = $conexion->query($query);
     	if(mysqli_num_rows($resultado)>0) { 
+    		echo "<script>alert('Ya hay una cuenta asociada a este telefono')</script>";
 			$bandera = 1;
      		$telefono = "";
    		}
@@ -47,6 +50,7 @@
 		$resultado = $conexion->query($query);
     	if(mysqli_num_rows($resultado)>0) { 
     		if ($rfc != "") {
+    			echo "<script>alert('Ya hay una cuenta asociada a este RFC')</script>";
     			$bandera = 1;
      			$rfc = "";
     		}

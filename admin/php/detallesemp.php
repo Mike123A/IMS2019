@@ -28,7 +28,7 @@
 		$telefono = $fila['TelefonoEmp'];
 		$fechacont = $fila['FechaContEmp'];
 		$usuario = $fila['Usuario'];
-		$contrase単a = $fila['Contrasenia'];
+		$contraseña = $fila['Contrasenia'];
 		$tusuario = $fila['idtusuario'];
 		
 ?>
@@ -53,7 +53,7 @@
 			<div style="/*-webkit-column-count:3*/-moz-column-count:2;column-count:2">
 
 			<label>Nombre: <?php if(isset($nombre)) {echo $nombre;}?></label><br><br>
-			<label>Primer pellido: <?php if(isset($apellido1)) {echo $apellido1;}?></label><br><br>
+			<label>Primer apellido: <?php if(isset($apellido1)) {echo $apellido1;}?></label><br><br>
 			<label>Segundo apellido: <?php if(isset($apellido1)) {echo $apellido2;}?></label><br><br>
 			<label>Fecha de nacimiento: <?php if(isset($fechanac)) {echo $fechanac;}?></label><br><br>
 			<label>Correo: <?php if(isset($correo)) {echo $correo;}?></label><br><br>

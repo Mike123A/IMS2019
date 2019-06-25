@@ -173,7 +173,13 @@ td img{
 	font-size: 18px;
 	padding: 5px;
 	border-radius: 10px;
-	width: 100px;
+}
+.activar{
+	background: #2C612C;
+	color:#fff;
+	font-size: 18px;
+	padding: 5px;
+	border-radius: 10px;
 }
 .etapa{
 	background: #2C612C;
@@ -467,7 +473,6 @@ footer img{
 	height: 35px;
 }
 
-/**/
 .prevPhoto {
     display: flex;
     justify-content: space-between;

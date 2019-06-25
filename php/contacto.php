@@ -7,7 +7,7 @@
 		$telefono = $_POST["telefono"];
 		$asunto = $_POST["asunto"];
 		$mensaje = $_POST["mensaje"];
-        $headers = "From: imdicals.com.mx";
+        $headers = "From: ".$correo;
 		$destinatario = "SoporteIMS@outlook.com";
 
 		$mensaje = "
@@ -18,7 +18,7 @@
 
 			Mensaje/Comentario: ".$mensaje."
 		";
-		if(mail($destinatario,$asunto,utf8_decode($mensaje),$headers)){
+		if(mail($destinatario,$asunto,$mensaje,$headers)){
 			echo "<script type='text/javascript'>
 				location.href='contacto.php';
 			</script>";
@@ -47,15 +47,15 @@
 		<form class="formularios"action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
 			<h2>Tienes alguna duda, contactanos...</h2>
 			<label for="">*Nombre:</label><br>
-			<input type="text" placeholder="Aqui va tu nombre" id="nombre" name="nombre" required=""><br>
+			<input type="text" placeholder="Ej. Miguel Pereira Rodriguez" id="nombre" name="nombre" required=""><br>
 			<label for="">*Correo:</label><br>
-			<input type="text" placeholder="Aqui va tu correo" id="correo" name="correo" required=""><br>
+			<input type="email" placeholder="Ej. miguel@hotmail.com" id="correo" name="correo" required=""><br>
 			<label for="">*Telefono:</label><br>
-			<input type="text" placeholder="Aqui va tu telefono" id="telefono" name="telefono" required=""><br>
+			<input type="text" placeholder="Ej. 99 91 12 13 14" id="telefono" name="telefono" required="" pattern="[0-9]+" maxlength="10"><br>
 			<label for="">*Asunto:</label><br>
-			<input type="text" placeholder="Aqui va tu asunto" id="asunto" name="asunto" required=""><br>
+			<input type="text" placeholder="Ej. Aclaracion de dudas" id="asunto" name="asunto" required=""><br>
 			<label for="">*Mensaje:</label><br>
-			<textarea placeholder="Aqui va tu mensaje/comentario" id="mensaje" name="mensaje" required=""></textarea><br>
+			<textarea placeholder="Ej. Me comunico con ustedes..." id="mensaje" name="mensaje" required=""></textarea><br>
 			<button id="btn_env" type="submit" name="Enviar">Enviar mensaje</button>
 		</form>
 		<section id="DatosEmpresa">

@@ -9,7 +9,6 @@
 		}
 	}
 
-
  ?>
  <!DOCTYPE html>
 <html lang="es">
@@ -93,13 +92,26 @@
 							</button>
 							</a>
 						</td>
-						<td>		
-							<a href='cambiar_estado_cliente.php?clave=".$fila['idUsuario']."'>
-							<button class='eliminar'>
-								<img src='../img/refrescar.png' alt=''>Estado
+						<td>";
+						if ($fila['estado'] == 'Baja') {
+							echo "<a href='cambiar_estado_cliente.php?clave=".$fila['idUsuario']."'>
+							<button class='activar'>
+								<img src='../img/activado.png' alt=''>
 							</button>
 							</a>
 						</td></tr>";
+						}
+						if ($fila['estado'] == 'Alta') {
+							echo "<a href='cambiar_estado_cliente.php?clave=".$fila['idUsuario']."'>
+							<button class='eliminar'>
+								<img src='../img/eliminar.png' alt=''>
+							</button>
+							</a>
+						</td></tr>";
+						}
+
+
+							
 
 				}
 			?>

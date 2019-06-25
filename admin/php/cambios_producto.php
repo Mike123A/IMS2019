@@ -35,6 +35,8 @@
    			if(mysqli_num_rows($resultado)>0) { 
    				$bandera = 1;
       			$nombre = "";
+	      		echo "<script>alert('Ya hay un producto registrado con este nombre')</script>";
+
     		}
 		}
     	if($bandera == 0){
@@ -136,7 +138,7 @@
 			<label>Descripcion</label><br>
 			<input type="textarea" required name="Descripcion" placeholder="Descripcion" value="<?php if(isset($Descripcion)) {echo $Descripcion;}?>" maxlength="300"/><br><br>
 			<label>Precio</label><br>
-			<input type="text" required name="Precio" placeholder="Aqui va el precio" value="<?php if(isset($Precio)) {echo $Precio;}?>" /><br>
+			<input type="text" pattern="^[1-9][0-9]+" title="Solo numeros positivos, no puede iniciar con un 0"required name="Precio" placeholder="Aqui va el precio" value="<?php if(isset($Precio)) {echo $Precio;}?>" /><br>
 			
 			<br>
 			<div class="photo">

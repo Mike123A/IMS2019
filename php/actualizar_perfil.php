@@ -141,9 +141,9 @@
 			<div style="/*-webkit-column-count:3*/-moz-column-count:2;column-count:2">
 			<label>Nombre(s)</label><br>
 			<input type="text" required name="Nombres" placeholder="Ej. Juan Antonio" value="<?php if(isset($nombre)) {echo $nombre;}?>" pattern="[A-Z a-z]+" title="Solo puedes ingresar letras"/><br>
-			<label>Primer apellido</label><br>
+			<label>Apellido1</label><br>
 			<input type="text" name="Apellido1" placeholder="Ej. Torres" value="<?php if(isset($apellido1)) {echo $apellido1;}?>" pattern="[A-Za-z]+" title="Solo puedes ingresar letras" /><br>
-			<label>Segundo apellido</label><br>
+			<label>Apellido2</label><br>
 			<input type="text" name="Apellido2" placeholder="Ej. Martinez"value="<?php if(isset($apellido2)) {echo $apellido2;}?>" pattern="[A-Za-z]+" /><br>
 			<label>Correo</label><br>
 			<input type="email" required name="Correo" placeholder="<?php if(isset($correo) && $correo ==''){ echo 'Intente con otro';}else{echo "Ej. JuanAnt@ejemplo.com";} ?>"value="<?php if(isset($correo)) {echo $correo;}?>" /><br>

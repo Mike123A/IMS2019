@@ -31,7 +31,7 @@
 				$total_registros = mysqli_fetch_array($sql_numr);
 				$totalregistros = $total_registros['total'];
 
-				$porpagina = 2;
+				$porpagina = 4;
 
 				if (empty($_GET['pagina'])) {
 					$pagina = 1;
