@@ -97,7 +97,7 @@
 			        <label for="Imagen"></label>
 			        </div>
 			        <div class="upimg">
-			        <input type="file" name="Imagen" id="Imagen">
+			        <input required type="file" name="Imagen" id="Imagen">
 			        </div>
 			        <div id="form_alert"></div>
 			</div>

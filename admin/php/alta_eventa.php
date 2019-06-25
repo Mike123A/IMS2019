@@ -37,7 +37,7 @@
 				echo "No Insertado";
 			}
 	
-   		}
+   		} 
 	}	
 ?>
 <!DOCTYPE html>
