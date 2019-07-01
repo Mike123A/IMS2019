@@ -44,7 +44,7 @@
 				<input style="display: none" type="number" required name="precio" placeholder="" value="<?php echo $fila['PrecioProd']; ?>" /><br>
 				
 				<label for="">Cuantos desea:</label> <br>
-				<input type="number" value="1"name="cantidad"><br>
+				<input type="number" value="1"name="cantidad"  placeholder="Cantidad" pattern="[1-9][0-9]+" min="1"title="Solo numeros positivos, no puede iniciar con un 0"> <br>
 				<button type="submit" name="agregar" >Agregar al carrito</button>
 				<br>
 				<a href="productos.php">

@@ -99,6 +99,9 @@
 				if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
 				}
+				$query1 = ("SELECT * FROM cat_estadosventa"); // inicio de mi consulta 
+				$resultado1 = $conexion->query($query1);
+				$numero = mysqli_num_rows($resultado1);
 				mysqli_close($conexion);
 				
 				while($fila = $resultado->fetch_assoc()){
@@ -117,14 +120,21 @@
 								<img src='../img/archivo.png' alt=''>Ver detalles
 							</button>
 							</a>
-						</td>
-						<td>		
-							<a href='cambiar_estado_venta.php?clave=".$fila['idVenta']."&estado=".$fila['idestadoVenta']."'>
+					
+						</td>";
+					if ($fila['idestadoVenta'] < $numero) {
+					echo "	
+						<td><a href='cambio_etapa.php?clave=".$fila['idVenta']."&estado=".$fila['idestadoVenta']."&from=2'>
 							<button class='etapa'>
-								<img src='../img/aumentar.png' alt=''>Etapa
+								<img src='../img/refrescar.png' alt=''>Etapa
 							</button>
 							</a>
-						</td></tr>";
+						</td>
+							";
+					}else{
+						echo "<td></td>";
+					}
+					echo "</tr>";
 				}
 			?>
 		</table>	

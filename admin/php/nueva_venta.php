@@ -76,7 +76,7 @@
 							<input style='display: none' type='number' required name='precio' placeholder='' value=".$fila['PrecioProd']." /><br>
 				
 							<label for=''>Cuantos desea:</label> <br>
-							<input type='number' value='1' name='cantidad'>
+							<input type='number' value='1' name='cantidad' placeholder='Cantidad' pattern='[1-9][0-9]+'' min='1' title='Solo numeros positivos, no puede iniciar con un 0'>
 							<button id='btn_agregar' type='submit' name='agregar' >Agregar</button>
 							</form>
 						</td>

@@ -85,6 +85,9 @@
 				if(!$resultado = $conexion->query($sql)){
 					die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
 				}
+				$query1 = ("SELECT * FROM cat_estadosventa"); // inicio de mi consulta 
+				$resultado1 = $conexion->query($query1);
+				$numero = mysqli_num_rows($resultado1);
 				mysqli_close($conexion);
 				
 				while($fila = $resultado->fetch_assoc()){
@@ -94,22 +97,27 @@
     					<td>".$fila['FechaVenta']."</td>
     					<td>".$fila['NombreCli']." ".$fila['Apellido1Cli']." ".$fila['Apellido2Cli']."</td>
     					<td>$".$fila['totalVenta']."</td>
-    					<td>".$fila['EstadoVenta']."</td>";
-    					
-    				echo "
-						<td><a href='../pdf/factura.php?clave=".$fila['idVenta']."' target='_blank'>
+    					<td>".$fila['EstadoVenta']."</td>
+    					<td><a href='../pdf/factura.php?clave=".$fila['idVenta']."' target='_blank'>
 							<button class='modificar'>
 								<img src='../img/archivo.png' alt=''>Ver detalles
 							</button>
 							</a>
-						</td>	<td><a href='cambiar_estado_venta.php?clave=".$fila['idVenta']."&estado=".$fila['idestadoVenta']."'>
+					
+						</td>";
+					if ($fila['idestadoVenta'] < $numero) {
+					echo "	
+						<td><a href='cambio_etapa.php?clave=".$fila['idVenta']."&estado=".$fila['idestadoVenta']."&from=1'>
 							<button class='etapa'>
-								<img src='../img/aumentar.png' alt=''>Etapa
+								<img src='../img/refrescar.png' alt=''>Etapa
 							</button>
 							</a>
 						</td>
-							</a>
-						</td></tr>";
+							";
+					}else{
+						echo "<td></td>";
+					}
+					echo "</tr>";
 				}
 			?>
 		</table>	
