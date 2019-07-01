@@ -38,8 +38,8 @@
 				<tr>
 					<td>Clave</td>
 					<td>Estado de venta</td>
-					
-					<td>Acciones</td>
+					<td>Estado</td>
+					<td colspan="2">Acciones</td>
 				</tr>
 			</thead>
 			
@@ -73,13 +73,31 @@
 					<tr>
 						<td>".$fila['idEstadoVenta']." </td>
     					<td>".$fila['EstadoVenta']."</td>
+    					<td>".$fila['estado']."</td>
     					<td><a href='cambios_eventa.php?clave=".$fila['idEstadoVenta']."'>
 							<button class='modificar'>
 								<img src='../img/modificar.png' alt=''>Modificar
 							</button>
 							</a>
 						</td>
-						</tr>";
+						<td>";
+
+						if ($fila['estado'] == 'Baja') {
+							echo "<a href='cambiar_estado_estadoventa.php?clave=".$fila['idEstadoVenta']."'>
+							<button class='activar'>
+								<img src='../img/activado.png' alt=''>
+							</button>
+							</a>
+						</td></tr>";
+						}
+						if ($fila['estado'] == 'Alta') {
+							echo "<a href='cambiar_estado_estadoventa.php?clave=".$fila['idEstadoVenta']."'>
+							<button class='eliminar'>
+								<img src='../img/eliminar.png' alt=''>
+							</button>
+							</a>
+						</td></tr>";
+						}
 
 				}
 			?>
