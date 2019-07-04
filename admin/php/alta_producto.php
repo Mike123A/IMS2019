@@ -37,6 +37,8 @@
    		if(mysqli_num_rows($resultado)>0) { 
    			$bandera = 1;
       		$nombre = "";
+
+      		echo "<script>sweet.alert('Ya ha sido registrado un producto con este nombre')</script>";
       		echo "<script>alert('Ya ha sido registrado un producto con este nombre')</script>";
 
     	}
@@ -67,6 +69,7 @@
 	<script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script> 
 
 	<script type="text/javascript" src="../js/functions.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.13.0/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
 	<?php include ("../includes/encabezado_sesion.php") ?>
