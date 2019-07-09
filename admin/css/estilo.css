@@ -387,8 +387,8 @@ footer img{
 
 /*///NUEVOOOOO/////*/
 .MenuIndex{
-	width: 205px;
-	height: 205px;
+	width: 115px;
+	height: 115px;
 	padding: 10px;
 	margin: 20px 0px !important;
 	background: #669999;
@@ -398,22 +398,7 @@ footer img{
 	vertical-align: top;
 	text-align: center;
 }
-.MenuIndex img{
-	width: 130px;
-	height: 130px;
-	margin-top: 10px;
-}
-.MenuIndex label{
-	text-align: center;
-	color: white;
-	font-weight: bold;
-	margin:auto;
-	text-decoration: none;
-	font-size: 22px;
-}
-.a_menu_index{
-	width: 500px;
-}
+
 
 .fecha_rep{
 	width: 200px;
@@ -541,7 +526,32 @@ footer img{
 	width: 175px;
 }
 
+/*dasdasdasd*/
 
+.MenuIndex img{
+	width: 40px;
+	height: 40px;
+	margin-top: 30px;
+}
+.MenuIndex label{
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	margin:auto;
+	text-decoration: none;
+	font-size: 17px;
+}
+.a_menu_index{
+	width: 500px;
+}
 
+#leyenda header{
+	font-size: 50px;
+	background: transparent;
+}
+
+#leyenda{
+	font-size: 30px;
+}
 
 
