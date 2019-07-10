@@ -8,6 +8,7 @@ function Header()
 {
 
     $this->Image('../img/LogoConNombre.png',10,5,40);
+    $this->SetTextColor(66,99,99);
 
     $this->Ln(10);
     $this->Cell(65);
@@ -24,6 +25,8 @@ function Footer()
 // SoporteIMS@outlook.com
 // C. 28 x 19 y 17 519 
 // Col. Maya, Mérida, Yucatan
+    $this->SetTextColor(66,99,99);
+
     $this->SetY(-22);
 	$this->SetFont('Arial','',7);
     $this->Cell(140);
@@ -64,23 +67,30 @@ if(!$resultado = $conexion->query($sql)){
 }
 
 
+$pdf->SetTextColor(255,255,255);
+$pdf->SetDrawColor(66,99,99);
+$pdf->SetFillColor(66,99,99);
 
-$pdf->Cell(15,10,utf8_decode('Clave'),1,0,'C');
-$pdf->Cell(20,10,utf8_decode('Fecha'),1,0,'C');
-$pdf->Cell(55,10,utf8_decode('Cliente'),1,0,'C');
-$pdf->Cell(55,10,utf8_decode('Empleado'),1,0,'C');
-$pdf->Cell(20,10,utf8_decode('Importe'),1,0,'C');
-$pdf->Cell(25,10,utf8_decode('Etapa'),1,1,'C');
+$pdf->Cell(15,10,utf8_decode('Clave'),1,0,'C',True);
+$pdf->Cell(20,10,utf8_decode('Fecha'),1,0,'C',True);
+$pdf->Cell(55,10,utf8_decode('Cliente'),1,0,'C',True);
+$pdf->Cell(55,10,utf8_decode('Empleado'),1,0,'C',True);
+$pdf->Cell(20,10,utf8_decode('Importe'),1,0,'C',True);
+$pdf->Cell(25,10,utf8_decode('Etapa'),1,1,'C',True);
+
+$pdf->SetTextColor(255,255,255);
+$pdf->SetDrawColor(255,255,255);
+$pdf->SetFillColor(130,155,155);
 
 $pdf->SetFont('Arial','',8);
 
 while($fila2 = $resultado->fetch_assoc()){
-    $pdf->Cell(15,10,utf8_decode($fila2['idVenta']),1,0,'C');
-    $pdf->Cell(20,10,utf8_decode($fila2['FechaVenta']),1,0,'C');
-    $pdf->Cell(55,10,utf8_decode($fila2['NombreCli']." ".$fila2['Apellido1Cli']." ".$fila2['Apellido2Cli']),1,0,'C');
-    $pdf->Cell(55,10,utf8_decode($fila2['NombresEmp']." ".$fila2['Apellido1Emp']." ".$fila2['Apellido2Emp']),1,0,'C');
-    $pdf->Cell(20,10,utf8_decode($fila2['totalVenta']),1,0,'C');
-    $pdf->Cell(25,10,utf8_decode($fila2['EstadoVenta']),1,1,'C');
+    $pdf->Cell(15,10,utf8_decode($fila2['idVenta']),1,0,'C',True);
+    $pdf->Cell(20,10,utf8_decode($fila2['FechaVenta']),1,0,'C',True);
+    $pdf->Cell(55,10,utf8_decode($fila2['NombreCli']." ".$fila2['Apellido1Cli']." ".$fila2['Apellido2Cli']),1,0,'C',True);
+    $pdf->Cell(55,10,utf8_decode($fila2['NombresEmp']." ".$fila2['Apellido1Emp']." ".$fila2['Apellido2Emp']),1,0,'C',True);
+    $pdf->Cell(20,10,utf8_decode($fila2['totalVenta']),1,0,'C',True);
+    $pdf->Cell(25,10,utf8_decode($fila2['EstadoVenta']),1,1,'C',True);
 }
 
 

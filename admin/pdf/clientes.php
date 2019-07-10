@@ -8,13 +8,15 @@ function Header()
 {
 
     $this->Image('../img/LogoConNombre.png',10,5,40);
+    $this->SetTextColor(66,99,99);
+
 
     $this->Ln(10);
     $this->Cell(65);
     $this->SetFont('Arial','B',15);
     $this->SetXY(70, 15);
-    $this->Cell(60,10,'Clientes',0,0,'C');
-    $this->Ln(20);
+    $this->Cell(60,10,'Lista de clientes',0,0,'C');
+    $this->Ln(15);
 }
 
 // Pie de página
@@ -62,25 +64,31 @@ if(!$resultado = $conexion->query($sql)){
 }
 
 
+$pdf->SetTextColor(255,255,255);
+$pdf->SetDrawColor(66,99,99);
+$pdf->SetFillColor(66,99,99);
 
-$pdf->Cell(20,10,utf8_decode('Clave'),1,0,'C');
-$pdf->Cell(55,10,utf8_decode('Cliente'),1,0,'C');
-$pdf->Cell(65,10,utf8_decode('Direccion'),1,0,'C');
-$pdf->Cell(25,10,utf8_decode('Telefono'),1,0,'C');
-$pdf->Cell(25,10,utf8_decode('RFC'),1,1,'C');
+
+$pdf->Cell(20,10,utf8_decode('Clave'),1,0,'C',True);
+$pdf->Cell(55,10,utf8_decode('Cliente'),1,0,'C',True);
+$pdf->Cell(65,10,utf8_decode('Direccion'),1,0,'C',True);
+$pdf->Cell(25,10,utf8_decode('Telefono'),1,0,'C',True);
+$pdf->Cell(25,10,utf8_decode('RFC'),1,1,'C',True);
 
 $pdf->SetFont('Arial','',8);
 
 
-
+$pdf->SetTextColor(255,255,255);
+$pdf->SetDrawColor(255,255,255);
+$pdf->SetFillColor(130,155,155);
 
 
 while($fila2 = $resultado->fetch_assoc()){
-    $pdf->Cell(20,10,utf8_decode($fila2['idCliente']),1,0,'C');
-    $pdf->Cell(55,10,utf8_decode($fila2['NombreCli']." ".$fila2['Apellido1Cli']." ".$fila2['Apellido2Cli']),1,0,'C');
-    $pdf->Cell(65,10,utf8_decode($fila2['DireccionCli']),1,0,'C');
-    $pdf->Cell(25,10,utf8_decode($fila2['TelefonoCli']),1,0,'C');
-    $pdf->Cell(25,10,utf8_decode($fila2['RFC']),1,1,'C');
+    $pdf->Cell(20,10,utf8_decode($fila2['idCliente']),1,0,'C',True);
+    $pdf->Cell(55,10,utf8_decode($fila2['NombreCli']." ".$fila2['Apellido1Cli']." ".$fila2['Apellido2Cli']),1,0,'C',True);
+    $pdf->Cell(65,10,utf8_decode($fila2['DireccionCli']),1,0,'C',True);
+    $pdf->Cell(25,10,utf8_decode($fila2['TelefonoCli']),1,0,'C',True);
+    $pdf->Cell(25,10,utf8_decode($fila2['RFC']),1,1,'C',True);
 }
 
 

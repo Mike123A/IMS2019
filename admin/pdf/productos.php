@@ -8,12 +8,13 @@ function Header()
 {
 
     $this->Image('../img/LogoConNombre.png',10,5,40);
+    $this->SetTextColor(66,99,99);
 
     $this->Ln(10);
     $this->Cell(65);
     $this->SetFont('Arial','B',15);
     $this->SetXY(70, 15);
-    $this->Cell(60,10,'Productos',0,0,'C');
+    $this->Cell(60,10,'Lista de productos',0,0,'C');
     $this->Ln(20);
 }
 
@@ -61,26 +62,30 @@ if(!$resultado = $conexion->query($sql)){
     die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
 }
 
+$pdf->SetTextColor(255,255,255);
+$pdf->SetDrawColor(66,99,99);
+$pdf->SetFillColor(66,99,99);
 
-
-$pdf->Cell(25,10,utf8_decode('Clave'),1,0,'C');
-$pdf->Cell(90,10,utf8_decode('Producto'),1,0,'C');
-$pdf->Cell(25,10,utf8_decode('Precio'),1,0,'C');
-$pdf->Cell(25,10,utf8_decode('Stock'),1,0,'C');
-$pdf->Cell(25,10,utf8_decode('Estado'),1,1,'C');
+$pdf->Cell(25,10,utf8_decode('Clave'),1,0,'C',True);
+$pdf->Cell(90,10,utf8_decode('Producto'),1,0,'C',True);
+$pdf->Cell(25,10,utf8_decode('Precio'),1,0,'C',True);
+$pdf->Cell(25,10,utf8_decode('Stock'),1,0,'C',True);
+$pdf->Cell(25,10,utf8_decode('Estado'),1,1,'C',True);
 
 $pdf->SetFont('Arial','',8);
 
-
+$pdf->SetTextColor(255,255,255);
+$pdf->SetDrawColor(255,255,255);
+$pdf->SetFillColor(130,155,155);
 
 
 
 while($fila2 = $resultado->fetch_assoc()){
-    $pdf->Cell(25,10,utf8_decode($fila2['idProducto']),1,0,'C');
-    $pdf->Cell(90,10,utf8_decode($fila2['NombreProd']),1,0,'C');
-    $pdf->Cell(25,10,utf8_decode($fila2['PrecioProd']),1,0,'C');
-    $pdf->Cell(25,10,utf8_decode($fila2['StockProd']),1,0,'C');
-    $pdf->Cell(25,10,utf8_decode($fila2['estado']),1,1,'C');
+    $pdf->Cell(25,10,utf8_decode($fila2['idProducto']),1,0,'C',True);
+    $pdf->Cell(90,10,utf8_decode($fila2['NombreProd']),1,0,'C',True);
+    $pdf->Cell(25,10,utf8_decode($fila2['PrecioProd']),1,0,'C',True);
+    $pdf->Cell(25,10,utf8_decode($fila2['StockProd']),1,0,'C',True);
+    $pdf->Cell(25,10,utf8_decode($fila2['estado']),1,1,'C',True);
 }
 
 

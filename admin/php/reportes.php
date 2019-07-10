@@ -186,6 +186,17 @@
 			</a>
 		<br><br>
 		</form>
+			<hr>	
+		<hr>	
+		<br><br>
+		<form action="../pdf/empleados.php" method="POST" class="formrep" target="_blank">
+			<label for="">Lista de empleados</label>
+			<br><br><br>
+				<button type="submit" id="btn-resp">
+						Generar
+				</button>
+			</a>
+		<br><br>
 		<hr><hr>
 		<br><br>
 		

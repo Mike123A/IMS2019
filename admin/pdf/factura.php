@@ -24,6 +24,8 @@ function Footer()
 // SoporteIMS@outlook.com
 // C. 28 x 19 y 17 519 
 // Col. Maya, Mérida, Yucatan
+    $this->SetTextColor(66,99,99);
+    
     $this->SetY(-22);
 	$this->SetFont('Arial','',7);
     $this->Cell(140);
@@ -97,15 +99,18 @@ $pdf->MultiCell(100,6,"Direccion:".$fila1['DireccionCli'],0,"L");
 $pdf->MultiCell(80,6,"RFC:".$fila1['RFC'],0,"L");
 
 
+$pdf->SetTextColor(255,255,255);
+$pdf->SetDrawColor(66,99,99);
+$pdf->SetFillColor(66,99,99);
 
 $pdf->SetFont('Arial','B',10);
 
 $pdf->Cell(20,10,utf8_decode(''),0,1,'C');
 
-$pdf->Cell(20,10,utf8_decode('Cantidad'),1,0,'C');
-$pdf->Cell(110,10,utf8_decode('Descripcion'),1,0,'C');
-$pdf->Cell(30,10,utf8_decode('Precio unitario'),1,0,'C');
-$pdf->Cell(30,10,utf8_decode('Importe'),1,1,'C');
+$pdf->Cell(20,10,utf8_decode('Cantidad'),1,0,'C',True);
+$pdf->Cell(110,10,utf8_decode('Descripcion'),1,0,'C',True);
+$pdf->Cell(30,10,utf8_decode('Precio unitario'),1,0,'C',True);
+$pdf->Cell(30,10,utf8_decode('Importe'),1,1,'C',True);
 
 $pdf->SetFont('Arial','',10);
 
@@ -115,21 +120,27 @@ $sql = "SELECT * FROM detalle_venta dv INNER JOIN cat_productos cp ON dv.idProdu
 if(!$resultado = $conexion->query($sql)){
     die('Ocurrio un error ejecutando el query [' . $conexion->error . ']');
 }
+$pdf->SetTextColor(255,255,255);
+$pdf->SetDrawColor(255,255,255);
+$pdf->SetFillColor(130,155,155);
+
 while($fila2 = $resultado->fetch_assoc()){
-    $pdf->Cell(20,10,utf8_decode($fila2['Cantidad']),1,0,'C');
-    $pdf->Cell(110,10,utf8_decode($fila2['NombreProd']),1,0,'C');
-    $pdf->Cell(30,10,utf8_decode($fila2['Precio']),1,0,'C');
-	$pdf->Cell(30,10,utf8_decode($fila2['Precio']*$fila2['Cantidad']),1,1,'C');
+    $pdf->Cell(20,10,utf8_decode($fila2['Cantidad']),1,0,'C',True);
+    $pdf->Cell(110,10,utf8_decode($fila2['NombreProd']),1,0,'C',True);
+    $pdf->Cell(30,10,utf8_decode($fila2['Precio']),1,0,'C',True);
+	$pdf->Cell(30,10,utf8_decode($fila2['Precio']*$fila2['Cantidad']),1,1,'C',True);
 }
-$pdf->SetX(150);
-$pdf->Cell(20,10,'Subtotal',0,0,'C');
-$pdf->Cell(30,10,round(($fila['totalVenta']*.84) * 100) / 100,1,1,'C');
-$pdf->SetX(150);
-$pdf->Cell(20,10,'IVA %16',0,0,'C');
-$pdf->Cell(30,10,round(($fila['totalVenta']*.16) * 100) / 100,1,1,'C');
-$pdf->SetX(150);
-$pdf->Cell(20,10,'Total',0,0,'C');
-$pdf->Cell(30,10,$fila['totalVenta'],1,1,'C');
+
+$pdf->SetX(140);
+$pdf->Cell(30,10,'Subtotal',1,0,'C',True);
+
+$pdf->Cell(30,10,round(($fila['totalVenta']*.84) * 100) / 100,1,1,'C',True);
+$pdf->SetX(140);
+$pdf->Cell(30,10,'IVA %16',1,0,'C',True);
+$pdf->Cell(30,10,round(($fila['totalVenta']*.16) * 100) / 100,1,1,'C',True);
+$pdf->SetX(140);
+$pdf->Cell(30,10,'Total',1,0,'C',True);
+$pdf->Cell(30,10,$fila['totalVenta'],1,1,'C',True);
 
 
 
