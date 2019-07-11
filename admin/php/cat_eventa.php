@@ -137,6 +137,32 @@
 	<?php } ?>
 	</section>
 	<?php include ("../includes/footer.php") ?>
+	<script src="../js/sweetalert2.all.min.js"></script>
+
+	<?php 
+	if (isset($_GET['alta'])) {
+    echo "<script type='text/javascript'> Swal.fire({        
+        type: 'success',
+        title: 'Éxito',
+        text: '¡La etapa de venta se registro correctamente!',        
+    }); </script>"; 
+    }
+    if (isset($_GET['act'])) {
+    echo "<script type='text/javascript'> Swal.fire({        
+        type: 'success',
+        title: 'Éxito',
+        text: '¡La etapa de venta se actualizo correctamente!',        
+    }); </script>"; 
+    }
+    if (isset($_GET['baja'])) {
+    echo "<script type='text/javascript'> Swal.fire({        
+        type: 'success',
+        title: 'Éxito',
+        text: '¡Operacion exitosa!',        
+    }); </script>"; 
+    }
+// error, success, warning, info, question
+    ?>
 	
 	
 </body>

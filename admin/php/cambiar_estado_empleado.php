@@ -26,7 +26,7 @@
 	if ($resultado) {
 		mysqli_close($conexion);
 
-		header("Location: cat_empleados.php");
+		header("Location: cat_empleados.php?baja");
 	}else{
 		echo "No eliminado";
 	}

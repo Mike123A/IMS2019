@@ -29,8 +29,8 @@
 			$resultado = $conexion->query($query);
 	    	if(mysqli_num_rows($resultado)>0) { 
 				$bandera = 1;
+   			$bandera1 = 1;
 	     		$nombre = "";
-	      		echo "<script>alert('Ya esta registrado este tipo de usuarios')</script>";
 	     	}
    		}
    		if($bandera == 0  ){
@@ -39,7 +39,7 @@
 			if ($resultado) {
 				mysqli_close($conexion);
 				
-				header("Location: cat_tusuarios.php");
+				header("Location: cat_tusuarios.php?act");
 			}else{
 				echo "No Insertado";
 			}
@@ -83,6 +83,19 @@
 		</form>
 	</section>
 	<?php include ("../includes/footer.php") ?>
+	<script src="../js/sweetalert2.all.min.js"></script>
+      
+     <?php 
+	if (isset($bandera1)) {
+    echo "<script type='text/javascript'> Swal.fire({        
+        type: 'error',
+        title: 'Error',
+        text: '¡Ya hay una categoria registrada con este nombre!',        
+    }); </script>"; 
+
+
+} ?>
+
 	
 	
 </body>

@@ -30,7 +30,7 @@
 	    	if(mysqli_num_rows($resultado)>0) { 
 				$bandera = 1;
 	     		$nombre = "";
-	      		echo "<script>alert('Ya ha sido registra la etapa de venta')</script>";
+	   			$bandera1 = 1;
 
 	     	}
    		}
@@ -40,7 +40,7 @@
 			if ($resultado) {
 				mysqli_close($conexion);
 				
-				header("Location: cat_eventa.php");
+				header("Location: cat_eventa.php?act");
 			}else{
 				echo "No Insertado";
 			}
@@ -84,6 +84,19 @@
 		</form>
 	</section>
 	<?php include ("../includes/footer.php") ?>
+
+	<script src="../js/sweetalert2.all.min.js"></script>
+      
+     <?php 
+	if (isset($bandera1)) {
+    echo "<script type='text/javascript'> Swal.fire({        
+        type: 'error',
+        title: 'Error',
+        text: '¡Ya hay una categoria registrada con este nombre!',        
+    }); </script>"; 
+
+
+} ?>
 	
 	
 </body>

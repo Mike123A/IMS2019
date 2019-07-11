@@ -8,8 +8,10 @@
 			header("Location: index.php");
 		}
 	}
-
+	
 	if (isset($_POST['Guardar'])) {
+		$Imagen = $_POST ['img11'];
+		echo $_POST ['img11'];
 		include("conexion.php"); 
 
 		$clave = $_POST ['clave'];
@@ -34,8 +36,8 @@
    			
    			if(mysqli_num_rows($resultado)>0) { 
    				$bandera = 1;
+   				$bandera1 = 1;
       			$nombre = "";
-	      		echo "<script>alert('Ya hay un producto registrado con este nombre')</script>";
 
     		}
 		}
@@ -48,8 +50,8 @@
 				$resultado = $conexion->query($query);
 				if ($resultado) {
 					mysqli_close($conexion);
+					header("Location: cat_productos.php?act");
 
-					header("Location: cat_productos.php");
 				}
 				else{
 					echo "No Insertado";
@@ -76,7 +78,7 @@
 					
 					unlink("../../img/Productos/".$fila['ImagenProd']);
 					move_uploaded_file($url_temp,$src);
-					header("Location: cat_productos.php");
+					header("Location: cat_productos.php?act");
 				}
 				else{
 					echo "No Insertado";
@@ -117,6 +119,21 @@
 	<script type="text/javascript" src="../js/functions.js"></script>
 </head>
 <body>
+	<script src="../js/sweetalert2.all.min.js"></script>
+      
+     <?php 
+	if (isset($bandera1)) {
+    echo "<script type='text/javascript'> Swal.fire({        
+        type: 'error',
+        title: 'Error',
+        text: '¡Ya hay un producto registrado con este nombre!',        
+    }); </script>"; 
+
+
+}
+
+
+ ?>
 	<?php include ("../includes/encabezado_sesion.php") ?>
 	
 	<?php include ("../includes/menu.php") ?>
@@ -126,7 +143,12 @@
 		<h1>Cambios al producto: <?php echo $fila['idProducto']; ?> </h1>
 		<br><br>
 			<div style="/*-webkit-column-count:3*/-moz-column-count:2;column-count:2">
-		<input style="display: none" type="text" required name="clave" placeholder="" value=" <?php echo $fila['idProducto']; ?>" /><br>
+		<input style="display: none" type="text" required name="clave" placeholder="" value="<?php echo $fila['idProducto'];?>" />
+		
+
+
+
+		<br>
 			<label>Nombre</label><br>
 			<input type="text" required name="Nombres" placeholder="<?php if(isset($nombre) && $nombre ==''){ echo 'Intente con otro';}else{echo "Aqui va el nombre";} ?>" value="<?php if(isset($nombre)) {echo $nombre;}?>" maxlength="50" /><br>
 			<label>Alto en centimetros</label><br>
@@ -139,17 +161,18 @@
 			<input type="textarea" required name="Descripcion" placeholder="Descripcion" value="<?php if(isset($Descripcion)) {echo $Descripcion;}?>" maxlength="300"/><br><br>
 			<label>Precio</label><br>
 			<input type="text" pattern="^[1-9][0-9]+" title="Solo numeros positivos, no puede iniciar con un 0"required name="Precio" placeholder="Aqui va el precio" value="<?php if(isset($Precio)) {echo $Precio;}?>" /><br>
+
+			<input style="display: none" type="text" name="img11" placeholder="" value="<?php $Imagen; ?>" >
 			
 			<br>
 			<div class="photo">
 				<label for="Imagen">Imagen</label>
 			        <div class="prevPhoto">
-			        <span class="delPhoto <?php echo $classremove ?>">X</span>
 			        <label for="Imagen"></label>
 			        <?php echo $Imagen; ?>
 			        </div>
 			        <div class="upimg">
-			        <input type="file" name="Imagen" id="Imagen">
+			        <input type="file" name="Imagen" id="Imagen" >
 			        </div>
 			        <div id="form_alert"></div>
 			</div>

@@ -135,6 +135,19 @@
 
 	</section>
 	<?php include ("../includes/footer.php") ?>
+	<script src="../js/sweetalert2.all.min.js"></script>
+
+	<?php 
+	
+    if (isset($_GET['nuevo'])) {
+    echo "<script type='text/javascript'> Swal.fire({        
+        type: 'success',
+        title: 'Éxito',
+        text: '¡Operacion exitosa!',        
+    }); </script>"; 
+    }
+// error, success, warning, info, question
+    ?>
 	
 	
 </body>

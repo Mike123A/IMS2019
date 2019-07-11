@@ -23,10 +23,21 @@ $fecha = date('Y/m/d');
 			if($resultado){
 				print "<script>	window.open('../pdf/factura.php?clave=$cart_id');</script>";
 				unset($_SESSION["cart"]);
-				print "<script>	window.location='productos.php';</script>";
+				print "<script>	window.location='productos.php?venta';</script>";
 			}
 		}
 	
 }
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>

@@ -28,30 +28,23 @@
 		$query = ("SELECT * FROM cat_usuarios WHERE usuario='$usuario'");
 		$resultado = $conexion->query($query);
    		if(mysqli_num_rows($resultado)>0) { 
-    		echo "<script>alert('El usuario no esta disponible')</script>";
    			$bandera = 1;
+   			$bandera1 = 1;
       		$usuario = "";
     	}
     	$query = ("SELECT * FROM cat_clientes WHERE CorreoCli='$correo'"); 
 		$resultado = $conexion->query($query);
     	if(mysqli_num_rows($resultado)>0) { 
-    		echo "<script>alert('Ya hay una cuenta asociada a este corrreo')</script>";
 			$bandera = 1;
+			$bandera2 = 1;
      		$correo = "";
-   		}
-   		$query = ("SELECT * FROM cat_clientes WHERE TelefonoCli='$telefono'"); 
-		$resultado = $conexion->query($query);
-    	if(mysqli_num_rows($resultado)>0) { 
-    		echo "<script>alert('Ya hay una cuenta asociada a este telefono')</script>";
-			$bandera = 1;
-     		$telefono = "";
    		}
    		$query = ("SELECT * FROM cat_clientes WHERE RFC='$rfc'"); 
 		$resultado = $conexion->query($query);
-    	if(mysqli_num_rows($resultado)>0) { 
-    		if ($rfc != "") {
-    			echo "<script>alert('Ya hay una cuenta asociada a este RFC')</script>";
+    	if($rfc != "") { 
+    		if (mysqli_num_rows($resultado)>0 && $rfc != "") {
     			$bandera = 1;
+    			$bandera3 = 1;
      			$rfc = "";
     		}
    		}
@@ -68,9 +61,9 @@
 				$resultado = $conexion->query($query);
 				mysqli_close($conexion);
 				if (isset($_SESSION["cart"])) 
-					header("Location: nueva_venta.php" );  
+					header("Location: nueva_venta.php?exito" );  
 				else
-					header("Location: cat_clientes.php" );  
+					header("Location: cat_clientes.php?alta" );  
 			}else{
 				echo "No Insertado";
 			}
@@ -106,10 +99,10 @@
 			<label>Telefono</label><br>
 			<input type="tel" required name="Telefono" placeholder="<?php if(isset($telefono) && $telefono ==''){ echo 'Intente con otro';}else{echo 'Ej. 9991 47 47 47';}?>" value="<?php if(isset($telefono)) {echo $telefono;}?>"  pattern="[0-9]+" maxlength="10" title="Solo puedes ingresar numeros "/><br>
 			<label>RFC</label><br>
-			<input type="text" name="RFC" placeholder="<?php if(isset($rfc) && $rfc ==''){ echo 'Intente con otro';}else{echo 'Ej. VECJ880326 XXX';}?>" value="<?php if(isset($rfc)) {echo $rfc;}?>" /><br>
+			<input type="text" name="RFC" placeholder="<?php if(isset($rfc) && $rfc !=''){ echo 'Intente con otro';}else{echo 'Ej. VECJ880326 XXX';}?>" value="<?php if(isset($rfc)) {echo $rfc;}?>" /><br>
 			<label>Usuario</label><br>
 			
-			<input autocomplete="off" type="text" required name="Usuario" placeholder="<?php if(isset($usuario) && $usuario ==''){ echo 'Ej. UsuarioVic';}else{echo "Ej. User147";} ?>" value="<?php if(isset($usuario)){ echo $usuario;} ?>" maxlength="10" /><br>
+			<input autocomplete="off" type="text" required name="Usuario" placeholder="<?php if(isset($usuario) && $usuario ==''){ echo 'Intente con otro';}else{echo "Ej. User147";} ?>" value="<?php if(isset($usuario)){ echo $usuario;} ?>" maxlength="10" /><br>
 			<label>Contraseña</label><br>
 			<input type="password" required name="Contraseña" placeholder="<?php if(isset($contraseña) && $contraseña ==''){ echo 'No coinciden';}else{echo "Ej. Vic1478AHs";} ?>"value="<?php if(isset($contraseña)) {echo $contraseña;}?>" pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" title="Una contraseña válida es un conjuto de caracteres, donde cada uno consiste de una letra mayúscula o minúscula, o un dígito. La contraseña debe empezar con una letra y contener al menos un dígito. Debe tener 8-10 caracteres" maxlength="10" minlength="10"/> <br>
 			<br><br>
@@ -121,7 +114,16 @@
 		</form>
 	</section>
 	<?php include ("../includes/footer.php") ?>
-	
+	<script src="../js/sweetalert2.all.min.js"></script>
+      
+    <?php 
+	if (isset($bandera1)) 
+    	echo "<script type='text/javascript'> Swal.fire({type: 'error',title: 'Error',text: '¡Este usuario ya no esta disponible!'}); </script>"; 
+    if (isset($bandera2)) 
+    	echo "<script type='text/javascript'> Swal.fire({type: 'error',title: 'Error',text: '¡Ya hay un cliente registrado con este correo!'}); </script>"; 
+    if (isset($bandera3)) 
+    	echo "<script type='text/javascript'> Swal.fire({type: 'error',title: 'Error',text: '¡Ya hay un cliente registrado con este RFC!'}); </script>"; 
+	?>
 	
 </body>
 </html>

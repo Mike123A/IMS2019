@@ -45,7 +45,7 @@
 			}
 			mysqli_close($conexion);
 
-			header("Location: almacen_productos.php");
+			header("Location: almacen_productos.php?nuevo");
 		}else{
 			echo "No Insertado";
 		}

@@ -95,5 +95,24 @@
 	<?php 
 		include("../includes/footer.php"); 
 	?>
+	<script src="../admin/js/sweetalert2.all.min.js"></script>
+      
+    <?php 
+	if (isset($_GET['venta'])) {
+    echo "<script type='text/javascript'> Swal.fire({        
+        type: 'success',
+        title: 'Éxito',
+        text: '¡Gracias por comprar!',        
+    }); </script>"; 
+    }
+    if (isset($_GET['repetido'])) {
+    echo "<script type='text/javascript'> Swal.fire({        
+        type: 'error',
+        title: 'Error',
+        text: '¡Este producto ya esta en el carrito por comprar!',        
+    }); </script>"; 
+    }
+
+ ?>
 </body>
 </html>

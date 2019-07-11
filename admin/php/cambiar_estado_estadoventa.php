@@ -26,7 +26,7 @@
 	if ($resultado) {
 		mysqli_close($conexion);
 
-		header("Location: cat_eventa.php");
+		header("Location: cat_eventa.php?baja");
 	}else{
 		echo "No eliminado";
 	}

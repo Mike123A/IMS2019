@@ -25,7 +25,7 @@ if (isset($_SESSION['cliente'])) {
 				unset($_SESSION["cart"]);
 				unset($_SESSION["cliente"]);
 				print "<script>	window.open('../pdf/factura.php?clave=$cart_id');</script>";
-				print "<script>	window.location='ventas.php';</script>";
+				print "<script>	window.location='ventas.php?nuevo';</script>";
 			}
 		}
 		

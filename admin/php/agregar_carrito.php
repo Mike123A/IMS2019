@@ -27,7 +27,7 @@ if(!empty($_POST)){
 			}
 			// si el producto es repetido no hacemos nada, simplemente redirigimos
 			if($repeated){
-				print "<script>alert('Este producto ya esta en el carrito.');</script>";
+				header("Location:".$_SERVER['HTTP_REFERER']."?repetido");  
 			}else{
 				// si el producto no esta repetido entonces lo agregamos a la variable cart y despues asignamos la variable cart a la variable de sesion
 				array_push($cart, array("clave"=>$_POST["clave"],"cantidad"=> $_POST["cantidad"],"precio"=> $_POST["precio"]));

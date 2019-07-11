@@ -26,7 +26,7 @@
 	$resultado = $conexion->query($query);
 	if ($resultado) {
 		mysqli_close($conexion);
-		header("Location: cat_productos.php");
+		header("Location: cat_productos.php?baja");
 	}else{
 		echo "No eliminado";
 	}

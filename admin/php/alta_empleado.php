@@ -30,7 +30,8 @@
    		if(mysqli_num_rows($resultado)>0) { 
    			$bandera = 1;
       		$usuario = "";
-      		echo "<script>alert('El usuario no esta disponible')</script>";
+   			$bandera1 = 1;
+
 
     	}
     	$query = ("SELECT * FROM cat_empleados WHERE CorreoEmp='$correo'"); // inicio de mi consulta 
@@ -38,7 +39,7 @@
     	if(mysqli_num_rows($resultado)>0) { 
 			$bandera = 1;
      		$correo = "";
-    		echo "<script>alert('Ya hay una cuenta asociada a este corrreo')</script>";
+   			$bandera2 = 1;
 
    		}
    		if($bandera == 0  ){
@@ -54,7 +55,7 @@
 				$resultado = $conexion->query($query);
 				mysqli_close($conexion);
 				
-				header("Location: cat_empleados.php");
+				header("Location: cat_empleados.php?alta");
 			}else{
 				echo "No Insertado";
 			}
@@ -130,7 +131,14 @@
 		</form>
 	</section>
 	<?php include ("../includes/footer.php") ?>
-	
+	<script src="../js/sweetalert2.all.min.js"></script>
+
+	 <?php 
+	if (isset($bandera1)) 
+    	echo "<script type='text/javascript'> Swal.fire({type: 'error',title: 'Error',text: '¡Este usuario ya no esta disponible!'}); </script>"; 
+    if (isset($bandera2)) 
+    	echo "<script type='text/javascript'> Swal.fire({type: 'error',title: 'Error',text: '¡Ya hay un cliente registrado con este correo!'}); </script>"; 
+    ?>
 	
 	
 </body>

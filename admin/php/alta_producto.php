@@ -1,4 +1,5 @@
 <?php
+	
 	session_start(); 	
 	if (empty($_SESSION['active'])) {
 		header("Location: ../");
@@ -36,10 +37,10 @@
 		$resultado = $conexion->query($query);
    		if(mysqli_num_rows($resultado)>0) { 
    			$bandera = 1;
+   			$bandera1 = 1;
       		$nombre = "";
 
-      		echo "<script>sweet.alert('Ya ha sido registrado un producto con este nombre')</script>";
-      		echo "<script>alert('Ya ha sido registrado un producto con este nombre')</script>";
+      		
 
     	}
     	if($bandera == 0  ){
@@ -52,7 +53,7 @@
 			if ($resultado) {
 				move_uploaded_file($url_temp,$src);
 				mysqli_close($conexion);
-	    		header("Location: cat_productos.php");
+	    		header("Location: cat_productos.php?alta");
 			}else{
 				echo "No Insertado";
 			}
@@ -72,6 +73,23 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.13.0/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
+<script src="../js/sweetalert2.all.min.js"></script>
+      
+     <?php 
+	if (isset($bandera1)) {
+    echo "<script type='text/javascript'> Swal.fire({        
+        type: 'error',
+        title: 'Error',
+        text: '¡Ya hay un producto registrado con este nombre!',        
+    }); </script>"; 
+
+
+}
+
+
+ ?>
+
+
 	<?php include ("../includes/encabezado_sesion.php") ?>
 	
 	<?php include ("../includes/menu.php") ?>
@@ -96,11 +114,10 @@
 			<div class="photo">
 				<label for="Imagen">Imagen</label>
 			        <div class="prevPhoto">
-			        <span class="delPhoto notBlock">X</span>
 			        <label for="Imagen"></label>
 			        </div>
 			        <div class="upimg">
-			        <input type="file" name="Imagen" id="Imagen">
+			        <input type="file" name="Imagen" id="Imagen" required>
 			        </div>
 			        <div id="form_alert"></div>
 			</div>
@@ -115,6 +132,7 @@
 		</form>
 	</section>
 	<?php include ("../includes/footer.php") ?>
+	
 	
 </body>
 </html>

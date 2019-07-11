@@ -25,9 +25,9 @@
 		$resultado = $conexion->query($query13);
 
 		if ($_POST['reg']==1) 
-			header("Location: ventas_linea.php");
+			header("Location: ventas_linea.php?nuevo");
 		else
-			header("Location: ventas.php");
+			header("Location: ventas.php?nuevo");
 
 		exit();
 		
